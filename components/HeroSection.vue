@@ -44,7 +44,7 @@
 
           <!-- Phone -->
           <a 
-            href="tel:+74852333362" 
+            :href="`tel:${config.contacts.phone.formatted}`" 
             class="w-10 h-10 md:w-12 md:h-12 lg:w-14 lg:h-14 rounded-full bg-[#2B2D31] border-2 border-white/20 hover:border-white/40 transition-colors flex items-center justify-center relative group"
             aria-label="Телефон"
           >
@@ -72,10 +72,16 @@
 </template>
 
 <script setup>
+import { siteConfig } from '~/config/contacts'
+
+const config = siteConfig
+
 const scrollDown = () => {
-  window.scrollTo({
-    top: window.innerHeight,
-    behavior: 'smooth'
-  })
+  if (typeof window !== 'undefined') {
+    window.scrollTo({
+      top: window.innerHeight,
+      behavior: 'smooth'
+    })
+  }
 }
 </script>

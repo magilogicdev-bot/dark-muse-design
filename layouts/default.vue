@@ -1,9 +1,14 @@
 <template>
   <div class="min-h-screen bg-[#252734] text-white font-sans">
-    <slot />
+    <Header />
+    <main>
+      <slot />
+    </main>
+    <Footer />
   </div>
 </template>
 
 <script setup>
-// Пустой базовый лейаут: отдельные страницы сами выводят нужный хедер/футер.
+// Базовый layout с Header и Footer для всех страниц
+// Если нужен другой layout, создайте новый файл в папке layouts/
 </script>

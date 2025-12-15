@@ -1,5 +1,5 @@
 <template>
-  <header class="w-full bg-[#2a2c38] text-white z-50">
+  <header class="w-full bg-[#2a2c38] text-white z-50 relative">
     <div class="container mx-auto max-w-[1920px] px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 2xl:px-20">
       <div class="flex items-center justify-between py-4 md:py-5 lg:py-6 xl:py-7 2xl:py-8">
         <!-- Left Section: Menu + Buy Apartment (Desktop only) -->
@@ -20,7 +20,7 @@
           </button>
           
           <a 
-            href="#" 
+            :href="config.navigation.buyApartment" 
             class="font-['Inter'] text-xs xl:text-[13px] 2xl:text-sm font-normal tracking-[0.15em] text-white uppercase no-underline hover:opacity-70 transition-opacity"
           >
             КУПИТЬ КВАРТИРУ
@@ -29,18 +29,18 @@
 
         <!-- Center: Logo -->
         <div class="flex-1 lg:flex-none flex justify-center">
-          <a 
-            href="/" 
+          <NuxtLink 
+            to="/" 
             class="font-['Playfair_Display',Georgia,serif] text-lg md:text-xl lg:text-2xl xl:text-[26px] 2xl:text-[28px] font-normal tracking-[0.04em] text-white no-underline hover:opacity-80 transition-opacity"
           >
-            Pobedonoscev
-          </a>
+            {{ config.branding.name }}
+          </NuxtLink>
         </div>
 
         <!-- Right Section: Presentation + Phone (Desktop only) -->
         <div class="hidden lg:flex lg:flex-1 items-center justify-end gap-6 xl:gap-8 2xl:gap-12">
           <a 
-            href="#" 
+            :href="config.navigation.getPresentation" 
             class="flex items-center gap-2 no-underline hover:opacity-70 transition-opacity"
           >
             <svg 
@@ -62,10 +62,10 @@
           </a>
           
           <a 
-            href="tel:+74852333362" 
+            :href="`tel:${config.contacts.phone.formatted}`" 
             class="font-['Inter'] text-sm xl:text-[15px] 2xl:text-base font-medium tracking-[0.02em] text-white no-underline hover:opacity-70 transition-opacity whitespace-nowrap"
           >
-            +7 (4852) 33-33-62
+            {{ config.contacts.phone.primary }}
           </a>
         </div>
 
@@ -115,21 +115,21 @@
         
         <nav class="flex flex-col gap-6">
           <a 
-            href="#" 
+            :href="config.navigation.menu" 
             class="font-['Inter'] text-sm font-normal tracking-[0.15em] text-white uppercase no-underline py-3 border-b border-white/10 hover:opacity-70 transition-opacity"
             @click="closeMenu"
           >
             МЕНЮ
           </a>
           <a 
-            href="#" 
+            :href="config.navigation.buyApartment" 
             class="font-['Inter'] text-sm font-normal tracking-[0.15em] text-white uppercase no-underline py-3 border-b border-white/10 hover:opacity-70 transition-opacity"
             @click="closeMenu"
           >
             КУПИТЬ КВАРТИРУ
           </a>
           <a 
-            href="#" 
+            :href="config.navigation.getPresentation" 
             class="font-['Inter'] text-sm font-normal tracking-[0.15em] text-white uppercase no-underline py-3 border-b border-white/10 hover:opacity-70 transition-opacity"
             @click="closeMenu"
           >
@@ -138,10 +138,10 @@
         </nav>
         
         <a 
-          href="tel:+74852333362" 
+          :href="`tel:${config.contacts.phone.formatted}`" 
           class="mt-auto font-['Inter'] text-lg font-medium text-white no-underline text-center py-4 bg-white/5 rounded-lg hover:bg-white/10 transition-colors"
         >
-          +7 (4852) 33-33-62
+          {{ config.contacts.phone.primary }}
         </a>
       </div>
     </Transition>
@@ -149,23 +149,11 @@
 </template>
 
 <script setup>
-import { ref } from 'vue'
+import { useMenu } from '~/composables/useMenu'
+import { siteConfig } from '~/config/contacts'
 
-const isMenuOpen = ref(false)
-
-const toggleMenu = () => {
-  isMenuOpen.value = !isMenuOpen.value
-  if (isMenuOpen.value) {
-    document.body.style.overflow = 'hidden'
-  } else {
-    document.body.style.overflow = ''
-  }
-}
-
-const closeMenu = () => {
-  isMenuOpen.value = false
-  document.body.style.overflow = ''
-}
+const { isMenuOpen, toggleMenu, closeMenu } = useMenu()
+const config = siteConfig
 </script>
 
 <style scoped>

@@ -8,7 +8,7 @@
           <!-- Left: Brand Name -->
           <div class="flex flex-col">
             <span class="font-['Lora',Georgia,serif] text-2xl md:text-3xl lg:text-4xl xl:text-[36px] font-normal tracking-[5.76px] text-white leading-tight">
-              Pobedonoscev
+              {{ config.branding.name }}
             </span>
             <span class="font-['Inter',sans-serif] text-sm md:text-base lg:text-lg xl:text-[24px] font-bold tracking-[6.84px] bg-clip-text text-transparent bg-gradient-to-r from-[#cecece] to-[#2e2e2e] mt-1">
               GROUP
@@ -47,30 +47,30 @@
           <div class="flex flex-col gap-3 md:gap-4">
             <div>
               <p class="text-white/60 text-xs md:text-sm lg:text-base mb-1 leading-[1.56]">
-                Время работы отдела продаж
+                {{ config.contacts.workingHours.label }}
               </p>
               <p class="text-white text-sm md:text-base lg:text-lg xl:text-xl font-['Manrope',sans-serif] font-normal leading-[1.56]">
-                Сегодня с 09:00 до 18:00
+                {{ config.contacts.workingHours.text }}
               </p>
             </div>
             <div class="flex flex-col lg:flex-row lg:items-start gap-3 md:gap-4 lg:gap-5">
               <div class="flex flex-col gap-1 md:gap-2">
                 <a 
-                  href="tel:+74852363094" 
+                  :href="`tel:${config.contacts.phone.formatted}`" 
                   class="text-white text-lg md:text-xl lg:text-2xl xl:text-3xl font-['Manrope',sans-serif] font-normal leading-[1.56] hover:opacity-70 transition-opacity"
                 >
-                  +7 (4852) 36-30-94
+                  {{ config.contacts.phone.primary }}
                 </a>
                 <a 
-                  href="tel:+74852363094" 
+                  :href="`tel:${config.contacts.phone.secondaryFormatted}`" 
                   class="text-white text-lg md:text-xl lg:text-2xl xl:text-3xl font-['Manrope',sans-serif] font-normal leading-[1.56] hover:opacity-70 transition-opacity"
                 >
-                  +7 (4852) 36-30-94
+                  {{ config.contacts.phone.secondary }}
                 </a>
               </div>
               <div class="flex items-center gap-2 md:gap-3 lg:gap-4 mt-2 lg:mt-0">
                 <a 
-                  href="#" 
+                  :href="config.contacts.social.vk" 
                   class="w-12 h-12 md:w-14 md:h-14 lg:w-16 lg:h-16 xl:w-[97px] xl:h-[97px] flex items-center justify-center hover:opacity-80 transition-opacity flex-shrink-0 relative"
                   aria-label="VKontakte"
                 >
@@ -88,7 +88,7 @@
                   />
                 </a>
                 <a 
-                  href="#" 
+                  :href="config.contacts.social.telegram" 
                   class="w-12 h-12 md:w-14 md:h-14 lg:w-16 lg:h-16 xl:w-[97px] xl:h-[97px] flex items-center justify-center hover:opacity-80 transition-opacity flex-shrink-0 relative"
                   aria-label="Telegram"
                 >
@@ -113,14 +113,15 @@
           <div class="flex flex-col gap-3 md:gap-4 lg:gap-5 max-w-5xl lg:max-w-3xl xl:max-w-4xl">
             <!-- Company Names -->
             <div class="flex flex-wrap items-center gap-3 md:gap-4 lg:gap-5 xl:gap-6">
-              <h3 class="text-white/80 text-sm md:text-base lg:text-lg font-['Manrope',sans-serif] font-light leading-[1.528] tracking-[-0.4px]">
-                Pobedonoscev Group
-              </h3>
-              <h3 class="text-white text-sm md:text-base lg:text-lg font-['Manrope',sans-serif] font-light leading-[1.528] tracking-[-0.4px]">
-                Камни Дагестана
-              </h3>
-              <h3 class="text-white text-sm md:text-base lg:text-lg font-['Manrope',sans-serif] font-light leading-[1.528] tracking-[-0.4px]">
-                Pobedonoscev Architects
+              <h3 
+                v-for="(company, index) in config.companies" 
+                :key="index"
+                :class="[
+                  'text-sm md:text-base lg:text-lg font-['Manrope',sans-serif] font-light leading-[1.528] tracking-[-0.4px]',
+                  index === 0 ? 'text-white/80' : 'text-white'
+                ]"
+              >
+                {{ company }}
               </h3>
             </div>
 
@@ -132,19 +133,19 @@
             <!-- Navigation Links -->
             <div class="flex flex-wrap gap-3 md:gap-4 lg:gap-5">
               <a 
-                href="#" 
+                :href="config.legal.userAgreement" 
                 class="text-white/60 text-xs md:text-sm lg:text-base font-['Manrope',sans-serif] font-light leading-[1.528] tracking-[0.32px] underline hover:text-white hover:opacity-80 transition-colors decoration-solid underline-offset-2"
               >
                 Пользовательское соглашение
               </a>
               <a 
-                href="#" 
+                :href="config.legal.privacyPolicy" 
                 class="text-white/60 text-xs md:text-sm lg:text-base font-['Manrope',sans-serif] font-light leading-[1.528] tracking-[0.32px] underline hover:text-white hover:opacity-80 transition-colors decoration-solid underline-offset-2"
               >
                 Политика конфиденциальности
               </a>
               <a 
-                href="#" 
+                :href="config.legal.sitemap" 
                 class="text-white/60 text-xs md:text-sm lg:text-base font-['Manrope',sans-serif] font-light leading-[1.528] tracking-[0.32px] underline hover:text-white hover:opacity-80 transition-colors decoration-solid underline-offset-2"
               >
                 Карта сайта
@@ -158,5 +159,7 @@
 </template>
 
 <script setup>
-// Footer Component
+import { siteConfig } from '~/config/contacts'
+
+const config = siteConfig
 </script>

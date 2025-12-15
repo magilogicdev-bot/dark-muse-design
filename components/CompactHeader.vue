@@ -15,9 +15,9 @@
       </div>
 
       <div class="flex items-center gap-4">
-        <div class="text-white font-serif text-lg tracking-[0.04em]">Pobedonoscev</div>
-        <a href="tel:+74852333362" class="text-white font-semibold text-sm md:text-base hover:text-[#ffb347] transition-colors whitespace-nowrap">
-          +7 (4852) 33-33-62
+        <div class="text-white font-serif text-lg tracking-[0.04em]">{{ config.branding.name }}</div>
+        <a :href="`tel:${config.contacts.phone.formatted}`" class="text-white font-semibold text-sm md:text-base hover:text-[#ffb347] transition-colors whitespace-nowrap">
+          {{ config.contacts.phone.primary }}
         </a>
       </div>
     </div>
@@ -25,11 +25,9 @@
 </template>
 
 <script setup>
-import { ref } from 'vue'
+import { useMenu } from '~/composables/useMenu'
+import { siteConfig } from '~/config/contacts'
 
-const isMenuOpen = ref(false)
-
-const toggleMenu = () => {
-  isMenuOpen.value = !isMenuOpen.value
-}
+const { isMenuOpen, toggleMenu } = useMenu()
+const config = siteConfig
 </script>
