@@ -12,7 +12,7 @@
       <CompletedProjects />
       <MediaSection />
     </main>
-
+    
     <Footer />
   </div>
 </template>
