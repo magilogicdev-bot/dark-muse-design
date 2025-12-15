@@ -6,32 +6,32 @@
       <div class="pt-8 md:pt-10 lg:pt-12 xl:pt-14 pb-6 md:pb-8 lg:pb-10">
         <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-6 md:gap-8 lg:gap-12">
           <!-- Left: Brand Name -->
-          <div class="flex flex-col">
-            <span class="font-['Lora',Georgia,serif] text-2xl md:text-3xl lg:text-4xl xl:text-[36px] font-normal tracking-[5.76px] text-white leading-tight">
+          <div class="flex flex-col gap-1">
+            <span class="text-2xl md:text-3xl lg:text-4xl xl:text-[36px] 2xl:text-[40px] font-normal tracking-[5.76px] text-white leading-[1.1]" style="font-family: 'Lora', Georgia, serif">
               {{ config.branding.name }}
             </span>
-            <span class="font-['Inter',sans-serif] text-sm md:text-base lg:text-lg xl:text-[24px] font-bold tracking-[6.84px] bg-clip-text text-transparent bg-gradient-to-r from-[#cecece] to-[#2e2e2e] mt-1">
+            <span class="text-sm md:text-base lg:text-lg xl:text-[24px] 2xl:text-[26px] font-bold tracking-[6.84px] bg-clip-text text-transparent bg-gradient-to-r from-[#cecece] to-[#2e2e2e] leading-tight" style="font-family: 'Inter', sans-serif">
               GROUP
             </span>
           </div>
 
           <!-- Right: Badges/Logos -->
-          <div class="flex items-center gap-4 md:gap-5 lg:gap-6 xl:gap-8">
+          <div class="flex items-center gap-3 md:gap-4 lg:gap-5 xl:gap-6">
             <!-- Icon components from Figma -->
             <img 
               src="/images/footer-icon-1.png" 
               alt="CITY VISION AWARDS" 
-              class="h-12 md:h-14 lg:h-16 xl:h-[79px] w-auto object-contain flex-shrink-0"
+              class="h-10 md:h-12 lg:h-14 xl:h-16 max-h-16 w-auto object-contain flex-shrink-0 aspect-auto"
             />
             <img 
               src="/images/footer-icon-2.png" 
               alt="Checkmark Icon" 
-              class="h-12 md:h-14 lg:h-16 xl:h-[79px] w-auto object-contain flex-shrink-0"
+              class="h-10 md:h-12 lg:h-14 xl:h-16 max-h-16 w-auto object-contain flex-shrink-0 aspect-auto"
             />
             <img 
               src="/images/footer-icon-3.png" 
               alt="Refresh Icon" 
-              class="h-12 md:h-14 lg:h-16 xl:h-[79px] w-auto object-contain flex-shrink-0"
+              class="h-10 md:h-12 lg:h-14 xl:h-16 max-h-16 w-auto object-contain flex-shrink-0 aspect-auto"
             />
           </div>
         </div>
@@ -45,64 +45,66 @@
         <div class="flex flex-col lg:flex-row lg:items-start lg:justify-between gap-8 md:gap-10 lg:gap-12 xl:gap-16">
           <!-- Left: Contact Info -->
           <div class="flex flex-col gap-3 md:gap-4">
-            <div>
-              <p class="text-white/60 text-xs md:text-sm lg:text-base mb-1 leading-[1.56]">
+            <div class="mb-2 md:mb-3">
+              <p class="text-white/60 text-xs md:text-sm lg:text-base leading-[1.4] mb-1.5">
                 {{ config.contacts.workingHours.label }}
               </p>
-              <p class="text-white text-sm md:text-base lg:text-lg xl:text-xl font-['Manrope',sans-serif] font-normal leading-[1.56]">
+              <p class="text-white text-sm md:text-base lg:text-lg xl:text-xl font-normal leading-[1.4]" style="font-family: 'Manrope', sans-serif">
                 {{ config.contacts.workingHours.text }}
               </p>
             </div>
             <div class="flex flex-col lg:flex-row lg:items-start gap-3 md:gap-4 lg:gap-5">
-              <div class="flex flex-col gap-1 md:gap-2">
+              <div class="flex flex-col gap-1.5 md:gap-2">
                 <a 
-                  :href="`tel:${config.contacts.phone.formatted}`" 
-                  class="text-white text-lg md:text-xl lg:text-2xl xl:text-3xl font-['Manrope',sans-serif] font-normal leading-[1.56] hover:opacity-70 transition-opacity"
+                  :href="'tel:' + config.contacts.phone.formatted" 
+                  class="text-white text-lg md:text-xl lg:text-2xl xl:text-[28px] 2xl:text-3xl font-normal leading-[1.3] hover:opacity-70 transition-opacity whitespace-nowrap"
+                  style="font-family: 'Manrope', sans-serif"
                 >
                   {{ config.contacts.phone.primary }}
                 </a>
                 <a 
-                  :href="`tel:${config.contacts.phone.secondaryFormatted}`" 
-                  class="text-white text-lg md:text-xl lg:text-2xl xl:text-3xl font-['Manrope',sans-serif] font-normal leading-[1.56] hover:opacity-70 transition-opacity"
+                  :href="'tel:' + config.contacts.phone.secondaryFormatted" 
+                  class="text-white text-lg md:text-xl lg:text-2xl xl:text-[28px] 2xl:text-3xl font-normal leading-[1.3] hover:opacity-70 transition-opacity whitespace-nowrap"
+                  style="font-family: 'Manrope', sans-serif"
                 >
                   {{ config.contacts.phone.secondary }}
                 </a>
               </div>
-              <div class="flex items-center gap-2 md:gap-3 lg:gap-4 mt-2 lg:mt-0">
+              <div class="flex items-center gap-2 md:gap-2.5 lg:gap-3 mt-2 lg:mt-0">
                 <a 
                   :href="config.contacts.social.vk" 
-                  class="w-12 h-12 md:w-14 md:h-14 lg:w-16 lg:h-16 xl:w-[97px] xl:h-[97px] flex items-center justify-center hover:opacity-80 transition-opacity flex-shrink-0 relative"
+                  class="w-10 h-10 md:w-12 md:h-12 lg:w-14 lg:h-14 xl:w-16 xl:h-16 aspect-square flex items-center justify-center hover:opacity-80 transition-opacity flex-shrink-0 relative"
                   aria-label="VKontakte"
                 >
                   <!-- Circle background -->
                   <img 
                     src="https://www.figma.com/api/mcp/asset/54d0f66b-b601-41f4-aa21-e69f71bfa8c4" 
                     alt="" 
-                    class="absolute inset-0 w-full h-full object-cover"
+                    class="absolute inset-0 w-full h-full object-cover rounded-full"
                   />
                   <!-- VK logo inside -->
                   <img 
                     src="https://www.figma.com/api/mcp/asset/91373bff-ac3b-4736-977d-166869d00832" 
                     alt="VK" 
-                    class="relative z-10 w-1/2 h-1/2 object-contain"
+                    class="relative z-10 w-[40%] h-[40%] object-contain"
                   />
                 </a>
                 <a 
                   :href="config.contacts.social.telegram" 
-                  class="w-12 h-12 md:w-14 md:h-14 lg:w-16 lg:h-16 xl:w-[97px] xl:h-[97px] flex items-center justify-center hover:opacity-80 transition-opacity flex-shrink-0 relative"
+                  class="w-10 h-10 md:w-12 md:h-12 lg:w-14 lg:h-14 xl:w-16 xl:h-16 aspect-square flex items-center justify-center hover:opacity-80 transition-opacity flex-shrink-0 relative"
                   aria-label="Telegram"
                 >
                   <!-- Circle background -->
                   <img 
                     src="https://www.figma.com/api/mcp/asset/3256f975-f004-4f9d-86a3-5eb85f9d85fb" 
                     alt="" 
-                    class="absolute inset-0 w-full h-full object-cover"
+                    class="absolute inset-0 w-full h-full object-cover rounded-full"
                   />
                   <!-- Telegram logo inside -->
                   <img 
                     src="https://www.figma.com/api/mcp/asset/3c609572-383a-4756-896c-c4a192efdaba" 
                     alt="Telegram" 
-                    class="relative z-10 w-1/2 h-1/2 object-contain"
+                    class="relative z-10 w-[40%] h-[40%] object-contain"
                   />
                 </a>
               </div>
@@ -117,16 +119,17 @@
                 v-for="(company, index) in config.companies" 
                 :key="index"
                 :class="[
-                  'text-sm md:text-base lg:text-lg font-['Manrope',sans-serif] font-light leading-[1.528] tracking-[-0.4px]',
+                  'text-sm md:text-base lg:text-lg font-light leading-[1.528] tracking-[-0.4px]',
                   index === 0 ? 'text-white/80' : 'text-white'
                 ]"
+                style="font-family: 'Manrope', sans-serif"
               >
                 {{ company }}
               </h3>
             </div>
 
             <!-- Legal Disclaimer -->
-            <p class="text-white/60 text-xs md:text-sm lg:text-base leading-[1.528] tracking-[0.36px] font-['Manrope',sans-serif] font-light">
+            <p class="text-white/60 text-xs md:text-sm lg:text-base leading-[1.528] tracking-[0.36px] font-light" style="font-family: 'Manrope', sans-serif">
               Любая информация, представленная на данном сайте, носит исключительно информационный характер и ни при каких условиях не является публичной офертой, определяемой положениями статьи 437 ГК РФ. Любые изображения и видеоматериалы несут ознакомительный характер и могут отличаться от действительности. Все права на публикуемые на сайте победоносцев.рф материалы принадлежат ООО «СЗ «ПОБЕДОНОСЦЕВ ГРУПП». Использование материалов, без письменного разрешения, является нарушением закона об авторском праве.
             </p>
 
@@ -134,19 +137,22 @@
             <div class="flex flex-wrap gap-3 md:gap-4 lg:gap-5">
               <a 
                 :href="config.legal.userAgreement" 
-                class="text-white/60 text-xs md:text-sm lg:text-base font-['Manrope',sans-serif] font-light leading-[1.528] tracking-[0.32px] underline hover:text-white hover:opacity-80 transition-colors decoration-solid underline-offset-2"
+                class="text-white/60 text-xs md:text-sm lg:text-base font-light leading-[1.528] tracking-[0.32px] underline hover:text-white hover:opacity-80 transition-colors decoration-solid underline-offset-2"
+                style="font-family: 'Manrope', sans-serif"
               >
                 Пользовательское соглашение
               </a>
               <a 
                 :href="config.legal.privacyPolicy" 
-                class="text-white/60 text-xs md:text-sm lg:text-base font-['Manrope',sans-serif] font-light leading-[1.528] tracking-[0.32px] underline hover:text-white hover:opacity-80 transition-colors decoration-solid underline-offset-2"
+                class="text-white/60 text-xs md:text-sm lg:text-base font-light leading-[1.528] tracking-[0.32px] underline hover:text-white hover:opacity-80 transition-colors decoration-solid underline-offset-2"
+                style="font-family: 'Manrope', sans-serif"
               >
                 Политика конфиденциальности
               </a>
               <a 
                 :href="config.legal.sitemap" 
-                class="text-white/60 text-xs md:text-sm lg:text-base font-['Manrope',sans-serif] font-light leading-[1.528] tracking-[0.32px] underline hover:text-white hover:opacity-80 transition-colors decoration-solid underline-offset-2"
+                class="text-white/60 text-xs md:text-sm lg:text-base font-light leading-[1.528] tracking-[0.32px] underline hover:text-white hover:opacity-80 transition-colors decoration-solid underline-offset-2"
+                style="font-family: 'Manrope', sans-serif"
               >
                 Карта сайта
               </a>

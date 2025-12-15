@@ -14,14 +14,15 @@
               <span class="block h-[1.5px] w-full bg-white transition-all"></span>
               <span class="block h-[1.5px] w-full bg-white transition-all"></span>
             </span>
-            <span class="font-['Inter'] text-xs xl:text-[13px] 2xl:text-sm font-normal tracking-[0.15em] text-white uppercase">
+            <span class="text-xs xl:text-[13px] 2xl:text-sm font-normal tracking-[0.15em] text-white uppercase" style="font-family: 'Inter', sans-serif">
               МЕНЮ
             </span>
           </button>
           
           <a 
             :href="config.navigation.buyApartment" 
-            class="font-['Inter'] text-xs xl:text-[13px] 2xl:text-sm font-normal tracking-[0.15em] text-white uppercase no-underline hover:opacity-70 transition-opacity"
+            class="text-xs xl:text-[13px] 2xl:text-sm font-normal tracking-[0.15em] text-white uppercase no-underline hover:opacity-70 transition-opacity"
+            style="font-family: 'Inter', sans-serif"
           >
             КУПИТЬ КВАРТИРУ
           </a>
@@ -31,7 +32,8 @@
         <div class="flex-1 lg:flex-none flex justify-center">
           <NuxtLink 
             to="/" 
-            class="font-['Playfair_Display',Georgia,serif] text-lg md:text-xl lg:text-2xl xl:text-[26px] 2xl:text-[28px] font-normal tracking-[0.04em] text-white no-underline hover:opacity-80 transition-opacity"
+            class="text-lg md:text-xl lg:text-2xl xl:text-[26px] 2xl:text-[28px] font-normal tracking-[0.04em] text-white no-underline hover:opacity-80 transition-opacity"
+            style="font-family: 'Playfair Display', Georgia, serif"
           >
             {{ config.branding.name }}
           </NuxtLink>
@@ -56,14 +58,15 @@
                 d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" 
               />
             </svg>
-            <span class="font-['Inter'] text-xs xl:text-[13px] 2xl:text-sm font-normal tracking-[0.15em] text-white uppercase">
+            <span class="text-xs xl:text-[13px] 2xl:text-sm font-normal tracking-[0.15em] text-white uppercase" style="font-family: 'Inter', sans-serif">
               ПОЛУЧИТЬ ПРЕЗЕНТАЦИЮ
             </span>
           </a>
           
           <a 
-            :href="`tel:${config.contacts.phone.formatted}`" 
-            class="font-['Inter'] text-sm xl:text-[15px] 2xl:text-base font-medium tracking-[0.02em] text-white no-underline hover:opacity-70 transition-opacity whitespace-nowrap"
+            :href="phoneHref" 
+            class="text-sm xl:text-[15px] 2xl:text-base font-medium tracking-[0.02em] text-white no-underline hover:opacity-70 transition-opacity whitespace-nowrap"
+            style="font-family: 'Inter', sans-serif"
           >
             {{ config.contacts.phone.primary }}
           </a>
@@ -99,7 +102,7 @@
         class="fixed top-0 right-0 w-full max-w-[360px] md:max-w-[400px] h-screen bg-gradient-to-b from-[#2a2c38] to-[#1f2129] z-[300] p-6 flex flex-col shadow-[-10px_0_40px_rgba(0,0,0,0.3)]"
       >
         <div class="flex items-center justify-between mb-10">
-          <span class="font-['Playfair_Display',Georgia,serif] text-xl text-white tracking-[0.04em]">
+          <span class="text-xl text-white tracking-[0.04em]" style="font-family: 'Playfair Display', Georgia, serif">
             Pobedonoscev
           </span>
           <button 
@@ -116,21 +119,24 @@
         <nav class="flex flex-col gap-6">
           <a 
             :href="config.navigation.menu" 
-            class="font-['Inter'] text-sm font-normal tracking-[0.15em] text-white uppercase no-underline py-3 border-b border-white/10 hover:opacity-70 transition-opacity"
+            class="text-sm font-normal tracking-[0.15em] text-white uppercase no-underline py-3 border-b border-white/10 hover:opacity-70 transition-opacity"
+            style="font-family: 'Inter', sans-serif"
             @click="closeMenu"
           >
             МЕНЮ
           </a>
           <a 
             :href="config.navigation.buyApartment" 
-            class="font-['Inter'] text-sm font-normal tracking-[0.15em] text-white uppercase no-underline py-3 border-b border-white/10 hover:opacity-70 transition-opacity"
+            class="text-sm font-normal tracking-[0.15em] text-white uppercase no-underline py-3 border-b border-white/10 hover:opacity-70 transition-opacity"
+            style="font-family: 'Inter', sans-serif"
             @click="closeMenu"
           >
             КУПИТЬ КВАРТИРУ
           </a>
           <a 
             :href="config.navigation.getPresentation" 
-            class="font-['Inter'] text-sm font-normal tracking-[0.15em] text-white uppercase no-underline py-3 border-b border-white/10 hover:opacity-70 transition-opacity"
+            class="text-sm font-normal tracking-[0.15em] text-white uppercase no-underline py-3 border-b border-white/10 hover:opacity-70 transition-opacity"
+            style="font-family: 'Inter', sans-serif"
             @click="closeMenu"
           >
             ПОЛУЧИТЬ ПРЕЗЕНТАЦИЮ
@@ -138,8 +144,9 @@
         </nav>
         
         <a 
-          :href="`tel:${config.contacts.phone.formatted}`" 
-          class="mt-auto font-['Inter'] text-lg font-medium text-white no-underline text-center py-4 bg-white/5 rounded-lg hover:bg-white/10 transition-colors"
+          :href="phoneHref" 
+          class="mt-auto text-lg font-medium text-white no-underline text-center py-4 bg-white/5 rounded-lg hover:bg-white/10 transition-colors"
+          style="font-family: 'Inter', sans-serif"
         >
           {{ config.contacts.phone.primary }}
         </a>
@@ -154,6 +161,9 @@ import { siteConfig } from '~/config/contacts'
 
 const { isMenuOpen, toggleMenu, closeMenu } = useMenu()
 const config = siteConfig
+
+// Computed для телефонных ссылок
+const phoneHref = 'tel:' + config.contacts.phone.formatted
 </script>
 
 <style scoped>
