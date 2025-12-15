@@ -1,0 +1,83 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Lora:wght@400;500;600;700&display=swap');
+
+:root {
+  --page-bg: #252734;
+  --card-bg: #ffffff;
+  --accent: #ff8700;
+  --text-primary: #f5f6fb;
+  --text-secondary: #c8cbd6;
+  --muted: #8e92a3;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Manrope', 'Mazzard H', 'Inter', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  background-color: var(--page-bg);
+  color: var(--text-primary);
+  margin: 0;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+.page-container {
+  width: 100%;
+  max-width: 1320px;
+  margin: 0 auto;
+  padding-left: 16px;
+  padding-right: 16px;
+}
+
+@media (min-width: 576px) {
+  .page-container {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+}
+
+@media (min-width: 768px) {
+  .page-container {
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .page-container {
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+}
+
+.section-block {
+  padding-top: 48px;
+  padding-bottom: 56px;
+}
+
+@media (min-width: 768px) {
+  .section-block {
+    padding-top: 64px;
+    padding-bottom: 72px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .section-block {
+    padding-top: 80px;
+    padding-bottom: 88px;
+  }
+}
+
+.section-title {
+  margin: 0 0 20px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}

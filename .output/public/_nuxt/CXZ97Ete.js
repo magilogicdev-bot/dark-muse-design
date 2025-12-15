@@ -1,0 +1,1 @@
+import{x as t,y as s,O as a}from"./DqQxM3r2.js";const n={class:"min-h-screen bg-[#252734] text-white font-sans"},l={__name:"default",setup(o){return(e,r)=>(s(),t("div",n,[a(e.$slots,"default")]))}};export{l as default};
