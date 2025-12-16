@@ -1,5 +1,5 @@
 <template>
-  <section class="bg-[#2a2c38] py-4 md:py-6">
+  <section class="bg-primary py-4 md:py-6">
     <div class="container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <nav class="flex items-center gap-2 md:gap-3 text-sm md:text-base lg:text-lg">
         <template v-for="(crumb, index) in breadcrumbs" :key="index">

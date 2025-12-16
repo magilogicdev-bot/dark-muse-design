@@ -22,7 +22,8 @@ export const siteConfig = {
   navigation: {
     menu: '#',
     buyApartment: '#',
-    getPresentation: '#'
+    getPresentation: '#',
+    contacts: '/contacts'
   },
 
   // Компании

@@ -1,5 +1,5 @@
 <template>
-  <section class="py-8 md:py-12 lg:py-16 xl:py-20 bg-[#2a2c38] text-white">
+  <section class="py-8 md:py-12 lg:py-16 xl:py-20 bg-primary text-white">
     <div class="container mx-auto max-w-[1920px] px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 2xl:px-20">
       <!-- Section Header Row - 2 columns on desktop -->
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-4 lg:gap-8 xl:gap-12 mb-6 md:mb-8 lg:mb-10">

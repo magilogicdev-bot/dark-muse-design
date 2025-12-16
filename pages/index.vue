@@ -1,5 +1,5 @@
 <template>
-  <div class="bg-[#2a2c38] text-white">
+  <div class="bg-primary text-white">
     <!-- Hero Section with Header overlay (Header теперь в layout) -->
     <div class="relative">
       <HeroSection />

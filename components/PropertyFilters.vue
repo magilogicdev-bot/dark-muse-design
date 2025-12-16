@@ -1,5 +1,5 @@
 <template>
-  <section class="pt-14 pb-10 md:pt-20 md:pb-14 lg:pt-24 lg:pb-16 xl:pt-28 xl:pb-20 bg-[#2a2c38] text-white">
+  <section class="pt-14 pb-10 md:pt-20 md:pb-14 lg:pt-24 lg:pb-16 xl:pt-28 xl:pb-20 bg-primary text-white">
     <div class="container mx-auto max-w-[1920px] px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 2xl:px-20">
       <!-- Header -->
       <div class="mb-10 md:mb-12 lg:mb-14">
@@ -110,7 +110,7 @@
                     room.isStudio ? 'h-[44px] px-4 md:px-6 rounded-full text-[12px] md:text-[13px]' : 'w-[40px] md:w-[44px] h-[40px] md:h-[44px] rounded-full text-[12px] md:text-[13px]',
                     'font-medium flex items-center justify-center transition-colors border cursor-pointer shadow-sm',
                     room.active 
-                      ? 'bg-[#2a2c38] text-white border-white/20' 
+                      ? 'bg-primary text-white border-white/20' 
                       : 'bg-white text-black border-black/10 hover:border-black/30'
                   ]"
                 >

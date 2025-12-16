@@ -1,5 +1,5 @@
 <template>
-  <footer class="text-white relative overflow-hidden bg-[#2a2c38]">
+  <footer class="text-white relative overflow-hidden bg-primary">
     <!-- Content -->
     <div class="container mx-auto max-w-[1920px] px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 2xl:px-20 relative z-10">
       <!-- Top Section: Logo + Badges -->

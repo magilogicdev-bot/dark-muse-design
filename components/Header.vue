@@ -1,5 +1,5 @@
 <template>
-  <header class="w-full bg-[#2a2c38] text-white z-50 relative">
+  <header class="w-full bg-primary text-white z-50 relative">
     <div class="container mx-auto max-w-[1920px] px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 2xl:px-20">
       <div class="flex items-center justify-between py-4 md:py-5 lg:py-6 xl:py-7 2xl:py-8">
         <!-- Left Section: Menu + Buy Apartment (Desktop only) -->
@@ -99,7 +99,7 @@
     <Transition name="slide">
       <div 
         v-if="isMenuOpen" 
-        class="fixed top-0 right-0 w-full max-w-[360px] md:max-w-[400px] h-screen bg-gradient-to-b from-[#2a2c38] to-[#1f2129] z-[300] p-6 flex flex-col shadow-[-10px_0_40px_rgba(0,0,0,0.3)]"
+        class="fixed top-0 right-0 w-full max-w-[360px] md:max-w-[400px] h-screen bg-gradient-to-b from-primary to-[#1f2129] z-[300] p-6 flex flex-col shadow-[-10px_0_40px_rgba(0,0,0,0.3)]"
       >
         <div class="flex items-center justify-between mb-10">
           <span class="text-xl text-white tracking-[0.04em]" style="font-family: 'Playfair Display', Georgia, serif">

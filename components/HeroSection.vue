@@ -1,5 +1,5 @@
 <template>
-  <section class="relative w-full bg-[#2a2c38]">
+  <section class="relative w-full bg-primary">
     <!-- Hero Background Image -->
     <div class="relative w-full aspect-[16/10] md:aspect-[16/9] lg:aspect-[2/1] xl:aspect-[2.2/1]">
       <img

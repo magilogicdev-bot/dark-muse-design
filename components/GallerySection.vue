@@ -1,5 +1,5 @@
 <template>
-  <section class="bg-[#2a2c38] py-16 md:py-20 lg:py-24">
+  <section class="bg-primary py-16 md:py-20 lg:py-24">
     <div class="container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <h2 class="text-white text-[clamp(2rem,7.2vw,128px)] font-medium uppercase leading-[1.125] mb-12 md:mb-16 lg:mb-20">
         ГАЛЕРЕЯ

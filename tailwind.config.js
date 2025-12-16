@@ -9,6 +9,15 @@ export default {
   ],
   theme: {
     extend: {
+      colors: {
+        // Основные цвета проекта
+        'primary': '#2A2C38',
+        'primary-dark': '#252732',
+        'primary-light': '#2B2D31',
+        // Акцентные цвета
+        'accent-gold': '#c9a86c',
+        'accent-green': '#5a8c3a',
+      },
       fontFamily: {
         serif: ['Georgia', 'Times New Roman', 'serif'],
         sans: ['Manrope', 'Mazzard H', 'Inter', 'system-ui', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'sans-serif'],
