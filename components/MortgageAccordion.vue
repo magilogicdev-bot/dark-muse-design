@@ -1,20 +1,22 @@
 <template>
-  <div class="bg-white/5 border border-white/10 rounded-lg overflow-hidden">
+  <div class="bg-white rounded-lg overflow-hidden">
     <button
-      @click="toggle"
-      class="w-full px-6 py-4 md:px-8 md:py-5 flex items-center justify-between text-left hover:bg-white/5 transition-colors"
+      @click="handleToggle"
+      class="w-full px-6 py-4 md:px-8 md:py-5 flex items-center justify-between text-left hover:bg-gray-50 transition-colors"
     >
-      <span class="text-lg md:text-xl lg:text-2xl font-semibold text-white uppercase">
+      <span class="text-lg md:text-xl lg:text-2xl font-medium text-[#1A1A1A] uppercase">
         {{ title }}
       </span>
-      <svg
-        :class="['w-5 h-5 md:w-6 md:h-6 transition-transform duration-200 text-white', isOpen && 'rotate-180']"
-        fill="none"
-        viewBox="0 0 24 24"
-        stroke="currentColor"
-      >
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
-      </svg>
+      <div class="flex-shrink-0 w-12 h-12 md:w-15 md:h-15 rounded-full bg-[#1A1A1A] flex items-center justify-center">
+        <svg
+          :class="['w-6 h-6 transition-transform duration-200 text-white', localIsOpen && 'rotate-180']"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+        >
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+        </svg>
+      </div>
     </button>
     <Transition
       enter-active-class="transition duration-200 ease-out"
@@ -24,7 +26,7 @@
       leave-from-class="opacity-100 max-h-screen"
       leave-to-class="opacity-0 max-h-0"
     >
-      <div v-if="isOpen" class="px-6 pb-4 md:px-8 md:pb-5">
+      <div v-if="localIsOpen" class="px-6 pb-4 md:px-8 md:pb-5">
         <slot />
       </div>
     </Transition>
@@ -43,9 +45,16 @@ const props = defineProps({
   }
 })
 
-const isOpen = ref(props.isOpen)
+const emit = defineEmits(['toggle'])
 
-const toggle = () => {
-  isOpen.value = !isOpen.value
+const localIsOpen = ref(props.isOpen)
+
+watch(() => props.isOpen, (newVal) => {
+  localIsOpen.value = newVal
+})
+
+const handleToggle = () => {
+  localIsOpen.value = !localIsOpen.value
+  emit('toggle')
 }
 </script>

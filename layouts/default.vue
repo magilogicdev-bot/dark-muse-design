@@ -5,6 +5,7 @@
       <slot />
     </main>
     <Footer />
+    <ScrollToTopButton />
   </div>
 </template>
 

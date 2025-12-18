@@ -1,31 +1,47 @@
 <template>
-  <section class="bg-[#1a1d28] py-16 md:py-20 lg:py-24">
-    <div class="container max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-      <h2 class="text-white text-[clamp(2rem,7.2vw,128px)] font-medium uppercase leading-[1.125] mb-12 md:mb-16 text-center">
-        ЧАСТО ЗАДАВАЕМЫЕ ВОПРОСЫ
+  <section class="bg-primary py-16 md:py-20 lg:py-24">
+    <div class="container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-white mb-12 md:mb-16">
+        ВОПРОСЫ И ОТВЕТЫ
       </h2>
       
       <div class="space-y-4 md:space-y-6">
         <div
           v-for="(faq, index) in faqs"
           :key="index"
-          class="bg-white/5 border border-white/10 rounded-lg md:rounded-xl overflow-hidden"
+          class="bg-[#F9F9F9] rounded-lg overflow-hidden"
         >
           <button
             @click="toggleFaq(index)"
-            class="w-full px-6 py-4 md:px-8 md:py-5 flex items-center justify-between text-left hover:bg-white/5 transition-colors"
+            class="w-full px-6 py-4 md:px-8 md:py-5 flex items-center justify-between text-left hover:bg-gray-100 transition-colors"
           >
-            <span class="text-white text-lg md:text-xl lg:text-2xl font-semibold pr-4">
+            <span class="text-[#1A1A1A] text-base md:text-lg lg:text-xl font-medium pr-4">
               {{ faq.question }}
             </span>
-            <svg
-              :class="['w-5 h-5 md:w-6 md:h-6 transition-transform duration-200 text-white flex-shrink-0', faq.isOpen && 'rotate-180']"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-            >
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
-            </svg>
+            <div class="flex-shrink-0 w-12 h-12 md:w-15 md:h-15 rounded-full bg-[#1A1A1A] flex items-center justify-center">
+              <!-- Plus icon when collapsed -->
+              <svg
+                v-if="!faq.isOpen"
+                class="w-6 h-6 text-white transition-opacity duration-200"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4" />
+              </svg>
+              <!-- Minus icon when expanded -->
+              <svg
+                v-else
+                class="w-6 h-6 text-white transition-opacity duration-200"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path stroke-linecap="round" stroke-linejoin="round" d="M20 12H4" />
+              </svg>
+            </div>
           </button>
           <Transition
             enter-active-class="transition duration-200 ease-out"
@@ -36,9 +52,9 @@
             leave-to-class="opacity-0 max-h-0"
           >
             <div v-if="faq.isOpen" class="px-6 pb-4 md:px-8 md:pb-5">
-              <p class="text-gray-300 text-base md:text-lg lg:text-xl leading-relaxed">
-                {{ faq.answer }}
-              </p>
+              <ol class="text-[#1A1A1A] text-sm md:text-base lg:text-lg leading-relaxed space-y-2 list-decimal list-inside">
+                <li v-for="(item, idx) in faq.answer" :key="idx">{{ item }}</li>
+              </ol>
             </div>
           </Transition>
         </div>
@@ -50,23 +66,39 @@
 <script setup>
 const faqs = ref([
   {
-    question: 'Как оформить ипотеку?',
-    answer: 'Для оформления ипотеки вам необходимо связаться с нашими специалистами, которые помогут подобрать оптимальную программу и подготовить все необходимые документы.',
+    question: 'Какие документы необходимы для подачи заявки на ипотеку',
+    answer: [
+      'Паспорт ( скан всех страниц, включая пустые )',
+      'СНИЛС',
+      'Заверенная копия трудовой книжки',
+      'Справка о доходах ( 2НДФЛ или по форме банка )',
+      'Военный билет для мужчин, не достигших 27-летнего возвраста'
+    ],
+    isOpen: true
+  },
+  {
+    question: 'Какой срок действия документов для ипотеки?',
+    answer: ['Срок действия документов для ипотеки обычно составляет 30 дней с момента выдачи. Справка о доходах (2-НДФЛ) действительна в течение месяца.'],
     isOpen: false
   },
   {
-    question: 'Какие документы нужны для покупки?',
-    answer: 'Стандартный пакет документов включает паспорт, справку о доходах, выписку с банковского счета. Полный список документов зависит от выбранной программы ипотеки.',
+    question: 'Смогу ли я получить одобрение без справки 2НДФЛ',
+    answer: ['Да, некоторые банки принимают альтернативные способы подтверждения дохода, например, справку по форме банка или выписку со счета.'],
     isOpen: false
   },
   {
-    question: 'Можно ли использовать материнский капитал?',
-    answer: 'Да, материнский капитал можно использовать для первоначального взноса или погашения долга по ипотеке. Наши специалисты помогут правильно оформить все документы.',
+    question: 'Я трудоустроен не официально, но доход стабилен, смогу ли получить одобрение ?',
+    answer: ['Банки требуют официальное подтверждение дохода. Однако некоторые программы ипотеки предусматривают альтернативные способы подтверждения платежеспособности. Рекомендуем обратиться к нашим специалистам для консультации.'],
     isOpen: false
   },
   {
-    question: 'Какие сроки строительства?',
-    answer: 'Сроки строительства зависят от конкретного проекта. Обычно строительство жилого комплекса занимает 2-3 года с момента начала работ.',
+    question: 'Какой минимальный первоначальный взнос?',
+    answer: ['Минимальный первоначальный взнос зависит от выбранной программы ипотеки. Обычно он составляет от 15% до 20% от стоимости недвижимости. Для некоторых льготных программ возможно снижение до 10%.'],
+    isOpen: false
+  },
+  {
+    question: 'Кто может получить семейную ипотеку?',
+    answer: ['Семейную ипотеку могут получить семьи, в которых есть хотя бы один ребенок, рожденный с 1 января 2018 года. Также программа доступна для семей с детьми-инвалидами.'],
     isOpen: false
   }
 ])

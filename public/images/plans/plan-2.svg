@@ -1,0 +1,104 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="500" height="500" viewBox="0 0 500 500">
+  <rect fill="#ffffff" width="500" height="500"/>
+  
+  <!-- Main floor plan structure - 3 room apartment -->
+  <g stroke="#555" stroke-width="2" fill="none">
+    <!-- Outer walls -->
+    <path d="M60,60 L440,60 L440,440 L60,440 Z"/>
+    
+    <!-- Master bedroom (left) -->
+    <path d="M60,60 L200,60 L200,200 L60,200 Z"/>
+    
+    <!-- Living room (center top) -->
+    <path d="M200,60 L360,60 L360,200 L200,200 Z"/>
+    
+    <!-- Balcony (top right) -->
+    <path d="M360,60 L440,60 L440,140 L360,140" stroke-dasharray="5,3"/>
+    
+    <!-- Kitchen (right) -->
+    <path d="M360,140 L440,140 L440,300 L360,300 Z"/>
+    
+    <!-- Hallway (center) -->
+    <path d="M200,200 L360,200 L360,280 L200,280 Z"/>
+    
+    <!-- Bathroom -->
+    <path d="M200,280 L280,280 L280,360 L200,360 Z"/>
+    
+    <!-- WC -->
+    <path d="M280,280 L360,280 L360,360 L280,360 Z"/>
+    
+    <!-- Child bedroom 1 -->
+    <path d="M60,200 L200,200 L200,340 L60,340 Z"/>
+    
+    <!-- Child bedroom 2 -->
+    <path d="M60,340 L200,340 L200,440 L60,440 Z"/>
+    
+    <!-- Storage -->
+    <path d="M200,360 L360,360 L360,440 L200,440 Z"/>
+    
+    <!-- Kitchen-Living connection -->
+    <path d="M360,300 L440,300 L440,440 L360,440 Z"/>
+  </g>
+  
+  <!-- Room furniture indicators -->
+  <g fill="#ddd" stroke="#999" stroke-width="1">
+    <!-- Master bed -->
+    <rect x="80" y="90" width="90" height="70" rx="3"/>
+    <!-- Sofa -->
+    <rect x="220" y="100" width="100" height="35" rx="3"/>
+    <!-- Coffee table -->
+    <rect x="250" y="150" width="40" height="30" rx="2"/>
+    <!-- Kitchen counter -->
+    <path d="M370,145 L430,145 L430,180 L370,180 Z"/>
+    <!-- Bath -->
+    <rect x="210" y="290" width="50" height="30" rx="10"/>
+    <!-- Child beds -->
+    <rect x="80" y="220" width="70" height="50" rx="3"/>
+    <rect x="80" y="360" width="70" height="50" rx="3"/>
+  </g>
+  
+  <!-- Room labels with areas -->
+  <g font-family="Arial, sans-serif" font-size="11" fill="#666" text-anchor="middle">
+    <text x="130" y="150">
+      <tspan x="130" dy="0">Спальня</tspan>
+      <tspan x="130" dy="14" font-weight="bold" fill="#333">16.8 м²</tspan>
+    </text>
+    <text x="280" y="140">
+      <tspan x="280" dy="0">Гостиная</tspan>
+      <tspan x="280" dy="14" font-weight="bold" fill="#333">24.5 м²</tspan>
+    </text>
+    <text x="400" y="220">
+      <tspan x="400" dy="0">Кухня</tspan>
+      <tspan x="400" dy="14" font-weight="bold" fill="#333">12.3 м²</tspan>
+    </text>
+    <text x="130" y="280">
+      <tspan x="130" dy="0">Детская</tspan>
+      <tspan x="130" dy="14" font-weight="bold" fill="#333">14.2 м²</tspan>
+    </text>
+    <text x="130" y="400">
+      <tspan x="130" dy="0">Детская</tspan>
+      <tspan x="130" dy="14" font-weight="bold" fill="#333">11.5 м²</tspan>
+    </text>
+    <text x="240" y="325">
+      <tspan x="240" dy="0">С/У</tspan>
+      <tspan x="240" dy="12" font-weight="bold" fill="#333">4.2</tspan>
+    </text>
+    <text x="320" y="325">
+      <tspan x="320" dy="0">WC</tspan>
+      <tspan x="320" dy="12" font-weight="bold" fill="#333">2.4</tspan>
+    </text>
+    <text x="280" y="400">
+      <tspan x="280" dy="0">Кладовая</tspan>
+      <tspan x="280" dy="14" font-weight="bold" fill="#333">5.8 м²</tspan>
+    </text>
+    <text x="400" y="100" font-size="10">
+      <tspan>Балкон</tspan>
+    </text>
+  </g>
+  
+  <!-- Compass -->
+  <g transform="translate(460, 50)">
+    <circle cx="0" cy="0" r="12" fill="none" stroke="#999" stroke-width="1"/>
+    <text x="0" y="-15" font-family="Arial" font-size="9" fill="#666" text-anchor="middle">N</text>
+  </g>
+</svg>

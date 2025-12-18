@@ -15,7 +15,11 @@ type LazyComponent<T> = DefineComponent<HydrationStrategies, {}, {}, {}, {}, {},
 
 interface _GlobalComponents {
   'AboutUsSection': typeof import("../../components/AboutUsSection.vue").default
+  'ApartmentCard': typeof import("../../components/ApartmentCard.vue").default
+  'ApartmentPlanCard': typeof import("../../components/ApartmentPlanCard.vue").default
+  'ApartmentSelectionSection': typeof import("../../components/ApartmentSelectionSection.vue").default
   'BreadcrumbsSection': typeof import("../../components/BreadcrumbsSection.vue").default
+  'BuyApartmentHeroSection': typeof import("../../components/BuyApartmentHeroSection.vue").default
   'CTAButtonSection': typeof import("../../components/CTAButtonSection.vue").default
   'CallbackFormSection': typeof import("../../components/CallbackFormSection.vue").default
   'CompactHeader': typeof import("../../components/CompactHeader.vue").default
@@ -23,23 +27,37 @@ interface _GlobalComponents {
   'CompletedProjects': typeof import("../../components/CompletedProjects.vue").default
   'ContactSection': typeof import("../../components/ContactSection.vue").default
   'CurrentProjects': typeof import("../../components/CurrentProjects.vue").default
+  'DagestanStonesSection': typeof import("../../components/DagestanStonesSection.vue").default
   'DocumentSection': typeof import("../../components/DocumentSection.vue").default
+  'EcocitySection': typeof import("../../components/EcocitySection.vue").default
   'FAQSection': typeof import("../../components/FAQSection.vue").default
+  'FavoritePlanCard': typeof import("../../components/FavoritePlanCard.vue").default
+  'FavoriteSearchPanel': typeof import("../../components/FavoriteSearchPanel.vue").default
   'FeaturesSection': typeof import("../../components/FeaturesSection.vue").default
+  'FindPlansCard': typeof import("../../components/FindPlansCard.vue").default
+  'FloatingActionBar': typeof import("../../components/FloatingActionBar.vue").default
+  'FloatingActionBarGold': typeof import("../../components/FloatingActionBarGold.vue").default
   'Footer': typeof import("../../components/Footer.vue").default
   'GallerySection': typeof import("../../components/GallerySection.vue").default
   'Header': typeof import("../../components/Header.vue").default
   'HeroSection': typeof import("../../components/HeroSection.vue").default
+  'HowToBuySection': typeof import("../../components/HowToBuySection.vue").default
   'InvestmentSection': typeof import("../../components/InvestmentSection.vue").default
   'LocationSection': typeof import("../../components/LocationSection.vue").default
   'MapSection': typeof import("../../components/MapSection.vue").default
   'MediaSection': typeof import("../../components/MediaSection.vue").default
   'MortgageAccordion': typeof import("../../components/MortgageAccordion.vue").default
+  'MortgageCTABanner': typeof import("../../components/MortgageCTABanner.vue").default
+  'MortgageCalculatorFigma': typeof import("../../components/MortgageCalculatorFigma.vue").default
   'MortgageCalculatorSection': typeof import("../../components/MortgageCalculatorSection.vue").default
   'MortgageFormSection': typeof import("../../components/MortgageFormSection.vue").default
   'MortgageGuideFormSection': typeof import("../../components/MortgageGuideFormSection.vue").default
   'MortgageGuideSection': typeof import("../../components/MortgageGuideSection.vue").default
+  'MortgageHeroSection': typeof import("../../components/MortgageHeroSection.vue").default
+  'MortgageInfoSection': typeof import("../../components/MortgageInfoSection.vue").default
   'MortgagePromoSection': typeof import("../../components/MortgagePromoSection.vue").default
+  'MortgageStepsSection': typeof import("../../components/MortgageStepsSection.vue").default
+  'NewsCard': typeof import("../../components/NewsCard.vue").default
   'NewsSection': typeof import("../../components/NewsSection.vue").default
   'NuxtImg': typeof import("../../components/NuxtImg.vue").default
   'PartnersSection': typeof import("../../components/PartnersSection.vue").default
@@ -49,7 +67,7 @@ interface _GlobalComponents {
   'ProjectsCarousel': typeof import("../../components/ProjectsCarousel.vue").default
   'PropertyFilters': typeof import("../../components/PropertyFilters.vue").default
   'PropertySelectionGrid': typeof import("../../components/PropertySelectionGrid.vue").default
-  'SocialSidebar': typeof import("../../components/SocialSidebar.vue").default
+  'ScrollToTopButton': typeof import("../../components/ScrollToTopButton.vue").default
   'StatsSection': typeof import("../../components/StatsSection.vue").default
   'TestimonialsSection': typeof import("../../components/TestimonialsSection.vue").default
   'VideoSection': typeof import("../../components/VideoSection.vue").default
@@ -76,7 +94,11 @@ interface _GlobalComponents {
   'Body': typeof import("../../node_modules/nuxt/dist/head/runtime/components").Body
   'NuxtIsland': typeof import("../../node_modules/nuxt/dist/app/components/nuxt-island").default
   'LazyAboutUsSection': LazyComponent<typeof import("../../components/AboutUsSection.vue").default>
+  'LazyApartmentCard': LazyComponent<typeof import("../../components/ApartmentCard.vue").default>
+  'LazyApartmentPlanCard': LazyComponent<typeof import("../../components/ApartmentPlanCard.vue").default>
+  'LazyApartmentSelectionSection': LazyComponent<typeof import("../../components/ApartmentSelectionSection.vue").default>
   'LazyBreadcrumbsSection': LazyComponent<typeof import("../../components/BreadcrumbsSection.vue").default>
+  'LazyBuyApartmentHeroSection': LazyComponent<typeof import("../../components/BuyApartmentHeroSection.vue").default>
   'LazyCTAButtonSection': LazyComponent<typeof import("../../components/CTAButtonSection.vue").default>
   'LazyCallbackFormSection': LazyComponent<typeof import("../../components/CallbackFormSection.vue").default>
   'LazyCompactHeader': LazyComponent<typeof import("../../components/CompactHeader.vue").default>
@@ -84,23 +106,37 @@ interface _GlobalComponents {
   'LazyCompletedProjects': LazyComponent<typeof import("../../components/CompletedProjects.vue").default>
   'LazyContactSection': LazyComponent<typeof import("../../components/ContactSection.vue").default>
   'LazyCurrentProjects': LazyComponent<typeof import("../../components/CurrentProjects.vue").default>
+  'LazyDagestanStonesSection': LazyComponent<typeof import("../../components/DagestanStonesSection.vue").default>
   'LazyDocumentSection': LazyComponent<typeof import("../../components/DocumentSection.vue").default>
+  'LazyEcocitySection': LazyComponent<typeof import("../../components/EcocitySection.vue").default>
   'LazyFAQSection': LazyComponent<typeof import("../../components/FAQSection.vue").default>
+  'LazyFavoritePlanCard': LazyComponent<typeof import("../../components/FavoritePlanCard.vue").default>
+  'LazyFavoriteSearchPanel': LazyComponent<typeof import("../../components/FavoriteSearchPanel.vue").default>
   'LazyFeaturesSection': LazyComponent<typeof import("../../components/FeaturesSection.vue").default>
+  'LazyFindPlansCard': LazyComponent<typeof import("../../components/FindPlansCard.vue").default>
+  'LazyFloatingActionBar': LazyComponent<typeof import("../../components/FloatingActionBar.vue").default>
+  'LazyFloatingActionBarGold': LazyComponent<typeof import("../../components/FloatingActionBarGold.vue").default>
   'LazyFooter': LazyComponent<typeof import("../../components/Footer.vue").default>
   'LazyGallerySection': LazyComponent<typeof import("../../components/GallerySection.vue").default>
   'LazyHeader': LazyComponent<typeof import("../../components/Header.vue").default>
   'LazyHeroSection': LazyComponent<typeof import("../../components/HeroSection.vue").default>
+  'LazyHowToBuySection': LazyComponent<typeof import("../../components/HowToBuySection.vue").default>
   'LazyInvestmentSection': LazyComponent<typeof import("../../components/InvestmentSection.vue").default>
   'LazyLocationSection': LazyComponent<typeof import("../../components/LocationSection.vue").default>
   'LazyMapSection': LazyComponent<typeof import("../../components/MapSection.vue").default>
   'LazyMediaSection': LazyComponent<typeof import("../../components/MediaSection.vue").default>
   'LazyMortgageAccordion': LazyComponent<typeof import("../../components/MortgageAccordion.vue").default>
+  'LazyMortgageCTABanner': LazyComponent<typeof import("../../components/MortgageCTABanner.vue").default>
+  'LazyMortgageCalculatorFigma': LazyComponent<typeof import("../../components/MortgageCalculatorFigma.vue").default>
   'LazyMortgageCalculatorSection': LazyComponent<typeof import("../../components/MortgageCalculatorSection.vue").default>
   'LazyMortgageFormSection': LazyComponent<typeof import("../../components/MortgageFormSection.vue").default>
   'LazyMortgageGuideFormSection': LazyComponent<typeof import("../../components/MortgageGuideFormSection.vue").default>
   'LazyMortgageGuideSection': LazyComponent<typeof import("../../components/MortgageGuideSection.vue").default>
+  'LazyMortgageHeroSection': LazyComponent<typeof import("../../components/MortgageHeroSection.vue").default>
+  'LazyMortgageInfoSection': LazyComponent<typeof import("../../components/MortgageInfoSection.vue").default>
   'LazyMortgagePromoSection': LazyComponent<typeof import("../../components/MortgagePromoSection.vue").default>
+  'LazyMortgageStepsSection': LazyComponent<typeof import("../../components/MortgageStepsSection.vue").default>
+  'LazyNewsCard': LazyComponent<typeof import("../../components/NewsCard.vue").default>
   'LazyNewsSection': LazyComponent<typeof import("../../components/NewsSection.vue").default>
   'LazyNuxtImg': LazyComponent<typeof import("../../components/NuxtImg.vue").default>
   'LazyPartnersSection': LazyComponent<typeof import("../../components/PartnersSection.vue").default>
@@ -110,7 +146,7 @@ interface _GlobalComponents {
   'LazyProjectsCarousel': LazyComponent<typeof import("../../components/ProjectsCarousel.vue").default>
   'LazyPropertyFilters': LazyComponent<typeof import("../../components/PropertyFilters.vue").default>
   'LazyPropertySelectionGrid': LazyComponent<typeof import("../../components/PropertySelectionGrid.vue").default>
-  'LazySocialSidebar': LazyComponent<typeof import("../../components/SocialSidebar.vue").default>
+  'LazyScrollToTopButton': LazyComponent<typeof import("../../components/ScrollToTopButton.vue").default>
   'LazyStatsSection': LazyComponent<typeof import("../../components/StatsSection.vue").default>
   'LazyTestimonialsSection': LazyComponent<typeof import("../../components/TestimonialsSection.vue").default>
   'LazyVideoSection': LazyComponent<typeof import("../../components/VideoSection.vue").default>

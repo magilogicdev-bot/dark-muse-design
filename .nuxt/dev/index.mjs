@@ -1360,7 +1360,7 @@ const _MSYYFPRJJAc2VbgybV_dQCj60aneKEZpx7Hc7LnM6RA = (function(nitro) {
 
 const rootDir = "C:/Users/neiro/Documents/propject/freelance/Pobedonantigra";
 
-const appHead = {"meta":[{"name":"viewport","content":"width=device-width, initial-scale=1"},{"charset":"utf-8"}],"link":[{"rel":"preconnect","href":"https://fonts.googleapis.com"},{"rel":"preconnect","href":"https://fonts.gstatic.com","crossorigin":"anonymous"},{"rel":"stylesheet","href":"https://fonts.googleapis.com/css2?family=Lora:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap"}],"style":[],"script":[],"noscript":[]};
+const appHead = {"meta":[{"name":"viewport","content":"width=device-width, initial-scale=1"},{"charset":"utf-8"}],"link":[{"rel":"preconnect","href":"https://fonts.googleapis.com"},{"rel":"preconnect","href":"https://fonts.gstatic.com","crossorigin":"anonymous"},{"rel":"stylesheet","href":"https://fonts.googleapis.com/css2?family=Lora:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&family=Marck+Script&display=swap"}],"style":[],"script":[],"noscript":[]};
 
 const appRootTag = "div";
 

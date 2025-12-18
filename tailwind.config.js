@@ -22,6 +22,7 @@ export default {
         serif: ['Georgia', 'Times New Roman', 'serif'],
         sans: ['Manrope', 'Mazzard H', 'Inter', 'system-ui', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'sans-serif'],
         brand: ['Mazzard H', 'Manrope', 'Inter', 'system-ui', '-apple-system', 'Segoe UI', 'sans-serif'],
+        arimo: ['Arimo', 'sans-serif'],
       },
       maxWidth: {
         'content': '2798px',

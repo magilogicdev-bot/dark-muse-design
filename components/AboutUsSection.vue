@@ -1,85 +1,77 @@
 <template>
-  <section class="bg-[#1a1d28] py-16 md:py-20 lg:py-24">
-    <div class="container max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="mb-12 md:mb-16">
-        <h1 class="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-white mb-8 md:mb-10">
-          Pobedonoscev
-        </h1>
-      </div>
-
-      <!-- Content Sections -->
-      <div class="space-y-12 md:space-y-16 lg:space-y-20">
-        <!-- Text Section with Image -->
-        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12">
-          <div class="space-y-6 text-white text-base md:text-lg lg:text-xl leading-relaxed">
-            <p>
-              Компания Pobedonoscev Group — один из ведущих застройщиков в регионе, специализирующийся на создании комфортного жилья для современных семей.
-            </p>
-            <p>
-              Мы строим не просто дома, а создаём пространства для жизни, где каждая деталь продумана для максимального комфорта и уюта наших жильцов.
-            </p>
-          </div>
-          <div class="rounded-lg md:rounded-xl lg:rounded-2xl overflow-hidden aspect-[4/3]">
-            <img
-              src="/images/about-1.webp"
-              alt="О компании"
-              class="w-full h-full object-cover"
-            />
-          </div>
-        </div>
-
-        <!-- Image Gallery -->
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
-          <div class="rounded-lg md:rounded-xl overflow-hidden aspect-[4/3]">
-            <img
-              src="/images/about-2.webp"
-              alt="Проект"
-              class="w-full h-full object-cover"
-            />
-          </div>
-          <div class="rounded-lg md:rounded-xl overflow-hidden aspect-[4/3]">
-            <img
-              src="/images/about-3.webp"
-              alt="Проект"
-              class="w-full h-full object-cover"
-            />
-          </div>
-        </div>
-
-        <!-- Team Section -->
-        <div class="bg-white/5 rounded-lg md:rounded-xl lg:rounded-2xl p-8 md:p-12">
-          <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-8 md:mb-10">
-            Наша команда
-          </h2>
-          <div class="rounded-lg md:rounded-xl overflow-hidden aspect-[16/9] mb-8">
-            <img
-              src="/images/team.webp"
-              alt="Команда"
-              class="w-full h-full object-cover"
-            />
-          </div>
-          <p class="text-white text-base md:text-lg lg:text-xl leading-relaxed">
-            Наша команда состоит из опытных профессионалов: архитекторов, строителей, менеджеров проектов, которые работают над каждым проектом с максимальной отдачей и вниманием к деталям.
+  <section class="bg-primary text-white py-12 sm:py-16 md:py-20 lg:py-24 px-5 sm:px-6 md:px-10 lg:px-16 xl:px-20">
+    <div class="max-w-[1770px] mx-auto">
+      
+      <!-- Top Section: Text Left, Image Right -->
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 xl:gap-16 mb-12 sm:mb-16 md:mb-20 lg:mb-24">
+        
+        <!-- Left: Poetic Text (Italic) -->
+        <div class="flex items-center order-2 lg:order-1">
+          <p class="quote-text italic text-white/90 leading-[1.4] lg:leading-[1.5]">
+            Кажется что потолок уже достигнут... В такие моменты приходит особое чувство. Это не скука, нет. Это скорее предвкушение чего-то нового, зов к неизведанному. Хочется снова почувствовать тот самый азарт первооткрывателя, найти новые горизонты, которые заставят меня работать на полную катушку и вдохнут новую жизнь в творчество.
           </p>
         </div>
 
-        <!-- Awards Section -->
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
-          <div class="bg-white/5 rounded-full w-32 h-32 md:w-40 md:h-40 lg:w-48 lg:h-48 flex items-center justify-center mx-auto">
-            <svg class="w-16 h-16 md:w-20 md:h-20 lg:w-24 lg:h-24 text-white" fill="currentColor" viewBox="0 0 24 24">
-              <path d="M12 2L2 7v10c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V7l-10-5z"/>
-            </svg>
+        <!-- Right: House Image with Watermark -->
+        <div class="relative aspect-[16/10] lg:aspect-[4/3] overflow-hidden order-1 lg:order-2">
+          <img 
+            src="/images/render48.webp" 
+            alt="Современный дом" 
+            class="w-full h-full object-cover"
+          />
+          <!-- Watermark Overlay -->
+          <div class="absolute bottom-0 left-0 p-4 lg:p-6 pointer-events-none">
+            <p class="text-white/60 text-xs sm:text-sm md:text-base lg:text-lg uppercase tracking-[0.1em] font-light">
+              POBEDONOSCEV ARCHITECTS
+            </p>
           </div>
-          <div class="bg-white/5 rounded-full w-32 h-32 md:w-40 md:h-40 lg:w-48 lg:h-48 flex items-center justify-center mx-auto">
-            <svg class="w-16 h-16 md:w-20 md:h-20 lg:w-24 lg:h-24 text-white" fill="currentColor" viewBox="0 0 24 24">
-              <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/>
-            </svg>
+        </div>
+      </div>
+
+      <!-- Bottom Section: Image Left with Carousel, Text Right -->
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 xl:gap-16">
+        
+        <!-- Left: Grayscale House Image with Carousel Dots -->
+        <div class="relative aspect-[4/3] overflow-hidden order-2 lg:order-1">
+          <img 
+            :src="carouselImage" 
+            alt="Архитектурный проект" 
+            class="w-full h-full object-cover grayscale"
+          />
+          <!-- Carousel Dots -->
+          <div class="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2 z-10">
+            <button 
+              v-for="(item, index) in carouselItems" 
+              :key="index"
+              @click="setActiveCarousel(index)"
+              class="w-2 h-2 rounded-full transition-all duration-300"
+              :class="activeCarouselIndex === index ? 'bg-white' : 'bg-white/40'"
+              :aria-label="`Перейти к изображению ${index + 1}`"
+            />
           </div>
-          <div class="bg-white/5 rounded-full w-32 h-32 md:w-40 md:h-40 lg:w-48 lg:h-48 flex items-center justify-center mx-auto">
-            <svg class="w-16 h-16 md:w-20 md:h-20 lg:w-24 lg:h-24 text-white" fill="currentColor" viewBox="0 0 24 24">
-              <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
-            </svg>
-          </div>
+        </div>
+
+        <!-- Right: Text Blocks -->
+        <div class="flex flex-col gap-4 lg:gap-5 order-1 lg:order-2 justify-center">
+          <!-- First Paragraph: Pobedonoscev architects -->
+          <p class="content-text text-white/90 leading-[1.65] lg:leading-[1.75] tracking-tight">
+            Pobedonoscev architects – студию, рожденную из страсти к совершенству и глубокого понимания того, что такое истинная роскошь в архитектуре.
+          </p>
+
+          <!-- Second Paragraph: Mission Statement -->
+          <p class="content-text text-white/90 leading-[1.65] lg:leading-[1.75] tracking-tight">
+            Мы верим, что современная частная архитектура премиум-класса должна быть не только эстетически безупречной, но и функциональной, комфортной и, главное, отражать уникальный стиль жизни своих владельцев. Наша миссия – создавать пространства, которые вдохновляют, дарят ощущение гармонии и становятся настоящим воплощением вашего видения идеального дома.
+          </p>
+
+          <!-- Third Paragraph: Team Goal -->
+          <p class="content-text text-white/90 leading-[1.65] lg:leading-[1.75] tracking-tight">
+            Команда профессионалов, объединенных общей целью: создавать архитектуру, которая будет восхищать и служить вам долгие годы. Мы стремимся к тому, чтобы ваш дом стал не просто местом проживания, а настоящим произведением искусства, отражающим ваш успех и утонченный вкус.
+          </p>
+
+          <!-- Fourth Paragraph: Pobedonoscev Group -->
+          <p class="content-text text-white/90 leading-[1.65] lg:leading-[1.75] tracking-tight">
+            Pobedonoscev Group команда профессионалов строительной отрасли, чья репутация подкреплена многолетним опытом и многочисленными наградами. Pobedonoscev Group успешно реализует проекты по строительству многоквартирных жилых комплексов, предлагая современные решения и высочайшие стандарты качества. Мы строим не просто дома, а пространства, где будет комфортно жить и развиваться вашим семьям.
+          </p>
         </div>
       </div>
     </div>
@@ -87,5 +79,67 @@
 </template>
 
 <script setup>
-// About Us Section Component
+import { ref, computed } from 'vue'
+
+// Carousel state
+const activeCarouselIndex = ref(0)
+
+const carouselItems = [
+  '/images/rakurs5.webp',
+  '/images/render48.webp',
+  '/images/rakurs5.webp',
+  '/images/render48.webp',
+  '/images/rakurs5.webp',
+  '/images/render48.webp'
+]
+
+const carouselImage = computed(() => {
+  return carouselItems[activeCarouselIndex.value]
+})
+
+const setActiveCarousel = (index) => {
+  activeCarouselIndex.value = index
+}
 </script>
+
+<style scoped>
+@import url('https://fonts.googleapis.com/css2?family=Marck+Script&display=swap');
+
+/* Quote Text - poetic italic style */
+.quote-text {
+  font-family: 'LeoHand', 'Marck Script', cursive;
+  font-size: clamp(18px, 2vw, 28px);
+  letter-spacing: 0.02em;
+  font-weight: 300;
+  font-style: italic;
+}
+
+/* Content Text - regular sans-serif */
+.content-text {
+  font-family: 'Mazzard M', 'Manrope', 'Inter', sans-serif;
+  font-size: clamp(11px, 1vw, 14px);
+  font-weight: 400;
+}
+
+/* Mobile adjustments */
+@media (max-width: 640px) {
+  .quote-text {
+    font-size: clamp(16px, 4.5vw, 22px);
+  }
+  
+  .content-text {
+    font-size: clamp(12px, 3vw, 14px);
+  }
+}
+
+/* Tablet adjustments */
+@media (min-width: 641px) and (max-width: 1024px) {
+  .quote-text {
+    font-size: clamp(18px, 2.5vw, 24px);
+  }
+  
+  .content-text {
+    font-size: clamp(11px, 1.5vw, 13px);
+  }
+}
+</style>

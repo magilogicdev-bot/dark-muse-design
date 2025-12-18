@@ -1,0 +1,84 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="500" height="500" viewBox="0 0 500 500">
+  <rect fill="#ffffff" width="500" height="500"/>
+  
+  <!-- Main floor plan - 1 room studio -->
+  <g stroke="#555" stroke-width="2" fill="none">
+    <!-- Outer walls -->
+    <path d="M100,100 L400,100 L400,400 L100,400 Z"/>
+    
+    <!-- Main living/bedroom area -->
+    <path d="M100,100 L300,100 L300,280 L100,280 Z"/>
+    
+    <!-- Kitchen zone (open plan) -->
+    <path d="M300,100 L400,100 L400,280 L300,280" stroke-dasharray="3,3"/>
+    
+    <!-- Hallway -->
+    <path d="M100,280 L200,280 L200,400 L100,400 Z"/>
+    
+    <!-- Bathroom -->
+    <path d="M200,280 L300,280 L300,340 L200,340 Z"/>
+    
+    <!-- WC -->
+    <path d="M200,340 L300,340 L300,400 L200,400 Z"/>
+    
+    <!-- Storage/wardrobe -->
+    <path d="M300,280 L400,280 L400,400 L300,400 Z"/>
+    
+    <!-- Balcony -->
+    <path d="M100,160 L80,160 L80,240 L100,240" stroke-dasharray="5,3"/>
+  </g>
+  
+  <!-- Furniture -->
+  <g fill="#ddd" stroke="#999" stroke-width="1">
+    <!-- Sofa bed -->
+    <rect x="120" y="140" width="100" height="60" rx="3"/>
+    <!-- Coffee table -->
+    <rect x="150" y="220" width="45" height="35" rx="2"/>
+    <!-- Kitchen counter L-shape -->
+    <path d="M310,110 L310,160 L390,160 L390,110 Z" fill="#ddd"/>
+    <rect x="330" y="170" width="60" height="20" rx="2"/>
+    <!-- Bath -->
+    <rect x="210" y="290" width="70" height="30" rx="15"/>
+    <!-- Toilet -->
+    <ellipse cx="250" cy="370" rx="15" ry="20"/>
+    <!-- Wardrobe -->
+    <rect x="320" y="300" width="60" height="80"/>
+  </g>
+  
+  <!-- Room labels -->
+  <g font-family="Arial, sans-serif" font-size="12" fill="#666" text-anchor="middle">
+    <text x="200" y="190">
+      <tspan x="200" dy="0">Студия</tspan>
+      <tspan x="200" dy="16" font-weight="bold" fill="#333">28.5 м²</tspan>
+    </text>
+    <text x="350" y="220">
+      <tspan x="350" dy="0">Кухня</tspan>
+      <tspan x="350" dy="14" font-weight="bold" fill="#333">8.2 м²</tspan>
+    </text>
+    <text x="250" y="320">
+      <tspan x="250" dy="0">Ванная</tspan>
+      <tspan x="250" dy="14" font-weight="bold" fill="#333">3.8</tspan>
+    </text>
+    <text x="250" y="380">
+      <tspan x="250" dy="0">WC</tspan>
+      <tspan x="250" dy="14" font-weight="bold" fill="#333">2.1</tspan>
+    </text>
+    <text x="350" y="350">
+      <tspan x="350" dy="0">Гардероб</tspan>
+      <tspan x="350" dy="14" font-weight="bold" fill="#333">4.5 м²</tspan>
+    </text>
+    <text x="150" y="340">
+      <tspan x="150" dy="0">Холл</tspan>
+      <tspan x="150" dy="14" font-weight="bold" fill="#333">3.2</tspan>
+    </text>
+    <text x="90" y="205" font-size="10">
+      <tspan>Балкон</tspan>
+    </text>
+  </g>
+  
+  <!-- Compass -->
+  <g transform="translate(420, 80)">
+    <circle cx="0" cy="0" r="12" fill="none" stroke="#999" stroke-width="1"/>
+    <text x="0" y="-15" font-family="Arial" font-size="9" fill="#666" text-anchor="middle">N</text>
+  </g>
+</svg>

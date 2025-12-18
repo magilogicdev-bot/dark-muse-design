@@ -21,7 +21,7 @@ export const siteConfig = {
   // Навигация
   navigation: {
     menu: '#',
-    buyApartment: '#',
+    buyApartment: '/buy-apartment',
     getPresentation: '#',
     contacts: '/contacts'
   },

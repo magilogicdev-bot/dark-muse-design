@@ -2,14 +2,38 @@
   <section class="pt-14 pb-10 md:pt-20 md:pb-14 lg:pt-24 lg:pb-16 xl:pt-28 xl:pb-20 bg-primary text-white">
     <div class="container mx-auto max-w-[1920px] px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 2xl:px-20">
       <!-- Header -->
-      <div class="mb-10 md:mb-12 lg:mb-14">
-        <p class="text-white/60 uppercase text-[10px] md:text-[12px] lg:text-[14px] xl:text-[18px] tracking-[-0.02em] mb-3 md:mb-4">
-          НАШИ ПРОЕКТЫ
+      <div class="mb-6 md:mb-8 lg:mb-10">
+        <p class="text-white/60 uppercase text-[10px] md:text-[12px] lg:text-[14px] xl:text-[18px] tracking-[-0.02em] mb-1 md:mb-2">
+          ВЫБОР КВАРТИРЫ
         </p>
-        <h2 class="text-[28px] md:text-[40px] lg:text-[56px] xl:text-[72px] 2xl:text-[88px] font-medium uppercase leading-tight">
-          ВЫБРАТЬ НЕДВИЖИМОСТЬ
+        <h2 class="text-[20px] md:text-[28px] lg:text-[40px] xl:text-[56px] 2xl:text-[72px] font-medium uppercase leading-tight">
+          АКТУАЛЬНЫЕ ПРОЕКТЫ
         </h2>
       </div>
+
+      <!-- Main Project Card -->
+      <article class="relative overflow-hidden rounded-[12px] lg:rounded-[18px] xl:rounded-[22px] shadow-lg bg-black mb-6 md:mb-8 lg:mb-10">
+        <div class="aspect-[16/10] md:aspect-[16/9] lg:aspect-[2/1] xl:aspect-[2.4/1]">
+          <img 
+            src="/images/current-projects-main.webp" 
+            alt="ЭКОГОРОД 3" 
+            class="w-full h-full object-cover" 
+          />
+          <div class="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black/46"></div>
+        </div>
+
+        <div class="absolute inset-0 flex flex-col justify-end p-4 md:p-6 lg:p-8 xl:p-10">
+          <div class="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-3">
+            <div class="space-y-1">
+              <p class="text-white/80 uppercase text-[10px] md:text-[12px] lg:text-[16px] xl:text-[20px] tracking-[-0.02em]">ЖИЛОЙ КОМПЛЕКС</p>
+              <h3 class="text-[20px] md:text-[32px] lg:text-[48px] xl:text-[64px] font-medium uppercase leading-tight">ЭКОГОРОД 3</h3>
+            </div>
+            <button class="w-full sm:w-auto lg:w-[140px] xl:w-[180px] h-[36px] md:h-[40px] lg:h-[48px] xl:h-[56px] bg-white rounded-[5px] text-black text-[10px] md:text-[12px] lg:text-[14px] xl:text-[16px] font-medium uppercase hover:bg-gray-100 transition-colors px-4">
+              Подробнее
+            </button>
+          </div>
+        </div>
+      </article>
 
       <!-- Filters Row -->
       <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-4 md:gap-3 lg:gap-4 xl:gap-5 mb-6 md:mb-8 lg:mb-10">
