@@ -250,6 +250,14 @@
         </div>
       </div>
     </Transition>
+
+    <!-- 3D Model Viewer Modal -->
+    <Model3DViewer
+      v-if="is3DViewerOpen"
+      :is-open="is3DViewerOpen"
+      model-path="/models/4.gltf"
+      @close="close3DViewer"
+    />
   </header>
 </template>
 
@@ -265,6 +273,7 @@ const route = useRoute()
 
 const headerEl = ref(null)
 const headerBarEl = ref(null)
+const is3DViewerOpen = ref(false)
 
 // Check if we're on the favorites page
 const isFavoritesPage = computed(() => route.path === '/favorites')
@@ -342,12 +351,15 @@ const menuItems = [
 
 // Handle 3D button click
 const handle3DButtonClick = () => {
-  // Можно открыть 3D модель, модальное окно или перейти на страницу
-  // Например, открыть в новом окне или показать модальное окно
-  console.log('3D модель открыта')
-  // Здесь можно добавить логику открытия 3D модели
-  // Например: window.open('/3d-model', '_blank')
-  // Или: show3DModal.value = true
+  console.log('Кнопка 3D модели нажата')
+  is3DViewerOpen.value = true
+  console.log('is3DViewerOpen установлен в:', is3DViewerOpen.value)
+  closeMenu()
+}
+
+const close3DViewer = () => {
+  console.log('Закрытие 3D просмотра')
+  is3DViewerOpen.value = false
 }
 
 // Handle action buttons
@@ -736,8 +748,9 @@ const handleVideoClick = () => {
 /* 3D Icon Button */
 .menu-3d-button {
   position: absolute;
-  left: 1059px;
-  top: 559px;
+  left: 50%;
+  top: 50%;
+  transform: translate(calc(50% + 50px), calc(-50% - 50px));
   z-index: 10;
   background: transparent;
   border: none;
@@ -774,7 +787,8 @@ const handleVideoClick = () => {
 .menu-action-buttons {
   position: absolute;
   right: clamp(16px, 2vw, 40px);
-  top: 567px;
+  top: 50%;
+  transform: translateY(-50%);
   z-index: 10;
   display: flex;
   flex-direction: column;
@@ -903,7 +917,7 @@ const handleVideoClick = () => {
 /* Video Button Container (Aligned with КОМПАНИЯ) */
 .menu-video-container {
   position: absolute;
-  top: 78px;
+  top: clamp(60px, 8vh, 120px);
   left: 50%;
   transform: translateX(-50%);
   z-index: 10;

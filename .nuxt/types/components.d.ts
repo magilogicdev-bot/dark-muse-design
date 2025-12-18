@@ -46,6 +46,7 @@ interface _GlobalComponents {
   'LocationSection': typeof import("../../components/LocationSection.vue").default
   'MapSection': typeof import("../../components/MapSection.vue").default
   'MediaSection': typeof import("../../components/MediaSection.vue").default
+  'Model3DViewer': typeof import("../../components/Model3DViewer.vue").default
   'MortgageAccordion': typeof import("../../components/MortgageAccordion.vue").default
   'MortgageCTABanner': typeof import("../../components/MortgageCTABanner.vue").default
   'MortgageCalculatorFigma': typeof import("../../components/MortgageCalculatorFigma.vue").default
@@ -125,6 +126,7 @@ interface _GlobalComponents {
   'LazyLocationSection': LazyComponent<typeof import("../../components/LocationSection.vue").default>
   'LazyMapSection': LazyComponent<typeof import("../../components/MapSection.vue").default>
   'LazyMediaSection': LazyComponent<typeof import("../../components/MediaSection.vue").default>
+  'LazyModel3DViewer': LazyComponent<typeof import("../../components/Model3DViewer.vue").default>
   'LazyMortgageAccordion': LazyComponent<typeof import("../../components/MortgageAccordion.vue").default>
   'LazyMortgageCTABanner': LazyComponent<typeof import("../../components/MortgageCTABanner.vue").default>
   'LazyMortgageCalculatorFigma': LazyComponent<typeof import("../../components/MortgageCalculatorFigma.vue").default>
