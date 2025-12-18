@@ -308,7 +308,10 @@ const updateHeaderBarHeight = () => {
   if (!headerEl.value || !headerBarEl.value) return
 
   const height = headerBarEl.value.getBoundingClientRect().height
-  headerEl.value.style.setProperty('--header-bar-height', `${Math.round(height)}px`)
+  const heightPx = `${Math.round(height)}px`
+  headerEl.value.style.setProperty('--header-bar-height', heightPx)
+  // Also set on :root for global access
+  document.documentElement.style.setProperty('--header-bar-height', heightPx)
 }
 
 let headerResizeObserver
@@ -517,8 +520,8 @@ const handleVideoClick = () => {
 
 .header__menu-text {
   font-family: 'Mazzard', 'Inter', sans-serif;
-  font-size: clamp(12px, 1.2vw, 18px);
-  font-weight: 300;
+  font-size: clamp(8px, 0.8vw, 12px);
+  font-weight: 200;
   letter-spacing: -0.02em;
   color: #fff;
   text-transform: uppercase;
@@ -526,14 +529,14 @@ const handleVideoClick = () => {
 
 @media (min-width: 1280px) {
   .header__menu-text {
-    font-size: clamp(14px, 1.4vw, 22px);
+    font-size: clamp(10px, 1vw, 14px);
   }
 }
 
 .header__nav-link {
   font-family: 'Mazzard', 'Inter', sans-serif;
-  font-size: clamp(12px, 1.2vw, 18px);
-  font-weight: 300;
+  font-size: clamp(8px, 0.8vw, 12px);
+  font-weight: 200;
   letter-spacing: -0.02em;
   color: #fff;
   text-transform: uppercase;
@@ -544,7 +547,7 @@ const handleVideoClick = () => {
 
 @media (min-width: 1280px) {
   .header__nav-link {
-    font-size: clamp(14px, 1.4vw, 22px);
+    font-size: clamp(10px, 1vw, 14px);
   }
 }
 
@@ -578,7 +581,7 @@ const handleVideoClick = () => {
 }
 
 .header__logo-img {
-  width: clamp(120px, 10vw, 160px);
+  width: clamp(140px, 12vw, 190px);
   height: auto;
   display: block;
   object-fit: contain;
@@ -633,8 +636,8 @@ const handleVideoClick = () => {
 
 .header__favorites-count {
   font-family: 'Inter', sans-serif;
-  font-size: clamp(12px, 1.2vw, 14px);
-  font-weight: 500;
+  font-size: clamp(8px, 0.8vw, 10px);
+  font-weight: 300;
   color: #fff;
   flex-shrink: 0;
 }
@@ -655,8 +658,8 @@ const handleVideoClick = () => {
 
 .header__phone {
   font-family: 'Mazzard', 'Inter', sans-serif;
-  font-size: clamp(11px, 1.1vw, 16px);
-  font-weight: 300;
+  font-size: clamp(7px, 0.7vw, 11px);
+  font-weight: 200;
   letter-spacing: -0.02em;
   color: #fff;
   text-decoration: none;
@@ -667,13 +670,13 @@ const handleVideoClick = () => {
 
 @media (min-width: 1024px) {
   .header__phone {
-    font-size: clamp(12px, 1.2vw, 18px);
+    font-size: clamp(8px, 0.8vw, 12px);
   }
 }
 
 @media (min-width: 1440px) {
   .header__phone {
-    font-size: clamp(14px, 1.3vw, 20px);
+    font-size: clamp(10px, 0.9vw, 14px);
   }
 }
 
@@ -750,7 +753,7 @@ const handleVideoClick = () => {
   position: absolute;
   left: 50%;
   top: 50%;
-  transform: translate(calc(50% + 50px), calc(-50% - 50px));
+  transform: translate(calc(50% + clamp(120px, 12vw, 220px)), calc(-50% + clamp(100px, 12vh, 180px)));
   z-index: 10;
   background: transparent;
   border: none;
@@ -762,23 +765,24 @@ const handleVideoClick = () => {
   align-items: center;
   justify-content: center;
   outline: none;
-  width: 135px;
-  height: 115px;
+  width: clamp(140px, 14vw, 180px);
+  height: clamp(120px, 12vw, 155px);
 }
 
 .menu-3d-button:hover {
-  transform: scale(1.1);
   opacity: 0.9;
+  transform: translate(calc(50% + clamp(120px, 12vw, 220px)), calc(-50% + clamp(100px, 12vh, 180px))) scale(1.15);
 }
 
 .menu-3d-button:active {
-  transform: scale(0.95);
+  opacity: 0.8;
+  transform: translate(calc(50% + clamp(120px, 12vw, 220px)), calc(-50% + clamp(100px, 12vh, 180px))) scale(1.05);
 }
 
 .menu-3d-button__icon {
   display: block;
-  width: clamp(60px, 6vw, 120px);
-  height: auto;
+  width: 100%;
+  height: 100%;
   object-fit: contain;
   pointer-events: none;
 }
@@ -1143,7 +1147,7 @@ const handleVideoClick = () => {
 
 @media (max-width: 1200px) {
   .header__logo-img {
-    width: clamp(110px, 9vw, 150px);
+    width: clamp(130px, 11vw, 180px);
   }
 }
 
@@ -1184,7 +1188,7 @@ const handleVideoClick = () => {
 /* Уменьшаем номер телефона на средних экранах */
 @media (min-width: 1025px) and (max-width: 1400px) {
   .header__phone {
-    font-size: clamp(11px, 1vw, 14px);
+    font-size: clamp(7px, 0.7vw, 10px);
   }
 }
 
@@ -1254,11 +1258,25 @@ const handleVideoClick = () => {
     max-width: clamp(180px, 28vw, 280px);
     max-height: clamp(45px, 5.5vh, 70px);
   }
+
+  .menu-3d-button {
+    transform: translate(calc(50% + clamp(90px, 9vw, 180px)), calc(-50% + clamp(70px, 9vh, 140px)));
+    width: clamp(120px, 12vw, 160px);
+    height: clamp(100px, 11vw, 135px);
+  }
+
+  .menu-3d-button:hover {
+    transform: translate(calc(50% + clamp(90px, 9vw, 180px)), calc(-50% + clamp(70px, 9vh, 140px))) scale(1.15);
+  }
+
+  .menu-3d-button:active {
+    transform: translate(calc(50% + clamp(90px, 9vw, 180px)), calc(-50% + clamp(70px, 9vh, 140px))) scale(1.05);
+  }
 }
 
 @media (max-width: 768px) {
   .header__logo-img {
-    width: clamp(100px, 12vw, 140px);
+    width: clamp(120px, 14vw, 170px);
   }
 
   .menu__content {
@@ -1278,6 +1296,20 @@ const handleVideoClick = () => {
     padding-right: clamp(0.75rem, 4vw, 1.5rem);
   }
 
+  .menu-3d-button {
+    transform: translate(calc(50% + clamp(60px, 7vw, 120px)), calc(-50% + clamp(50px, 7vh, 100px)));
+    width: clamp(110px, 11vw, 160px);
+    height: clamp(95px, 10vw, 135px);
+  }
+
+  .menu-3d-button:hover {
+    transform: translate(calc(50% + clamp(60px, 7vw, 120px)), calc(-50% + clamp(50px, 7vh, 100px))) scale(1.15);
+  }
+
+  .menu-3d-button:active {
+    transform: translate(calc(50% + clamp(60px, 7vw, 120px)), calc(-50% + clamp(50px, 7vh, 100px))) scale(1.05);
+  }
+
   .menu__logo-text {
     font-size: clamp(24px, 6vw, 40px);
   }
@@ -1290,13 +1322,27 @@ const handleVideoClick = () => {
 
 @media (max-width: 640px) {
   .header__logo-img {
-    width: clamp(90px, 15vw, 130px);
+    width: clamp(110px, 17vw, 155px);
+  }
+
+  .menu-3d-button {
+    transform: translate(calc(50% + clamp(40px, 5vw, 80px)), calc(-50% + clamp(30px, 4vh, 70px)));
+    width: clamp(90px, 9vw, 130px);
+    height: clamp(75px, 8vw, 110px);
+  }
+
+  .menu-3d-button:hover {
+    transform: translate(calc(50% + clamp(40px, 5vw, 80px)), calc(-50% + clamp(30px, 4vh, 70px))) scale(1.15);
+  }
+
+  .menu-3d-button:active {
+    transform: translate(calc(50% + clamp(40px, 5vw, 80px)), calc(-50% + clamp(30px, 4vh, 70px))) scale(1.05);
   }
 }
 
 @media (max-width: 480px) {
   .header__logo-img {
-    width: clamp(80px, 18vw, 120px);
+    width: clamp(95px, 20vw, 145px);
   }
 
   .menu__content {
@@ -1339,6 +1385,20 @@ const handleVideoClick = () => {
   .menu-background__image {
     max-width: min(90vw, 800px);
     max-height: min(95vh, 600px);
+  }
+
+  .menu-3d-button {
+    transform: translate(calc(50% + clamp(30px, 4vw, 60px)), calc(-50% + clamp(20px, 3vh, 50px)));
+    width: clamp(70px, 7vw, 100px);
+    height: clamp(60px, 6vw, 85px);
+  }
+
+  .menu-3d-button:hover {
+    transform: translate(calc(50% + clamp(30px, 4vw, 60px)), calc(-50% + clamp(20px, 3vh, 50px))) scale(1.15);
+  }
+
+  .menu-3d-button:active {
+    transform: translate(calc(50% + clamp(30px, 4vw, 60px)), calc(-50% + clamp(20px, 3vh, 50px))) scale(1.05);
   }
 
   .menu-action-buttons {

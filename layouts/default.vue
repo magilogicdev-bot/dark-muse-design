@@ -1,7 +1,7 @@
 <template>
   <div class="min-h-screen bg-primary text-white font-sans">
     <Header />
-    <main>
+    <main class="main-content">
       <slot />
     </main>
     <Footer />
@@ -14,3 +14,9 @@
 // Если нужен другой layout, создайте новый файл в папке layouts/
 // Компоненты автоматически импортируются в Nuxt 3
 </script>
+
+<style scoped>
+.main-content {
+  padding-top: var(--header-bar-height, 0px);
+}
+</style>

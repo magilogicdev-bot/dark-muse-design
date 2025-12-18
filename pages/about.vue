@@ -1,10 +1,10 @@
 <template>
   <div class="bg-primary text-white min-h-screen font-sans selection:bg-[#d4a574] selection:text-primary">
     <!-- Main Biography Section -->
-    <section class="min-h-screen flex items-center justify-center pt-24 pb-16 md:pt-32 md:pb-20 lg:pt-40 lg:pb-24 px-5 sm:px-6 md:px-10 lg:px-16 xl:px-20 relative">
+    <section class="min-h-screen flex items-center justify-center pb-16 md:pb-20 lg:pb-24 px-5 sm:px-6 md:px-10 lg:px-16 xl:px-20 relative">
       
       <!-- Decorative Horizontal Lines -->
-      <div class="absolute top-24 md:top-32 lg:top-40 left-0 w-full h-px bg-white/10 z-0"></div>
+      <div class="absolute top-0 left-0 w-full h-px bg-white/10 z-0"></div>
       <div class="absolute bottom-16 md:bottom-20 lg:bottom-24 left-0 w-full h-px bg-white/10 z-0"></div>
       
       <div class="max-w-[1770px] mx-auto w-full relative z-10">

@@ -1,5 +1,5 @@
 <template>
-  <div class="bg-primary text-white min-h-screen font-sans pt-12 md:pt-16 lg:pt-20 xl:pt-24">
+  <div class="bg-primary text-white min-h-screen font-sans">
     <!-- Main Content -->
     <section class="container max-w-[1920px] mx-auto px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 2xl:px-20 py-8 md:py-12 lg:py-16 xl:py-20 relative">
       <!-- Close Button (Top Right of Content) -->
@@ -16,7 +16,7 @@
       <!-- Main Grid: Left Text + Right Cards -->
       <div class="grid grid-cols-1 lg:grid-cols-[minmax(280px,35%)_1fr] gap-8 lg:gap-12 xl:gap-16 2xl:gap-20 items-start">
         <!-- Left Section: Title and Description -->
-        <div class="flex flex-col pt-8 md:pt-12 lg:pt-16">
+        <div class="flex flex-col">
           <h1 class="text-5xl font-bold uppercase mb-4 md:mb-6 lg:mb-8 text-white leading-tight">
             ИЗБРАННОЕ
           </h1>

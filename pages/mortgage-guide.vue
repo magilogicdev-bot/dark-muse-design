@@ -2,7 +2,7 @@
   <div class="bg-[#2A2C38] text-white">
     <!-- Main Content -->
       <!-- Hero Section -->
-      <section class="pt-16 md:pt-20 lg:pt-24 pb-12 md:pb-16 lg:pb-20">
+      <section class="pb-12 md:pb-16 lg:pb-20">
         <div class="container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h1 class="text-6xl md:text-7xl lg:text-8xl font-medium text-white mb-4 md:mb-6 lg:mb-8 leading-[1.0234375em] tracking-[-0.015em]">
             ГИД ПО ИПОТЕКЕ

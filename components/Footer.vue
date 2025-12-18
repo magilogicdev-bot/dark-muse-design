@@ -7,10 +7,10 @@
         <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-6 md:gap-8 lg:gap-12">
           <!-- Left: Brand Name -->
           <div class="flex flex-col gap-1">
-            <span class="text-2xl md:text-3xl lg:text-4xl xl:text-[36px] 2xl:text-[40px] font-normal tracking-[5.76px] text-white leading-[1.1]" style="font-family: 'Lora', Georgia, serif">
+            <span class="text-xl md:text-2xl lg:text-3xl xl:text-[32px] 2xl:text-[36px] font-normal tracking-[5.76px] text-white leading-[1.1]" style="font-family: 'Lora', Georgia, serif">
               {{ config.branding.name }}
             </span>
-            <span class="text-sm md:text-base lg:text-lg xl:text-[24px] 2xl:text-[26px] font-bold tracking-[6.84px] bg-clip-text text-transparent bg-gradient-to-r from-[#cecece] to-[#2e2e2e] leading-tight" style="font-family: 'Inter', sans-serif">
+            <span class="text-xs md:text-sm lg:text-base xl:text-[20px] 2xl:text-[22px] font-bold tracking-[6.84px] bg-clip-text text-transparent bg-gradient-to-r from-[#cecece] to-[#2e2e2e] leading-tight" style="font-family: 'Inter', sans-serif">
               GROUP
             </span>
           </div>
@@ -46,10 +46,10 @@
           <!-- Left: Contact Info -->
           <div class="flex flex-col gap-3 md:gap-4">
             <div class="mb-2 md:mb-3">
-              <p class="text-white/60 text-xs md:text-sm lg:text-base leading-[1.4] mb-1.5">
+              <p class="text-white/60 text-[10px] md:text-xs lg:text-sm leading-[1.4] mb-1.5">
                 {{ config.contacts.workingHours.label }}
               </p>
-              <p class="text-white text-sm md:text-base lg:text-lg xl:text-xl font-normal leading-[1.4]" style="font-family: 'Manrope', sans-serif">
+              <p class="text-white text-xs md:text-sm lg:text-base xl:text-lg font-normal leading-[1.4]" style="font-family: 'Manrope', sans-serif">
                 {{ config.contacts.workingHours.text }}
               </p>
             </div>
@@ -57,14 +57,14 @@
               <div class="flex flex-col gap-1.5 md:gap-2">
                 <a 
                   :href="'tel:' + config.contacts.phone.formatted" 
-                  class="text-white text-lg md:text-xl lg:text-2xl xl:text-[28px] 2xl:text-3xl font-normal leading-[1.3] hover:opacity-70 transition-opacity whitespace-nowrap"
+                  class="text-white text-base md:text-lg lg:text-xl xl:text-2xl 2xl:text-[24px] font-normal leading-[1.3] hover:opacity-70 transition-opacity whitespace-nowrap"
                   style="font-family: 'Manrope', sans-serif"
                 >
                   {{ config.contacts.phone.primary }}
                 </a>
                 <a 
                   :href="'tel:' + config.contacts.phone.secondaryFormatted" 
-                  class="text-white text-lg md:text-xl lg:text-2xl xl:text-[28px] 2xl:text-3xl font-normal leading-[1.3] hover:opacity-70 transition-opacity whitespace-nowrap"
+                  class="text-white text-base md:text-lg lg:text-xl xl:text-2xl 2xl:text-[24px] font-normal leading-[1.3] hover:opacity-70 transition-opacity whitespace-nowrap"
                   style="font-family: 'Manrope', sans-serif"
                 >
                   {{ config.contacts.phone.secondary }}
@@ -73,7 +73,7 @@
               <div class="flex items-center gap-2 md:gap-2.5 lg:gap-3 mt-2 lg:mt-0">
                 <a 
                   :href="config.contacts.social.vk" 
-                  class="w-10 h-10 md:w-12 md:h-12 lg:w-14 lg:h-14 xl:w-16 xl:h-16 aspect-square flex items-center justify-center hover:opacity-80 transition-opacity flex-shrink-0 relative"
+                  class="w-8 h-8 md:w-9 md:h-9 lg:w-10 lg:h-10 xl:w-12 xl:h-12 rounded-full aspect-square flex items-center justify-center hover:opacity-80 transition-opacity flex-shrink-0 relative overflow-hidden"
                   aria-label="VKontakte"
                 >
                   <!-- Circle background -->
@@ -91,7 +91,7 @@
                 </a>
                 <a 
                   :href="config.contacts.social.telegram" 
-                  class="w-10 h-10 md:w-12 md:h-12 lg:w-14 lg:h-14 xl:w-16 xl:h-16 aspect-square flex items-center justify-center hover:opacity-80 transition-opacity flex-shrink-0 relative"
+                  class="w-8 h-8 md:w-9 md:h-9 lg:w-10 lg:h-10 xl:w-12 xl:h-12 rounded-full aspect-square flex items-center justify-center hover:opacity-80 transition-opacity flex-shrink-0 relative overflow-hidden"
                   aria-label="Telegram"
                 >
                   <!-- Circle background -->
@@ -119,7 +119,7 @@
                 v-for="(company, index) in config.companies" 
                 :key="index"
                 :class="[
-                  'text-sm md:text-base lg:text-lg font-light leading-[1.528] tracking-[-0.4px]',
+                  'text-xs md:text-sm lg:text-base font-light leading-[1.528] tracking-[-0.4px]',
                   index === 0 ? 'text-white/80' : 'text-white'
                 ]"
                 style="font-family: 'Manrope', sans-serif"
@@ -129,7 +129,7 @@
             </div>
 
             <!-- Legal Disclaimer -->
-            <p class="text-white/60 text-xs md:text-sm lg:text-base leading-[1.528] tracking-[0.36px] font-light" style="font-family: 'Manrope', sans-serif">
+            <p class="text-white/60 text-[10px] md:text-xs lg:text-sm leading-[1.528] tracking-[0.36px] font-light" style="font-family: 'Manrope', sans-serif">
               Любая информация, представленная на данном сайте, носит исключительно информационный характер и ни при каких условиях не является публичной офертой, определяемой положениями статьи 437 ГК РФ. Любые изображения и видеоматериалы несут ознакомительный характер и могут отличаться от действительности. Все права на публикуемые на сайте победоносцев.рф материалы принадлежат ООО «СЗ «ПОБЕДОНОСЦЕВ ГРУПП». Использование материалов, без письменного разрешения, является нарушением закона об авторском праве.
             </p>
 
@@ -137,21 +137,21 @@
             <div class="flex flex-wrap gap-3 md:gap-4 lg:gap-5">
               <a 
                 :href="config.legal.userAgreement" 
-                class="text-white/60 text-xs md:text-sm lg:text-base font-light leading-[1.528] tracking-[0.32px] underline hover:text-white hover:opacity-80 transition-colors decoration-solid underline-offset-2"
+                class="text-white/60 text-[10px] md:text-xs lg:text-sm font-light leading-[1.528] tracking-[0.32px] underline hover:text-white hover:opacity-80 transition-colors decoration-solid underline-offset-2"
                 style="font-family: 'Manrope', sans-serif"
               >
                 Пользовательское соглашение
               </a>
               <a 
                 :href="config.legal.privacyPolicy" 
-                class="text-white/60 text-xs md:text-sm lg:text-base font-light leading-[1.528] tracking-[0.32px] underline hover:text-white hover:opacity-80 transition-colors decoration-solid underline-offset-2"
+                class="text-white/60 text-[10px] md:text-xs lg:text-sm font-light leading-[1.528] tracking-[0.32px] underline hover:text-white hover:opacity-80 transition-colors decoration-solid underline-offset-2"
                 style="font-family: 'Manrope', sans-serif"
               >
                 Политика конфиденциальности
               </a>
               <a 
                 :href="config.legal.sitemap" 
-                class="text-white/60 text-xs md:text-sm lg:text-base font-light leading-[1.528] tracking-[0.32px] underline hover:text-white hover:opacity-80 transition-colors decoration-solid underline-offset-2"
+                class="text-white/60 text-[10px] md:text-xs lg:text-sm font-light leading-[1.528] tracking-[0.32px] underline hover:text-white hover:opacity-80 transition-colors decoration-solid underline-offset-2"
                 style="font-family: 'Manrope', sans-serif"
               >
                 Карта сайта

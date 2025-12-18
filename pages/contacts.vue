@@ -1,7 +1,7 @@
 <template>
   <div class="contacts-page relative">
     <!-- Main Section -->
-    <section class="relative min-h-[calc(100vh-200px)] pt-14 pb-14">
+    <section class="relative min-h-[calc(100vh-200px)] pb-14">
       <!-- Container for proper alignment with header/footer -->
       <div class="container mx-auto max-w-full sm:max-w-[640px] md:max-w-[768px] lg:max-w-[1024px] xl:max-w-[1280px] 2xl:max-w-[1920px] px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 2xl:px-20 relative">
         <div class="grid lg:grid-cols-[400px_1fr] xl:grid-cols-[450px_1fr] 2xl:grid-cols-[500px_1fr] min-h-[calc(100vh-200px)]">
