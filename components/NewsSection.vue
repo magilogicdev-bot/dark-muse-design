@@ -3,7 +3,7 @@
     <div class="container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <!-- Header -->
       <div class="flex items-center justify-between mb-12 md:mb-16">
-        <h2 class="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-white uppercase">
+        <h2 class="text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold text-white uppercase">
           НОВОСТИ
         </h2>
         <button class="text-white hover:text-[#F2994A] transition-colors">

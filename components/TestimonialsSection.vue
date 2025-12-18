@@ -1,7 +1,7 @@
 <template>
   <section class="bg-[#1a1d28] py-16 md:py-20 lg:py-24">
     <div class="container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <h2 class="text-white text-[clamp(2rem,7.2vw,128px)] font-medium uppercase leading-[1.125] mb-12 md:mb-16 lg:mb-20 text-center">
+      <h2 class="text-white text-4xl font-medium uppercase leading-tight mb-12 md:mb-16 lg:mb-20 text-center">
         ОТЗЫВЫ КЛИЕНТОВ
       </h2>
       
@@ -13,20 +13,20 @@
         >
           <div class="flex items-center gap-4 md:gap-5 mb-4 md:mb-6">
             <div class="w-12 h-12 md:w-16 md:h-16 rounded-full bg-[#F2994A] flex items-center justify-center flex-shrink-0">
-              <span class="text-white text-lg md:text-xl lg:text-2xl font-bold">
+              <span class="text-white text-xl font-bold">
                 {{ testimonial.initials }}
               </span>
             </div>
             <div>
-              <h3 class="text-white text-lg md:text-xl lg:text-2xl font-semibold">
+              <h3 class="text-white text-xl font-semibold">
                 {{ testimonial.name }}
               </h3>
-              <p class="text-gray-400 text-sm md:text-base">
+              <p class="text-gray-400 text-base">
                 {{ testimonial.location }}
               </p>
             </div>
           </div>
-          <p class="text-gray-300 text-base md:text-lg lg:text-xl leading-relaxed">
+          <p class="text-gray-300 text-lg leading-relaxed">
             "{{ testimonial.text }}"
           </p>
         </div>

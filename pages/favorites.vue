@@ -17,10 +17,10 @@
       <div class="grid grid-cols-1 lg:grid-cols-[minmax(280px,35%)_1fr] gap-8 lg:gap-12 xl:gap-16 2xl:gap-20 items-start">
         <!-- Left Section: Title and Description -->
         <div class="flex flex-col pt-8 md:pt-12 lg:pt-16">
-          <h1 class="text-3xl md:text-4xl lg:text-5xl xl:text-6xl 2xl:text-7xl font-bold uppercase mb-4 md:mb-6 lg:mb-8 text-white leading-[1.1] tracking-[-0.02em]">
+          <h1 class="text-5xl font-bold uppercase mb-4 md:mb-6 lg:mb-8 text-white leading-tight">
             ИЗБРАННОЕ
           </h1>
-          <p class="text-sm md:text-base lg:text-lg text-white leading-relaxed">
+          <p class="text-lg text-white leading-relaxed">
             Сохраняйте понравившиеся квартиры в избранное. Вернитесь к ним в любой момент, чтобы сравнить варианты, показать близким или обсудить с нашими менеджерами.
           </p>
         </div>

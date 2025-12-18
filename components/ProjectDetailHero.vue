@@ -24,10 +24,10 @@
     <!-- Content Overlay -->
     <div class="absolute bottom-0 left-0 right-0 p-6 md:p-8 lg:p-12 z-10">
       <div class="container max-w-7xl mx-auto">
-        <h1 class="text-white text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold mb-4 md:mb-6">
+        <h1 class="text-white text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold mb-4 md:mb-6">
           {{ projectTitle }}
         </h1>
-        <p class="text-white text-lg md:text-xl lg:text-2xl max-w-3xl">
+        <p class="text-white text-base md:text-lg max-w-3xl">
           {{ projectDescription }}
         </p>
       </div>

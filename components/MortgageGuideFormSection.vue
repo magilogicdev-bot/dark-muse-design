@@ -1,7 +1,7 @@
 <template>
   <section class="bg-[#1a1d28] py-16 md:py-20 lg:py-24">
     <div class="container max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-      <h2 class="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-white mb-12 md:mb-16">
+      <h2 class="text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold text-white mb-12 md:mb-16">
         Гид по ипотеке
       </h2>
       

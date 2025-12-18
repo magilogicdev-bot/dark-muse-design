@@ -49,17 +49,17 @@
           </div>
 
           <!-- Page Title -->
-          <h1 class="text-4xl md:text-5xl lg:text-6xl xl:text-7xl 2xl:text-8xl font-bold uppercase mb-6 md:mb-8 lg:mb-10 text-white leading-[1.1] tracking-[-0.02em]">
+          <h1 class="text-5xl font-bold uppercase mb-6 md:mb-8 lg:mb-10 text-white leading-tight">
             НОВОСТИ
           </h1>
 
           <!-- Description Paragraph 1 -->
-          <p class="text-xs md:text-sm lg:text-base xl:text-lg text-white leading-relaxed mb-4 md:mb-6">
+          <p class="text-lg text-white leading-relaxed mb-4 md:mb-6">
             Будьте в курсе самых значимых событий: новые реализованные проекты, тенденции в архитектуре и строительных технологиях, изменения в законодательстве и события из жизни нашей компании.
           </p>
 
           <!-- Description Paragraph 2 -->
-          <p class="text-xs md:text-sm lg:text-base xl:text-lg text-white leading-relaxed">
+          <p class="text-lg text-white leading-relaxed">
             Здесь мы делимся опытом, успехами и полезными знаниями.
           </p>
         </div>

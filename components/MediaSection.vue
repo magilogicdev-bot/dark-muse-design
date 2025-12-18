@@ -5,7 +5,7 @@
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-4 lg:gap-8 xl:gap-12 mb-6 md:mb-8 lg:mb-10">
         <!-- Left: Section title + Filter Buttons -->
         <div class="flex flex-col justify-between gap-4 md:gap-5 lg:gap-6">
-          <h2 class="text-[18px] md:text-[24px] lg:text-[32px] xl:text-[40px] 2xl:text-[48px] font-medium uppercase leading-tight">МЕДИА</h2>
+          <h2 class="text-4xl font-medium uppercase leading-tight">МЕДИА</h2>
           
           <!-- Filter Buttons -->
           <div class="flex flex-wrap gap-2 lg:gap-3">
@@ -70,7 +70,7 @@
         <!-- More News Card -->
         <div class="bg-white text-[#1f2736] rounded-[8px] lg:rounded-[10px] overflow-hidden shadow-lg flex flex-col p-3 md:p-4 lg:p-5 xl:p-6">
           <div class="flex-1 flex flex-col justify-center pt-3 md:pt-4 lg:pt-5">
-            <h3 class="text-[18px] md:text-[20px] lg:text-[22px] xl:text-[24px] 2xl:text-[28px] font-medium leading-tight">БОЛЬШЕ<br>НОВОСТЕЙ</h3>
+            <h3 class="text-xl font-medium leading-tight">БОЛЬШЕ<br>НОВОСТЕЙ</h3>
           </div>
           <button class="mt-auto w-full h-[36px] md:h-[40px] lg:h-[44px] xl:h-[48px] bg-[#656565] rounded-[8px] md:rounded-[10px] lg:rounded-[12px] xl:rounded-[14px] text-white text-[10px] md:text-[11px] lg:text-[12px] xl:text-[13px] font-medium uppercase hover:bg-[#757575] transition-colors">
             все новости

@@ -13,19 +13,19 @@
       <div class="grid grid-cols-1 lg:grid-cols-[57%_43%] gap-0 items-stretch">
         <!-- Left Column: Text Content -->
         <div class="flex flex-col justify-center py-6 md:py-8 lg:py-10 xl:py-12 z-10 order-2 lg:order-1">
-          <h1 class="text-2xl md:text-3xl lg:text-4xl xl:text-5xl 2xl:text-6xl font-medium text-white leading-tight tracking-tight mb-4 md:mb-5 lg:mb-6 xl:mb-8 max-w-[90%] lg:max-w-full">
+          <h1 class="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-medium text-white leading-tight mb-4 md:mb-5 lg:mb-6 xl:mb-8 max-w-[90%] lg:max-w-full">
             Оформи ипотеку с Pobedonoscev GROUP
           </h1>
           
-          <p class="text-sm md:text-base lg:text-lg xl:text-xl text-white opacity-60 leading-relaxed mb-6 md:mb-8 lg:mb-10 xl:mb-12 max-w-[85%] lg:max-w-[75%]">
+          <p class="text-base md:text-lg text-white opacity-60 leading-relaxed mb-6 md:mb-8 lg:mb-10 xl:mb-12 max-w-[85%] lg:max-w-[75%]">
             Ипотека является одним из самых популярных и доступных способов покупки недвижимости. Это реальный шанс въехать в новую квартиру уже сейчас, не дожидаясь накоплений.
           </p>
           
-          <button class="bg-white hover:bg-gray-100 text-black font-normal italic px-6 md:px-8 lg:px-10 xl:px-14 2xl:px-16 py-2.5 md:py-3 lg:py-4 xl:py-5 rounded-full text-xs md:text-sm lg:text-base xl:text-lg transition-colors mb-8 md:mb-10 lg:mb-12 xl:mb-16 w-fit">
+          <button class="bg-white hover:bg-gray-100 text-black font-normal italic px-6 md:px-8 lg:px-10 xl:px-14 2xl:px-16 py-2.5 md:py-3 lg:py-4 xl:py-5 rounded-full text-sm md:text-base transition-colors mb-8 md:mb-10 lg:mb-12 xl:mb-16 w-fit">
             Хочу оформить ипотеку
           </button>
           
-          <p class="text-xs md:text-sm lg:text-base text-white leading-relaxed max-w-[85%] lg:max-w-[75%]">
+          <p class="text-sm md:text-base text-white leading-relaxed max-w-[85%] lg:max-w-[75%]">
             Мы работаем только с лидерами страхового рынка. Гарантируем прозрачные условия и официальные полисы.
           </p>
         </div>
@@ -41,7 +41,7 @@
                 alt="АЛЬФА СТРАХОВАНИЕ"
                 class="h-7 md:h-9 lg:h-10 xl:h-12 w-auto"
               />
-              <p class="text-white text-[10px] md:text-xs lg:text-sm xl:text-base leading-[1.4] opacity-60 font-arimo text-left">
+              <p class="text-white text-xs md:text-sm leading-relaxed opacity-60 font-arimo text-left">
                 возможно оформление<br/>при ипотеке и рассрочке
               </p>
             </div>
@@ -53,7 +53,7 @@
                 alt="СБЕР"
                 class="h-6 md:h-8 lg:h-9 xl:h-11 w-auto"
               />
-              <p class="text-white text-[10px] md:text-xs lg:text-sm xl:text-base leading-[1.4] opacity-60 font-arimo text-left">
+              <p class="text-white text-xs md:text-sm leading-relaxed opacity-60 font-arimo text-left">
                 возможно оформление<br/>при ипотеке
               </p>
             </div>

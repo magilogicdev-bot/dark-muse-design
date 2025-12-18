@@ -5,8 +5,8 @@
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-4 lg:gap-8 xl:gap-12 mb-6 md:mb-8 lg:mb-10">
         <!-- Left: Section title -->
         <div>
-          <p class="text-white/60 uppercase text-[10px] md:text-[12px] lg:text-[14px] xl:text-[18px] tracking-[-0.02em] mb-1 md:mb-2">НАШИ ПРОЕКТЫ</p>
-          <h2 class="text-[20px] md:text-[28px] lg:text-[40px] xl:text-[56px] 2xl:text-[72px] font-medium uppercase leading-tight">ЗАВЕРШЕННЫЕ<br>ПРОЕКТЫ</h2>
+          <p class="text-white/60 uppercase text-xs md:text-sm tracking-[-0.02em] mb-1 md:mb-2">НАШИ ПРОЕКТЫ</p>
+          <h2 class="text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-medium uppercase leading-tight">ЗАВЕРШЕННЫЕ<br>ПРОЕКТЫ</h2>
         </div>
         
         <!-- Right: Description -->
@@ -30,7 +30,7 @@
           </div>
           <div class="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black/46"></div>
           <div class="absolute bottom-3 md:bottom-4 lg:bottom-6 xl:bottom-8 left-3 md:left-4 lg:left-6 xl:left-8">
-            <h3 class="text-[16px] md:text-[22px] lg:text-[32px] xl:text-[42px] font-medium uppercase text-white">жк "экогород 2"</h3>
+            <h3 class="text-lg md:text-xl lg:text-2xl xl:text-3xl font-medium uppercase text-white">жк "экогород 2"</h3>
           </div>
         </article>
 

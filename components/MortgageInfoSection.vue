@@ -4,12 +4,12 @@
       <!-- Header Section -->
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 mb-12 md:mb-16 lg:mb-20">
         <div>
-          <h2 class="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-white mb-6 md:mb-8">
+          <h2 class="text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold text-white mb-6 md:mb-8">
             ИПОТЕКА
           </h2>
         </div>
         <div class="flex items-start">
-          <p class="text-base md:text-lg lg:text-xl text-white/90 leading-relaxed">
+          <p class="text-base md:text-lg text-white/90 leading-relaxed">
             Ипотека — один из самых удобных способов приобрести собственное жильё. Она позволяет въехать в новую квартиру уже сейчас, оплачивая её стоимость постепенно, без необходимости годами копить всю сумму.
           </p>
         </div>

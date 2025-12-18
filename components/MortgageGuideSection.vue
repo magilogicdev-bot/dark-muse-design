@@ -6,7 +6,7 @@
         <div class="space-y-12 md:space-y-16 lg:space-y-20">
           <!-- Title Section -->
           <section>
-            <h2 class="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold mb-6 md:mb-8 leading-tight">
+            <h2 class="text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold mb-6 md:mb-8 leading-tight">
               ГИД ПО ИПОТЕКЕ
             </h2>
             <p class="text-base md:text-lg lg:text-xl text-gray-300 leading-relaxed">
@@ -16,10 +16,10 @@
 
           <!-- Process Section -->
           <section>
-            <h3 class="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 md:mb-8">
+            <h3 class="text-xl md:text-2xl lg:text-3xl font-bold mb-6 md:mb-8">
               Процесс покупки в ипотеку
             </h3>
-            <ol class="space-y-4 md:space-y-5 text-base md:text-lg lg:text-xl text-gray-300">
+            <ol class="space-y-4 md:space-y-5 text-base md:text-lg text-gray-300">
               <li class="flex gap-4">
                 <span class="flex-shrink-0 font-bold text-white">1.</span>
                 <span>Выберите квартиру</span>
@@ -49,7 +49,7 @@
 
           <!-- Documents Section -->
           <section>
-            <h3 class="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 md:mb-8">
+            <h3 class="text-xl md:text-2xl lg:text-3xl font-bold mb-6 md:mb-8">
               Документы для оформления
             </h3>
             <div class="space-y-4 text-base md:text-lg lg:text-xl text-gray-300 leading-relaxed">
@@ -64,7 +64,7 @@
 
           <!-- Married Section -->
           <section>
-            <h3 class="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 md:mb-8">
+            <h3 class="text-xl md:text-2xl lg:text-3xl font-bold mb-6 md:mb-8">
               Если женат/замужем
             </h3>
             <p class="text-base md:text-lg lg:text-xl text-gray-300 leading-relaxed">
@@ -74,7 +74,7 @@
 
           <!-- Bank Interaction Section -->
           <section>
-            <h3 class="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 md:mb-8">
+            <h3 class="text-xl md:text-2xl lg:text-3xl font-bold mb-6 md:mb-8">
               Взаимодействие с банком
             </h3>
             <p class="text-base md:text-lg lg:text-xl text-gray-300 leading-relaxed">
@@ -84,7 +84,7 @@
 
           <!-- Co-borrower Section -->
           <section>
-            <h3 class="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 md:mb-8">
+            <h3 class="text-xl md:text-2xl lg:text-3xl font-bold mb-6 md:mb-8">
               Кто может быть созаёмщиком
             </h3>
             <div class="space-y-4 text-base md:text-lg lg:text-xl text-gray-300 leading-relaxed">
@@ -100,7 +100,7 @@
 
           <!-- Maternity Capital Section -->
           <section>
-            <h3 class="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 md:mb-8">
+            <h3 class="text-xl md:text-2xl lg:text-3xl font-bold mb-6 md:mb-8">
               Материнский капитал
             </h3>
             <div class="space-y-4 text-base md:text-lg lg:text-xl text-gray-300 leading-relaxed">

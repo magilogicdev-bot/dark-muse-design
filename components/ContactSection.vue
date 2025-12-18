@@ -4,15 +4,15 @@
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 md:gap-16">
         <!-- Contact Info -->
         <div class="text-white">
-          <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold mb-8 md:mb-10">
+          <h2 class="text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold mb-8 md:mb-10">
             Контакты
           </h2>
           
           <div class="space-y-6 md:space-y-8">
             <!-- Address -->
             <div>
-              <h3 class="text-xl md:text-2xl font-semibold mb-3 md:mb-4">Адрес</h3>
-              <p class="text-gray-300 text-base md:text-lg lg:text-xl">
+              <h3 class="text-xl md:text-2xl lg:text-3xl font-semibold mb-3 md:mb-4">Адрес</h3>
+              <p class="text-gray-300 text-base md:text-lg">
                 г. Ярославль, ул. Примерная, д. 1
               </p>
             </div>

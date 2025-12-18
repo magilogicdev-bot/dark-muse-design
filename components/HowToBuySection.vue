@@ -7,17 +7,17 @@
           <!-- Left Content Block -->
           <div class="flex flex-col space-y-4 md:space-y-5 lg:space-y-6">
           <!-- Main Heading -->
-          <h2 class="text-[20px] md:text-[26px] lg:text-[32px] xl:text-[38px] 2xl:text-[44px] font-bold text-[#333333] leading-tight flex flex-wrap">
+          <h2 class="text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold text-[#333333] leading-tight flex flex-wrap">
             КАК КУПИТЬ КВАРТИРУ ?
           </h2>
 
           <!-- Description Text -->
-          <p class="text-[13px] md:text-[14px] lg:text-[15px] xl:text-[16px] text-[#555555] leading-relaxed font-normal max-w-[324px] md:max-w-[400px] lg:max-w-[450px]">
+          <p class="text-base md:text-lg text-[#555555] leading-relaxed font-normal max-w-[324px] md:max-w-[400px] lg:max-w-[450px]">
             Оставьте заявку и наш консультант свяжется с вами в ближайшее время
           </p>
 
           <!-- Call-to-Action Button -->
-          <button class="w-auto px-6 py-3 bg-white text-[#333333] rounded-full text-[12px] md:text-[13px] lg:text-[14px] xl:text-[15px] font-medium hover:bg-gray-50 transition-colors shadow-sm">
+          <button class="w-auto px-6 py-3 bg-white text-[#333333] rounded-full text-sm md:text-base font-medium hover:bg-gray-50 transition-colors shadow-sm">
             Оставить заявку
           </button>
           </div>

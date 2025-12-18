@@ -1,7 +1,7 @@
 <template>
   <section class="bg-primary py-16 md:py-20 lg:py-24">
     <div class="container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <h2 class="text-white text-[clamp(2rem,7.2vw,128px)] font-medium uppercase leading-[1.125] mb-12 md:mb-16 lg:mb-20">
+      <h2 class="text-white text-4xl font-medium uppercase leading-tight mb-12 md:mb-16 lg:mb-20">
         ХОД СТРОИТЕЛЬСТВА
       </h2>
       
@@ -12,10 +12,10 @@
           class="bg-white/5 border border-white/10 rounded-lg md:rounded-xl lg:rounded-2xl p-6 md:p-8"
         >
           <div class="flex items-center justify-between mb-4 md:mb-6">
-            <h3 class="text-white text-xl md:text-2xl lg:text-3xl font-semibold">
+            <h3 class="text-white text-2xl font-semibold">
               {{ progress.title }}
             </h3>
-            <span class="text-[#F2994A] text-lg md:text-xl lg:text-2xl font-bold">
+            <span class="text-[#F2994A] text-xl font-bold">
               {{ progress.percentage }}%
             </span>
           </div>
@@ -25,7 +25,7 @@
               :style="{ width: progress.percentage + '%' }"
             ></div>
           </div>
-          <p class="text-gray-300 text-base md:text-lg mt-4 md:mt-5">
+          <p class="text-gray-300 text-lg mt-4 md:mt-5">
             {{ progress.description }}
           </p>
         </div>

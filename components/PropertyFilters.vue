@@ -6,7 +6,7 @@
         <p class="text-white/60 uppercase text-[10px] md:text-[12px] lg:text-[14px] xl:text-[18px] tracking-[-0.02em] mb-1 md:mb-2">
           ВЫБОР КВАРТИРЫ
         </p>
-        <h2 class="text-[20px] md:text-[28px] lg:text-[40px] xl:text-[56px] 2xl:text-[72px] font-medium uppercase leading-tight">
+        <h2 class="text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-medium uppercase leading-tight">
           АКТУАЛЬНЫЕ ПРОЕКТЫ
         </h2>
       </div>
@@ -26,7 +26,7 @@
           <div class="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-3">
             <div class="space-y-1">
               <p class="text-white/80 uppercase text-[10px] md:text-[12px] lg:text-[16px] xl:text-[20px] tracking-[-0.02em]">ЖИЛОЙ КОМПЛЕКС</p>
-              <h3 class="text-[20px] md:text-[32px] lg:text-[48px] xl:text-[64px] font-medium uppercase leading-tight">ЭКОГОРОД 3</h3>
+              <h3 class="text-xl md:text-2xl lg:text-3xl xl:text-4xl font-medium uppercase leading-tight">ЭКОГОРОД 3</h3>
             </div>
             <button class="w-full sm:w-auto lg:w-[140px] xl:w-[180px] h-[36px] md:h-[40px] lg:h-[48px] xl:h-[56px] bg-white rounded-[5px] text-black text-[10px] md:text-[12px] lg:text-[14px] xl:text-[16px] font-medium uppercase hover:bg-gray-100 transition-colors px-4">
               Подробнее

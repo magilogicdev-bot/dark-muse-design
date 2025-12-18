@@ -5,28 +5,28 @@
         <!-- Left Content Block -->
         <div class="flex flex-col space-y-5 md:space-y-6 lg:space-y-7 xl:space-y-8 h-[515px]">
           <!-- Main Heading -->
-          <h1 class="text-[20px] md:text-[26px] lg:text-[32px] xl:text-[38px] 2xl:text-[44px] font-bold text-[#333333] leading-tight">
+          <h1 class="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-[#333333] leading-tight">
             Купите квартиру в<br />
             Pobedonoscev GROUP
           </h1>
 
           <!-- First Paragraph -->
-          <p class="text-[13px] md:text-[14px] lg:text-[15px] xl:text-[16px] text-[#555555] leading-relaxed font-normal">
+          <p class="text-base md:text-lg text-[#555555] leading-relaxed font-normal">
             Выберите квартиру, которая подойдёт именно вам. В проектах Pobedonoscev GROUP собраны продуманные планировки, комфортная инфраструктура и современные решения для жизни.
           </p>
 
           <!-- Second Paragraph -->
-          <p class="text-[13px] md:text-[14px] lg:text-[15px] xl:text-[16px] text-[#555555] leading-relaxed font-normal">
+          <p class="text-base md:text-lg text-[#555555] leading-relaxed font-normal">
             Найдите пространство, в котором будет приятно жить, работать и отдыхать.
           </p>
 
           <!-- Call-to-Action Button -->
-          <button class="w-[286px] px-8 py-4 bg-white text-[#333333] rounded-full text-[13px] md:text-[14px] lg:text-[15px] xl:text-[16px] font-semibold hover:bg-gray-50 transition-colors mt-6 md:mt-[74px]">
+          <button class="w-[286px] px-8 py-4 bg-white text-[#333333] rounded-full text-sm md:text-base font-semibold hover:bg-gray-50 transition-colors mt-6 md:mt-[74px]">
             Хочу купить квартиру
           </button>
 
           <!-- Disclaimer Text -->
-          <p class="text-[11px] md:text-[11px] lg:text-[12px] xl:text-[12px] text-[#555555] leading-normal font-bold mt-6 md:mt-8 lg:mt-10">
+          <p class="text-xs md:text-sm text-[#555555] leading-normal font-bold mt-6 md:mt-8 lg:mt-10">
             Мы работаем только с лидерами страхового рынка. Гарантируем прозрачные условия и официальные полисы.
           </p>
         </div>

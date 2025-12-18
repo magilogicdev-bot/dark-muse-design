@@ -1,7 +1,7 @@
 <template>
   <div class="contacts-page relative">
     <!-- Main Section -->
-    <section class="relative min-h-[calc(100vh-200px)]">
+    <section class="relative min-h-[calc(100vh-200px)] pt-14 pb-14">
       <!-- Container for proper alignment with header/footer -->
       <div class="container mx-auto max-w-full sm:max-w-[640px] md:max-w-[768px] lg:max-w-[1024px] xl:max-w-[1280px] 2xl:max-w-[1920px] px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 2xl:px-20 relative">
         <div class="grid lg:grid-cols-[400px_1fr] xl:grid-cols-[450px_1fr] 2xl:grid-cols-[500px_1fr] min-h-[calc(100vh-200px)]">
@@ -10,12 +10,12 @@
           <div class="relative z-20 py-8 lg:py-10 xl:py-12 flex flex-col">
             <div class="flex flex-col gap-4 lg:gap-5 xl:gap-6">
               <!-- Title -->
-              <h1 class="text-4xl sm:text-5xl lg:text-[52px] xl:text-[58px] 2xl:text-[64px] font-semibold tracking-tight leading-none text-white">
+              <h1 class="text-5xl font-semibold tracking-tight leading-tight text-white">
                 КОНТАКТЫ
               </h1>
               
               <!-- Address -->
-              <p class="text-sm sm:text-[15px] lg:text-base leading-relaxed text-white/70" style="font-family: 'Manrope', sans-serif">
+              <p class="text-lg leading-relaxed text-white/70" style="font-family: 'Manrope', sans-serif">
                 г. Ярославль, пл. Труда, д. 1, <br />
                 Бизнес-центр Towers, офис 605
               </p>
@@ -32,7 +32,7 @@
               <!-- Working Hours -->
               <div class="space-y-0.5 text-white/90">
                 <p class="text-[11px] uppercase tracking-[0.15em] text-white/50" style="font-family: 'Manrope', sans-serif">Время работы отдела продаж:</p>
-                <p class="text-sm lg:text-base" style="font-family: 'Manrope', sans-serif">Сегодня с 09:00 до 18:00</p>
+                <p class="text-base" style="font-family: 'Manrope', sans-serif">Сегодня с 09:00 до 18:00</p>
               </div>
 
               <!-- Phone Numbers -->
@@ -43,7 +43,7 @@
                   class="flex items-baseline gap-2"
                 >
                   <a
-                    class="text-lg sm:text-xl lg:text-[22px] font-medium tracking-tight hover:text-white/80 transition-colors text-white"
+                    class="text-xl font-medium tracking-tight hover:text-white/80 transition-colors text-white"
                     :href="`tel:${contact.href}`"
                     style="font-family: 'Manrope', sans-serif"
                   >
@@ -56,7 +56,7 @@
               <!-- CTA Button -->
               <div class="pt-2">
                 <button
-                  class="border border-white/50 text-white rounded-full px-5 py-2 text-sm font-normal tracking-[0.03em] hover:bg-white hover:text-primary transition-all duration-300"
+                  class="border border-white/50 text-white rounded-full px-5 py-2 text-base font-normal tracking-[0.03em] hover:bg-white hover:text-primary transition-all duration-300"
                   type="button"
                   style="font-family: 'Manrope', sans-serif"
                 >
@@ -65,7 +65,7 @@
               </div>
 
               <!-- Disclaimer -->
-              <p class="text-[11px] sm:text-xs text-white/40 leading-relaxed max-w-xs" style="font-family: 'Manrope', sans-serif">
+              <p class="text-sm text-white/40 leading-relaxed max-w-xs" style="font-family: 'Manrope', sans-serif">
                 Мы работаем только с лидерами страхового рынка. Гарантируем прозрачные условия и официальные полисы.
               </p>
             </div>
@@ -86,24 +86,24 @@
             <!-- Map Labels -->
             <div class="absolute inset-0 pointer-events-none">
               <!-- Street Labels -->
-              <p class="map-label absolute text-xs sm:text-sm lg:text-[15px] font-medium text-white/90 left-[8%] sm:left-[15%] top-[6%] sm:top-[8%] tracking-wide">
+              <p class="map-label absolute text-xs md:text-sm lg:text-base font-medium text-white/90 left-[8%] sm:left-[15%] top-[6%] sm:top-[8%] tracking-wide">
                 улица машиностроителей
               </p>
-              <p class="map-label absolute text-xs sm:text-sm lg:text-[15px] font-medium text-white/90 right-[3%] sm:right-[8%] top-[10%] sm:top-[12%] tracking-wide hidden sm:block">
+              <p class="map-label absolute text-xs md:text-sm lg:text-base font-medium text-white/90 right-[3%] sm:right-[8%] top-[10%] sm:top-[12%] tracking-wide hidden sm:block">
                 улица машиностроителей
               </p>
               
               
 
-              <p class="map-label absolute text-xs sm:text-sm lg:text-[15px] font-medium text-white/80 left-[12%] sm:left-[18%] top-[40%] sm:top-[38%] tracking-wide">
+              <p class="map-label absolute text-xs md:text-sm lg:text-base font-medium text-white/80 left-[12%] sm:left-[18%] top-[40%] sm:top-[38%] tracking-wide">
                 тц Глобус
               </p>
               
-              <p class="map-label absolute text-xs sm:text-sm lg:text-[15px] font-medium text-white/80 left-[18%] sm:left-[25%] top-[58%] sm:top-[55%] tracking-wide">
+              <p class="map-label absolute text-xs md:text-sm lg:text-base font-medium text-white/80 left-[18%] sm:left-[25%] top-[58%] sm:top-[55%] tracking-wide">
                 поликлиника
               </p>
               
-              <p class="map-label absolute text-xs sm:text-sm lg:text-[15px] font-medium text-white/80 left-[12%] sm:left-[18%] bottom-[12%] sm:bottom-[15%] tracking-wide">
+              <p class="map-label absolute text-xs md:text-sm lg:text-base font-medium text-white/80 left-[12%] sm:left-[18%] bottom-[12%] sm:bottom-[15%] tracking-wide">
                 школа Красного Бора
               </p>
             </div>

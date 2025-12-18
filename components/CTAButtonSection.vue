@@ -1,7 +1,7 @@
 <template>
   <section class="bg-[#F2994A] py-16 md:py-20 lg:py-24">
     <div class="container max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-      <h2 class="text-white text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold mb-6 md:mb-8">
+      <h2 class="text-white text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold mb-6 md:mb-8">
         {{ title }}
       </h2>
       <p v-if="description" class="text-white text-lg md:text-xl lg:text-2xl mb-8 md:mb-10">

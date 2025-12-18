@@ -1,7 +1,7 @@
 <template>
   <section class="bg-primary py-16 md:py-20 lg:py-24">
     <div class="container max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-      <h2 class="text-white text-[clamp(2rem,7.2vw,128px)] font-medium uppercase leading-[1.125] mb-12 md:mb-16 lg:mb-20 text-center">
+      <h2 class="text-white text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-medium uppercase leading-tight mb-12 md:mb-16 lg:mb-20 text-center">
         ИНВЕСТИЦИОННАЯ ПРИВЛЕКАТЕЛЬНОСТЬ
       </h2>
       

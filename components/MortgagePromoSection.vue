@@ -15,13 +15,13 @@
 
         <!-- Right: Content -->
         <div class="text-white">
-          <h2 class="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold mb-6 md:mb-8 leading-tight">
+          <h2 class="text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold mb-6 md:mb-8 leading-tight">
             Оформи ипотеку с<br />Pobedonoscev GROUP
           </h2>
-          <p class="text-base md:text-lg lg:text-xl text-gray-300 mb-8 md:mb-10 leading-relaxed">
+          <p class="text-base md:text-lg text-gray-300 mb-8 md:mb-10 leading-relaxed">
             Мы поможем подобрать оптимальную программу ипотечного кредитования и оформить все документы быстро и удобно.
           </p>
-          <button class="bg-[#F2994A] hover:bg-[#e8893a] text-white rounded-lg px-8 md:px-12 py-4 md:py-5 text-base md:text-lg lg:text-xl font-semibold uppercase transition-colors cursor-pointer">
+          <button class="bg-[#F2994A] hover:bg-[#e8893a] text-white rounded-lg px-8 md:px-12 py-4 md:py-5 text-sm md:text-base font-semibold uppercase transition-colors cursor-pointer">
             Узнать больше
           </button>
         </div>

@@ -1,7 +1,7 @@
 <template>
   <section class="bg-primary py-16 md:py-20 lg:py-24">
     <div class="container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <h2 class="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-white mb-12 md:mb-16">
+      <h2 class="text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold text-white mb-12 md:mb-16">
         ВОПРОСЫ И ОТВЕТЫ
       </h2>
       

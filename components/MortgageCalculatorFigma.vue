@@ -1,7 +1,7 @@
 <template>
   <section class="bg-[#1a1d28] py-16 md:py-20 lg:py-24">
     <div class="container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <h2 class="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-white mb-12 md:mb-16">
+      <h2 class="text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold text-white mb-12 md:mb-16">
         ИПОТЕЧНЫЙ КАЛЬКУЛЯТОР
       </h2>
       
@@ -13,12 +13,12 @@
           </h3>
           
           <!-- Property Type -->
-          <div class="space-y-2">
-            <label class="text-xs text-white/70 block">Тип объекта</label>
-            <div class="bg-white border border-white/20 rounded-lg overflow-hidden">
+          <div class="space-y-2 bg-white rounded-xl p-4">
+            <label class="text-xs text-gray-600 block">Тип объекта</label>
+            <div class="bg-transparent">
               <select
                 v-model="propertyType"
-                class="w-full bg-transparent text-[#1A1A1A] px-4 py-3 text-sm focus:outline-none appearance-none cursor-pointer"
+                class="w-full bg-transparent text-black text-sm font-medium focus:outline-none appearance-none cursor-pointer"
               >
                 <option value="apartment">Квартира</option>
                 <option value="house">Дом</option>
@@ -27,12 +27,12 @@
           </div>
           
           <!-- Income Confirmation -->
-          <div class="space-y-2">
-            <label class="text-xs text-white/70 block">Способ подтверждения дохода</label>
-            <div class="bg-white border border-white/20 rounded-lg overflow-hidden">
+          <div class="space-y-2 bg-white rounded-xl p-4">
+            <label class="text-xs text-gray-600 block">Способ подтверждения дохода</label>
+            <div class="bg-transparent">
               <select
                 v-model="incomeConfirmation"
-                class="w-full bg-transparent text-[#1A1A1A] px-4 py-3 text-sm focus:outline-none appearance-none cursor-pointer"
+                class="w-full bg-transparent text-black text-sm font-medium focus:outline-none appearance-none cursor-pointer"
               >
                 <option value="2ndfl">2-НДФЛ или форма банка</option>
                 <option value="bank">Справка из банка</option>
@@ -41,15 +41,15 @@
           </div>
           
           <!-- Property Cost Slider -->
-          <div class="space-y-2">
-            <label class="text-xs text-white/70 block">Стоимость недвижимости</label>
-            <div class="bg-white border border-white/20 rounded-lg px-4 py-3">
-              <div class="text-[#1A1A1A] text-sm font-medium">
+          <div class="space-y-2 bg-white rounded-xl p-4">
+            <label class="text-xs text-gray-600 block">Стоимость недвижимости</label>
+            <div class="bg-transparent">
+              <div class="text-black text-sm font-medium">
                 ОТ {{ formatCurrency(propertyCost) }} РУБ
               </div>
             </div>
             <div class="relative h-1 mt-3">
-              <div class="absolute inset-0 h-1 bg-[#e0e0e0] rounded-full"></div>
+              <div class="absolute inset-0 h-1 bg-[#2d2d2d] rounded-full"></div>
               <div 
                 class="absolute h-1 bg-[#1A1A1A] rounded-full top-0"
                 :style="{ width: `${((propertyCost - propertyCostMin) / (propertyCostMax - propertyCostMin)) * 100}%` }"
@@ -64,23 +64,23 @@
                 class="absolute inset-0 w-full h-4 -top-1.5 opacity-0 cursor-pointer z-10"
               />
               <div 
-                class="absolute w-4 h-4 bg-[#1A1A1A] rounded-full top-1/2 -translate-y-1/2 -translate-x-1/2 pointer-events-none z-20"
+                class="absolute w-4 h-4 bg-black rounded-full top-1/2 -translate-y-1/2 -translate-x-1/2 pointer-events-none z-20"
                 :style="{ left: `${((propertyCost - propertyCostMin) / (propertyCostMax - propertyCostMin)) * 100}%` }"
               ></div>
             </div>
           </div>
           
           <!-- Down Payment Slider -->
-          <div class="space-y-2">
-            <label class="text-xs text-white/70 block">Первоначальный взнос</label>
-            <div class="bg-white border border-white/20 rounded-lg px-4 py-3">
-              <div class="flex items-center justify-between text-[#1A1A1A]">
-                <span class="text-sm font-medium">{{ formatCurrency(downPaymentAmount) }}</span>
-                <span class="text-sm font-medium">{{ downPaymentPercent.toFixed(1).replace('.', ',') }}%</span>
+          <div class="space-y-2 bg-white rounded-xl p-4">
+            <label class="text-xs text-gray-600 block">Первоначальный взнос</label>
+            <div class="bg-transparent">
+              <div class="flex items-center justify-between">
+                <span class="text-sm font-medium text-black">{{ formatCurrency(downPaymentAmount) }}</span>
+                <span class="text-sm font-medium text-black">{{ downPaymentPercent.toFixed(1).replace('.', ',') }}%</span>
               </div>
             </div>
             <div class="relative h-1 mt-3 mb-4">
-              <div class="absolute inset-0 h-1 bg-[#e0e0e0] rounded-full"></div>
+              <div class="absolute inset-0 h-1 bg-[#2d2d2d] rounded-full"></div>
               <div 
                 class="absolute h-1 bg-[#1A1A1A] rounded-full top-0"
                 :style="{ width: `${((downPaymentPercent - downPaymentMin) / (downPaymentMax - downPaymentMin)) * 100}%` }"
@@ -95,7 +95,7 @@
                 class="absolute inset-0 w-full h-4 -top-1.5 opacity-0 cursor-pointer z-10"
               />
               <div 
-                class="absolute w-4 h-4 bg-[#1A1A1A] rounded-full top-1/2 -translate-y-1/2 -translate-x-1/2 pointer-events-none z-20"
+                class="absolute w-4 h-4 bg-black rounded-full top-1/2 -translate-y-1/2 -translate-x-1/2 pointer-events-none z-20"
                 :style="{ left: `${((downPaymentPercent - downPaymentMin) / (downPaymentMax - downPaymentMin)) * 100}%` }"
               ></div>
             </div>
@@ -105,12 +105,7 @@
                 v-for="percent in downPaymentOptions"
                 :key="percent"
                 @click="setDownPaymentPercent(percent)"
-                :class="[
-                  'px-3 py-1.5 rounded-full text-xs font-medium transition-colors border',
-                  Math.abs(downPaymentPercent - percent) < 0.1
-                    ? 'bg-white text-[#1A1A1A] border-white'
-                    : 'bg-[#1A1A1A] text-white border-white/30 hover:border-white/50'
-                ]"
+                class="px-4 py-2 rounded-xl text-xs font-medium text-white bg-[#5A5A5A] hover:bg-[#6A6A6A] transition-colors"
               >
                 {{ percent.toFixed(1).replace('.', ',') }}%
               </button>
@@ -118,16 +113,16 @@
           </div>
           
           <!-- Term Slider -->
-          <div class="space-y-2">
-            <label class="text-xs text-white/70 block">Срок</label>
-            <div class="bg-white border border-white/20 rounded-lg px-4 py-3">
-              <div class="flex items-center justify-between text-[#1A1A1A]">
-                <span class="text-sm font-medium">{{ loanTerm }}</span>
+          <div class="space-y-2 bg-white rounded-xl p-4">
+            <label class="text-xs text-gray-600 block">Срок</label>
+            <div class="bg-transparent">
+              <div class="flex items-center justify-between">
+                <span class="text-sm font-medium text-black">{{ loanTerm }}</span>
                 <span class="text-sm font-medium text-[#666]">ЛЕТ</span>
               </div>
             </div>
             <div class="relative h-1 mt-3 mb-4">
-              <div class="absolute inset-0 h-1 bg-[#e0e0e0] rounded-full"></div>
+              <div class="absolute inset-0 h-1 bg-[#2d2d2d] rounded-full"></div>
               <div 
                 class="absolute h-1 bg-[#1A1A1A] rounded-full top-0"
                 :style="{ width: `${((loanTerm - loanTermMin) / (loanTermMax - loanTermMin)) * 100}%` }"
@@ -142,7 +137,7 @@
                 class="absolute inset-0 w-full h-4 -top-1.5 opacity-0 cursor-pointer z-10"
               />
               <div 
-                class="absolute w-4 h-4 bg-[#1A1A1A] rounded-full top-1/2 -translate-y-1/2 -translate-x-1/2 pointer-events-none z-20"
+                class="absolute w-4 h-4 bg-black rounded-full top-1/2 -translate-y-1/2 -translate-x-1/2 pointer-events-none z-20"
                 :style="{ left: `${((loanTerm - loanTermMin) / (loanTermMax - loanTermMin)) * 100}%` }"
               ></div>
             </div>
@@ -152,12 +147,7 @@
                 v-for="years in loanTermOptions"
                 :key="years"
                 @click="loanTerm = years"
-                :class="[
-                  'px-3 py-1.5 rounded-full text-xs font-medium transition-colors border',
-                  loanTerm === years
-                    ? 'bg-white text-[#1A1A1A] border-white'
-                    : 'bg-[#1A1A1A] text-white border-white/30 hover:border-white/50'
-                ]"
+                class="px-4 py-2 rounded-xl text-xs font-medium text-white bg-[#5A5A5A] hover:bg-[#6A6A6A] transition-colors"
               >
                 {{ years }} лет
               </button>
@@ -165,16 +155,16 @@
           </div>
           
           <!-- Borrower Age Slider -->
-          <div class="space-y-2">
-            <label class="text-xs text-white/70 block">Возраст заёмщика</label>
-            <div class="bg-white border border-white/20 rounded-lg px-4 py-3">
-              <div class="flex items-center justify-between text-[#1A1A1A]">
-                <span class="text-sm font-medium">{{ borrowerAge }}</span>
+          <div class="space-y-2 bg-white rounded-xl p-4">
+            <label class="text-xs text-gray-600 block">Возраст заемщика</label>
+            <div class="bg-transparent">
+              <div class="flex items-center justify-between">
+                <span class="text-sm font-medium text-black">{{ borrowerAge }}</span>
                 <span class="text-sm font-medium text-[#666]">ЛЕТ</span>
               </div>
             </div>
             <div class="relative h-1 mt-3">
-              <div class="absolute inset-0 h-1 bg-[#e0e0e0] rounded-full"></div>
+              <div class="absolute inset-0 h-1 bg-[#2d2d2d] rounded-full"></div>
               <div 
                 class="absolute h-1 bg-[#1A1A1A] rounded-full top-0"
                 :style="{ width: `${((borrowerAge - borrowerAgeMin) / (borrowerAgeMax - borrowerAgeMin)) * 100}%` }"
@@ -189,20 +179,22 @@
                 class="absolute inset-0 w-full h-4 -top-1.5 opacity-0 cursor-pointer z-10"
               />
               <div 
-                class="absolute w-4 h-4 bg-[#1A1A1A] rounded-full top-1/2 -translate-y-1/2 -translate-x-1/2 pointer-events-none z-20"
+                class="absolute w-4 h-4 bg-black rounded-full top-1/2 -translate-y-1/2 -translate-x-1/2 pointer-events-none z-20"
                 :style="{ left: `${((borrowerAge - borrowerAgeMin) / (borrowerAgeMax - borrowerAgeMin)) * 100}%` }"
               ></div>
             </div>
-            <p class="text-xs text-white/60 mt-2">
+            <p class="text-xs text-gray-600 mt-2">
               Его нужно указать, чтобы мы понимали, подходите ли вы под условия банка
             </p>
           </div>
           
           <!-- Loan Amount Display -->
           <div class="mt-6 pt-6 border-t border-white/20">
-            <div class="flex items-center justify-between">
-              <span class="text-sm font-medium text-white">Сумма кредита</span>
-              <span class="text-lg font-semibold text-white">{{ formatCurrency(calculatedLoanAmount) }} ₽</span>
+            <div class="mb-2">
+              <span class="text-base font-semibold text-white">Сумма кредита</span>
+            </div>
+            <div class="flex justify-end">
+              <span class="text-2xl md:text-3xl font-bold text-white">{{ formatCurrency(calculatedLoanAmount) }} Р</span>
             </div>
           </div>
           
@@ -249,9 +241,11 @@
                   </h4>
                   <button
                     @click="toggleProgram(program.id)"
-                    class="w-5 h-5 rounded-full bg-[#1A1A1A] flex items-center justify-center flex-shrink-0 ml-3"
+                    class="w-10 h-10 rounded-full bg-[#F7F7F5] flex items-center justify-center flex-shrink-0 ml-3 hover:bg-[#E7E7E5] transition-colors"
                   >
-                    <span class="text-white text-xs font-bold">i</span>
+                    <svg class="w-4 h-4 text-[#141414]" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M4 6L8 10L12 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
                   </button>
                 </div>
                 
