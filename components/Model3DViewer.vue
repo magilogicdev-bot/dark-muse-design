@@ -147,7 +147,7 @@ const initModel = async () => {
     
     camera = new THREE.PerspectiveCamera(45, width / height, 0.1, 100000)
 
-    // Рендерер
+    // Рендерер с улучшенными настройками
     renderer = new THREE.WebGLRenderer({
       canvas: canvasRef.value,
       antialias: true,
@@ -156,18 +156,39 @@ const initModel = async () => {
     renderer.setSize(width, height)
     renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2))
     renderer.outputColorSpace = THREE.SRGBColorSpace
+    renderer.shadowMap.enabled = true
+    renderer.shadowMap.type = THREE.PCFSoftShadowMap
+    renderer.toneMapping = THREE.ACESFilmicToneMapping
+    renderer.toneMappingExposure = 1.2
 
-    // Освещение
-    const ambientLight = new THREE.AmbientLight(0xffffff, 0.6)
+    // Улучшенное освещение
+    // Мягкий ambient свет для заполнения теней
+    const ambientLight = new THREE.AmbientLight(0x87CEEB, 0.4)
     scene.add(ambientLight)
 
-    const directionalLight1 = new THREE.DirectionalLight(0xffffff, 0.8)
-    directionalLight1.position.set(5, 5, 5)
-    scene.add(directionalLight1)
+    // Hemisphere light для более естественного освещения (небо/земля)
+    const hemisphereLight = new THREE.HemisphereLight(0x87CEEB, 0x444444, 0.6)
+    scene.add(hemisphereLight)
 
-    const directionalLight2 = new THREE.DirectionalLight(0xffffff, 0.4)
-    directionalLight2.position.set(-5, -5, -5)
-    scene.add(directionalLight2)
+    // Основной солнечный свет с тенями
+    const sunLight = new THREE.DirectionalLight(0xfff4e6, 1.2)
+    sunLight.position.set(50, 80, 30)
+    sunLight.castShadow = true
+    sunLight.shadow.mapSize.width = 2048
+    sunLight.shadow.mapSize.height = 2048
+    sunLight.shadow.camera.near = 0.5
+    sunLight.shadow.camera.far = 500
+    sunLight.shadow.camera.left = -100
+    sunLight.shadow.camera.right = 100
+    sunLight.shadow.camera.top = 100
+    sunLight.shadow.camera.bottom = -100
+    sunLight.shadow.bias = -0.0001
+    scene.add(sunLight)
+
+    // Дополнительный fill-свет для мягких теней
+    const fillLight = new THREE.DirectionalLight(0xc4e0ff, 0.4)
+    fillLight.position.set(-30, 20, -20)
+    scene.add(fillLight)
 
     // Загрузка модели
     const loader = new GLTFLoader()
@@ -238,9 +259,22 @@ const initModel = async () => {
     scene.add(modelContainer)
 
     
-    // Добавляем вспомогательную сетку для отладки
-    const gridHelper = new THREE.GridHelper(targetSize * 2, 20, 0x444444, 0x222222)
-    scene.add(gridHelper)
+    // Включаем тени для всех мешей
+    model.traverse((child) => {
+      if (child.isMesh) {
+        child.castShadow = true
+        child.receiveShadow = true
+      }
+    })
+    
+    // Добавляем плоскость-землю для приёма теней
+    const groundGeometry = new THREE.PlaneGeometry(targetSize * 4, targetSize * 4)
+    const groundMaterial = new THREE.ShadowMaterial({ opacity: 0.3 })
+    const ground = new THREE.Mesh(groundGeometry, groundMaterial)
+    ground.rotation.x = -Math.PI / 2
+    ground.position.y = -0.01 // Чуть ниже модели
+    ground.receiveShadow = true
+    scene.add(ground)
 
     // Контролы
     controls = new OrbitControls(camera, renderer.domElement)
