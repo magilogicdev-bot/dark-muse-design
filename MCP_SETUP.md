@@ -35,9 +35,14 @@
 
 ### 2.1. Настройка Figma API Token (опционально)
 
-Для использования Figma API в скриптах проекта токен уже настроен в файле `.env`:
+Для использования Figma API в скриптах проекта токен настраивается через переменную окружения:
+```powershell
+$env:FIGMA_TOKEN = "your-figma-token"
 ```
-FIGMA_TOKEN=figd_PwlJ7ZOlxMjdx8SbRj8VxDhLo9A4RSyzfW6vNHgD
+
+Или создайте файл `.env` в корне проекта:
+```
+FIGMA_TOKEN=your-figma-token
 ```
 
 Токен автоматически используется в скриптах:

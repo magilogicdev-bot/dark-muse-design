@@ -1,8 +1,15 @@
 param(
-    [string]$Token = "figd_PwlJ7ZOlxMjdx8SbRj8VxDhLo9A4RSyzfW6vNHgD"
+    [string]$Token = $env:FIGMA_TOKEN
 )
 
 $ErrorActionPreference = "Stop"
+
+if (-not $Token) {
+    Write-Host "❌ FIGMA_TOKEN is required" -ForegroundColor Red
+    Write-Host "Usage: .\scripts\download-news-simple.ps1 -Token 'your-token'" -ForegroundColor White
+    Write-Host "Or set: `$env:FIGMA_TOKEN = 'your-token'" -ForegroundColor White
+    exit 1
+}
 
 $projectRoot = Split-Path -Parent $PSScriptRoot
 $newsDir = Join-Path $projectRoot "public\images\news"

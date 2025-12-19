@@ -1,7 +1,17 @@
 # Download scroll to top icon from Figma
+param(
+    [string]$Token = $env:FIGMA_TOKEN
+)
+
 $fileKey = "dbhRRPEagcwqR97v2vLgAd"
 $nodeId = "1044:3530"
-$token = "figd_SL2MJTYepPLZK7ZQdrsK41vCtoicfjVHEik0JgtI"
+
+if (-not $Token) {
+    Write-Host "❌ FIGMA_TOKEN is required" -ForegroundColor Red
+    Write-Host "Usage: .\scripts\download-scroll-top-icon.ps1 -Token 'your-token'" -ForegroundColor White
+    Write-Host "Or set: `$env:FIGMA_TOKEN = 'your-token'" -ForegroundColor White
+    exit 1
+}
 
 $projectRoot = Split-Path -Parent $PSScriptRoot
 $iconsDir = Join-Path $projectRoot "public\images\icons"

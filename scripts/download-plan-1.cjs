@@ -13,7 +13,14 @@ if (!fs.existsSync(plansDir)) {
 
 const fileKey = 'dbhRRPEagcwqR97v2vLgAd';
 const nodeId = '1034:472';
-const token = 'figd_SL2MJTYepPLZK7ZQdrsK41vCtoicfjVHEik0JgtI';
+const token = process.argv[2] || process.env.FIGMA_TOKEN;
+
+if (!token) {
+  console.error('❌ FIGMA_TOKEN is required');
+  console.error('Usage: node scripts/download-plan-1.cjs [FIGMA_TOKEN]');
+  console.error('Or set: FIGMA_TOKEN=your-token node scripts/download-plan-1.cjs');
+  process.exit(1);
+}
 
 function downloadFile(url, filepath) {
   return new Promise((resolve, reject) => {

@@ -13,7 +13,14 @@ if (!fs.existsSync(iconsDir)) {
 
 const fileKey = 'dbhRRPEagcwqR97v2vLgAd';
 const nodeId = '1044:3530';
-const token = 'figd_SL2MJTYepPLZK7ZQdrsK41vCtoicfjVHEik0JgtI';
+const token = process.argv[2] || process.env.FIGMA_TOKEN;
+
+if (!token) {
+  console.error('❌ FIGMA_TOKEN is required');
+  console.error('Usage: node scripts/download-scroll-top.cjs [FIGMA_TOKEN]');
+  console.error('Or set: FIGMA_TOKEN=your-token node scripts/download-scroll-top.cjs');
+  process.exit(1);
+}
 
 function downloadFile(url, filepath) {
   return new Promise((resolve, reject) => {
