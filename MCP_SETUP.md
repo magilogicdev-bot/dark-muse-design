@@ -35,19 +35,28 @@
 
 ### 2.1. Настройка Figma API Token (опционально)
 
-Для использования Figma API в скриптах проекта токен настраивается через переменную окружения:
-```powershell
-$env:FIGMA_TOKEN = "your-figma-token"
+Для использования Figma API в скриптах проекта токен настраивается в `~/.cursor/mcp.json`:
+
+```json
+{
+  "servers": {
+    "figma-api": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "figma-developer-mcp",
+        "--figma-api-key=YOUR_TOKEN",
+        "--stdio"
+      ]
+    }
+  }
+}
 ```
 
-Или создайте файл `.env` в корне проекта:
-```
-FIGMA_TOKEN=your-figma-token
-```
-
-Токен автоматически используется в скриптах:
+Токен автоматически читается скриптами из `mcp.json`:
 - `scripts/download-figma-icons-api.ps1`
 - `scripts/download-news-images.ps1`
+- `scripts/download-bank-logos.cjs`
 - И других скриптах, использующих Figma API
 
 **Примечание:** MCP сервер Figma использует OAuth для аутентификации, поэтому токен API используется только для скриптов проекта, а не для самого MCP сервера.

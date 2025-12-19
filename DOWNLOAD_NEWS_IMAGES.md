@@ -2,11 +2,24 @@
 
 ## Способ 1: Использование скрипта (рекомендуется)
 
-### Шаг 1: Получите Figma Personal Access Token
+### Шаг 1: Настройка токена
 
-1. Перейдите на https://www.figma.com/settings
-2. Прокрутите до раздела "Personal access tokens"
-3. Создайте новый токен и скопируйте его
+Токен должен быть настроен в `~/.cursor/mcp.json`:
+```json
+{
+  "servers": {
+    "figma-api": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "figma-developer-mcp",
+        "--figma-api-key=YOUR_TOKEN",
+        "--stdio"
+      ]
+    }
+  }
+}
+```
 
 ### Шаг 2: Найдите Node ID для каждого изображения
 
@@ -33,13 +46,10 @@
 ### Шаг 3: Запустите скрипт
 
 ```powershell
-# Вариант 1: Установите переменную окружения
-$env:FIGMA_TOKEN = "your-token-here"
 .\scripts\download-news-images.ps1
-
-# Вариант 2: Передайте токен как параметр
-.\scripts\download-news-images.ps1 -Token "your-token-here"
 ```
+
+Скрипт автоматически читает токен из `~/.cursor/mcp.json`.
 
 Изображения будут сохранены в `public/images/news/` в формате WebP.
 

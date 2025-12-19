@@ -26,6 +26,7 @@ interface _GlobalComponents {
   'CompactHeader': typeof import("../../components/CompactHeader.vue").default
   'ComparisonTableSection': typeof import("../../components/ComparisonTableSection.vue").default
   'CompletedProjects': typeof import("../../components/CompletedProjects.vue").default
+  'ContactFormSection': typeof import("../../components/ContactFormSection.vue").default
   'ContactSection': typeof import("../../components/ContactSection.vue").default
   'CurrentProjects': typeof import("../../components/CurrentProjects.vue").default
   'DagestanStonesSection': typeof import("../../components/DagestanStonesSection.vue").default
@@ -49,6 +50,7 @@ interface _GlobalComponents {
   'MediaSection': typeof import("../../components/MediaSection.vue").default
   'Model3DViewer': typeof import("../../components/Model3DViewer.vue").default
   'MortgageAccordion': typeof import("../../components/MortgageAccordion.vue").default
+  'MortgageBanksSection': typeof import("../../components/MortgageBanksSection.vue").default
   'MortgageCTABanner': typeof import("../../components/MortgageCTABanner.vue").default
   'MortgageCalculatorFigma': typeof import("../../components/MortgageCalculatorFigma.vue").default
   'MortgageCalculatorSection': typeof import("../../components/MortgageCalculatorSection.vue").default
@@ -70,9 +72,12 @@ interface _GlobalComponents {
   'PropertyFilters': typeof import("../../components/PropertyFilters.vue").default
   'PropertySelectionGrid': typeof import("../../components/PropertySelectionGrid.vue").default
   'ScrollToTopButton': typeof import("../../components/ScrollToTopButton.vue").default
+  'SimilarApartmentsSection': typeof import("../../components/SimilarApartmentsSection.vue").default
   'StatsSection': typeof import("../../components/StatsSection.vue").default
   'TestimonialsSection': typeof import("../../components/TestimonialsSection.vue").default
   'VideoSection': typeof import("../../components/VideoSection.vue").default
+  'WhiteBoxFinishingSection': typeof import("../../components/WhiteBoxFinishingSection.vue").default
+  'WhiteBoxTooltip': typeof import("../../components/WhiteBoxTooltip.vue").default
   'NuxtWelcome': typeof import("../../node_modules/nuxt/dist/app/components/welcome.vue").default
   'NuxtLayout': typeof import("../../node_modules/nuxt/dist/app/components/nuxt-layout").default
   'NuxtErrorBoundary': typeof import("../../node_modules/nuxt/dist/app/components/nuxt-error-boundary.vue").default
@@ -107,6 +112,7 @@ interface _GlobalComponents {
   'LazyCompactHeader': LazyComponent<typeof import("../../components/CompactHeader.vue").default>
   'LazyComparisonTableSection': LazyComponent<typeof import("../../components/ComparisonTableSection.vue").default>
   'LazyCompletedProjects': LazyComponent<typeof import("../../components/CompletedProjects.vue").default>
+  'LazyContactFormSection': LazyComponent<typeof import("../../components/ContactFormSection.vue").default>
   'LazyContactSection': LazyComponent<typeof import("../../components/ContactSection.vue").default>
   'LazyCurrentProjects': LazyComponent<typeof import("../../components/CurrentProjects.vue").default>
   'LazyDagestanStonesSection': LazyComponent<typeof import("../../components/DagestanStonesSection.vue").default>
@@ -130,6 +136,7 @@ interface _GlobalComponents {
   'LazyMediaSection': LazyComponent<typeof import("../../components/MediaSection.vue").default>
   'LazyModel3DViewer': LazyComponent<typeof import("../../components/Model3DViewer.vue").default>
   'LazyMortgageAccordion': LazyComponent<typeof import("../../components/MortgageAccordion.vue").default>
+  'LazyMortgageBanksSection': LazyComponent<typeof import("../../components/MortgageBanksSection.vue").default>
   'LazyMortgageCTABanner': LazyComponent<typeof import("../../components/MortgageCTABanner.vue").default>
   'LazyMortgageCalculatorFigma': LazyComponent<typeof import("../../components/MortgageCalculatorFigma.vue").default>
   'LazyMortgageCalculatorSection': LazyComponent<typeof import("../../components/MortgageCalculatorSection.vue").default>
@@ -151,9 +158,12 @@ interface _GlobalComponents {
   'LazyPropertyFilters': LazyComponent<typeof import("../../components/PropertyFilters.vue").default>
   'LazyPropertySelectionGrid': LazyComponent<typeof import("../../components/PropertySelectionGrid.vue").default>
   'LazyScrollToTopButton': LazyComponent<typeof import("../../components/ScrollToTopButton.vue").default>
+  'LazySimilarApartmentsSection': LazyComponent<typeof import("../../components/SimilarApartmentsSection.vue").default>
   'LazyStatsSection': LazyComponent<typeof import("../../components/StatsSection.vue").default>
   'LazyTestimonialsSection': LazyComponent<typeof import("../../components/TestimonialsSection.vue").default>
   'LazyVideoSection': LazyComponent<typeof import("../../components/VideoSection.vue").default>
+  'LazyWhiteBoxFinishingSection': LazyComponent<typeof import("../../components/WhiteBoxFinishingSection.vue").default>
+  'LazyWhiteBoxTooltip': LazyComponent<typeof import("../../components/WhiteBoxTooltip.vue").default>
   'LazyNuxtWelcome': LazyComponent<typeof import("../../node_modules/nuxt/dist/app/components/welcome.vue").default>
   'LazyNuxtLayout': LazyComponent<typeof import("../../node_modules/nuxt/dist/app/components/nuxt-layout").default>
   'LazyNuxtErrorBoundary': LazyComponent<typeof import("../../node_modules/nuxt/dist/app/components/nuxt-error-boundary.vue").default>

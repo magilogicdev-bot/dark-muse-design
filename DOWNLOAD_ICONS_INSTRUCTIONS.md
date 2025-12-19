@@ -8,21 +8,29 @@
 
 ### Вариант 1: Через Figma API (автоматически)
 
-1. Получите Figma Personal Access Token:
-   - Перейдите на https://www.figma.com/settings
-   - Прокрутите до "Personal access tokens"
-   - Создайте новый токен
+Скрипт автоматически читает токен из `~/.cursor/mcp.json`.
 
-2. Запустите скрипт:
-   ```powershell
-   $env:FIGMA_TOKEN = "your-token-here"
-   .\scripts\download-figma-icons-api.ps1
-   ```
+Запустите скрипт:
+```powershell
+.\scripts\download-figma-icons-api.ps1
+```
 
-   Или передайте токен как параметр:
-   ```powershell
-   .\scripts\download-figma-icons-api.ps1 -Token "your-token-here"
-   ```
+Токен должен быть настроен в `~/.cursor/mcp.json`:
+```json
+{
+  "servers": {
+    "figma-api": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "figma-developer-mcp",
+        "--figma-api-key=YOUR_TOKEN",
+        "--stdio"
+      ]
+    }
+  }
+}
+```
 
 ### Вариант 2: Вручную из Figma (рекомендуется, если нет токена)
 

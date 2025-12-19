@@ -156,8 +156,7 @@ const initModel = async () => {
     renderer.setSize(width, height)
     renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2))
     renderer.outputColorSpace = THREE.SRGBColorSpace
-    renderer.shadowMap.enabled = true
-    renderer.shadowMap.type = THREE.PCFSoftShadowMap
+    renderer.shadowMap.enabled = false
     renderer.toneMapping = THREE.ACESFilmicToneMapping
     renderer.toneMappingExposure = 1.2
 
@@ -170,19 +169,10 @@ const initModel = async () => {
     const hemisphereLight = new THREE.HemisphereLight(0x87CEEB, 0x444444, 0.6)
     scene.add(hemisphereLight)
 
-    // Основной солнечный свет с тенями
+    // Основной солнечный свет
     const sunLight = new THREE.DirectionalLight(0xfff4e6, 1.2)
     sunLight.position.set(50, 80, 30)
-    sunLight.castShadow = true
-    sunLight.shadow.mapSize.width = 2048
-    sunLight.shadow.mapSize.height = 2048
-    sunLight.shadow.camera.near = 0.5
-    sunLight.shadow.camera.far = 500
-    sunLight.shadow.camera.left = -100
-    sunLight.shadow.camera.right = 100
-    sunLight.shadow.camera.top = 100
-    sunLight.shadow.camera.bottom = -100
-    sunLight.shadow.bias = -0.0001
+    sunLight.castShadow = false
     scene.add(sunLight)
 
     // Дополнительный fill-свет для мягких теней
@@ -248,7 +238,7 @@ const initModel = async () => {
     
     const fov = camera.fov * (Math.PI / 180)
     const cameraZ = Math.abs(targetSize / 2 / Math.tan(fov / 2))
-    const distance = cameraZ * 2.5
+    const distance = cameraZ * 0.6
 
     camera.position.set(distance * 0.7, distance * 0.5, distance)
     camera.lookAt(0, 0, 0)
@@ -257,24 +247,6 @@ const initModel = async () => {
     console.log('Дистанция:', distance)
 
     scene.add(modelContainer)
-
-    
-    // Включаем тени для всех мешей
-    model.traverse((child) => {
-      if (child.isMesh) {
-        child.castShadow = true
-        child.receiveShadow = true
-      }
-    })
-    
-    // Добавляем плоскость-землю для приёма теней
-    const groundGeometry = new THREE.PlaneGeometry(targetSize * 4, targetSize * 4)
-    const groundMaterial = new THREE.ShadowMaterial({ opacity: 0.3 })
-    const ground = new THREE.Mesh(groundGeometry, groundMaterial)
-    ground.rotation.x = -Math.PI / 2
-    ground.position.y = -0.01 // Чуть ниже модели
-    ground.receiveShadow = true
-    scene.add(ground)
 
     // Контролы
     controls = new OrbitControls(camera, renderer.domElement)

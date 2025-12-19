@@ -239,10 +239,11 @@
 
       <!-- Property Cards Grid -->
       <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 lg:gap-4 xl:gap-5 mb-6 md:mb-8 lg:mb-10">
-        <article
+        <NuxtLink
           v-for="item in properties"
           :key="item.id"
-          class="bg-white rounded-[10px] lg:rounded-[14px] xl:rounded-[18px] overflow-hidden shadow-lg cursor-pointer hover:shadow-xl transition-shadow"
+          :to="`/apartment/${item.id}`"
+          class="bg-white rounded-[10px] lg:rounded-[14px] xl:rounded-[18px] overflow-hidden shadow-lg cursor-pointer hover:shadow-xl transition-shadow block"
         >
           <div class="aspect-[4/5] bg-gray-100">
             <img 
@@ -251,7 +252,7 @@
               class="w-full h-full object-cover" 
             />
           </div>
-        </article>
+        </NuxtLink>
       </div>
 
       <!-- Load More Button -->

@@ -8,21 +8,28 @@
 
 **Выполните в терминале:**
 
-```powershell
-# Вариант 1: Установите токен и запустите
-$env:FIGMA_TOKEN = "ваш-токен-здесь"
+```bash
 node scripts/download-figma-icons.js
-
-# Вариант 2: Передайте токен напрямую
-node scripts/download-figma-icons.js "ваш-токен-здесь"
 ```
 
-## Получить Figma токен:
+Скрипт автоматически читает токен из `~/.cursor/mcp.json`.
 
-1. Откройте https://www.figma.com/settings
-2. Прокрутите до "Personal access tokens"
-3. Нажмите "Create new token"
-4. Скопируйте токен
+Токен должен быть настроен в `~/.cursor/mcp.json`:
+```json
+{
+  "servers": {
+    "figma-api": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "figma-developer-mcp",
+        "--figma-api-key=YOUR_TOKEN",
+        "--stdio"
+      ]
+    }
+  }
+}
+```
 
 ## Что будет экспортировано:
 

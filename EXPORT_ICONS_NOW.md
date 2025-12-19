@@ -2,27 +2,29 @@
 
 ## ⚡ Быстрый экспорт через Figma API
 
-Для автоматического экспорта нужен Figma Personal Access Token.
+Скрипт автоматически читает токен из `~/.cursor/mcp.json`.
 
-### Шаг 1: Получите токен
-1. Откройте https://www.figma.com/settings
-2. Прокрутите до "Personal access tokens"
-3. Нажмите "Create new token"
-4. Скопируйте токен
-
-### Шаг 2: Запустите экспорт
+### Запустите экспорт
 
 ```powershell
-# Установите токен
-$env:FIGMA_TOKEN = "ваш-токен-здесь"
-
-# Запустите скрипт экспорта
 .\scripts\download-figma-icons-api.ps1
 ```
 
-Или передайте токен как параметр:
-```powershell
-.\scripts\download-figma-icons-api.ps1 -Token "ваш-токен-здесь"
+Токен должен быть настроен в `~/.cursor/mcp.json`:
+```json
+{
+  "servers": {
+    "figma-api": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "figma-developer-mcp",
+        "--figma-api-key=YOUR_TOKEN",
+        "--stdio"
+      ]
+    }
+  }
+}
 ```
 
 ### Что будет экспортировано:

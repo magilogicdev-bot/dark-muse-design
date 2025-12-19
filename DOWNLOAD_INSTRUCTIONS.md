@@ -2,20 +2,28 @@
 
 ## Быстрый способ (рекомендуется)
 
-Если у вас есть Figma Personal Access Token, просто выполните:
+Скрипт автоматически читает токен из `~/.cursor/mcp.json`:
 
 ```powershell
-.\scripts\download-news-with-token.ps1 -Token "your-figma-token"
+.\scripts\download-news-with-token.ps1
 ```
 
-Скрипт автоматически найдет и скачает все изображения новостей.
-
-## Получение Figma токена
-
-1. Перейдите на https://www.figma.com/settings
-2. Прокрутите до раздела "Personal access tokens"
-3. Нажмите "Create new token"
-4. Скопируйте токен (он показывается только один раз!)
+Токен должен быть настроен в `~/.cursor/mcp.json`:
+```json
+{
+  "servers": {
+    "figma-api": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "figma-developer-mcp",
+        "--figma-api-key=YOUR_TOKEN",
+        "--stdio"
+      ]
+    }
+  }
+}
+```
 
 ## Альтернативный способ (если автоматический не работает)
 
@@ -46,9 +54,10 @@ $nodeIds = @(
 5. Запустите скрипт:
 
 ```powershell
-$env:FIGMA_TOKEN = "your-token"
 .\scripts\download-news-images.ps1
 ```
+
+Скрипт автоматически читает токен из `~/.cursor/mcp.json`.
 
 ## Проверка результата
 

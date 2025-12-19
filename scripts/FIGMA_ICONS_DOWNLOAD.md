@@ -1,30 +1,39 @@
 # Инструкция по скачиванию иконок из Figma
 
-## Быстрый способ (с Figma токеном)
+## Быстрый способ (автоматический)
+
+Скрипты автоматически читают токен из `~/.cursor/mcp.json`:
 
 ### Вариант 1: Node.js скрипт
 
 ```bash
-# Установите токен Figma
-$env:FIGMA_TOKEN = "your-figma-token"
-
-# Запустите скрипт
 node scripts/download-figma-icons.js
 ```
 
 ### Вариант 2: PowerShell скрипт
 
 ```powershell
-# Установите токен Figma
-$env:FIGMA_TOKEN = "your-figma-token"
-
-# Запустите скрипт
 .\scripts\download-figma-icons-api.ps1
 ```
 
-Или передайте токен как параметр:
-```powershell
-.\scripts\download-figma-icons-api.ps1 -Token "your-figma-token"
+## Настройка токена
+
+Токен должен быть настроен в `~/.cursor/mcp.json`:
+
+```json
+{
+  "servers": {
+    "figma-api": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "figma-developer-mcp",
+        "--figma-api-key=YOUR_TOKEN",
+        "--stdio"
+      ]
+    }
+  }
+}
 ```
 
 ## Как получить Figma токен
@@ -32,7 +41,7 @@ $env:FIGMA_TOKEN = "your-figma-token"
 1. Перейдите на https://www.figma.com/settings
 2. Прокрутите до раздела "Personal access tokens"
 3. Нажмите "Create a new token"
-4. Скопируйте токен и используйте его в скриптах выше
+4. Добавьте токен в `~/.cursor/mcp.json`
 
 ## Ручной способ (без токена)
 
@@ -84,6 +93,8 @@ Get-ChildItem public\images\icons\*.png
 - Иконки уже содержат фон и границы, поэтому компонент обновлён и не добавляет дополнительные стили
 - Используйте масштаб 2x или 3x при экспорте для лучшего качества на retina-экранах
 - Формат должен быть PNG для сохранения прозрачности и текстуры
+
+
 
 
 

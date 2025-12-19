@@ -11,21 +11,28 @@ This directory should contain 4 chalk-style icons from Figma:
 
 ### Option 1: Using Figma API (Recommended)
 
-1. Get your Figma Personal Access Token:
-   - Go to https://www.figma.com/settings
-   - Scroll to "Personal access tokens"
-   - Create a new token
+Скрипт автоматически читает токен из `~/.cursor/mcp.json`:
 
-2. Run the download script:
-   ```powershell
-   $env:FIGMA_TOKEN = "your-token-here"
-   .\scripts\download-figma-icons-api.ps1
-   ```
+```powershell
+.\scripts\download-figma-icons-api.ps1
+```
 
-   Or pass token as parameter:
-   ```powershell
-   .\scripts\download-figma-icons-api.ps1 -Token "your-token-here"
-   ```
+Токен должен быть настроен в `~/.cursor/mcp.json`:
+```json
+{
+  "servers": {
+    "figma-api": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "figma-developer-mcp",
+        "--figma-api-key=YOUR_TOKEN",
+        "--stdio"
+      ]
+    }
+  }
+}
+```
 
 ### Option 2: Manual Download from Figma
 

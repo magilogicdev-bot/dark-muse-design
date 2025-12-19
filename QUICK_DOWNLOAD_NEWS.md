@@ -30,32 +30,41 @@ $nodeIds = @(
 ## Шаг 3: Запустите скрипт
 
 ```powershell
-# Установите токен
-$env:FIGMA_TOKEN = "your-figma-token"
-
-# Запустите скрипт
 .\scripts\download-news-images.ps1
 ```
+
+Скрипт автоматически читает токен из `~/.cursor/mcp.json`.
 
 ## Альтернатива: Автоматический поиск
 
 Попробуйте автоматический скрипт (может найти node-id автоматически):
 
 ```powershell
-$env:FIGMA_TOKEN = "your-figma-token"
 .\scripts\download-news-images-auto.ps1
 ```
 
 Или используйте скрипт для поиска node-id:
 
 ```powershell
-$env:FIGMA_TOKEN = "your-figma-token"
 .\scripts\find-news-node-ids.ps1
 ```
 
-## Получение Figma токена
+## Настройка токена
 
-1. Перейдите на https://www.figma.com/settings
-2. Прокрутите до "Personal access tokens"
-3. Нажмите "Create new token"
+Токен должен быть настроен в `~/.cursor/mcp.json`:
+```json
+{
+  "servers": {
+    "figma-api": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "figma-developer-mcp",
+        "--figma-api-key=YOUR_TOKEN",
+        "--stdio"
+      ]
+    }
+  }
+}
+```
 4. Скопируйте токен
