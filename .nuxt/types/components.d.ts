@@ -19,6 +19,7 @@ interface _GlobalComponents {
   'ApartmentPlanCard': typeof import("../../components/ApartmentPlanCard.vue").default
   'ApartmentSelectionSection': typeof import("../../components/ApartmentSelectionSection.vue").default
   'BreadcrumbsSection': typeof import("../../components/BreadcrumbsSection.vue").default
+  'BuildingTooltip': typeof import("../../components/BuildingTooltip.vue").default
   'BuyApartmentHeroSection': typeof import("../../components/BuyApartmentHeroSection.vue").default
   'CTAButtonSection': typeof import("../../components/CTAButtonSection.vue").default
   'CallbackFormSection': typeof import("../../components/CallbackFormSection.vue").default
@@ -99,6 +100,7 @@ interface _GlobalComponents {
   'LazyApartmentPlanCard': LazyComponent<typeof import("../../components/ApartmentPlanCard.vue").default>
   'LazyApartmentSelectionSection': LazyComponent<typeof import("../../components/ApartmentSelectionSection.vue").default>
   'LazyBreadcrumbsSection': LazyComponent<typeof import("../../components/BreadcrumbsSection.vue").default>
+  'LazyBuildingTooltip': LazyComponent<typeof import("../../components/BuildingTooltip.vue").default>
   'LazyBuyApartmentHeroSection': LazyComponent<typeof import("../../components/BuyApartmentHeroSection.vue").default>
   'LazyCTAButtonSection': LazyComponent<typeof import("../../components/CTAButtonSection.vue").default>
   'LazyCallbackFormSection': LazyComponent<typeof import("../../components/CallbackFormSection.vue").default>

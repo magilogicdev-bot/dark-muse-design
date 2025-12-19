@@ -19,6 +19,7 @@ export const ApartmentCard: typeof import("../components/ApartmentCard.vue").def
 export const ApartmentPlanCard: typeof import("../components/ApartmentPlanCard.vue").default
 export const ApartmentSelectionSection: typeof import("../components/ApartmentSelectionSection.vue").default
 export const BreadcrumbsSection: typeof import("../components/BreadcrumbsSection.vue").default
+export const BuildingTooltip: typeof import("../components/BuildingTooltip.vue").default
 export const BuyApartmentHeroSection: typeof import("../components/BuyApartmentHeroSection.vue").default
 export const CTAButtonSection: typeof import("../components/CTAButtonSection.vue").default
 export const CallbackFormSection: typeof import("../components/CallbackFormSection.vue").default
@@ -99,6 +100,7 @@ export const LazyApartmentCard: LazyComponent<typeof import("../components/Apart
 export const LazyApartmentPlanCard: LazyComponent<typeof import("../components/ApartmentPlanCard.vue").default>
 export const LazyApartmentSelectionSection: LazyComponent<typeof import("../components/ApartmentSelectionSection.vue").default>
 export const LazyBreadcrumbsSection: LazyComponent<typeof import("../components/BreadcrumbsSection.vue").default>
+export const LazyBuildingTooltip: LazyComponent<typeof import("../components/BuildingTooltip.vue").default>
 export const LazyBuyApartmentHeroSection: LazyComponent<typeof import("../components/BuyApartmentHeroSection.vue").default>
 export const LazyCTAButtonSection: LazyComponent<typeof import("../components/CTAButtonSection.vue").default>
 export const LazyCallbackFormSection: LazyComponent<typeof import("../components/CallbackFormSection.vue").default>
