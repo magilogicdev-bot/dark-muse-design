@@ -31,7 +31,18 @@ interface _GlobalComponents {
   'CurrentProjects': typeof import("../../components/CurrentProjects.vue").default
   'DagestanStonesSection': typeof import("../../components/DagestanStonesSection.vue").default
   'DocumentSection': typeof import("../../components/DocumentSection.vue").default
+  'EcocityAboutSection': typeof import("../../components/EcocityAboutSection.vue").default
+  'EcocityCTASection': typeof import("../../components/EcocityCTASection.vue").default
+  'EcocityConstructionProgressSection': typeof import("../../components/EcocityConstructionProgressSection.vue").default
+  'EcocityDocumentsSection': typeof import("../../components/EcocityDocumentsSection.vue").default
+  'EcocityExcursionsSection': typeof import("../../components/EcocityExcursionsSection.vue").default
+  'EcocityFeaturesSection': typeof import("../../components/EcocityFeaturesSection.vue").default
+  'EcocityFiltersSection': typeof import("../../components/EcocityFiltersSection.vue").default
+  'EcocityGeneralPlanSection': typeof import("../../components/EcocityGeneralPlanSection.vue").default
+  'EcocityHeroSection': typeof import("../../components/EcocityHeroSection.vue").default
+  'EcocityMediaSection': typeof import("../../components/EcocityMediaSection.vue").default
   'EcocitySection': typeof import("../../components/EcocitySection.vue").default
+  'EcocityWhiteBoxSection': typeof import("../../components/EcocityWhiteBoxSection.vue").default
   'FAQSection': typeof import("../../components/FAQSection.vue").default
   'FavoritePlanCard': typeof import("../../components/FavoritePlanCard.vue").default
   'FavoriteSearchPanel': typeof import("../../components/FavoriteSearchPanel.vue").default
@@ -117,7 +128,18 @@ interface _GlobalComponents {
   'LazyCurrentProjects': LazyComponent<typeof import("../../components/CurrentProjects.vue").default>
   'LazyDagestanStonesSection': LazyComponent<typeof import("../../components/DagestanStonesSection.vue").default>
   'LazyDocumentSection': LazyComponent<typeof import("../../components/DocumentSection.vue").default>
+  'LazyEcocityAboutSection': LazyComponent<typeof import("../../components/EcocityAboutSection.vue").default>
+  'LazyEcocityCTASection': LazyComponent<typeof import("../../components/EcocityCTASection.vue").default>
+  'LazyEcocityConstructionProgressSection': LazyComponent<typeof import("../../components/EcocityConstructionProgressSection.vue").default>
+  'LazyEcocityDocumentsSection': LazyComponent<typeof import("../../components/EcocityDocumentsSection.vue").default>
+  'LazyEcocityExcursionsSection': LazyComponent<typeof import("../../components/EcocityExcursionsSection.vue").default>
+  'LazyEcocityFeaturesSection': LazyComponent<typeof import("../../components/EcocityFeaturesSection.vue").default>
+  'LazyEcocityFiltersSection': LazyComponent<typeof import("../../components/EcocityFiltersSection.vue").default>
+  'LazyEcocityGeneralPlanSection': LazyComponent<typeof import("../../components/EcocityGeneralPlanSection.vue").default>
+  'LazyEcocityHeroSection': LazyComponent<typeof import("../../components/EcocityHeroSection.vue").default>
+  'LazyEcocityMediaSection': LazyComponent<typeof import("../../components/EcocityMediaSection.vue").default>
   'LazyEcocitySection': LazyComponent<typeof import("../../components/EcocitySection.vue").default>
+  'LazyEcocityWhiteBoxSection': LazyComponent<typeof import("../../components/EcocityWhiteBoxSection.vue").default>
   'LazyFAQSection': LazyComponent<typeof import("../../components/FAQSection.vue").default>
   'LazyFavoritePlanCard': LazyComponent<typeof import("../../components/FavoritePlanCard.vue").default>
   'LazyFavoriteSearchPanel': LazyComponent<typeof import("../../components/FavoriteSearchPanel.vue").default>

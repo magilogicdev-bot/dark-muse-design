@@ -1,6 +1,8 @@
 <template>
-  <div class="min-h-screen">
+  <div class="bg-primary text-white">
+    <!-- Hero Section -->
     <BuyApartmentHeroSection />
+
     <PropertyFilters />
     <HowToBuySection />
   </div>
@@ -8,7 +10,7 @@
 
 <script setup>
 usePageMeta({
-  title: 'Купить квартиру',
-  description: 'Выберите квартиру, которая подойдёт именно вам. В проектах Pobedonoscev GROUP собраны продуманные планировки, комфортная инфраструктура и современные решения для жизни.'
+  title: 'Купить квартиру в Pobedonoscev GROUP',
+  description: 'Купите квартиру в Pobedonoscev GROUP. Продуманные планировки, комфортная инфраструктура и современные решения для жизни.'
 })
 </script>

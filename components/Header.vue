@@ -346,7 +346,7 @@ onBeforeUnmount(() => {
 const menuItems = [
   { label: 'КОМПАНИЯ', to: '/about' },
   { label: 'ПРОЕКТЫ', to: '/projects' },
-  { label: 'ВЫБОР КВАРТИРЫ', to: '/apartments' },
+  { label: 'ВЫБОР КВАРТИРЫ', to: '/apartment-selection' },
   { label: 'ИПОТЕКА', to: '/mortgage' },
   { label: 'КОНТАКТЫ', to: '/contacts' },
   { label: 'НОВОСТИ', to: '/news' },
