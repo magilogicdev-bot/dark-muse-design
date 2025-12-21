@@ -62,7 +62,7 @@ const goBack = () => {
 const favoritePlans = ref([
   {
     id: 1,
-    image: '/images/plans/plan-1.png',
+    image: '/images/plans/plan-1.webp',
     rooms: '2',
     area: '65.7',
   },

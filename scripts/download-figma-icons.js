@@ -140,7 +140,7 @@ async function main() {
       for (let i = 0; i < nodeIds.length; i++) {
         const nodeId = nodeIds[i];
         const iconName = iconNames[i];
-        const iconPath = path.join(iconsDir, `${iconName}.png`);
+        const iconPath = path.join(iconsDir, `${iconName}.webp`);
         
         if (response.images[nodeId]) {
           const imageUrl = response.images[nodeId];
@@ -148,7 +148,7 @@ async function main() {
           
           try {
             await downloadFile(imageUrl, iconPath);
-            console.log(`✓ Saved: ${iconName}.png`);
+            console.log(`✓ Saved: ${iconName}.webp`);
           } catch (err) {
             console.error(`✗ Failed to download ${iconName}: ${err.message}`);
           }

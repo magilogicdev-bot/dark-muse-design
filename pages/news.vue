@@ -89,42 +89,42 @@ const config = siteConfig
 const newsItems = ref([
   {
     id: 1,
-    image: '/images/news/news-1.png',
+    image: '/images/news/news-1.webp',
     date: '26.11.2025',
     title: 'Важное событие для будущих жителей!',
     description: 'Важное событие для будущих жителей!'
   },
   {
     id: 2,
-    image: '/images/news/news-2.png',
+    image: '/images/news/news-2.webp',
     date: '26.11.2025',
     title: 'вокруг ЖК «Экогород 2» был убран забор',
     description: 'вокруг ЖК «Экогород 2» был убран забор'
   },
   {
     id: 3,
-    image: '/images/news/news-3.png',
+    image: '/images/news/news-3.webp',
     date: '26.11.2025',
     title: 'ЖК «Экогород 3» – дом заметно подрос',
     description: 'ЖК «Экогород 3» – дом заметно подрос'
   },
   {
     id: 4,
-    image: '/images/news/news-4.png',
+    image: '/images/news/news-4.webp',
     date: '26.11.2025',
     title: 'ЖК «Экогород 3» – дом заметно подрос',
     description: 'ЖК «Экогород 3» – дом заметно подрос'
   },
   {
     id: 5,
-    image: '/images/news/news-5.png',
+    image: '/images/news/news-5.webp',
     date: '26.11.2025',
     title: 'Новости со стройки',
     description: 'Новости со стройки'
   },
   {
     id: 6,
-    image: '/images/news/news-6.png',
+    image: '/images/news/news-6.webp',
     date: '26.11.2025',
     title: 'Новости со стройки',
     description: 'Новости со стройки'

@@ -302,7 +302,7 @@
             <!-- Bottom: Large Complex Image (Full Width, Shorter Height) -->
             <div class="relative w-full -ml-8 sm:-ml-12 lg:-ml-20 mr-[-20px] sm:mr-[-32px] md:mr-[-48px] lg:mr-[-80px] mt-auto aspect-[16/12] sm:aspect-[16/11] lg:aspect-[16/11] overflow-hidden group">
               <img 
-                src="/images/ecocity-complex.png" 
+                src="/images/ecocity-complex.webp" 
                 alt="Современное здание" 
                 class="w-full h-full object-cover shadow-2xl"
                 loading="lazy"
@@ -502,7 +502,7 @@
       <!-- Background Sketch (Excavator/Quarry) -->
       <div class="absolute inset-0 w-full h-full opacity-40 pointer-events-none mix-blend-screen">
          <img 
-           src="/images/dagestan-stones-bg.png" 
+           src="/images/dagestan-stones-bg.webp" 
            alt="Карьерный экскаватор скетч" 
            class="w-full h-full object-cover object-bottom"
          />
@@ -526,7 +526,7 @@
               <!-- Top: Building Image -->
                <div class="w-full max-w-[620px] relative aspect-[16/10] shadow-2xl">
                  <img 
-                   src="/images/dagestan-building-new.png" 
+                   src="/images/dagestan-building-new.webp" 
                    alt="Камни Дагестана Офис" 
                    class="w-full h-full object-cover"
                    loading="lazy"
@@ -655,7 +655,7 @@
       <!-- Background Sketch (Absolute) -->
       <div class="absolute inset-0 w-full h-full opacity-30 pointer-events-none mix-blend-screen">
          <img 
-           src="/images/team-section-bg.jpeg" 
+           src="/images/team-section-bg.webp" 
            alt="Background Sketch" 
            class="w-full h-full object-cover"
          />
@@ -668,7 +668,7 @@
          <div class="relative w-full max-w-[900px] aspect-video border border-blue-400/30 shadow-[0_0_40px_rgba(59,130,246,0.15)] group overflow-hidden">
             <!-- Photo -->
             <img 
-              src="/images/team-photo.png" 
+              src="/images/team-photo.webp" 
               alt="Команда Pobedonoscev Group" 
               class="w-full h-full object-cover grayscale brightness-75 transition-transform duration-700 group-hover:scale-105"
             />

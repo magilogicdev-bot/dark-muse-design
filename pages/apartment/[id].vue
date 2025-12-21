@@ -167,7 +167,7 @@
                 >
                   <!-- Compass Icon from Figma -->
                   <img 
-                    src="/images/3d-control-compass-38362c.png" 
+                    src="/images/3d-control-compass-38362c.webp" 
                     alt="3D контрол направления"
                     class="w-full h-full object-contain"
                   />
@@ -311,9 +311,9 @@ const apartmentData = {
     ceilingHeight: '2.72',
     location: 'м. Пятницкое шоссе, Тушинская, Сходненская',
     windowsView: 'На окружающую застройку',
-    image: '/images/apartment-plan-3room.png',
-    designImage: '/images/apartment-plan-3room.png',
-    sectionImage: '/images/apartment-plan-3room.png',
+    image: '/images/apartment-plan-3room.webp',
+    designImage: '/images/apartment-plan-3room.webp',
+    sectionImage: '/images/apartment-plan-3room.webp',
     model3d: '/models/4.gltf'
   },
   2: {
@@ -332,9 +332,9 @@ const apartmentData = {
     ceilingHeight: '2.72',
     location: 'м. Пятницкое шоссе, Тушинская, Сходненская',
     windowsView: 'На окружающую застройку',
-    image: '/images/apartment-plan-3room.png',
-    designImage: '/images/apartment-plan-3room.png',
-    sectionImage: '/images/apartment-plan-3room.png',
+    image: '/images/apartment-plan-3room.webp',
+    designImage: '/images/apartment-plan-3room.webp',
+    sectionImage: '/images/apartment-plan-3room.webp',
     model3d: '/models/4.gltf'
   },
   3: {
@@ -353,9 +353,9 @@ const apartmentData = {
     ceilingHeight: '2.72',
     location: 'м. Пятницкое шоссе, Тушинская, Сходненская',
     windowsView: 'На окружающую застройку',
-    image: '/images/apartment-plan-3room.png',
-    designImage: '/images/apartment-plan-3room.png',
-    sectionImage: '/images/apartment-plan-3room.png',
+    image: '/images/apartment-plan-3room.webp',
+    designImage: '/images/apartment-plan-3room.webp',
+    sectionImage: '/images/apartment-plan-3room.webp',
     model3d: '/models/4.gltf'
   }
 }

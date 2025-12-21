@@ -16,7 +16,7 @@ try {
 }
 
 // Функция для рекурсивного поиска файлов
-function findImages(dir, extensions = ['.png', '.jpg', '.jpeg']) {
+function findImages(dir, extensions = ['.webp', '.webp', '.webp']) {
   const files = [];
   const items = fs.readdirSync(dir, { withFileTypes: true });
 
