@@ -72,7 +72,7 @@
         <!-- Bottom Right Circle Buttons -->
         <div class="ecocity-hero__bottom-actions">
            <button class="circle-btn" @click="$emit('open3d')" aria-label="3D Model">
-             <img src="/images/3d-icon-button.png" alt="3D" class="w-full h-full object-contain" />
+             <img src="/images/icons/Group 134.png" alt="3D" class="w-full h-full object-contain" />
            </button>
            <button class="circle-btn" aria-label="Location">
              <img src="/images/icons/ecocity-location.png" alt="Location" class="w-full h-full object-contain" />

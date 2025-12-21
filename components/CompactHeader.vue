@@ -1,5 +1,5 @@
 <template>
-  <header class="bg-[#262a38]/95 py-4 shadow-[0_10px_24px_rgba(0,0,0,0.24)] border-b border-white/10 backdrop-blur">
+  <header class="bg-[#2A2C38]/95 py-4 shadow-[0_10px_24px_rgba(0,0,0,0.24)] border-b border-white/10 backdrop-blur">
     <div class="page-container flex items-center justify-between">
       <div class="flex items-center gap-3">
         <button

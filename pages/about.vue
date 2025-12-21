@@ -78,7 +78,7 @@
                 <img 
                   src="/images/395fddf73453a4c5ea047bd09cfa3ef614c29e08.webp" 
                   alt="Победоносцев Алексей Николаевич" 
-                  class="w-full h-full object-cover"
+                  class="w-full h-full object-cover scale-x-[-1]"
                 />
               </div>
               
@@ -154,7 +154,7 @@
                   <img 
                     src="/images/395fddf73453a4c5ea047bd09cfa3ef614c29e08.webp" 
                     alt="Победоносцев Алексей Николаевич" 
-                    class="w-full h-full object-cover"
+                    class="w-full h-full object-cover scale-x-[-1]"
                   />
                 </div>
                 
@@ -202,7 +202,7 @@
                 <img 
                   src="/images/395fddf73453a4c5ea047bd09cfa3ef614c29e08.webp" 
                   alt="Победоносцев Алексей Николаевич" 
-                  class="w-full h-full object-cover"
+                  class="w-full h-full object-cover scale-x-[-1]"
                 />
               </div>
               
@@ -283,255 +283,418 @@
     </section>
 
     <!-- Content Block 2: Two Column Layout -->
-    <section class="py-12 sm:py-16 md:py-20 lg:py-24 px-5 sm:px-6 md:px-10 lg:px-16 xl:px-20">
-      <div class="max-w-[1770px] mx-auto">
-        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 xl:gap-16">
-          
-          <!-- Left Column -->
-          <div class="flex flex-col gap-8 lg:gap-10 xl:gap-12">
-            <!-- Top: Text + Icon (Upper Left) -->
-            <div class="flex flex-col gap-6 lg:gap-8">
-              <!-- Italic Text -->
-              <div>
-                <p class="quote-text italic text-white/90 leading-[1.4] lg:leading-[1.5]">
-                  Я чувствую в себе силы и знаю, что весь созданный потенциал, теперь готов к новым вызовам. Я иду вперед, к целям, которые еще вчера казались недостижимыми, к возможностям, которые открывают двери в неизведанное. Моя страсть - создавать то, что невозможно представить. Я делаю первый шаг, создаю свою компанию.
-                </p>
-              </div>
+    <section class="w-full">
+      <div class="max-w-[1920px] mx-auto grid grid-cols-1 lg:grid-cols-2">
+        
+        <!-- Left Column: Darker Background -->
+        <div class="bg-[#2A2C38] px-5 sm:px-8 md:px-12 lg:px-20 py-12 lg:py-16 flex flex-col h-full border-r border-white/10 overflow-hidden relative">
+           
+           <!-- Continuous Left Blur Strip (Foliage Effect Overlay) - Lighter -->
+           <div class="absolute top-0 bottom-0 left-0 w-[140px] sm:w-[180px] bg-white/10 backdrop-blur-[6px] z-20 pointer-events-none border-r border-white/5"></div>
 
-              <!-- Icon (Circle with Double Arrow) -->
-              <div class="flex items-start">
-                <button 
-                  class="group w-12 h-12 lg:w-14 lg:h-14 flex items-center justify-center rounded-full border border-white/40 hover:border-white/60 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-white/50"
-                  aria-label="Узнать подробнее"
-                >
-                  <svg class="w-6 h-6 lg:w-7 lg:h-7 text-white/80 group-hover:text-white transition-colors" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <!-- Horizontal arrow (right) -->
-                    <path d="M6 12H18M18 12L16 10M18 12L16 14" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                    <!-- Vertical arrow (up and down) -->
-                    <path d="M12 6V18M12 6L10 8M12 6L14 8M12 18L10 16M12 18L14 16" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                  </svg>
-                </button>
-              </div>
+           <!-- Top: Italic Text (Indented significantly to clear blur) -->
+           <div class="max-w-[550px] mb-12 relative z-10 pl-24 sm:pl-32">
+              <p class="italic text-white/90 leading-[1.6]" style="font-family: 'Marck Script', cursive; font-size: clamp(16px, 1.6vw, 21px);">
+                Я чувствую в себе силы и знаю, что весь созданный потенциал, теперь готов к новым вызовам. Я иду вперед, к целям, которые еще вчера казались недостижимыми, к возможностям, которые открывают двери в неизведанное. Моя страсть - создавать то, что невозможно представить. Я делаю первый шаг, создаю свою компанию.
+              </p>
             </div>
 
-            <!-- Bottom: Image with Carousel (Lower Left) -->
-            <div class="relative w-full aspect-[4/3] overflow-hidden">
-              <img 
-                src="/images/ecocity-townhouses.webp" 
-                alt="Таунхаусы" 
-                class="w-full h-full object-cover"
-                loading="lazy"
-              />
-              <!-- Carousel Dots (5 dots, first active) -->
-              <div class="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2 z-10">
-                <button class="w-2 h-2 rounded-full bg-white" aria-label="Изображение 1"></button>
-                <button class="w-2 h-2 rounded-full bg-white/40" aria-label="Изображение 2"></button>
-                <button class="w-2 h-2 rounded-full bg-white/40" aria-label="Изображение 3"></button>
-                <button class="w-2 h-2 rounded-full bg-white/40" aria-label="Изображение 4"></button>
-                <button class="w-2 h-2 rounded-full bg-white/40" aria-label="Изображение 5"></button>
-              </div>
-            </div>
-          </div>
-
-          <!-- Right Column -->
-          <div class="flex flex-col gap-8 lg:gap-10 xl:gap-12">
-            <!-- Top: Image (Upper Right) -->
-            <div class="relative w-full aspect-[4/3] overflow-hidden">
+            <!-- Bottom: Large Complex Image (Full Width, Shorter Height) -->
+            <div class="relative w-full -ml-8 sm:-ml-12 lg:-ml-20 mr-[-20px] sm:mr-[-32px] md:mr-[-48px] lg:mr-[-80px] mt-auto aspect-[16/12] sm:aspect-[16/11] lg:aspect-[16/11] overflow-hidden group">
               <img 
                 src="/images/ecocity-complex.png" 
-                alt="Жилой комплекс" 
-                class="w-full h-full object-cover"
+                alt="Современное здание" 
+                class="w-full h-full object-cover shadow-2xl"
                 loading="lazy"
               />
             </div>
-
-            <!-- Bottom: Text Block (Lower Right - АСК "Новый Дом") -->
-            <div class="flex flex-col gap-4 lg:gap-5">
-              <p class="content-text text-white/90 leading-[1.65] lg:leading-[1.75] tracking-tight">
-                АСК "Новый Дом" – это не просто строительная компания, это команда профессионалов, которая много лет воплощает в жизнь самые смелые мечты о собственном пространстве.
-              </p>
-              
-              <p class="content-text text-white/90 leading-[1.65] lg:leading-[1.75] tracking-tight">
-                Индивидуальные жилые дома и коттеджи: от уютных семейных гнездышек до роскошных загородных резиденций.
-              </p>
-              
-              <p class="content-text text-white/90 leading-[1.65] lg:leading-[1.75] tracking-tight">
-                Большие элитные особняки: воплощение статуса и безупречного вкуса. Таунхаусы и блокированные дома: современное решение для комфортной жизни в гармонии с природой. Многоквартирные жилые дома: создаем комфортное и современное жилье для тысяч семей. Мы гордимся нашими реализованными объектами, среди которых такие знаковые проекты, как: Жилой комплекс "Сирень" Жилые дома на улицах Яковлевская и Пионерская Два современных жилых дома в Заволжье Компания организовала сильную команду талантливых дизайнеров, которые работают в тесном сотрудничестве с архитекторами. Вместе они доводят до совершенства экстерьеры зданий, прорабатывая фасады до мельчайших деталей. Большое количество индивидуальных элитных дизайн-проектов, каждый из которых уникален и отражает неповторимый стиль.
-              </p>
-            </div>
-          </div>
         </div>
+
+        <!-- Right Column: Lighter Grey Background -->
+        <div class="bg-[#555761] px-5 sm:px-8 md:px-12 lg:px-20 py-12 lg:py-16 flex flex-col h-full relative">
+            
+            <div class="flex flex-col h-full min-h-[600px] lg:min-h-0">
+              <!-- Middle: Company Info Text Block - Vertically Centered -->
+              <div class="flex-1 flex flex-col justify-center py-10 lg:py-0">
+                <div class="flex justify-end">
+                  <div class="relative pr-6 lg:pr-8 max-w-[540px]">
+                    <!-- Vertical line on the right -->
+                    <div class="absolute right-0 top-[-30px] bottom-[-30px] w-px bg-white/30"></div>
+                    
+                    <div class="flex flex-col gap-6 lg:gap-8 text-right font-light">
+                      <p class="text-white leading-[1.8] tracking-[0.16em] text-[10px] lg:text-[11px] uppercase">
+                        АСК "Новый Дом" – это не просто строительная компания, это команда профессионалов, которая много лет воплощает в жизнь самые смелые мечты о собственном пространстве. Индивидуальные жилые дома и коттеджи: от уютных семейных гнездышек до роскошных загородных резиденций.
+                      </p>
+                      <p class="text-white leading-[1.8] tracking-[0.16em] text-[10px] lg:text-[11px] uppercase">
+                        Большие элитные особняки: воплощение статуса и безупречного вкуса. Таунхаусы и блокированные дома: современное решение для комфортной жизни в гармонии с природой. Многоквартирные жилые дома: создаем комфортное и современное жилье для тысяч семей. Мы гордимся нашими реализованными объектами, среди которых такие знаковые проекты, как: Жилой комплекс "Сирень" Жилые дома на улицах Яковлевская и Пионерская Два современных жилых дома в Заволжье Компания организовала сильную команду талантливых дизайнеров, которые работают в тесном сотрудничестве с архитекторами. Вместе они доводят до совершенства экстерьеры зданий, прорабатывая фасады до мельчайших деталей.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Bottom Right: Townhouse Image -->
+              <div class="flex justify-end mt-auto pt-8">
+                <div class="w-full max-w-[480px] aspect-[16/10] overflow-hidden shadow-lg">
+                   <img 
+                    src="/images/ecocity-townhouses.webp" 
+                    alt="Таунхаусы" 
+                    class="w-full h-full object-cover"
+                    loading="lazy"
+                  />
+                </div>
+              </div>
+            </div>
+        </div>
+
       </div>
     </section>
 
     <!-- Content Block 3: Church Project -->
-    <section class="py-12 sm:py-16 md:py-20 lg:py-24 px-5 sm:px-6 md:px-10 lg:px-16 xl:px-20">
-      <div class="max-w-[1770px] mx-auto">
-        <!-- Grid with Background Composition -->
-        <div class="relative grid grid-cols-1 lg:grid-cols-[55%_1fr] gap-8 lg:gap-16 xl:gap-20 items-start">
+    <section class="relative py-16 sm:py-20 lg:py-28 px-5 sm:px-6 md:px-10 lg:px-16 bg-[#2A2C38] overflow-hidden">
+       
+      <!-- Background Blueprint (Absolute Positioned) -->
+      <div class="absolute bottom-0 left-0 w-full md:w-[80%] lg:w-[75%] h-[70%] md:h-[90%] opacity-40 pointer-events-none">
+         <img 
+           src="/images/church-blueprint-group.webp" 
+           alt="Чертежи церкви" 
+           class="w-full h-full object-contain object-bottom left-0"
+         />
+      </div>
+
+      <div class="max-w-[1700px] mx-auto relative z-10">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-8 items-start">
           
-          <!-- Background Blueprint Composition -->
-          <div class="absolute inset-0 overflow-hidden pointer-events-none opacity-[0.5]">
-            <img 
-              src="/images/church-blueprint-group.webp" 
-              alt="Архитектурные чертежи церкви" 
-              class="absolute top-0 left-[-101px] w-[1376px] h-[555px] object-contain mix-blend-screen"
-            />
-          </div>
-          
-          <!-- Left: Text -->
-          <div class="relative flex flex-col gap-6 lg:gap-8 z-10">
-            <!-- Quote Text -->
-            <div class="max-w-[520px] pr-4">
-              <p class="text-base sm:text-lg md:text-xl lg:text-[15px] xl:text-[16px] 2xl:text-[17px] leading-[1.55] lg:leading-[1.65] xl:leading-[1.7] text-white/90" style="font-family: 'Marck Script', cursive; letter-spacing: 0.02em;">
+          <!-- Left Area: Text (Span 5 cols) -->
+          <div class="lg:col-span-5 pt-10 lg:pt-20">
+            <div class="max-w-[480px]">
+              <p class="italic text-white/90 leading-[1.8] text-lg sm:text-xl lg:text-2xl" style="font-family: 'Marck Script', cursive;">
                 Возможно, это было что-то, что я видел, слышал, или просто чувствовал. Но эта мысль, как семечко, прорастала во мне, и я представлял себе, как возвожу стены, как украшаю его, как люди приходят туда, чтобы найти покой и свет. Это было нечто большее, чем просто здание, это было место, где душа могла бы обрести свой дом.
               </p>
             </div>
           </div>
 
-          <!-- Right: Church Photo + Text -->
-          <div class="relative flex flex-col gap-5 lg:gap-6 xl:gap-7 z-10">
-            <!-- Church Photo -->
-            <div class="relative">
-              <div class="relative aspect-[4/3] overflow-hidden">
-                <img 
-                  src="/images/church-photo.webp" 
-                  alt="Село Лобатки" 
-                  class="w-full h-full object-cover"
+          <!-- Right Area: Photo & Description (Span 7 cols) -->
+          <div class="lg:col-span-7 flex flex-col items-center lg:items-end">
+             
+             <!-- Church Photo Container with Frame -->
+             <div class="relative p-6 sm:p-8 border border-white/20 mb-8 sm:mb-12">
+               <!-- Crosshair decorations on frame corners -->
+               <div class="absolute -top-[1px] -left-[10px] w-[20px] h-[1px] bg-white/40"></div>
+               <div class="absolute -top-[10px] -left-[1px] w-[1px] h-[20px] bg-white/40"></div>
+               <div class="absolute -top-[1px] -right-[10px] w-[20px] h-[1px] bg-white/40"></div>
+               <div class="absolute -top-[10px] -right-[1px] w-[1px] h-[20px] bg-white/40"></div>
+               <div class="absolute -bottom-[1px] -right-[10px] w-[20px] h-[1px] bg-white/40"></div>
+               <div class="absolute -bottom-[10px] -right-[1px] w-[1px] h-[20px] bg-white/40"></div>
+               <div class="absolute -bottom-[1px] -left-[10px] w-[20px] h-[1px] bg-white/40"></div>
+               <div class="absolute -bottom-[10px] -left-[1px] w-[1px] h-[20px] bg-white/40"></div>
+
+               <div class="relative w-full max-w-[400px] sm:max-w-[450px] aspect-[3/4] overflow-hidden">
+                 <img 
+                   src="/images/church-photo.webp" 
+                   alt="Храм в селе Любилки" 
+                   class="w-full h-full object-cover"
+                   loading="lazy"
+                 />
+               </div>
+             </div>
+
+             <!-- Description Text -->
+             <div class="max-w-[450px] text-center lg:text-right">
+               <p class="text-white/80 text-[10px] sm:text-[11px] lg:text-[12px] leading-[1.8] tracking-[0.05em] uppercase font-light">
+                 Село Любилки украшает величественный белокаменный храм, словно жемчужина, посвященный Пресвятой Богородице и святому Феодосию Тотемскому. Его золотой купол, устремленный в небо, является настоящим украшением, подчеркивая и сохраняя неповторимую историческую целостность этого живописного места.
+               </p>
+             </div>
+
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+
+
+    <!-- Content Block 4: Ecocity Description Layout -->
+    <section class="w-full">
+      <div class="max-w-[1920px] mx-auto grid grid-cols-1 lg:grid-cols-2">
+        
+        <!-- Left Column: Darker Background -->
+        <div class="bg-[#2A2C38] px-5 sm:px-8 md:px-12 lg:px-20 py-12 lg:py-16 flex flex-col h-full border-r border-white/10 overflow-hidden relative">
+           
+           <!-- Continuous Left Blur Strip (Foliage Effect Overlay) -->
+           <div class="absolute top-0 bottom-0 left-0 w-[140px] sm:w-[180px] bg-white/10 backdrop-blur-[6px] z-20 pointer-events-none border-r border-white/5"></div>
+
+           <!-- Top: Italic Text (Indented significantly to clear blur) -->
+           <div class="max-w-[550px] mb-12 relative z-10 pl-24 sm:pl-32">
+              <p class="italic text-white/90 leading-[1.6]" style="font-family: 'Marck Script', cursive; font-size: clamp(16px, 1.6vw, 21px);">
+                Когда меня по-настоящему захватывает какое-то дело, я не могу остановиться на достигнутом. Всегда вырастает до чего-то по-настоящему значимого хочется большего, хочется увидеть, как моя идея И вот, после долгих размышлений и вдохновения, я принял твердое решение: пора воплощать в жизнь мою мечту о современном, экологичном и по-настоящему комфортном пространстве.
+              </p>
+            </div>
+
+            <!-- Bottom: Large Complex Image (Full Width) -->
+            <div class="relative w-full -ml-8 sm:-ml-12 lg:-ml-20 mr-[-20px] sm:mr-[-32px] md:mr-[-48px] lg:mr-[-80px] mt-auto aspect-[16/11] overflow-hidden group">
+              <img 
+                src="/images/ecocity-townhouses.webp" 
+                alt="Экогород Таунхаусы" 
+                class="w-full h-full object-cover shadow-2xl"
+                loading="lazy"
+              />
+               <!-- Pagination Dots Interaction (Mockup) -->
+               <div class="absolute bottom-6 left-1/2 -translate-x-1/2 flex gap-3 z-30">
+                  <div class="w-2.5 h-2.5 rounded-full bg-white drop-shadow-md"></div>
+                  <div class="w-2.5 h-2.5 rounded-full border border-white/60 bg-transparent"></div>
+                  <div class="w-2.5 h-2.5 rounded-full border border-white/60 bg-transparent"></div>
+                  <div class="w-2.5 h-2.5 rounded-full border border-white/60 bg-transparent"></div>
+                  <div class="w-2.5 h-2.5 rounded-full border border-white/60 bg-transparent"></div>
+              </div>
+            </div>
+        </div>
+
+        <!-- Right Column: Lighter Grey Background -->
+        <div class="bg-[#555761] px-5 sm:px-8 md:px-12 lg:px-20 py-12 lg:py-16 flex flex-col h-full relative">
+            
+            <div class="flex flex-col h-full justify-between gap-12">
+              
+              <!-- Top: Small Grayscale Image -->
+              <div class="w-full max-w-[500px] aspect-[16/10] overflow-hidden shadow-lg self-end lg:self-start">
+                 <img 
+                  src="/images/ecocity-house-bw.webp" 
+                  alt="Экогород ЧБ" 
+                  class="w-full h-full object-cover grayscale"
+                  loading="lazy"
                 />
               </div>
-            </div>
 
-            <!-- Description Text -->
-            <div class="text-right">
-              <p class="content-text text-[11px] sm:text-xs md:text-sm lg:text-[12px] xl:text-[13px] 2xl:text-[14px] leading-[1.7] lg:leading-[1.75] xl:leading-[1.8] text-white/90 tracking-tight">
-                Село Лобатки украшает величественный белокаменный храм, словно жемчужина, посвященный Пресвятой Богородице и святому Феодосию Тотемскому. Его золотой купол, устремленный в небо, является настоящим украшением, подчеркивая и сохраняя неповторимую историческую целостность этого живописного места.
-              </p>
+              <!-- Bottom: Text Block -->
+              <div class="flex justify-end mt-auto">
+                <div class="relative pr-6 lg:pr-8 max-w-[580px]">
+                  <!-- Vertical line on the right -->
+                  <div class="absolute right-0 top-[-30px] bottom-[-30px] w-px bg-white/30"></div>
+                  
+                  <div class="flex flex-col gap-6 lg:gap-8 text-right font-light">
+                    <h3 class="text-white text-[12px] lg:text-[14px] uppercase tracking-[0.15em] leading-[1.6]">
+                      ЭКОГОРОД: Новый стандарт жизни в Ярославской области, который говорит сам за себя
+                    </h3>
+                    
+                    <p class="text-white/90 leading-[1.7] tracking-[0.05em] text-[10px] lg:text-[11px] uppercase">
+                      В Ярославской области стремительно набирает обороты популярность жилого комплекса ЭКОГОРОД. Этот проект не нуждается в громкой рекламе – о нем говорят сами жители и с интересом изучают конкуренты. Секрет успеха кроется в продуманных до мелочей решениях, которые делают жизнь здесь по-настоящему комфортной и современной.
+                    </p>
+                    
+                     <p class="text-white/90 leading-[1.7] tracking-[0.05em] text-[10px] lg:text-[11px] uppercase">
+                      Представьте себе двор, свободный от автомобилей, где безопасно играют дети, а прогулки проходят в спокойной атмосфере. ЭКОГОРОД воплощает эту мечту в реальность, предлагая двусторонние подъезды и удобную навигацию. Панорамные окна наполняют квартиры светом и открывают живописные виды, а французские балконы добавляют изысканности. Особое внимание уделено ландшафтному дизайну: каждый уголок комплекса утопает в зелени, а детские площадки вынесены в отдельные, безопасные зоны, где малыши могут резвиться и развиваться. Все эти современные и функциональные решения высоко ценятся жителями и становятся предметом обсуждения среди застройщиков города.
+                    </p>
+
+                    <p class="text-white/90 leading-[1.7] tracking-[0.05em] text-[10px] lg:text-[11px] uppercase">
+                      Но что делает ЭКОГОРОД еще более уникальным? Это его стремление к полной независимости и контролю качества. Компания не просто строит, а активно инвестирует в собственное производство, обеспечивая до 42% строительных материалов из собственных ресурсов. Это не только гарантирует высокое качество, но и позволяет оптимизировать сроки и стоимость строительства.
+                    </p>
+                  </div>
+                </div>
+              </div>
             </div>
-          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Content Block 5: Dagestan Stones -->
+    <section class="relative py-8 sm:py-12 lg:py-16 px-5 sm:px-6 md:px-10 lg:px-16 bg-[#2A2C38] overflow-hidden text-white border-t border-white/5">
+      
+      <!-- Background Sketch (Excavator/Quarry) -->
+      <div class="absolute inset-0 w-full h-full opacity-40 pointer-events-none mix-blend-screen">
+         <img 
+           src="/images/dagestan-stones-bg.png" 
+           alt="Карьерный экскаватор скетч" 
+           class="w-full h-full object-cover object-bottom"
+         />
+      </div>
+
+      <div class="max-w-[1920px] mx-auto relative z-10">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-start">
+           
+           <!-- Left Column: Poetic Quote -->
+           <div class="pt-10 lg:pt-20">
+              <div class="max-w-[500px] pl-4 sm:pl-10 relative">
+                 <p class="italic text-white/90 leading-[1.8] text-base lg:text-[18px]" style="font-family: 'Marck Script', cursive;">
+                   Камень - это не просто безмолвный свидетель времени, не просто строительный материал или элемент пейзажа. В нем заключена своя, особая музыка - тихая, глубокая, пронизанная мудростью веков. Это не мелодия, которую можно услышать ухом, а скорее вибрация, ощущение, которое проникает в самую суть
+                 </p>
+              </div>
+           </div>
+
+           <!-- Right Column: Image and Product Description -->
+           <div class="flex flex-col gap-16 lg:gap-32 items-end">
+              
+              <!-- Top: Building Image -->
+               <div class="w-full max-w-[620px] relative aspect-[16/10] shadow-2xl">
+                 <img 
+                   src="/images/dagestan-building-new.png" 
+                   alt="Камни Дагестана Офис" 
+                   class="w-full h-full object-cover"
+                   loading="lazy"
+                 />
+              </div>
+              
+              <!-- Bottom: Description Text Block with Right Border -->
+               <div class="relative pr-8 lg:pr-10 max-w-[700px] text-right">
+                 <!-- Vertical Line -->
+                 <div class="absolute right-0 top-[-20px] bottom-[-20px] w-px bg-white/30"></div>
+
+                  <div class="flex flex-col gap-2.5 text-[10px] uppercase leading-[1.4] tracking-[0.1em] font-light text-white/80 origin-right transition-all duration-300" style="font-size: 10px; transform: scale(0.75);">
+                    <p>
+                      "Камни Дагестана" является признанным лидером в производстве высококачественных облицовочных материалов. Находясь в самом сердце Дагестана она специализируется на создании продукции, отвечающей самым взыскательным требованиям современного строительства и дизайна.
+                    </p>
+                    <p>
+                      Компания предлагает впечатляющий ассортимент натурального камня, насчитывающий более 60 эксклюзивных расцветок. В нашем каталоге вы найдете:
+                    </p>
+                    
+                    <div class="flex flex-col gap-4 mt-2">
+                      <p>
+                        <span class="font-bold text-white">Песчаник:</span> прочный и долговечный материал с неповторимой текстурой, идеально подходящий для создания классических и современных фасадов.
+                      </p>
+                      <p>
+                        <span class="font-bold text-white">Известняк:</span> элегантный и благородный камень, придающий зданиям изысканный вид и обеспечивающий превосходную теплоизоляцию.
+                      </p>
+                      <p>
+                        <span class="font-bold text-white">Доломит:</span> камень с высокой прочностью и устойчивостью к атмосферным воздействиям, идеальный для облицовки фасадов и создания ландшафтных элементов.
+                      </p>
+                      <p>
+                        <span class="font-bold text-white">Ракушечник:</span> легкий и теплый материал с уникальной пористой структурой, обладающий отличными звукоизоляционными свойствами и создающий неповторимый среднеземноморский стиль.
+                      </p>
+                    </div>
+                 </div>
+              </div>
+
+           </div>
         </div>
       </div>
     </section>
 
-    <!-- ЭКОГОРОД Section -->
-    <EcocitySection />
+    <!-- Content Block 6: Architects & Group Description Layout -->
+    <section class="w-full">
+      <div class="max-w-[1920px] mx-auto grid grid-cols-1 lg:grid-cols-2">
+        
+        <!-- Left Column: Darker Background -->
+        <div class="bg-[#2A2C38] px-5 sm:px-8 md:px-12 lg:px-20 py-12 lg:py-16 flex flex-col h-full border-r border-white/10 overflow-hidden relative">
+           
+           <!-- Continuous Left Blur Strip (Foliage Effect Overlay) -->
+           <div class="absolute top-0 bottom-0 left-0 w-[140px] sm:w-[180px] bg-white/10 backdrop-blur-[6px] z-20 pointer-events-none border-r border-white/5"></div>
 
-    <!-- Камни Дагестана Section -->
-    <DagestanStonesSection />
+           <!-- Top: Italic Text (Indented significantly to clear blur) -->
+           <div class="max-w-[550px] mb-12 relative z-10 pl-24 sm:pl-32">
+              <p class="italic text-white/90 leading-[1.6]" style="font-family: 'Marck Script', cursive; font-size: clamp(16px, 1.6vw, 21px);">
+                Кажется что потолок уже достигнут... В такие моменты приходит особое чувство. Это не скука, нет. Это скорее предвкушение чего-то нового, зов к неизведанному. Хочется снова почувствовать тот самый азарт первооткрывателя, найти новые горизонты, которые заставят мозг работать на полную катушку и вдохнут новую жизнь в творчество.
+              </p>
+            </div>
 
-    <!-- Top Section: Architectural Layout with Decorative Text -->
-    <section class="py-12 sm:py-16 md:py-20 lg:py-24 px-5 sm:px-6 md:px-10 lg:px-16 xl:px-20">
-      <div class="max-w-[1770px] mx-auto">
-        <!-- Grid 2x2: Two rows, two columns -->
-        <div class="grid grid-cols-1 lg:grid-cols-2 lg:grid-rows-2 gap-8 lg:gap-12 xl:gap-16 lg:min-h-[1000px]">
-          
-          <!-- Top Left: Decorative Inspirational Text -->
-          <div class="flex items-center justify-start">
-            <p class="bio-quote text-white leading-[1.4] lg:leading-[1.5] xl:leading-[1.6] text-left italic" style="font-family: 'Marck Script', cursive; font-size: clamp(20px, 2.5vw, 32px);">
-              Кажется что потолок уже достигнут... В такие моменты приходит особое чувство. Это не скука, нет. Это скорее предвкушение чего-то нового, зов к неизведанному. Хочется снова почувствовать тот самый азарт первооткрывателя, найти новые горизонты, которые заставят мозг работать на полную катушку и вдохнут новую жизнь в творчество.
-            </p>
-          </div>
-
-          <!-- Top Right: Color Architectural Image with Watermark -->
-          <div class="flex items-center justify-end">
-            <div class="relative w-full aspect-[4/3] overflow-hidden">
+            <!-- Bottom: Large Architectural Image -->
+            <div class="relative w-full -ml-8 sm:-ml-12 lg:-ml-20 mr-[-20px] sm:mr-[-32px] md:mr-[-48px] lg:mr-[-80px] mt-auto aspect-[16/11] overflow-hidden group">
               <img 
-                src="/images/ecocity-complex.png" 
-                alt="Современное здание" 
-                class="w-full h-full object-cover"
+                src="/images/11dfb6d0c179847dedb1585f97c42324de436bcd.webp" 
+                alt="Архитектура и дизайн" 
+                class="w-full h-full object-cover shadow-2xl"
                 loading="lazy"
               />
-              <!-- Watermark Overlay -->
-              <div class="absolute bottom-0 left-0 p-4 lg:p-6 pointer-events-none">
-                <p class="text-white/60 text-xs sm:text-sm md:text-base lg:text-lg uppercase tracking-[0.1em] font-light">
-                  POBEDONOSCEV ARCHITECTS
-                </p>
-              </div>
             </div>
-          </div>
-
-          <!-- Bottom Left: Large Grayscale Architectural Image with Pagination -->
-          <div class="flex items-center justify-start">
-            <div class="relative w-full aspect-[4/3] lg:aspect-[3/2] overflow-hidden">
-              <img 
-                src="/images/ecocity-house-bw.webp" 
-                alt="Современный архитектурный комплекс" 
-                class="w-full h-full object-cover grayscale"
-                loading="lazy"
-              />
-              <!-- Pagination Dots (5 dots, first active) -->
-              <div class="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2 z-10">
-                <button class="w-2 h-2 rounded-full bg-white" aria-label="Изображение 1"></button>
-                <button class="w-2 h-2 rounded-full border border-white bg-transparent" aria-label="Изображение 2"></button>
-                <button class="w-2 h-2 rounded-full border border-white bg-transparent" aria-label="Изображение 3"></button>
-                <button class="w-2 h-2 rounded-full border border-white bg-transparent" aria-label="Изображение 4"></button>
-                <button class="w-2 h-2 rounded-full border border-white bg-transparent" aria-label="Изображение 5"></button>
-              </div>
-            </div>
-          </div>
-
-          <!-- Bottom Right: Company Information Text -->
-          <div class="flex items-center justify-end">
-            <div class="flex flex-col gap-4 lg:gap-5 text-right w-full">
-              <p class="content-text text-white/90 leading-[1.65] lg:leading-[1.75] tracking-tight">
-                Pobedonoscev architects – студию, рожденную из страсти к совершенству и глубокого понимания того, что такое истинная роскошь в архитектуре.
-              </p>
-              
-              <p class="content-text text-white/90 leading-[1.65] lg:leading-[1.75] tracking-tight">
-                Мы верим, что современная частная архитектура премиум-класса должна быть не только эстетически безупречной, но и функциональной, комфортной и, главное, отражать уникальный стиль жизни своих владельцев. Наша миссия – создавать пространства, которые вдохновляют, дарят ощущение гармонии и становятся настоящим воплощением вашего видения идеального дома.
-              </p>
-              
-              <p class="content-text text-white/90 leading-[1.65] lg:leading-[1.75] tracking-tight">
-                Команда профессионалов, объединенных общей целью: создавать архитектуру, которая будет восхищать и служить вам долгие годы. Мы стремимся к тому, чтобы ваш дом стал не просто местом проживания, а настоящим произведением искусства, отражающим ваш успех и утонченный вкус.
-              </p>
-              
-              <p class="content-text text-white/90 leading-[1.65] lg:leading-[1.75] tracking-tight">
-                Pobedonoscev Group команда профессионалов строительной отрасли, чья репутация подкреплена многолетним опытом и многочисленными наградами. Pobedonoscev Group успешно реализует проекты по строительству многоквартирных жилых комплексов, предлагая современные решения и высочайшие стандарты качества. Мы строим не просто дома, а пространства, где будет комфортно жить и развиваться вашим семьям.
-              </p>
-            </div>
-          </div>
         </div>
+
+        <!-- Right Column: Lighter Grey Background -->
+        <div class="bg-[#555761] px-5 sm:px-8 md:px-12 lg:px-20 py-12 lg:py-16 flex flex-col h-full relative">
+            
+            <div class="flex flex-col h-full justify-between gap-12 lg:gap-16">
+              
+              <!-- Top: Architects Branding Image/Slider -->
+              <div class="w-full max-w-[650px] aspect-[16/10] overflow-hidden shadow-lg self-end lg:self-start relative group">
+                 <img 
+                  src="/images/a9f3495b5dc55635957a7aade82d1b35127bfe7d.webp" 
+                  alt="Pobedonoscev Architects Project" 
+                  class="w-full h-full object-cover"
+                  loading="lazy"
+                />
+
+                <!-- Pagination dots (mockup) -->
+                <div class="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-1.5">
+                   <div class="w-1.5 h-1.5 rounded-full bg-white"></div>
+                   <div class="w-1.5 h-1.5 rounded-full border border-white/50"></div>
+                   <div class="w-1.5 h-1.5 rounded-full border border-white/50"></div>
+                </div>
+              </div>
+
+              <!-- Bottom: Text Block -->
+              <div class="flex justify-end mt-auto">
+                <div class="relative pr-6 lg:pr-8 max-w-[580px]">
+                  <!-- Vertical line on the right -->
+                  <div class="absolute right-0 top-[-20px] bottom-[-20px] w-px bg-white/30"></div>
+                  
+                  <div class="flex flex-col gap-6 lg:gap-8 text-right font-light">
+                    <p class="text-white/95 leading-[1.7] tracking-[0.05em] text-[10px] lg:text-[11px] uppercase">
+                      Pobedonoscev architects — студию, рожденную из страсти к совершенству и глубокого понимания того, что такое истинная роскошь в архитектуре.
+                    </p>
+                    
+                    <p class="text-white/95 leading-[1.7] tracking-[0.05em] text-[10px] lg:text-[11px] uppercase">
+                      Мы верим, что современная частная архитектура премиум-класса должна быть не только эстетически безупречной, но и функциональной, комфортной и, главное, отражать уникальный стиль жизни своих владельцев. Наша миссия — создавать пространства, которые вдохновляют, дарят ощущение гармонии и становятся настоящим воплощением вашего видения идеального дома.
+                    </p>
+                    
+                     <p class="text-white/95 leading-[1.7] tracking-[0.05em] text-[10px] lg:text-[11px] uppercase">
+                      Команда профессионалов, объединенных общей целью: создавать архитектуру, которая будет восхищать и служить вам долгие годы. Мы стремимся к тому, чтобы ваш дом стал не просто местом проживания, а настоящим произведением искусства, отражающим ваш успех и утонченный вкус.
+                    </p>
+
+                    <p class="text-white/95 leading-[1.7] tracking-[0.05em] text-[10px] lg:text-[11px] uppercase">
+                      Pobedonoscev Group команда профессионалов строительной отрасли, чья репутация подкреплена многолетним опытом и многочисленными наградами. Pobedonoscev Group успешно реализует проекты по строительству многоквартирных жилых комплексов, предлагая современные решения и высочайшие стандарты качества. Мы строим не просто дома, а пространства, где будет комфортно жить и развиваться вашим семьям.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+        </div>
+
       </div>
     </section>
 
-    <!-- Middle Section: Photo Gallery/Team with Illustrations -->
-    <section class="relative py-12 sm:py-16 md:py-20 lg:py-24 px-5 sm:px-6 md:px-10 lg:px-16 xl:px-20 overflow-hidden">
-      <!-- Central Content Block -->
-      <div class="max-w-[1770px] mx-auto">
-        <div class="flex flex-col gap-8 md:gap-10 lg:gap-12">
-          
-          <!-- Central Photo with Frame and ФОТО Overlay -->
-          <div class="flex justify-center">
-            <div class="relative w-full max-w-[900px] aspect-[16/10] lg:aspect-[3/2] overflow-hidden rounded-sm border border-white/20">
-              <!-- Team Photo -->
-              <img 
-                src="/images/team-photo.png" 
-                alt="Команда Pobedonoscev Group" 
-                class="w-full h-full object-cover grayscale"
-                loading="lazy"
-              />
-              <!-- ФОТО Overlay Text -->
-              <div class="absolute inset-0 flex items-center justify-center pointer-events-none">
-                <span class="text-white text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold uppercase" style="font-family: 'Manrope', sans-serif; letter-spacing: 0.1em;">
+    <!-- Content Block 7: Team Section with Sketch Background -->
+    <section class="relative py-16 sm:py-20 lg:py-28 px-5 sm:px-6 md:px-10 lg:px-16 bg-[#2A2C38] overflow-hidden">
+      
+      <!-- Background Sketch (Absolute) -->
+      <div class="absolute inset-0 w-full h-full opacity-30 pointer-events-none mix-blend-screen">
+         <img 
+           src="/images/team-section-bg.jpeg" 
+           alt="Background Sketch" 
+           class="w-full h-full object-cover"
+         />
+      </div>
+
+      <!-- Central Content -->
+      <div class="relative z-10 max-w-[1200px] mx-auto flex flex-col items-center gap-10 lg:gap-14">
+         
+         <!-- Team Photo Container -->
+         <div class="relative w-full max-w-[900px] aspect-video border border-blue-400/30 shadow-[0_0_40px_rgba(59,130,246,0.15)] group overflow-hidden">
+            <!-- Photo -->
+            <img 
+              src="/images/team-photo.png" 
+              alt="Команда Pobedonoscev Group" 
+              class="w-full h-full object-cover grayscale brightness-75 transition-transform duration-700 group-hover:scale-105"
+            />
+            
+            <!-- Center Overlay Text -->
+            <div class="absolute inset-0 flex items-center justify-center">
+               <h2 class="text-white text-4xl sm:text-5xl lg:text-7xl font-light tracking-[0.2em] uppercase opacity-90" style="font-family: 'Manrope', sans-serif;">
                   ФОТО
-                </span>
-              </div>
+               </h2>
             </div>
-          </div>
+            
+            <!-- Grid Lines overlay (optional from design) -->
+            <div class="absolute left-0 bottom-10 right-0 h-px bg-blue-400/20"></div>
+            <div class="absolute top-0 bottom-0 left-10 w-px bg-blue-400/20"></div>
+         </div>
 
-          <!-- Text Blocks Below Photo (Vertical Stack, Center-aligned) -->
-          <div class="flex flex-col gap-6 md:gap-8 lg:gap-10 text-center max-w-[900px] mx-auto">
-            <!-- First Text Block -->
-            <p class="content-text text-white/90 leading-[1.65] lg:leading-[1.75] tracking-tight">
+         <!-- Text Content -->
+         <div class="flex flex-col gap-6 text-center max-w-[800px]">
+            <p class="text-white/90 text-xs sm:text-sm uppercase leading-[1.7] tracking-wider font-light">
               Pobedonoscev Group команда профессионалов строительной отрасли, чья репутация подкреплена многолетним опытом и многочисленными наградами.
             </p>
-
-            <!-- Second Text Block -->
-            <p class="content-text text-white/90 leading-[1.65] lg:leading-[1.75] tracking-tight">
+            <p class="text-white/90 text-xs sm:text-sm uppercase leading-[1.7] tracking-wider font-light">
               Pobedonoscev Group успешно реализует проекты по строительству многоквартирных жилых комплексов, предлагая современные решения и высочайшие стандарты качества. Мы строим не просто дома, а пространства, где будет комфортно жить и развиваться вашим семьям.
             </p>
-          </div>
-        </div>
+         </div>
+
       </div>
     </section>
 
@@ -541,7 +704,7 @@
         <div class="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8 xl:gap-10 max-w-[1200px] mx-auto">
           
           <!-- Award Card 1: CITY VISION AWARDS 2016 -->
-          <div class="bg-[#2a2d38] border border-white/20 rounded-lg lg:rounded-xl p-5 md:p-6 lg:p-8 flex flex-col items-center text-center gap-3 md:gap-4 lg:gap-5">
+          <div class="bg-[#2A2C38] border border-white/20 rounded-lg lg:rounded-xl p-5 md:p-6 lg:p-8 flex flex-col items-center text-center gap-3 md:gap-4 lg:gap-5">
             <div class="w-24 h-24 md:w-28 md:h-28 lg:w-32 lg:h-32 flex items-center justify-center">
               <img 
                 src="/images/footer-icon-1.webp" 
@@ -556,7 +719,7 @@
           </div>
 
           <!-- Award Card 2: СБЕРБАНК -->
-          <div class="bg-[#2a2d38] border border-white/20 rounded-lg lg:rounded-xl p-5 md:p-6 lg:p-8 flex flex-col items-center text-center gap-3 md:gap-4 lg:gap-5">
+          <div class="bg-[#2A2C38] border border-white/20 rounded-lg lg:rounded-xl p-5 md:p-6 lg:p-8 flex flex-col items-center text-center gap-3 md:gap-4 lg:gap-5">
             <div class="w-24 h-24 md:w-28 md:h-28 lg:w-32 lg:h-32 flex items-center justify-center">
               <img 
                 src="/images/footer-icon-2.webp" 
@@ -576,7 +739,7 @@
           </div>
 
           <!-- Award Card 3: КОНКУРС ТОП ЖК -->
-          <div class="bg-[#2a2d38] border border-white/20 rounded-lg lg:rounded-xl p-5 md:p-6 lg:p-8 flex flex-col items-center text-center gap-3 md:gap-4 lg:gap-5">
+          <div class="bg-[#2A2C38] border border-white/20 rounded-lg lg:rounded-xl p-5 md:p-6 lg:p-8 flex flex-col items-center text-center gap-3 md:gap-4 lg:gap-5">
             <div class="w-24 h-24 md:w-28 md:h-28 lg:w-32 lg:h-32 flex items-center justify-center">
               <img 
                 src="/images/footer-icon-3.webp" 

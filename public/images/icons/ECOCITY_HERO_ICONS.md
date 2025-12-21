@@ -94,3 +94,5 @@ The script will show the current status of all required icons.
 
 If `ecocity-scroll-down.png` is not found, the component will automatically use `chevron-down.png` as a fallback.
 
+
+

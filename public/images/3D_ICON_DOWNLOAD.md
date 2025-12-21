@@ -44,3 +44,5 @@ Get-Item public\images\3d-icon-button.png
 - **Figma File Key:** `PoqoKMYQJFXDIWo8qbsKsj`
 - **Node ID:** `1080:7738` (или `1080-7738` в URL)
 
+
+

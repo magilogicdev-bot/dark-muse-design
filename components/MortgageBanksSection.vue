@@ -1,5 +1,5 @@
 <template>
-  <section class="w-full bg-[#282A3A] py-12 md:py-16 lg:py-20 xl:py-24">
+  <section class="w-full bg-[#2A2C38] py-12 md:py-16 lg:py-20 xl:py-24">
     <div class="container mx-auto max-w-[1920px] px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 2xl:px-20">
       <!-- Section Title -->
       <h2 class="text-white text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-medium uppercase tracking-wider mb-8 md:mb-12 lg:mb-16">
