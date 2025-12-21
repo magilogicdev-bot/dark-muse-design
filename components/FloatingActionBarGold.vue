@@ -7,7 +7,7 @@
       aria-label="Позвонить"
     >
       <NuxtImg
-        src="/images/icons/phone-handset.png"
+        src="/images/icons/phone-handset.webp"
         alt="Позвонить"
         class="w-full h-full object-contain"
         loading="lazy"
@@ -21,7 +21,7 @@
       aria-label="Telegram"
     >
       <NuxtImg
-        src="/images/icons/telegram.png"
+        src="/images/icons/telegram.webp"
         alt="Telegram"
         class="w-full h-full object-contain"
         loading="lazy"
@@ -35,7 +35,7 @@
       aria-label="WhatsApp"
     >
       <NuxtImg
-        src="/images/icons/whatsapp.png"
+        src="/images/icons/whatsapp.webp"
         alt="WhatsApp"
         class="w-full h-full object-contain"
         loading="lazy"
@@ -49,7 +49,7 @@
       aria-label="Прокрутить вниз"
     >
       <NuxtImg
-        src="/images/icons/chevron-down.png"
+        src="/images/icons/chevron-down.webp"
         alt="Прокрутить вниз"
         class="w-full h-full object-contain"
         loading="lazy"

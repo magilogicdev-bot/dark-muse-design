@@ -52,42 +52,42 @@ const progressItems = [
   {
     month: 'декабрь',
     year: '2025',
-    image: '/images/ecocity-progress-december-2025.png'
+    image: '/images/ecocity-progress-december-2025.webp'
   },
   {
     month: 'ноябрь',
     year: '2025',
-    image: '/images/ecocity-progress-november-2025.png'
+    image: '/images/ecocity-progress-november-2025.webp'
   },
   {
     month: 'октябрь',
     year: '2025',
-    image: '/images/ecocity-progress-october-2025.png'
+    image: '/images/ecocity-progress-october-2025.webp'
   },
   {
     month: 'сентябрь',
     year: '2025',
-    image: '/images/ecocity-progress-september-2025.png'
+    image: '/images/ecocity-progress-september-2025.webp'
   },
   {
     month: 'август',
     year: '2025',
-    image: '/images/ecocity-progress-august-2025.png'
+    image: '/images/ecocity-progress-august-2025.webp'
   },
   {
     month: 'июль',
     year: '2025',
-    image: '/images/ecocity-progress-july-2025.png'
+    image: '/images/ecocity-progress-july-2025.webp'
   },
   {
     month: 'июнь',
     year: '2025',
-    image: '/images/ecocity-progress-june-2025.png'
+    image: '/images/ecocity-progress-june-2025.webp'
   },
   {
     month: 'май',
     year: '2025',
-    image: '/images/ecocity-progress-may-2025.png'
+    image: '/images/ecocity-progress-may-2025.webp'
   }
 ]
 

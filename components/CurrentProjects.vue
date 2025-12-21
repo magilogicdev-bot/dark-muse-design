@@ -103,7 +103,7 @@
 
 <script setup>
 const featureIcons = [
-  { src: '/images/icon-ecology.png', alt: 'Экология' },
+  { src: '/images/icon-ecology.webp', alt: 'Экология' },
   { src: '/images/icon-basketball.svg', alt: 'Баскетбол' },
   { src: '/images/icon-brick.svg', alt: 'Кирпичная стена' },
   { src: '/images/icon-fence.svg', alt: 'Забор' },

@@ -104,10 +104,10 @@
 <script setup>
 // Image paths - will be updated after downloading from Figma
 const images = {
-  playgrounds: '/images/ecocity-features-playgrounds.png',
-  nature: '/images/ecocity-features-nature.png',
-  carFree: '/images/ecocity-features-car-free.png',
-  safety: '/images/ecocity-features-safety.png'
+  playgrounds: '/images/ecocity-features-playgrounds.webp',
+  nature: '/images/ecocity-features-nature.webp',
+  carFree: '/images/ecocity-features-car-free.webp',
+  safety: '/images/ecocity-features-safety.webp'
 }
 </script>
 

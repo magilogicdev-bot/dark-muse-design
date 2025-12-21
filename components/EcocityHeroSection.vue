@@ -3,7 +3,7 @@
     <!-- Background Image -->
     <div class="ecocity-hero__bg">
       <img
-        src="/images/c128e2cbdc01ecd9ac287c89ce18f16ad7d56854.png"
+        src="/images/c128e2cbdc01ecd9ac287c89ce18f16ad7d56854.webp"
         alt="Жилой комплекс Экогород 3"
         class="ecocity-hero__image"
       />
@@ -50,18 +50,18 @@
         <div class="ecocity-hero__side-actions">
            <div class="vertical-group">
             <button class="side-btn" aria-label="WhatsApp">
-              <img src="/images/menu-icons/menu-icon-1.png" alt="WhatsApp" />
+              <img src="/images/menu-icons/menu-icon-1.webp" alt="WhatsApp" />
             </button>
             <button class="side-btn" aria-label="Telegram">
-              <img src="/images/menu-icons/menu-icon-2.png" alt="Telegram" />
+              <img src="/images/menu-icons/menu-icon-2.webp" alt="Telegram" />
             </button>
             <button class="side-btn" aria-label="Phone">
-              <img src="/images/menu-icons/menu-icon-3.png" alt="Phone" />
+              <img src="/images/menu-icons/menu-icon-3.webp" alt="Phone" />
             </button>
             <button class="side-btn side-btn--orange" aria-label="Scroll Down">
-              <!-- TODO: Replace with /images/icons/ecocity-scroll-down.png after downloading from Figma -->
+              <!-- TODO: Replace with /images/icons/ecocity-scroll-down.webp after downloading from Figma -->
               <img 
-                src="/images/icons/chevron-down.png" 
+                src="/images/icons/chevron-down.webp" 
                 alt="Scroll Down" 
                 class="w-5 h-5 object-contain"
               />
@@ -72,10 +72,10 @@
         <!-- Bottom Right Circle Buttons -->
         <div class="ecocity-hero__bottom-actions">
            <button class="circle-btn" @click="$emit('open3d')" aria-label="3D Model">
-             <img src="/images/icons/Group 134.png" alt="3D" class="w-full h-full object-contain" />
+             <img src="/images/icons/Group 134.webp" alt="3D" class="w-full h-full object-contain" />
            </button>
            <button class="circle-btn" aria-label="Location">
-             <img src="/images/icons/ecocity-location.png" alt="Location" class="w-full h-full object-contain" />
+             <img src="/images/icons/ecocity-location.webp" alt="Location" class="w-full h-full object-contain" />
            </button>
         </div>
       </div>
@@ -87,8 +87,8 @@
 defineEmits(['open3d'])
 
 // TODO: After downloading icons from Figma, update these paths:
-// scrollDownIcon: '/images/icons/ecocity-scroll-down.png'
-// locationIcon: '/images/icons/ecocity-location.png' (then change v-if to use img instead of svg)
+// scrollDownIcon: '/images/icons/ecocity-scroll-down.webp'
+// locationIcon: '/images/icons/ecocity-location.webp' (then change v-if to use img instead of svg)
 </script>
 
 <style scoped>

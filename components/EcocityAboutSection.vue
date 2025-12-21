@@ -86,11 +86,11 @@
 <script setup>
 // Image paths - will be updated after downloading from Figma
 const images = {
-  main: '/images/ecocity-about-main.png',
-  courtyard: '/images/ecocity-about-courtyard.png',
-  playground: '/images/ecocity-about-playground.png',
-  facade: '/images/ecocity-about-facade.png',
-  gallery: '/images/ecocity-about-gallery.png'
+  main: '/images/ecocity-about-main.webp',
+  courtyard: '/images/ecocity-about-courtyard.webp',
+  playground: '/images/ecocity-about-playground.webp',
+  facade: '/images/ecocity-about-facade.webp',
+  gallery: '/images/ecocity-about-gallery.webp'
 }
 </script>
 

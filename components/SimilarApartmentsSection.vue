@@ -82,7 +82,7 @@ const similarApartments = ref([
     pricePerM2: '93 000 Руб.',
     location: 'Дом 1, этаж 1, подъезд 1',
     completion: 'Сдача в 1 квартале 2028',
-    planImage: '/images/plans/similar-apartment-1.png'
+    planImage: '/images/plans/similar-apartment-1.webp'
   },
   {
     id: 2,
@@ -93,7 +93,7 @@ const similarApartments = ref([
     pricePerM2: '93 000 Руб.',
     location: 'Дом 1, этаж 1, подъезд 1',
     completion: 'Сдача в 1 квартале 2028',
-    planImage: '/images/plans/similar-apartment-2.png'
+    planImage: '/images/plans/similar-apartment-2.webp'
   },
   {
     id: 3,
@@ -104,7 +104,7 @@ const similarApartments = ref([
     pricePerM2: '93 000 Руб.',
     location: 'Дом 1, этаж 1, подъезд 1',
     completion: 'Сдача в 1 квартале 2028',
-    planImage: '/images/plans/similar-apartment-3.png'
+    planImage: '/images/plans/similar-apartment-3.webp'
   }
 ])
 

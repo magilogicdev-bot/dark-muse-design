@@ -74,9 +74,9 @@ const banks = ref([
     reference: '№ 1481 от 11.08.2015',
     fullCost: 'От 21.8% до 22.1%',
     rate: 'От 6.0%',
-    logo: '/images/banks/sberbank-logo.png',
+    logo: '/images/banks/sberbank-logo.webp',
     // New logo: Group 133
-    figmaLogo: '/images/group-133.png',
+    figmaLogo: '/images/group-133.webp',
     link: 'https://www.sberbank.ru'
   },
   {
@@ -84,9 +84,9 @@ const banks = ref([
     reference: '№ 1000 от 08.07.2015',
     fullCost: 'От 21.2% до 28.2%',
     rate: 'От 7.0%',
-    logo: '/images/banks/vtb-logo.png',
+    logo: '/images/banks/vtb-logo.webp',
     // Swapped: Promsvyazbank logo (blue "E" shape)
-    figmaLogo: '/images/design-1090-8364.png',
+    figmaLogo: '/images/design-1090-8364.webp',
     link: 'https://www.vtb.ru'
   },
   {
@@ -94,9 +94,9 @@ const banks = ref([
     reference: '№ 1326 от 16.01.2015',
     fullCost: 'От 23.2% до 32.1%',
     rate: 'От 6.0%',
-    logo: '/images/banks/alfabank-logo.png',
+    logo: '/images/banks/alfabank-logo.webp',
     // Figma design: 5023:4 (Alfa Bank logo - red "A")
-    figmaLogo: '/images/design-5023-4.png',
+    figmaLogo: '/images/design-5023-4.webp',
     link: 'https://www.alfabank.ru'
   },
   {
@@ -104,17 +104,17 @@ const banks = ref([
     reference: '№ 3251 от 17.12.2014',
     fullCost: 'От 21.5% до 31.5%',
     rate: 'От 5.9%',
-    logo: '/images/banks/promsvyazbank-logo.png',
+    logo: '/images/banks/promsvyazbank-logo.webp',
     // Swapped: VTB logo (Abstract icon - two interlocking shapes)
-    figmaLogo: '/images/design-5023-5.png',
+    figmaLogo: '/images/design-5023-5.webp',
     link: 'https://www.psbank.ru'
   }
 ])
 
 // Feature icons from Figma
 const featureIcons = {
-  checkmarkGradient: '/images/design-1090-8354.png', // Checkmark with gradient circle
-  checkmarkGreen: '/images/design-1090-8355.png' // Green checkmark
+  checkmarkGradient: '/images/design-1090-8354.webp', // Checkmark with gradient circle
+  checkmarkGreen: '/images/design-1090-8355.webp' // Green checkmark
 }
 
 const handleImageError = (event) => {

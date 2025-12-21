@@ -3,7 +3,7 @@
     <!-- Decorative image positioned at bottom-right of section -->
     <div class="absolute bottom-0 right-0 z-0 flex items-end justify-end pointer-events-none">
       <img
-        src="/images/mortgage-hero-hand-331f81.png"
+        src="/images/mortgage-hero-hand-331f81.webp"
         alt="Ипотека с Pobedonoscev GROUP"
         class="max-w-[70%] md:max-w-[65%] lg:max-w-[80%] max-h-[70%] object-contain scale-x-[-1]"
       />
@@ -37,7 +37,7 @@
             <!-- Alfa Logo Block -->
             <div class="flex flex-col gap-2 md:gap-2.5 lg:gap-3">
               <img
-                src="/images/alfa-logo.png"
+                src="/images/alfa-logo.webp"
                 alt="АЛЬФА СТРАХОВАНИЕ"
                 class="h-7 md:h-9 lg:h-10 xl:h-12 w-auto"
               />
@@ -49,7 +49,7 @@
             <!-- Sber Logo Block -->
             <div class="flex flex-col gap-2 md:gap-2.5 lg:gap-3">
               <img
-                src="/images/sber-logo.png"
+                src="/images/sber-logo.webp"
                 alt="СБЕР"
                 class="h-6 md:h-8 lg:h-9 xl:h-11 w-auto"
               />

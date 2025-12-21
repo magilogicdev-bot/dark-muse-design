@@ -49,7 +49,7 @@
 </template>
 
 <script setup>
-const excursionImage = '/images/ecocity-excursions.png'
+const excursionImage = '/images/ecocity-excursions.webp'
 
 const handleSignUp = () => {
   // Navigate to contact form or open modal

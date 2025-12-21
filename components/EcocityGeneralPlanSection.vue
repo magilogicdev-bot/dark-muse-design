@@ -65,6 +65,6 @@ const tabs = [
 
 // Image path - will be updated after downloading from Figma
 const images = {
-  generalPlan: '/images/ecocity-general-plan.png'
+  generalPlan: '/images/ecocity-general-plan.webp'
 }
 </script>

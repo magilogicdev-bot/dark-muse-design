@@ -7,7 +7,7 @@
       aria-label="Прокрутить вверх"
     >
       <NuxtImg
-        src="/images/icons/scroll-to-top.png"
+        src="/images/icons/scroll-to-top.webp"
         alt="Прокрутить вверх"
         class="w-full h-full object-contain"
         loading="lazy"

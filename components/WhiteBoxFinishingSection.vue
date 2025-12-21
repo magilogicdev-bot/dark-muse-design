@@ -45,7 +45,7 @@
       >
         <img
           v-if="imageExists"
-          src="/images/white-box-room.png"
+          src="/images/white-box-room.webp"
           alt="Комната с отделкой White Box"
           class="absolute inset-0 w-full h-full object-cover rounded-lg"
           @error="handleImageError"
@@ -147,7 +147,7 @@ onMounted(() => {
     img.onerror = () => {
       imageExists.value = false
     }
-    img.src = '/images/white-box-room.png'
+    img.src = '/images/white-box-room.webp'
   }
 })
 

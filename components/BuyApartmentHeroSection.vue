@@ -35,7 +35,7 @@
         <div class="w-full flex items-end justify-center lg:justify-end -mb-8 md:-mb-12 lg:-mb-16 xl:-mb-20">
           <div class="w-full max-w-full lg:max-w-none aspect-[1052/1138] relative">
             <img
-              src="/images/hero-apartment-woman-group126.png"
+              src="/images/hero-apartment-woman-group126.webp"
               alt="Женщина с подарком"
               class="w-full h-full object-cover object-bottom rounded-lg drop-shadow-[0_0_56px_rgba(225,227,225,0.5),0_4px_20px_rgba(225,227,225,0.3)]"
             />

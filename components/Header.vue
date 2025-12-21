@@ -28,7 +28,7 @@
 
         <div class="header__center">
           <NuxtLink v-if="!isMenuOpen" to="/" class="header__logo">
-            <NuxtImg src="/images/logo.png" alt="Pobedonoscev" class="header__logo-img" />
+            <NuxtImg src="/images/logo.webp" alt="Pobedonoscev" class="header__logo-img" />
           </NuxtLink>
         </div>
 
@@ -97,7 +97,7 @@
         <!-- Background 3D Model - Pinned to bottom right -->
         <div class="menu-background">
           <img
-            src="/images/menu-3d-background.jpeg"
+            src="/images/menu-3d-background.webp"
             alt="3D модель жилого комплекса"
             class="menu-background__image"
           />
@@ -110,7 +110,7 @@
           @click="handle3DButtonClick"
         >
           <img
-            src="/images/3d-icon-button.png"
+            src="/images/3d-icon-button.webp"
             alt="3D"
             class="menu-3d-button__icon"
           />
@@ -153,7 +153,7 @@
             aria-label="WhatsApp"
           >
             <img
-              src="/images/menu-icons/menu-icon-1.png"
+              src="/images/menu-icons/menu-icon-1.webp"
               alt="WhatsApp"
               class="menu-action-button__icon"
             />
@@ -164,7 +164,7 @@
             aria-label="Telegram"
           >
             <img
-              src="/images/menu-icons/menu-icon-2.png"
+              src="/images/menu-icons/menu-icon-2.webp"
               alt="Telegram"
               class="menu-action-button__icon"
             />
@@ -175,7 +175,7 @@
             aria-label="Позвонить"
           >
             <img
-              src="/images/menu-icons/menu-icon-3.png"
+              src="/images/menu-icons/menu-icon-3.webp"
               alt="Позвонить"
               class="menu-action-button__icon"
             />
@@ -186,7 +186,7 @@
             aria-label="Прокрутить вниз"
           >
             <img
-              src="/images/menu-icons/menu-icon-4.png"
+              src="/images/menu-icons/menu-icon-4.webp"
               alt="Прокрутить вниз"
               class="menu-action-button__icon"
             />
@@ -237,13 +237,13 @@
             aria-label="ВИДЕО"
           >
             <img
-              src="/images/menu-icons/menu-video-button.png"
+              src="/images/menu-icons/menu-video-button.webp"
               alt="ВИДЕО"
               class="menu-video-button__image"
             />
           </button>
           <img
-            src="/images/menu-tagline.png"
+            src="/images/menu-tagline.webp"
             alt="Легко трудно быть уникальным"
             class="menu-video-text"
           />

@@ -103,7 +103,7 @@ const isLabelHovered = ref(false)
 
 // Image path
 const images = {
-  whiteBoxRoom: '/images/white-box-room.png'
+  whiteBoxRoom: '/images/white-box-room.webp'
 }
 
 // Define hotspots with their positions (in percentages) and text

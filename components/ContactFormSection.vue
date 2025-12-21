@@ -57,7 +57,7 @@
         <div class="flex items-center justify-center">
           <div class="w-full rounded-lg md:rounded-xl lg:rounded-2xl overflow-hidden">
             <img
-              src="/images/contact-form-complex.png"
+              src="/images/contact-form-complex.webp"
               alt="Жилой комплекс"
               class="w-full h-full object-cover"
               @error="handleImageError"

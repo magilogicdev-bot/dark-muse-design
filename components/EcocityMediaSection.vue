@@ -155,19 +155,19 @@ const newsItems = [
     title: 'ОБЪЕКТ ЗАВЕРШЕН',
     description: 'Самые внимательные уже заметили: вокруг ЖК «Экогород 2» не осталось и намёка на строительный забор...',
     date: '03.12.2025',
-    image: '/images/ecocity-media-news-1.png'
+    image: '/images/ecocity-media-news-1.webp'
   },
   {
     title: 'СТРОИТЕЛЬСТВО ЖК «ЭКОГОРОД 3»',
     description: 'А вот и общий вид на строительную площадку ЖК «Экогород 3» — дом заметно подрос, и вся картина строительства как на ладони...',
     date: '03.12.2025',
-    image: '/images/ecocity-media-news-2.png'
+    image: '/images/ecocity-media-news-2.webp'
   },
   {
     title: 'НОВОСТИ СО СТРОЙКИ «ЭКОГОРОД 3»',
     description: 'А вот и начало строительства третьего этажа ЖК «Экогород 3» — дом уверенно набирает высоту и меняется буквально на глазах. С высоты будущих этажей уже...',
     date: '03.12.2025',
-    image: '/images/ecocity-media-news-3.png'
+    image: '/images/ecocity-media-news-3.webp'
   }
 ]
 

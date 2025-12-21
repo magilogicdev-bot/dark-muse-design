@@ -5,7 +5,7 @@
  * usePageMeta({
  *   title: 'Заголовок страницы',
  *   description: 'Описание страницы',
- *   ogImage: '/images/og-image.jpg'
+ *   ogImage: '/images/og-image.webp'
  * })
  */
 export const usePageMeta = (meta: {
@@ -46,7 +46,7 @@ export const usePageMeta = (meta: {
       },
       {
         property: 'og:image',
-        content: meta.ogImage ? `${siteUrl}${meta.ogImage}` : `${siteUrl}/images/og-default.jpg`
+        content: meta.ogImage ? `${siteUrl}${meta.ogImage}` : `${siteUrl}/images/og-default.webp`
       },
       {
         property: 'og:url',

@@ -4,7 +4,7 @@
     <div class="absolute inset-0 overflow-hidden pointer-events-none z-0">
       <!-- Excavator Illustration (positioned in lower-left area) -->
       <img
-        src="/images/dagestan-excavator.png"
+        src="/images/dagestan-excavator.webp"
         alt=""
         class="absolute top-[530px] left-[81px] w-[40%] md:w-[35%] lg:w-[45%] max-w-[650px] h-auto object-contain opacity-30"
         aria-hidden="true"
@@ -30,7 +30,7 @@
           <!-- Building Image "Камни Дагестана" -->
           <div class="relative aspect-[16/10] overflow-hidden rounded-sm shadow-lg">
             <img 
-              src="/images/dagestan-building-new.png" 
+              src="/images/dagestan-building-new.webp" 
               alt="Здание Камни Дагестана" 
               class="w-full h-full object-cover"
             />
