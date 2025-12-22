@@ -30,4 +30,25 @@ export default defineNuxtConfig({
       autoprefixer: {},
     },
   },
+  // Настройки для статической генерации (SSG)
+  nitro: {
+    prerender: {
+      crawlLinks: true,
+      failOnError: false, // Игнорировать ошибки 404 при генерации
+      routes: [
+        '/',
+        '/about',
+        '/apartment-selection',
+        '/buy-apartment',
+        '/contacts',
+        '/favorites',
+        '/mortgage',
+        '/mortgage-guide',
+        '/news',
+        '/apartment/1',
+        '/apartment/2',
+        '/apartment/3'
+      ]
+    }
+  }
 })

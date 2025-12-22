@@ -1,6 +1,6 @@
 <template>
   <NuxtLink
-    to="/apartments"
+    to="/apartment-selection"
     class="relative bg-[#2a2c38] rounded-lg md:rounded-xl overflow-hidden group flex flex-col aspect-[4/5] w-full hover:bg-[#353742] transition-colors"
   >
     <!-- Search Icon (Top Left) -->
@@ -22,6 +22,7 @@
 <script setup>
 // Component for "Find other plans" card
 </script>
+
 
 
 

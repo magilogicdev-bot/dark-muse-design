@@ -1,6 +1,6 @@
 <template>
   <NuxtLink
-    to="/apartments"
+    to="/apartment-selection"
     class="relative bg-primary rounded-md md:rounded-lg overflow-hidden group flex flex-col aspect-[4/5] w-full h-full hover:bg-[#353742] transition-colors border border-white/30"
   >
     <!-- Search Icon with Circle (Top Left) -->
