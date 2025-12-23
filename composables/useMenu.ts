@@ -1,32 +1,25 @@
 import { ref } from 'vue'
 
-export const useMenu = () => {
-  const isMenuOpen = ref(false)
+// Global state for menu
+const isMenuOpen = ref(false)
 
-  const toggleMenu = () => {
-    isMenuOpen.value = !isMenuOpen.value
-    if (isMenuOpen.value) {
-      if (typeof document !== 'undefined') {
-        document.body.style.overflow = 'hidden'
-      }
-    } else {
-      if (typeof document !== 'undefined') {
-        document.body.style.overflow = ''
-      }
+export function useMenu() {
+    const toggleMenu = () => {
+        isMenuOpen.value = !isMenuOpen.value
     }
-  }
 
-  const closeMenu = () => {
-    isMenuOpen.value = false
-    if (typeof document !== 'undefined') {
-      document.body.style.overflow = ''
+    const openMenu = () => {
+        isMenuOpen.value = true
     }
-  }
 
-  return {
-    isMenuOpen,
-    toggleMenu,
-    closeMenu
-  }
+    const closeMenu = () => {
+        isMenuOpen.value = false
+    }
+
+    return {
+        isMenuOpen,
+        toggleMenu,
+        openMenu,
+        closeMenu
+    }
 }
-

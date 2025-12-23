@@ -72,7 +72,8 @@
           <!-- Button (Figma 992:55 + 992:56) -->
           <div class="flex justify-start">
             <button 
-              class="group inline-flex items-center gap-3 text-white hover:text-white/80 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-white/50 focus:ring-offset-2 focus:ring-offset-primary rounded-sm px-2 py-1"
+              @click="navigateTo('/project/ecocity')"
+              class="group inline-flex items-center gap-3 text-white hover:text-white/80 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-white/50 focus:ring-offset-2 focus:ring-offset-primary rounded-sm px-2 py-1 cursor-pointer relative z-50"
               aria-label="Узнать подробнее о проекте ЭКОГОРОД"
             >
               <span class="button-text uppercase">

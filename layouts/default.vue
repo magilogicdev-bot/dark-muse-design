@@ -1,18 +1,21 @@
 <template>
-  <div class="min-h-screen bg-primary text-white font-sans">
+  <div class="min-h-screen bg-primary text-white font-sans" :class="{ 'overflow-hidden': isMenuOpen }">
     <Header />
     <main class="main-content">
       <slot />
     </main>
     <Footer />
-    <ScrollToTopButton />
   </div>
 </template>
 
 <script setup>
+import { useMenu } from '~/composables/useMenu'
+
 // Базовый layout с Header и Footer для всех страниц
 // Если нужен другой layout, создайте новый файл в папке layouts/
 // Компоненты автоматически импортируются в Nuxt 3
+
+const { isMenuOpen } = useMenu()
 </script>
 
 <style scoped>

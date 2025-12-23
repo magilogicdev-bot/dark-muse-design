@@ -48,8 +48,12 @@
               <p class="text-white/80 uppercase text-sm tracking-[-0.02em]">ЖИЛОЙ КОМПЛЕКС</p>
               <h3 class="text-3xl font-medium uppercase leading-tight">ЭКОГОРОД 3</h3>
             </div>
-            <button class="w-full sm:w-auto lg:w-[140px] xl:w-[180px] h-[36px] md:h-[40px] lg:h-[48px] xl:h-[56px] bg-white rounded-[5px] text-black text-base font-medium uppercase hover:bg-gray-100 transition-colors px-4">
-              подробнее
+            <button 
+              @click="navigateTo('/project/ecocity')"
+              type="button"
+              class="flex items-center justify-center w-full sm:w-auto lg:w-[140px] xl:w-[180px] h-[36px] md:h-[40px] lg:h-[48px] xl:h-[56px] bg-white rounded-[5px] text-black text-[10px] md:text-[12px] lg:text-[14px] xl:text-[16px] font-medium uppercase hover:bg-gray-100 transition-colors px-4 cursor-pointer relative z-50 mb-2"
+            >
+              ПОДРОБНЕЕ
             </button>
           </div>
         </div>
@@ -109,4 +113,5 @@ const featureIcons = [
   { src: '/images/icon-fence.svg', alt: 'Забор' },
   { src: '/images/icon-playground.svg', alt: 'Детская площадка' }
 ]
+
 </script>

@@ -2,7 +2,7 @@
   <header ref="headerEl" class="header" :class="{ 'header--menu-open': isMenuOpen }">
     <!-- Top ribbon -->
     <div ref="headerBarEl" class="header__bar">
-      <div class="container mx-auto max-w-[1920px] flex items-center justify-between gap-1.5 sm:gap-2.5 md:gap-4 lg:gap-6 xl:gap-8 px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 2xl:px-20 py-2.5 sm:py-3 md:py-4 lg:py-5 xl:py-6 2xl:py-8 w-full min-w-0 overflow-hidden">
+      <div class="container mx-auto max-w-[1920px] flex items-center justify-between gap-1.5 sm:gap-2.5 md:gap-4 lg:gap-6 xl:gap-8 px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 2xl:px-20 py-1.5 sm:py-2 md:py-2.5 lg:py-3 xl:py-4 2xl:py-5 w-full min-w-0 overflow-hidden">
         <div class="header__left">
           <button
             @click="toggleMenu"
@@ -27,7 +27,7 @@
         </div>
 
         <div class="header__center">
-          <NuxtLink v-if="!isMenuOpen" to="/" class="header__logo">
+          <NuxtLink to="/" class="header__logo" :class="{ 'header__logo--hidden': isHomePage }">
             <NuxtImg src="/images/logo.webp" alt="Pobedonoscev" class="header__logo-img" />
           </NuxtLink>
         </div>
@@ -86,168 +86,34 @@
       </div>
     </div>
 
-    <!-- Fullscreen Menu Overlay -->
-    <Transition name="menu-fade">
+    <!-- Compact Dropdown Menu -->
+    <Transition name="dropdown-slide" @after-enter="onMenuEnter">
       <div
         v-if="isMenuOpen"
         id="site-menu"
-        class="menu-overlay"
-        @click.self="closeMenu"
+        class="dropdown-menu"
+        @mouseleave="closeMenu"
       >
-        <!-- Background 3D Model - Pinned to bottom right -->
-        <div class="menu-background">
-          <img
-            src="/images/menu-3d-background.webp"
-            alt="3D модель жилого комплекса"
-            class="menu-background__image"
-          />
+        <!-- Decorative Rail Lines -->
+        <div class="dropdown-menu__rail-lines">
+          <div class="dropdown-menu__rail-line dropdown-menu__rail-line--accent"></div>
+          <div class="dropdown-menu__rail-line"></div>
         </div>
         
-        <!-- 3D Icon Button - Outside menu-background to be clickable -->
-        <button 
-          class="menu-3d-button" 
-          aria-label="Интерактивная 3D модель"
-          @click="handle3DButtonClick"
-        >
-          <img
-            src="/images/3d-icon-button.webp"
-            alt="3D"
-            class="menu-3d-button__icon"
-          />
-        </button>
-
-        <div class="menu">
-          <div class="menu__content">
-            <div class="menu__rail-lines">
-              <div class="menu__rail-line menu__rail-line--left"></div>
-              <div class="menu__rail-line"></div>
-            </div>
-            <nav class="menu__nav">
-              <NuxtLink
-                v-for="item in menuItems"
-                :key="item.label"
-                :to="item.to"
-                class="menu__link"
-                @click="closeMenu"
-              >
-                {{ item.label }}
-              </NuxtLink>
-            </nav>
-          </div>
-
-          <div class="menu__mobile-links">
-            <a :href="phoneHref" class="menu__phone">
-              {{ config.contacts.phone.primary }}
-            </a>
-            <a :href="config.navigation.getPresentation" class="menu__presentation-link">
-              ПОЛУЧИТЬ ПРЕЗЕНТАЦИЮ
-            </a>
-          </div>
-        </div>
-
-        <!-- Vertical Action Buttons (Right Side) -->
-        <div class="menu-action-buttons">
-          <button
-            @click="handleWhatsApp"
-            class="menu-action-button"
-            aria-label="WhatsApp"
+        <!-- Navigation Links with staggered animation -->
+        <nav class="dropdown-menu__nav">
+          <NuxtLink
+            v-for="(item, index) in menuItems"
+            :key="item.label"
+            :to="item.to"
+            class="dropdown-menu__link"
+            :class="{ 'dropdown-menu__link--visible': menuItemsVisible }"
+            :style="{ transitionDelay: `${index * 80}ms` }"
+            @click="closeMenu"
           >
-            <img
-              src="/images/menu-icons/menu-icon-1.webp"
-              alt="WhatsApp"
-              class="menu-action-button__icon"
-            />
-          </button>
-          <button
-            @click="handleTelegram"
-            class="menu-action-button"
-            aria-label="Telegram"
-          >
-            <img
-              src="/images/menu-icons/menu-icon-2.webp"
-              alt="Telegram"
-              class="menu-action-button__icon"
-            />
-          </button>
-          <button
-            @click="handlePhone"
-            class="menu-action-button"
-            aria-label="Позвонить"
-          >
-            <img
-              src="/images/menu-icons/menu-icon-3.webp"
-              alt="Позвонить"
-              class="menu-action-button__icon"
-            />
-          </button>
-          <button
-            @click="handleScrollDown"
-            class="menu-action-button"
-            aria-label="Прокрутить вниз"
-          >
-            <img
-              src="/images/menu-icons/menu-icon-4.webp"
-              alt="Прокрутить вниз"
-              class="menu-action-button__icon"
-            />
-          </button>
-        </div>
-
-        <!-- Bottom Right Buttons (Audio + Video) -->
-        <div class="menu-bottom-buttons">
-          <button
-            @click="handleAudioClick"
-            class="menu-audio-button"
-            aria-label="Аудио"
-          >
-            <svg
-              class="menu-audio-button__icon"
-              viewBox="0 0 24 24"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <rect x="4" y="12" width="2" height="8" fill="currentColor"/>
-              <rect x="8" y="8" width="2" height="16" fill="currentColor"/>
-              <rect x="12" y="4" width="2" height="24" fill="currentColor"/>
-              <rect x="16" y="10" width="2" height="12" fill="currentColor"/>
-            </svg>
-          </button>
-          <button
-            @click="handleVideoClick"
-            class="menu-bottom-video-button"
-            aria-label="ВИДЕО"
-          >
-            <svg
-              class="menu-bottom-video-button__play-icon"
-              viewBox="0 0 24 24"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path d="M8 5v14l11-7z" fill="currentColor"/>
-            </svg>
-            <span class="menu-bottom-video-button__text">ВИДЕО</span>
-          </button>
-        </div>
-
-        <!-- Video Button (Center) -->
-        <div class="menu-video-container">
-          <button
-            @click="handleVideoClick"
-            class="menu-video-button"
-            aria-label="ВИДЕО"
-          >
-            <img
-              src="/images/menu-icons/menu-video-button.webp"
-              alt="ВИДЕО"
-              class="menu-video-button__image"
-            />
-          </button>
-          <img
-            src="/images/menu-tagline.webp"
-            alt="Легко трудно быть уникальным"
-            class="menu-video-text"
-          />
-        </div>
+            {{ item.label }}
+          </NuxtLink>
+        </nav>
       </div>
     </Transition>
 
@@ -274,9 +140,18 @@ const route = useRoute()
 const headerEl = ref(null)
 const headerBarEl = ref(null)
 const is3DViewerOpen = ref(false)
+const menuItemsVisible = ref(false)
+
+// Trigger staggered animation after menu panel appears
+const onMenuEnter = () => {
+  menuItemsVisible.value = true
+}
 
 // Check if we're on the favorites page
 const isFavoritesPage = computed(() => route.path === '/favorites')
+
+// Check if we're on the home page
+const isHomePage = computed(() => route.path === '/')
 
 // Computed для телефонных ссылок
 const phoneHref = 'tel:' + config.contacts.phone.formatted
@@ -294,6 +169,8 @@ watch(isMenuOpen, (open) => {
     window.addEventListener('keydown', onKeydown)
   } else {
     window.removeEventListener('keydown', onKeydown)
+    // Reset menu items visibility for next animation
+    menuItemsVisible.value = false
   }
 })
 
@@ -345,8 +222,8 @@ onBeforeUnmount(() => {
 // Menu items
 const menuItems = [
   { label: 'КОМПАНИЯ', to: '/about' },
-  { label: 'ПРОЕКТЫ', to: '/projects' },
-  { label: 'ВЫБОР КВАРТИРЫ', to: '/apartment-selection' },
+  { label: 'ПРОЕКТЫ', to: '/apartment-selection' },
+  { label: 'ВЫБОР КВАРТИРЫ', to: '/buy-apartment' },
   { label: 'ИПОТЕКА', to: '/mortgage' },
   { label: 'КОНТАКТЫ', to: '/contacts' },
   { label: 'НОВОСТИ', to: '/news' },
@@ -417,9 +294,7 @@ const handleVideoClick = () => {
   color: #fff;
 }
 
-.header--menu-open {
-  position: fixed;
-}
+
 
 .header__bar {
   position: relative;
@@ -575,6 +450,11 @@ const handleVideoClick = () => {
   transition: opacity 0.3s ease, transform 0.3s ease;
 }
 
+.header__logo--hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
 .header__logo:hover {
   opacity: 0.9;
   transform: translateY(-1px);
@@ -711,15 +591,175 @@ const handleVideoClick = () => {
   width: 24px;
 }
 
-/* Menu Overlay */
-.menu-overlay {
-  position: fixed;
-  inset: 0;
+/* Compact Dropdown Menu */
+.dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 16px;
+  z-index: 240;
   background: #2a2c38;
-  z-index: 200;
+  border-radius: 0 0 20px 20px;
+  padding: 24px 32px 32px 24px;
   display: flex;
-  align-items: flex-start;
-  overflow: hidden;
+  gap: 16px;
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.35), 0 4px 16px rgba(0, 0, 0, 0.2);
+  transform-origin: top left;
+}
+
+@media (min-width: 640px) {
+  .dropdown-menu {
+    left: 24px;
+    padding: 28px 40px 36px 28px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .dropdown-menu {
+    left: 48px;
+    padding: 32px 48px 40px 32px;
+  }
+}
+
+@media (min-width: 1440px) {
+  .dropdown-menu {
+    left: 80px;
+  }
+}
+
+/* Rail Lines */
+.dropdown-menu__rail-lines {
+  display: flex;
+  gap: 4px;
+  padding-top: 8px;
+  flex-shrink: 0;
+}
+
+.dropdown-menu__rail-line {
+  width: 1px;
+  height: 100%;
+  min-height: 280px;
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0.6) 15%,
+    rgba(255, 255, 255, 0.6) 85%,
+    rgba(255, 255, 255, 0) 100%
+  );
+}
+
+.dropdown-menu__rail-line--accent {
+  width: 1px;
+  background: linear-gradient(
+    180deg,
+    rgba(212, 149, 45, 0) 0%,
+    rgba(212, 149, 45, 0.7) 15%,
+    rgba(212, 149, 45, 0.7) 85%,
+    rgba(212, 149, 45, 0) 100%
+  );
+}
+
+/* Navigation */
+.dropdown-menu__nav {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  padding-left: 16px;
+}
+
+@media (min-width: 640px) {
+  .dropdown-menu__nav {
+    gap: 28px;
+    padding-left: 20px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .dropdown-menu__nav {
+    gap: 32px;
+    padding-left: 24px;
+  }
+}
+
+.dropdown-menu__link {
+  font-family: 'Mazzard', 'Inter', sans-serif;
+  font-size: 18px;
+  font-weight: 300;
+  letter-spacing: 0.02em;
+  color: #fff;
+  text-decoration: none;
+  text-transform: uppercase;
+  display: block;
+  /* Initial state - hidden */
+  opacity: 0;
+  transform: translateX(-15px);
+  transition: opacity 0.4s ease, transform 0.4s ease, color 0.3s ease;
+}
+
+/* Visible state with staggered delay */
+.dropdown-menu__link--visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+@media (min-width: 640px) {
+  .dropdown-menu__link {
+    font-size: 20px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .dropdown-menu__link {
+    font-size: 22px;
+  }
+}
+
+.dropdown-menu__link:hover {
+  color: #d4952d;
+  transform: translateX(6px);
+}
+
+
+
+/* Dropdown Slide Animation */
+.dropdown-slide-enter-active {
+  animation: dropdownSlideIn 0.35s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.dropdown-slide-leave-active {
+  animation: dropdownSlideOut 0.25s cubic-bezier(0.5, 0, 0.75, 0) forwards;
+}
+
+@keyframes dropdownSlideIn {
+  0% {
+    opacity: 0;
+    transform: translateY(-20px) scale(0.95);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes dropdownSlideOut {
+  0% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-20px) scale(0.95);
+  }
+}
+
+/* Fade Animation for Backdrop */
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.3s ease;
+}
+
+.fade-enter-from,
+.fade-leave-to {
+  opacity: 0;
 }
 
 /* Background 3D Model - Pinned to bottom right */
@@ -1422,25 +1462,25 @@ const handleVideoClick = () => {
 
 @media (min-width: 481px) and (max-width: 768px) {
   .header__bar {
-    min-height: 70px;
+    min-height: 50px;
   }
 }
 
 @media (min-width: 769px) and (max-width: 1024px) {
   .header__bar {
-    min-height: 80px;
+    min-height: 60px;
   }
 }
 
 @media (min-width: 1025px) {
   .header__bar {
-    min-height: 90px;
+    min-height: 70px;
   }
 }
 
 @media (min-width: 1440px) {
   .header__bar {
-    min-height: 106px;
+    min-height: 80px;
   }
 }
 </style>

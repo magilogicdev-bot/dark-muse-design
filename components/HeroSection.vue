@@ -42,6 +42,9 @@
         @mouseleave="handleTooltipLeave"
       />
     </div>
+    
+    <!-- Action Menu Button -->
+    <ActionMenuButton />
   </section>
 </template>
 

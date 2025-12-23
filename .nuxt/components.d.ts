@@ -15,6 +15,7 @@ type LazyComponent<T> = DefineComponent<HydrationStrategies, {}, {}, {}, {}, {},
 
 
 export const AboutUsSection: typeof import("../components/AboutUsSection.vue").default
+export const ActionMenuButton: typeof import("../components/ActionMenuButton.vue").default
 export const ApartmentCard: typeof import("../components/ApartmentCard.vue").default
 export const ApartmentPlanCard: typeof import("../components/ApartmentPlanCard.vue").default
 export const ApartmentSelectionSection: typeof import("../components/ApartmentSelectionSection.vue").default
@@ -112,6 +113,7 @@ export const Html: typeof import("../node_modules/nuxt/dist/head/runtime/compone
 export const Body: typeof import("../node_modules/nuxt/dist/head/runtime/components").Body
 export const NuxtIsland: typeof import("../node_modules/nuxt/dist/app/components/nuxt-island").default
 export const LazyAboutUsSection: LazyComponent<typeof import("../components/AboutUsSection.vue").default>
+export const LazyActionMenuButton: LazyComponent<typeof import("../components/ActionMenuButton.vue").default>
 export const LazyApartmentCard: LazyComponent<typeof import("../components/ApartmentCard.vue").default>
 export const LazyApartmentPlanCard: LazyComponent<typeof import("../components/ApartmentPlanCard.vue").default>
 export const LazyApartmentSelectionSection: LazyComponent<typeof import("../components/ApartmentSelectionSection.vue").default>

@@ -7,6 +7,9 @@
     <CurrentProjects />
     <CompletedProjects />
     <MediaSection />
+    
+    <!-- Floating Action Bar -->
+    <FloatingActionBar />
   </div>
 </template>
 
