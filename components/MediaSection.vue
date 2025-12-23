@@ -32,7 +32,10 @@
           
           <!-- Subscribe Button -->
           <div class="flex justify-start lg:justify-end">
-            <button class="px-3 md:px-4 lg:px-5 xl:px-6 h-[32px] md:h-[36px] lg:h-[40px] xl:h-[44px] rounded-[5px] bg-white text-black text-[10px] md:text-[11px] lg:text-[12px] xl:text-[14px] font-medium uppercase hover:bg-gray-100 transition-colors flex items-center gap-1.5 md:gap-2">
+            <button 
+              @click="handleSubscribe"
+              class="px-3 md:px-4 lg:px-5 xl:px-6 h-[32px] md:h-[36px] lg:h-[40px] xl:h-[44px] rounded-[5px] bg-white text-black text-[10px] md:text-[11px] lg:text-[12px] xl:text-[14px] font-medium uppercase hover:bg-gray-100 transition-colors flex items-center gap-1.5 md:gap-2"
+            >
               <svg class="w-3 h-3 md:w-3.5 md:h-3.5 lg:w-4 lg:h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
               </svg>
@@ -84,10 +87,96 @@
         <span class="w-[8px] h-[8px] rounded-full bg-white/30"></span>
       </div>
     </div>
+
+    <!-- Subscribe Modal -->
+    <Teleport to="body">
+      <Transition name="modal-fade">
+        <div
+          v-if="isSubscribeModalOpen"
+          class="fixed inset-0 z-[1000] bg-black/70 flex items-center justify-center p-0 md:p-4"
+          @click.self="closeSubscribeModal"
+        >
+          <div class="relative w-full h-full md:h-auto md:max-w-[500px] bg-[#1a1d28] rounded-none md:rounded-xl overflow-hidden shadow-2xl flex flex-col">
+            <button
+              class="absolute top-2 right-2 md:top-4 md:right-4 z-10 w-10 h-10 md:w-11 md:h-11 flex items-center justify-center bg-white/10 border border-white/20 rounded-full text-white cursor-pointer transition-all hover:bg-white/20 hover:scale-110"
+              @click="closeSubscribeModal"
+              aria-label="Закрыть"
+            >
+              <svg
+                class="w-5 h-5 md:w-6 md:h-6"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M6 18L18 6M6 6l12 12"
+                />
+              </svg>
+            </button>
+
+            <div class="p-6 md:p-8 flex-1 flex flex-col">
+              <h2 class="text-xl md:text-2xl font-semibold text-white uppercase mb-4 text-center">
+                ПОДПИСАТЬСЯ НА НОВОСТИ
+              </h2>
+              
+              <p class="text-sm md:text-sm text-white/70 mb-6 md:mb-8 text-center leading-relaxed">
+                Будьте в курсе самых значимых событий: новые реализованные проекты, тенденции в архитектуре и строительных технологиях.
+              </p>
+
+              <form class="flex flex-col gap-6 flex-1" @submit.prevent="submitSubscribeForm">
+                <div class="flex flex-col">
+                  <label class="text-white text-sm md:text-base font-medium mb-2">
+                    Email
+                  </label>
+                  <input
+                    type="email"
+                    v-model="subscribeForm.email"
+                    required
+                    class="w-full bg-white text-black rounded-lg px-4 py-3 md:py-3.5 text-sm md:text-base border-none outline-none focus:outline-2 focus:outline-[#F2994A] focus:outline-offset-2 transition-all"
+                    placeholder="Введите ваш email"
+                  />
+                </div>
+
+                <button
+                  type="submit"
+                  class="w-full bg-[#F2994A] hover:bg-[#e8893a] text-white rounded-lg px-4 py-3 md:py-4 text-sm md:text-base font-semibold uppercase transition-colors disabled:opacity-60 disabled:cursor-not-allowed"
+                  :disabled="isSubmitting"
+                >
+                  <span v-if="!isSubmitting">ПОДПИСАТЬСЯ</span>
+                  <span v-else>ОТПРАВКА...</span>
+                </button>
+              </form>
+
+              <div v-if="subscribeSuccess" class="flex flex-col items-center gap-4 pt-6 md:pt-8 mt-4">
+                <svg class="w-8 h-8 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                </svg>
+                <p class="text-white text-sm md:text-base text-center">
+                  Спасибо! Вы успешно подписались на новости.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </Transition>
+    </Teleport>
   </section>
 </template>
 
 <script setup>
+import { ref } from 'vue'
+
+const isSubscribeModalOpen = ref(false)
+const isSubmitting = ref(false)
+const subscribeSuccess = ref(false)
+
+const subscribeForm = ref({
+  email: ''
+})
+
 const posts = [
   {
     date: '03.12.2025',
@@ -111,6 +200,48 @@ const posts = [
     image: '/images/media-3.webp'
   }
 ]
+
+const handleSubscribe = () => {
+  isSubscribeModalOpen.value = true
+  subscribeSuccess.value = false
+  subscribeForm.value.email = ''
+}
+
+const closeSubscribeModal = () => {
+  isSubscribeModalOpen.value = false
+  // Reset form after a delay to allow animation to complete
+  setTimeout(() => {
+    subscribeForm.value.email = ''
+    subscribeSuccess.value = false
+  }, 300)
+}
+
+const submitSubscribeForm = async () => {
+  if (!subscribeForm.value.email) return
+
+  isSubmitting.value = true
+
+  try {
+    // Here you would typically send the email to your backend API
+    // For now, we'll simulate an API call
+    await new Promise(resolve => setTimeout(resolve, 1000))
+    
+    console.log('Subscribing email:', subscribeForm.value.email)
+    
+    // Show success message
+    subscribeSuccess.value = true
+    
+    // Close modal after 2 seconds
+    setTimeout(() => {
+      closeSubscribeModal()
+    }, 2000)
+  } catch (error) {
+    console.error('Error subscribing:', error)
+    // You could add error handling here
+  } finally {
+    isSubmitting.value = false
+  }
+}
 </script>
 
 <style scoped>
@@ -125,5 +256,27 @@ const posts = [
   -webkit-line-clamp: 3;
   -webkit-box-orient: vertical;
   overflow: hidden;
+}
+
+/* Transition animations for modal */
+.modal-fade-enter-active,
+.modal-fade-leave-active {
+  transition: opacity 0.3s ease;
+}
+
+.modal-fade-enter-active > div,
+.modal-fade-leave-active > div {
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.modal-fade-enter-from,
+.modal-fade-leave-to {
+  opacity: 0;
+}
+
+.modal-fade-enter-from > div,
+.modal-fade-leave-to > div {
+  opacity: 0;
+  transform: scale(0.9);
 }
 </style>

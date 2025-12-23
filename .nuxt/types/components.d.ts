@@ -29,6 +29,7 @@ interface _GlobalComponents {
   'CompletedProjects': typeof import("../../components/CompletedProjects.vue").default
   'ContactFormSection': typeof import("../../components/ContactFormSection.vue").default
   'ContactSection': typeof import("../../components/ContactSection.vue").default
+  'CookieConsent': typeof import("../../components/CookieConsent.vue").default
   'CurrentProjects': typeof import("../../components/CurrentProjects.vue").default
   'DagestanStonesSection': typeof import("../../components/DagestanStonesSection.vue").default
   'DocumentSection': typeof import("../../components/DocumentSection.vue").default
@@ -56,6 +57,7 @@ interface _GlobalComponents {
   'Header': typeof import("../../components/Header.vue").default
   'HeroSection': typeof import("../../components/HeroSection.vue").default
   'HowToBuySection': typeof import("../../components/HowToBuySection.vue").default
+  'ImageZoomModal': typeof import("../../components/ImageZoomModal.vue").default
   'InvestmentSection': typeof import("../../components/InvestmentSection.vue").default
   'LocationSection': typeof import("../../components/LocationSection.vue").default
   'MapSection': typeof import("../../components/MapSection.vue").default
@@ -127,6 +129,7 @@ interface _GlobalComponents {
   'LazyCompletedProjects': LazyComponent<typeof import("../../components/CompletedProjects.vue").default>
   'LazyContactFormSection': LazyComponent<typeof import("../../components/ContactFormSection.vue").default>
   'LazyContactSection': LazyComponent<typeof import("../../components/ContactSection.vue").default>
+  'LazyCookieConsent': LazyComponent<typeof import("../../components/CookieConsent.vue").default>
   'LazyCurrentProjects': LazyComponent<typeof import("../../components/CurrentProjects.vue").default>
   'LazyDagestanStonesSection': LazyComponent<typeof import("../../components/DagestanStonesSection.vue").default>
   'LazyDocumentSection': LazyComponent<typeof import("../../components/DocumentSection.vue").default>
@@ -154,6 +157,7 @@ interface _GlobalComponents {
   'LazyHeader': LazyComponent<typeof import("../../components/Header.vue").default>
   'LazyHeroSection': LazyComponent<typeof import("../../components/HeroSection.vue").default>
   'LazyHowToBuySection': LazyComponent<typeof import("../../components/HowToBuySection.vue").default>
+  'LazyImageZoomModal': LazyComponent<typeof import("../../components/ImageZoomModal.vue").default>
   'LazyInvestmentSection': LazyComponent<typeof import("../../components/InvestmentSection.vue").default>
   'LazyLocationSection': LazyComponent<typeof import("../../components/LocationSection.vue").default>
   'LazyMapSection': LazyComponent<typeof import("../../components/MapSection.vue").default>

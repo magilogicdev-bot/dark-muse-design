@@ -30,7 +30,7 @@
           </div>
           <div class="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black/46"></div>
           <div class="absolute bottom-3 md:bottom-4 lg:bottom-6 xl:bottom-8 left-3 md:left-4 lg:left-6 xl:left-8">
-            <h3 class="text-lg md:text-xl lg:text-2xl xl:text-3xl font-medium uppercase text-white">жк "экогород 2"</h3>
+            <h3 class="text-lg md:text-xl lg:text-2xl xl:text-3xl font-bold uppercase text-white">жк "экогород 2"</h3>
           </div>
         </article>
 
@@ -49,6 +49,12 @@
               />
             </div>
             <div class="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent"></div>
+            <!-- Title overlay - appears on hover -->
+            <div class="absolute top-3 md:top-4 lg:top-6 xl:top-8 left-1/2 -translate-x-1/2 w-full px-3 md:px-4">
+              <h3 class="text-base md:text-lg lg:text-xl xl:text-2xl font-bold uppercase text-white text-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                {{ item.title }}
+              </h3>
+            </div>
           </article>
         </div>
       </div>
@@ -58,9 +64,9 @@
 
 <script setup>
 const galleryItems = [
-  { title: 'Проект 1', image: '/images/completed-projects-1.webp' },
-  { title: 'Проект 2', image: '/images/completed-projects-2.webp' },
-  { title: 'Проект 3', image: '/images/completed-projects-3.webp' },
-  { title: 'Проект 4', image: '/images/completed-projects-4.webp' }
+  { title: 'новый дом', image: '/images/completed-projects-1.webp' },
+  { title: 'экогород', image: '/images/completed-projects-2.webp' },
+  { title: 'папанина', image: '/images/completed-projects-3.webp' },
+  { title: 'жк литератор', image: '/images/completed-projects-4.webp' }
 ]
 </script>

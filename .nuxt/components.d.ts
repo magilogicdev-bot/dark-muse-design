@@ -29,6 +29,7 @@ export const ComparisonTableSection: typeof import("../components/ComparisonTabl
 export const CompletedProjects: typeof import("../components/CompletedProjects.vue").default
 export const ContactFormSection: typeof import("../components/ContactFormSection.vue").default
 export const ContactSection: typeof import("../components/ContactSection.vue").default
+export const CookieConsent: typeof import("../components/CookieConsent.vue").default
 export const CurrentProjects: typeof import("../components/CurrentProjects.vue").default
 export const DagestanStonesSection: typeof import("../components/DagestanStonesSection.vue").default
 export const DocumentSection: typeof import("../components/DocumentSection.vue").default
@@ -56,6 +57,7 @@ export const GallerySection: typeof import("../components/GallerySection.vue").d
 export const Header: typeof import("../components/Header.vue").default
 export const HeroSection: typeof import("../components/HeroSection.vue").default
 export const HowToBuySection: typeof import("../components/HowToBuySection.vue").default
+export const ImageZoomModal: typeof import("../components/ImageZoomModal.vue").default
 export const InvestmentSection: typeof import("../components/InvestmentSection.vue").default
 export const LocationSection: typeof import("../components/LocationSection.vue").default
 export const MapSection: typeof import("../components/MapSection.vue").default
@@ -127,6 +129,7 @@ export const LazyComparisonTableSection: LazyComponent<typeof import("../compone
 export const LazyCompletedProjects: LazyComponent<typeof import("../components/CompletedProjects.vue").default>
 export const LazyContactFormSection: LazyComponent<typeof import("../components/ContactFormSection.vue").default>
 export const LazyContactSection: LazyComponent<typeof import("../components/ContactSection.vue").default>
+export const LazyCookieConsent: LazyComponent<typeof import("../components/CookieConsent.vue").default>
 export const LazyCurrentProjects: LazyComponent<typeof import("../components/CurrentProjects.vue").default>
 export const LazyDagestanStonesSection: LazyComponent<typeof import("../components/DagestanStonesSection.vue").default>
 export const LazyDocumentSection: LazyComponent<typeof import("../components/DocumentSection.vue").default>
@@ -154,6 +157,7 @@ export const LazyGallerySection: LazyComponent<typeof import("../components/Gall
 export const LazyHeader: LazyComponent<typeof import("../components/Header.vue").default>
 export const LazyHeroSection: LazyComponent<typeof import("../components/HeroSection.vue").default>
 export const LazyHowToBuySection: LazyComponent<typeof import("../components/HowToBuySection.vue").default>
+export const LazyImageZoomModal: LazyComponent<typeof import("../components/ImageZoomModal.vue").default>
 export const LazyInvestmentSection: LazyComponent<typeof import("../components/InvestmentSection.vue").default>
 export const LazyLocationSection: LazyComponent<typeof import("../components/LocationSection.vue").default>
 export const LazyMapSection: LazyComponent<typeof import("../components/MapSection.vue").default>

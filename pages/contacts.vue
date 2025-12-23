@@ -1,161 +1,241 @@
 <template>
-  <div class="contacts-page relative">
-    <!-- Main Section -->
-    <section class="relative min-h-[calc(100vh-200px)] pb-14">
-      <!-- Container for proper alignment with header/footer -->
-      <div class="container mx-auto max-w-full sm:max-w-[640px] md:max-w-[768px] lg:max-w-[1024px] xl:max-w-[1280px] 2xl:max-w-[1920px] px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 2xl:px-20 relative">
-        <div class="grid lg:grid-cols-[400px_1fr] xl:grid-cols-[450px_1fr] 2xl:grid-cols-[500px_1fr] min-h-[calc(100vh-200px)]">
-          
-          <!-- Left Column: Contact Info -->
-          <div class="relative z-20 py-8 lg:py-10 xl:py-12 flex flex-col">
-            <div class="flex flex-col gap-4 lg:gap-5 xl:gap-6">
-              <!-- Title -->
-              <h1 class="text-5xl font-semibold tracking-tight leading-tight text-white">
-                КОНТАКТЫ
-              </h1>
-              
-              <!-- Address -->
-              <p class="text-lg leading-relaxed text-white/70" style="font-family: 'Manrope', sans-serif">
-                г. Ярославль, пл. Труда, д. 1, <br />
-                Бизнес-центр Towers, офис 605
-              </p>
+  <div class="contacts-page h-screen max-h-[813px] bg-[#2A2C38] text-white relative flex flex-col justify-center items-start">
+    <!-- Main Content -->
+    <main class="flex-grow container mx-auto py-0 px-0 relative z-10 flex justify-center items-center">
+      <!-- === LEFT COLUMN: Info (1/3 width) === -->
+      <section class="flex flex-col space-y-2 lg:space-y-3 w-full lg:w-1/3 lg:pr-8">
+        <!-- Title -->
+        <h1 class="text-[clamp(24px,4vw,48px)] font-black tracking-[-0.04em] leading-[0.9] uppercase m-0">
+          КОНТАКТЫ
+        </h1>
+        
+        <!-- Address -->
+        <div class="space-y-0.5">
+          <p class="text-[clamp(13px,1.1vw,18px)] font-medium leading-tight">
+            г. Ярославль, пл. Труда, д. 1,
+          </p>
+          <p class="text-[clamp(13px,1.1vw,18px)] font-medium opacity-50 leading-tight">
+            Бизнес-центр Towers, офис 605
+          </p>
+        </div>
 
-              <!-- Building Photo -->
-              <div class="overflow-hidden border border-white/10 max-w-[240px] lg:max-w-[260px] xl:max-w-[280px]">
-                <img
-                  src="/images/contacts/building-photo.webp"
-                  alt="Офис Pobedonoscev Group"
-                  class="w-full h-auto aspect-[4/3] object-cover"
-                />
-              </div>
+        <!-- Building Photo -->
+        <div class="w-full max-w-[400px] aspect-[2/1] rounded-xl overflow-hidden border border-white/5 shadow-[0_20px_60px_-15px_rgba(0,0,0,0.6)]">
+          <img
+            src="/images/contacts/building-photo.webp"
+            alt="Бизнес-центр"
+            class="w-full h-full object-cover grayscale-[0.2] brightness-90"
+            onerror="this.src='/images/contacts/image-49.png'"
+          />
+        </div>
 
-              <!-- Working Hours -->
-              <div class="space-y-0.5 text-white/90">
-                <p class="text-[11px] uppercase tracking-[0.15em] text-white/50" style="font-family: 'Manrope', sans-serif">Время работы отдела продаж:</p>
-                <p class="text-base" style="font-family: 'Manrope', sans-serif">Сегодня с 09:00 до 18:00</p>
-              </div>
-
-              <!-- Phone Numbers -->
-              <div class="space-y-1.5 lg:space-y-2">
-                <div
-                  v-for="contact in contacts"
-                  :key="contact.phone"
-                  class="flex items-baseline gap-2"
-                >
-                  <a
-                    class="text-xl font-medium tracking-tight hover:text-white/80 transition-colors text-white"
-                    :href="`tel:${contact.href}`"
-                    style="font-family: 'Manrope', sans-serif"
-                  >
-                    {{ contact.phone }}
-                  </a>
-                  <span class="text-[10px] sm:text-[11px] uppercase tracking-[0.15em] text-white/40" style="font-family: 'Manrope', sans-serif">– {{ contact.label }}</span>
-                </div>
-              </div>
-
-              <!-- CTA Button -->
-              <div class="pt-2">
-                <button
-                  class="border border-white/50 text-white rounded-full px-5 py-2 text-base font-normal tracking-[0.03em] hover:bg-white hover:text-primary transition-all duration-300"
-                  type="button"
-                  style="font-family: 'Manrope', sans-serif"
-                >
-                  Оставить заявку
-                </button>
-              </div>
-
-              <!-- Disclaimer -->
-              <p class="text-sm text-white/40 leading-relaxed max-w-xs" style="font-family: 'Manrope', sans-serif">
-                Мы работаем только с лидерами страхового рынка. Гарантируем прозрачные условия и официальные полисы.
-              </p>
-            </div>
+        <!-- Working Info Group -->
+        <div class="space-y-2">
+          <!-- Working Hours -->
+          <div class="space-y-0.5">
+            <p class="text-[8px] opacity-40 uppercase tracking-[0.2em] font-black">
+              Время работы отдела продаж:
+            </p>
+            <p class="text-[13px] lg:text-[15px] font-black">
+              Сегодня с 09:00 до 18:00
+            </p>
           </div>
 
-          <!-- Right Column: Map Area -->
-          <div class="relative overflow-hidden min-h-[400px] lg:min-h-0">
-            <!-- Map Image -->
-            <div class="absolute inset-0 map-image-container">
-              <img 
-                src="/images/contacts/map-iso.webp" 
-                alt="Схема расположения объектов" 
-                class="absolute w-full h-full sm:w-[120%] sm:h-auto sm:aspect-[885/636] md:w-[110%] lg:w-[885px] lg:h-[636px] object-cover left-0 sm:left-[-10%] md:left-[-5%] lg:left-[-120px] xl:left-[-60px] 2xl:left-[-20px] top-0 sm:top-[5%] md:top-[8%] lg:top-[122px] ml-0 mr-0"
-                style="object-position: 40% center;"
-              />
-            </div>
-
-            <!-- Map Labels -->
-            <div class="absolute inset-0 pointer-events-none">
-              <!-- Street Labels -->
-              <p class="map-label absolute text-xs md:text-sm lg:text-base font-medium text-white/90 left-[8%] sm:left-[15%] top-[6%] sm:top-[8%] tracking-wide">
-                улица машиностроителей
-              </p>
-              <p class="map-label absolute text-xs md:text-sm lg:text-base font-medium text-white/90 right-[3%] sm:right-[8%] top-[10%] sm:top-[12%] tracking-wide hidden sm:block">
-                улица машиностроителей
-              </p>
-              
-              
-
-              <p class="map-label absolute text-xs md:text-sm lg:text-base font-medium text-white/80 left-[12%] sm:left-[18%] top-[40%] sm:top-[38%] tracking-wide">
-                тц Глобус
-              </p>
-              
-              <p class="map-label absolute text-xs md:text-sm lg:text-base font-medium text-white/80 left-[18%] sm:left-[25%] top-[58%] sm:top-[55%] tracking-wide">
-                поликлиника
-              </p>
-              
-              <p class="map-label absolute text-xs md:text-sm lg:text-base font-medium text-white/80 left-[12%] sm:left-[18%] bottom-[12%] sm:bottom-[15%] tracking-wide">
-                школа Красного Бора
-              </p>
-            </div>
-
-            <!-- Gradient Overlay Left -->
-            <div class="absolute inset-y-0 left-0 bg-gradient-to-r from-primary via-primary/50 to-transparent pointer-events-none w-1/4 lg:w-1/5"></div>
-
-            <!-- Social Icons Bottom Right -->
-            <div class="absolute right-4 sm:right-6 lg:right-4 xl:right-6 2xl:right-8 bottom-4 sm:bottom-6 lg:bottom-6 flex items-center gap-2 sm:gap-3">
-              <!-- VK -->
-              <a
-                :href="config.contacts.social.vk"
-                class="w-10 h-10 sm:w-11 sm:h-11 lg:w-12 lg:h-12 xl:w-14 xl:h-14 rounded-full flex items-center justify-center transition hover:scale-105 relative"
-                aria-label="VKontakte"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <img 
-                  src="https://www.figma.com/api/mcp/asset/54d0f66b-b601-41f4-aa21-e69f71bfa8c4" 
-                  alt="" 
-                  class="absolute inset-0 w-full h-full object-cover rounded-full"
-                />
-                <img 
-                  src="https://www.figma.com/api/mcp/asset/91373bff-ac3b-4736-977d-166869d00832" 
-                  alt="VK" 
-                  class="relative z-10 w-[40%] h-[40%] object-contain"
-                />
+          <!-- Contact List -->
+          <div class="space-y-2">
+            <div v-for="(phone, index) in contactList" :key="index" class="flex items-center gap-2 flex-wrap">
+              <a :href="`tel:${phone.href}`" class="text-[clamp(16px,1.8vw,24px)] font-black tracking-tight hover:text-[#f8b543] transition-colors whitespace-nowrap">
+                {{ phone.display }}
               </a>
-              <!-- Telegram -->
-              <a
-                :href="config.contacts.social.telegram"
-                class="w-10 h-10 sm:w-11 sm:h-11 lg:w-12 lg:h-12 xl:w-14 xl:h-14 rounded-full flex items-center justify-center transition hover:scale-105 relative"
-                aria-label="Telegram"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <img 
-                  src="https://www.figma.com/api/mcp/asset/3256f975-f004-4f9d-86a3-5eb85f9d85fb" 
-                  alt="" 
-                  class="absolute inset-0 w-full h-full object-cover rounded-full"
-                />
-                <img 
-                  src="https://www.figma.com/api/mcp/asset/3c609572-383a-4756-896c-c4a192efdaba" 
-                  alt="Telegram" 
-                  class="relative z-10 w-[40%] h-[40%] object-contain"
-                />
-              </a>
+              <span class="text-[7px] opacity-25 uppercase tracking-[0.15em] font-black">
+                — {{ phone.label }}
+              </span>
             </div>
           </div>
         </div>
+
+        <!-- CTA Block -->
+        <div class="flex flex-col items-start gap-2">
+          <button class="bg-white text-[#2A2C38] hover:bg-[#f8b543] hover:text-white px-6 py-2 rounded-full text-[9px] font-black uppercase tracking-[0.25em] transition-all duration-300 shadow-2xl active:scale-95">
+            Оставить заявку
+          </button>
+          <p class="text-[10px] opacity-35 max-w-[340px] leading-relaxed">
+            Мы работаем только с лидерами страхового рынка. Гарантируем прозрачные условия и официальные полисы.
+          </p>
+        </div>
+      </section>
+
+      <!-- Map Container -->
+      <div class="w-full h-full overflow-hidden relative">
+        <img
+          src="/images/contacts/screenshot-reference.png"
+          alt="Карта"
+          class="absolute top-0 left-0 w-full h-full object-cover"
+        />
+        <!-- Houses Icon (Starting point for lines) -->
+        <img
+          id="houses-icon"
+          src="/images/Group.svg"
+          alt=""
+          class="absolute top-[67.65%] left-[44.30%] w-[45px] h-auto z-20 pointer-events-none"
+        />
+
+        <!-- Dynamic Markers and Lines -->
+        <div v-for="marker in markers" :key="marker.id" 
+             class="group absolute flex flex-col items-center gap-1 cursor-pointer"
+             :style="{ top: marker.top, left: marker.left }"
+             @mouseenter="hoveredMarker = marker.id"
+             @mouseleave="hoveredMarker = null"
+        >
+          <!-- Dotted Line (SVG) -->
+          <svg 
+            v-if="hoveredMarker === marker.id"
+            class="absolute pointer-events-none z-0 overflow-visible"
+            style="top: 27px; left: 30px;"
+            width="1000"
+            height="1000"
+          >
+            <!-- 
+                 Calculate the vector from current marker to houses icon.
+                 Start point (center of marker): (30, 27) in SVG local space
+                 End point (center of houses): (dx, dy)
+            -->
+            <!-- 
+                 Calculate the vector from current marker to houses icon.
+                 Start point (center of marker): (30, 27) in SVG local space
+                 End point (center of houses): (dx, dy)
+            -->
+            <template v-if="getLineCoords(marker)">
+              <line 
+                v-if="getLineCoords(marker).distance > 35 * 2.5"
+                :x1="getLineCoords(marker).ux * 35" 
+                :y1="getLineCoords(marker).uy * 35" 
+                :x2="getLineCoords(marker).dx - (getLineCoords(marker).ux * 35)" 
+                :y2="getLineCoords(marker).dy - (getLineCoords(marker).uy * 35)" 
+                stroke="white" 
+                stroke-width="1.5" 
+                stroke-dasharray="6 6"
+                stroke-opacity="0.8"
+                class="animate-dash"
+              />
+              
+              <!-- Person and Time on Line (at 40% of the shortened line for visual balance) -->
+              <foreignObject 
+                v-if="getLineCoords(marker).distance > 35 * 2.5"
+                :x="(getLineCoords(marker).dx * 0.4) - 30" 
+                :y="(getLineCoords(marker).dy * 0.4) - 30" 
+                width="60" 
+                height="60"
+              >
+                <div class="flex flex-col items-center justify-center bg-[#2A2C38]/90 backdrop-blur-md rounded-xl p-1.5 border border-white/30 shadow-2xl scale-90">
+                  <svg class="w-4 h-4 text-[#f8b543]" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="10" cy="4" r="1.5" fill="currentColor"/>
+                    <path d="M10 5.5v5.5M7 8.5l3-1.5 3 1.5M8 15l2-4 2 5" stroke-linecap="round"/>
+                  </svg>
+                  <span class="text-[9px] font-black text-white whitespace-nowrap uppercase tracking-wider">{{ marker.time }}</span>
+                </div>
+              </foreignObject>
+            </template>
+          </svg>
+
+          <!-- Marker Icon -->
+          <div class="w-[60px] h-[55px] rounded-[60px] border border-white relative overflow-hidden flex items-center justify-center z-10 transition-transform duration-300 group-hover:scale-110 shadow-lg">
+            <img
+              :src="marker.image"
+              :alt="marker.name"
+              class="w-full h-full object-cover object-center pointer-events-none rounded-[60px]"
+            />
+          </div>
+          
+          <!-- Time under image -->
+          <div class="flex items-center gap-1 z-10">
+            <svg class="w-3 h-3 text-white" fill="currentColor" viewBox="0 0 20 20">
+              <path d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z"/>
+            </svg>
+            <span class="text-white text-xs font-medium">{{ marker.time }}</span>
+          </div>
+          
+          <!-- Marker Name -->
+          <div class="text-[12px] leading-[14px] text-white/67 text-center tracking-[-0.96px] font-light font-sans" :style="{ maxWidth: marker.maxWidth || 'none' }">
+            {{ marker.name }}
+          </div>
+        </div>
+
+        <!-- 3D Icon (far right, aligned with Вкусно и точка) -->
+        <a 
+          href="/3d-map"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="absolute top-[54.82%] left-[86.69%] w-[111px] h-[95px] flex items-center justify-center cursor-pointer hover:opacity-80 transition-opacity z-20" 
+          style="left: 620px; top: 497px;"
+        >
+          <div class="w-20 h-20 lg:w-24 lg:h-24 relative">
+            <img
+              src="/images/3d-icon-button.png"
+              alt="3D"
+              class="w-full h-full object-contain"
+            />
+          </div>
+        </a>
+
+        <!-- Ecogorod Icon (under address text) -->
+        <!-- TODO: Uncomment when ecogorod-icon.png is exported from Figma -->
+        <!-- <div class="absolute top-[680px] left-[775px] w-[85px] h-[81px] flex items-center justify-center" data-node-id="1114:12382">
+          <img
+            src="/images/contacts/ecogorod-icon.png"
+            alt="Экогород"
+            class="w-full h-full object-contain"
+          />
+        </div> -->
       </div>
-    </section>
+      <!-- Ecogorod Address with Icon -->
+      <div class="absolute top-[650px] left-[989px] flex items-center gap-2 md:gap-2.5 lg:gap-3">
+        <img
+          src="/images/Group-ecogorod.svg"
+          alt=""
+          class="w-[50px] h-[50px] flex-shrink-0"
+        />
+        <p class="text-white text-[14px] leading-[21px] font-normal font-sans whitespace-nowrap">
+          Экогород 3, посёлок Красный Бор,<br> Ярославский муниципальный округ, 150518
+        </p>
+      </div>
+      <!-- Social Icons -->
+      <div class="absolute top-[720px] left-[989px] flex items-center justify-center gap-2 md:gap-2.5 lg:gap-3">
+        <a 
+          :href="config.contacts.social.vk" 
+          class="w-8 h-8 md:w-9 md:h-9 lg:w-10 lg:h-10 xl:w-12 xl:h-12 rounded-full aspect-square flex items-center justify-center hover:opacity-80 transition-opacity flex-shrink-0 relative overflow-hidden"
+          aria-label="VKontakte"
+        >
+          <img 
+            src="/images/social-vk-bg.svg" 
+            alt="VK" 
+            class="absolute inset-0 w-full h-full object-cover rounded-full"
+          />
+        </a>
+        <a 
+          :href="config.contacts.social.telegram" 
+          class="w-8 h-8 md:w-9 md:h-9 lg:w-10 lg:h-10 xl:w-12 xl:h-12 rounded-full aspect-square flex items-center justify-center hover:opacity-80 transition-opacity flex-shrink-0 relative overflow-hidden"
+          aria-label="Telegram"
+        >
+          <img 
+            src="/images/social-telegram-bg.svg" 
+            alt="Telegram" 
+            class="absolute inset-0 w-full h-full object-cover rounded-full"
+          />
+        </a>
+        <a 
+          :href="config.contacts.social.whatsapp" 
+          class="w-8 h-8 md:w-9 md:h-9 lg:w-10 lg:h-10 xl:w-12 xl:h-12 rounded-full aspect-square flex items-center justify-center hover:opacity-80 transition-opacity flex-shrink-0 relative overflow-hidden"
+          aria-label="WhatsApp"
+        >
+          <img 
+            src="/images/ellipse-14.png" 
+            alt="WhatsApp" 
+            class="absolute inset-0 w-full h-full object-cover rounded-full"
+          />
+        </a>
+      </div>
+    </main>
   </div>
 </template>
 
@@ -164,92 +244,102 @@ import { siteConfig } from '~/config/contacts'
 
 const config = siteConfig
 
-const contacts = [
-  { phone: '+7 (910) 973–00–99', href: '+79109730099', label: 'ОТДЕЛ ПРОДАЖ' },
-  { phone: '+7 (980) 650–74–63', href: '+79806507463', label: 'РЕКЛАМА' },
-  { phone: '+7 (980) 708–16–49', href: '+79807081649', label: 'СНАБЖЕНИЕ' },
-  { phone: '+7 (910) 973–33–73', href: '+79109733373', label: 'БУХГАЛТЕРИЯ' }
+const hoveredMarker = ref(null)
+
+const getLineCoords = (marker) => {
+  const dx = (parseFloat('44.30') - parseFloat(marker.left)) * 10
+  const dy = (parseFloat('67.65') - parseFloat(marker.top)) * 10
+  const distance = Math.sqrt(dx * dx + dy * dy)
+  
+  if (distance === 0) return { dx: 0, dy: 0, distance: 0, ux: 0, uy: 0 }
+  
+  const ux = dx / distance
+  const uy = dy / distance
+  
+  return { dx, dy, distance, ux, uy }
+}
+
+const markers = [
+  {
+    id: 'ecopark',
+    name: 'ЭКОПАРК',
+    time: '2 мин',
+    top: '5.66%',
+    left: '44.74%',
+    image: '/images/f1f38b64031d15233f024b39314b7eab79d3ddb7.png'
+  },
+  {
+    id: 'restaurant',
+    name: 'Вкусно и точка',
+    time: '5 мин',
+    top: '15.38%',
+    left: '28.75%',
+    image: '/images/83e26791ee87bf1ae2be35217a2eebe9e9429a70.png'
+  },
+  {
+    id: 'polyclinic',
+    name: 'Поликлиника',
+    time: '5 мин',
+    top: '53.75%',
+    left: '0.45%',
+    image: '/images/04019e2f95b75bd1ea76af66328601902522b470.png'
+  },
+  {
+    id: 'globus',
+    name: 'Тц Глобус',
+    time: '10 мин',
+    top: '33.83%',
+    left: '8.61%',
+    image: '/images/93844c73c2bc37792fbb814d0135be1a06aa6900.png'
+  },
+  {
+    id: 'school',
+    name: 'Строительство современной новой школы\nпос. Красный бор',
+    time: '3 мин',
+    top: '69.31%',
+    left: '3.47%',
+    image: '/images/4af098352d98e4197170afdcd0d2dbb8517cb0c6.png',
+    maxWidth: '150px'
+  }
 ]
+
+const contactList = [
+  { display: '+7 (910) 973–00–99', href: '+79109730099', label: 'ОТДЕЛ ПРОДАЖ' },
+  { display: '+7 (980) 650–74–63', href: '+79806507463', label: 'РЕКЛАМА' },
+  { display: '+7 (980) 708–16–49', href: '+79807081649', label: 'СНАБЖЕНИЕ' },
+  { display: '+7 (910) 973–33–73', href: '+79109733373', label: 'БУХГАЛТЕРИЯ' }
+]
+
 </script>
 
 <style scoped>
 .contacts-page {
-  font-family: 'Inter', sans-serif;
+  font-family: 'Manrope', 'Inter', sans-serif;
+  overflow: hidden;
 }
 
-.map-label {
-  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.8), 0 0 20px rgba(0, 0, 0, 0.5);
+h1 {
+  font-family: 'Mazzard H', 'Manrope', sans-serif;
 }
 
-/* Golden border colors for icons */
-.border-golden {
-  border-color: #D4AF37;
-}
-
-.border-golden-light {
-  border-color: #FFD700;
-}
-
-.hover\:shadow-golden:hover {
-  box-shadow: 0 0 20px rgba(212, 175, 55, 0.5), 0 0 40px rgba(212, 175, 55, 0.3);
-}
-
-
-/* Icon button animations with staggered delays */
-.icon-button {
-  animation: iconFloat 4s ease-in-out infinite;
-  filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.4));
-  cursor: pointer;
-}
-
-.animation-delay-100 {
-  animation-delay: 0.4s;
-}
-
-.animation-delay-200 {
-  animation-delay: 0.8s;
-}
-
-.animation-delay-300 {
-  animation-delay: 1.2s;
-}
-
-@keyframes iconFloat {
-  0%, 100% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(-8px);
-  }
-}
-
-.icon-button:hover {
-  animation: none;
-  transform: scale(1.1);
-  filter: drop-shadow(0 8px 20px rgba(212, 175, 55, 0.6)) drop-shadow(0 0 30px rgba(212, 175, 55, 0.4));
-}
-
-/* Icon buttons container subtle animation */
-.icon-buttons-container {
-  animation: slideIn 0.6s ease-out;
-}
-
-@keyframes slideIn {
-  from {
-    opacity: 0;
-    transform: translateX(20px) translateY(-50%);
-  }
+@keyframes dash {
   to {
-    opacity: 1;
-    transform: translateX(0) translateY(-50%);
+    stroke-dashoffset: -24;
   }
 }
 
-/* Mobile: stack map on top */
-@media (max-width: 1023px) {
-  .contacts-page section > div > div {
-    display: flex;
-    flex-direction: column-reverse;
-  }
+.animate-dash {
+  animation: dash 1s linear infinite;
 }
+
+@keyframes fadeInScale {
+  from { opacity: 0; transform: scale(0.98) translateY(20px); }
+  to { opacity: 1; transform: scale(1) translateY(0); }
+}
+
+main > div > section {
+  animation: fadeInScale 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
 </style>
+

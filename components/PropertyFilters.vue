@@ -39,9 +39,9 @@
       </article>
 
       <!-- Filters Row -->
-      <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-4 md:gap-3 lg:gap-4 xl:gap-5 mb-6 md:mb-8 lg:mb-10">
+      <div class="flex flex-col md:flex-row md:items-center gap-4 md:gap-3 lg:gap-4 xl:gap-5 mb-6 md:mb-8 lg:mb-10">
         <!-- Price Filter -->
-        <div class="flex-shrink-0 w-full md:w-auto md:flex-1 md:max-w-[280px] lg:max-w-[300px] xl:max-w-[330px]">
+        <div class="flex-1 w-full md:w-auto min-w-0">
           <p class="text-white/70 text-[11px] font-medium uppercase mb-2">СТОИМОСТЬ, РУБ</p>
           <div class="bg-white rounded-[14px] px-4 md:px-5 py-4">
             <div class="grid grid-cols-[1fr_auto_1fr] items-center gap-2 md:gap-3 text-[12px] font-medium text-black">
@@ -124,7 +124,7 @@
         </div>
 
         <!-- Rooms Filter - Centered -->
-        <div class="flex-shrink-0 w-full md:w-auto md:flex-1 md:flex md:justify-center">
+        <div class="flex-1 w-full md:w-auto min-w-0 md:flex md:justify-center">
           <div class="w-full md:w-auto">
             <p class="text-white/70 text-[11px] font-medium uppercase mb-2">КОЛИЧЕСТВО КОМНАТ</p>
             <div class="flex items-end gap-3 md:gap-4 pb-3 border-b border-white/15">
@@ -149,7 +149,7 @@
         </div>
 
         <!-- Area Filter -->
-        <div class="flex-shrink-0 w-full md:w-auto md:flex-1 md:max-w-[240px] lg:max-w-[260px] xl:max-w-[270px]">
+        <div class="flex-1 w-full md:w-auto min-w-0">
           <p class="text-white/70 text-[11px] font-medium uppercase mb-2">ПЛОЩАДЬ, М²</p>
           <div class="bg-white rounded-[14px] px-4 md:px-5 py-4">
             <div class="grid grid-cols-[1fr_auto_1fr] items-center gap-2 md:gap-3 text-[12px] font-medium text-black">
@@ -240,6 +240,44 @@
         </button>
       </div>
 
+      <!-- Expandable Project Apartments -->
+      <div 
+        @click="toggleProjectApartments"
+        class="w-full bg-white/10 rounded-[14px] py-3 md:py-4 flex items-center justify-center cursor-pointer hover:bg-white/15 transition-colors mb-6 md:mb-8 lg:mb-10"
+      >
+        <svg 
+          width="16" 
+          height="16" 
+          viewBox="0 0 24 24" 
+          fill="none" 
+          xmlns="http://www.w3.org/2000/svg" 
+          class="text-white/60 transition-transform duration-300"
+          :class="{ 'rotate-180': showProjectApartments }"
+        >
+          <path d="M6 9L12 15L18 9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+        </svg>
+      </div>
+
+      <!-- Project Apartments Grid (shown when expanded) -->
+      <Transition name="apartments-fade">
+        <div v-if="showProjectApartments" class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 lg:gap-4 xl:gap-5 mb-6 md:mb-8 lg:mb-10">
+          <NuxtLink
+            v-for="item in projectApartments"
+            :key="item.id"
+            :to="`/apartment/${item.id}`"
+            class="bg-white rounded-[10px] lg:rounded-[14px] xl:rounded-[18px] overflow-hidden shadow-lg cursor-pointer hover:shadow-xl transition-shadow block"
+          >
+            <div class="aspect-[4/5] bg-gray-100">
+              <img 
+                :src="item.image" 
+                :alt="item.title" 
+                class="w-full h-full object-cover" 
+              />
+            </div>
+          </NuxtLink>
+        </div>
+      </Transition>
+
       <!-- Property Cards Grid -->
       <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 lg:gap-4 xl:gap-5 mb-6 md:mb-8 lg:mb-10">
         <NuxtLink
@@ -272,6 +310,67 @@
 
 <script setup>
 import { ref, watch } from 'vue'
+
+// Project apartments toggle
+const showProjectApartments = ref(false)
+
+const toggleProjectApartments = () => {
+  showProjectApartments.value = !showProjectApartments.value
+}
+
+const planImage = '/images/property-plan.webp'
+
+// Project apartments (4 apartments from current project)
+const projectApartments = [
+  { 
+    id: 101, 
+    complex: 'ЖК Экогород 3, д. 1', 
+    title: '1-комнатная, 36.5 м²', 
+    area: '36.5 м²', 
+    price: '4 200 000', 
+    entrance: 1,
+    totalEntrances: 4,
+    floor: 2,
+    totalFloors: 8,
+    image: planImage 
+  },
+  { 
+    id: 102, 
+    complex: 'ЖК Экогород 3, д. 1', 
+    title: '2-комнатная, 54.39 м²', 
+    area: '54.39 м²', 
+    price: '5 167 050', 
+    entrance: 1,
+    totalEntrances: 4,
+    floor: 3,
+    totalFloors: 8,
+    image: planImage 
+  },
+  { 
+    id: 103, 
+    complex: 'ЖК Экогород 3, д. 1', 
+    title: '2-комнатная, 58.2 м²', 
+    area: '58.2 м²', 
+    price: '5 450 000', 
+    entrance: 2,
+    totalEntrances: 4,
+    floor: 2,
+    totalFloors: 8,
+    image: planImage 
+  },
+  { 
+    id: 104, 
+    complex: 'ЖК Экогород 3, д. 1', 
+    title: '3-комнатная, 72.8 м²', 
+    area: '72.8 м²', 
+    price: '6 800 000', 
+    entrance: 2,
+    totalEntrances: 4,
+    floor: 4,
+    totalFloors: 8,
+    image: planImage 
+  }
+]
 
 // Price filter
 const priceMin = 1000000
@@ -433,8 +532,6 @@ const handleMaxAreaChange = (e) => {
   maxAreaInput.value = maxArea.value.toString()
 }
 
-const planImage = '/images/property-plan.webp'
-
 const properties = [
   { 
     id: 1, 
@@ -534,3 +631,36 @@ const properties = [
   }
 ]
 </script>
+
+<style scoped>
+/* Apartments fade animation */
+.apartments-fade-enter-active {
+  animation: apartmentsFadeIn 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.apartments-fade-leave-active {
+  animation: apartmentsFadeOut 0.25s cubic-bezier(0.5, 0, 0.75, 0) forwards;
+}
+
+@keyframes apartmentsFadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes apartmentsFadeOut {
+  0% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+}
+</style>

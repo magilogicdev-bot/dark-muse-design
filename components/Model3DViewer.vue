@@ -189,15 +189,16 @@ const initModel = async () => {
     model = gltf.scene
     console.log('GLTF модель загружена:', model)
 
-    // Вычисление границ модели для центрирования
+    // Вычисление границ модели ДО масштабирования
     const box = new THREE.Box3().setFromObject(model)
     const center = box.getCenter(new THREE.Vector3())
     const size = box.getSize(new THREE.Vector3())
     const maxDim = Math.max(size.x, size.y, size.z)
     
-    console.log('Размер модели:', size)
-    console.log('Центр модели:', center)
+    console.log('Размер модели (до масштабирования):', size)
+    console.log('Центр модели (до масштабирования):', center)
     console.log('Максимальный размер:', maxDim)
+    console.log('Нижняя точка (до масштабирования):', box.min.y)
     
     // Проверяем, что модель не пустая
     if (maxDim === 0 || !isFinite(maxDim)) {
@@ -205,25 +206,39 @@ const initModel = async () => {
       throw new Error('Модель пустая или поврежденная')
     }
     
-    // Создаём группу-контейнер для правильного центрирования
+    // Создаём группу-контейнер для модели
     const modelContainer = new THREE.Group()
     modelContainer.add(model)
     
-    // Сначала масштабируем модель
+    // Применяем масштабирование к модели
     const targetSize = 10 // Целевой размер модели
     const scale = targetSize / maxDim
     model.scale.setScalar(scale)
     
-    // Теперь центрируем модель с учётом масштаба
-    // Позиция должна быть отрицательной от центра, умноженной на масштаб
-    model.position.set(
-      -center.x * scale,
-      -center.y * scale,
-      -center.z * scale
-    )
+    // Обновляем матрицы модели для корректного вычисления трансформированных координат
+    model.updateMatrixWorld(true)
+    
+    // Вычисляем bounding box после масштабирования, но до позиционирования
+    const scaledBox = new THREE.Box3().setFromObject(model)
+    const scaledCenter = scaledBox.getCenter(new THREE.Vector3())
+    const scaledSize = scaledBox.getSize(new THREE.Vector3())
+    const scaledMinY = scaledBox.min.y
     
     console.log('Применённый масштаб:', scale)
-    console.log('Позиция модели после центрирования:', model.position)
+    console.log('Масштабированный bounding box:', scaledBox)
+    console.log('Масштабированный центр:', scaledCenter)
+    console.log('Масштабированный размер:', scaledSize)
+    console.log('Масштабированная нижняя точка (scaledMinY):', scaledMinY)
+    
+    // Позиционируем контейнер так, чтобы модель стояла на Y=0 (нижняя точка на земле)
+    // Центрируем по X и Z, но нижняя точка должна быть на Y=0
+    modelContainer.position.set(
+      -scaledCenter.x,  // Центрируем по X
+      -scaledMinY,      // Смещаем так, чтобы нижняя точка была на Y=0
+      -scaledCenter.z   // Центрируем по Z
+    )
+    
+    console.log('Позиция контейнера после позиционирования:', modelContainer.position)
     
     // Убедимся, что материалы видимы
     model.traverse((child) => {
@@ -236,17 +251,49 @@ const initModel = async () => {
       }
     })
     
+    // Добавляем контейнер в сцену
+    scene.add(modelContainer)
+    
+    // Обновляем все матрицы в сцене
+    scene.updateMatrixWorld(true)
+    
+    // Финальная проверка: пересчитываем bounding box после всех трансформаций
+    const finalBox = new THREE.Box3().setFromObject(modelContainer)
+    const finalMinY = finalBox.min.y
+    const finalMaxY = finalBox.max.y
+    const finalSize = finalBox.getSize(new THREE.Vector3())
+    const finalCenter = finalBox.getCenter(new THREE.Vector3())
+    
+    console.log('Финальный bounding box после всех трансформаций:', finalBox)
+    console.log('Финальная нижняя точка (finalMinY):', finalMinY)
+    console.log('Финальная верхняя точка (finalMaxY):', finalMaxY)
+    
+    // Если нижняя точка все еще ниже Y=0, корректируем позицию контейнера
+    if (finalMinY < -0.001) { // Используем небольшую погрешность для учета ошибок округления
+      const correction = -finalMinY
+      modelContainer.position.y += correction
+      // Пересчитываем после коррекции
+      scene.updateMatrixWorld(true)
+      finalBox.setFromObject(modelContainer)
+      console.log('Применена коррекция позиции контейнера:', correction)
+      console.log('Новая нижняя точка после коррекции:', finalBox.min.y)
+      // Пересчитываем центр после коррекции
+      finalCenter.copy(finalBox.getCenter(new THREE.Vector3()))
+    }
+    
+    // Вычисляем центр модели для камеры (по X и Z - центр, по Y - середина высоты)
+    const modelCenterY = finalCenter.y
+    
     const fov = camera.fov * (Math.PI / 180)
     const cameraZ = Math.abs(targetSize / 2 / Math.tan(fov / 2))
     const distance = cameraZ * 0.6
 
-    camera.position.set(distance * 0.7, distance * 0.5, distance)
-    camera.lookAt(0, 0, 0)
+    camera.position.set(distance * 0.7, modelCenterY + distance * 0.5, distance)
+    camera.lookAt(finalCenter.x, modelCenterY, finalCenter.z)
     
     console.log('Позиция камеры:', camera.position)
     console.log('Дистанция:', distance)
-
-    scene.add(modelContainer)
+    console.log('Центр модели по Y:', modelCenterY)
 
     // Контролы
     controls = new OrbitControls(camera, renderer.domElement)
@@ -254,7 +301,12 @@ const initModel = async () => {
     controls.dampingFactor = 0.05
     controls.minDistance = distance * 0.1
     controls.maxDistance = distance * 10
-    controls.target.set(0, 0, 0)
+    // Ограничиваем вертикальный угол, чтобы камера не могла уйти под землю
+    // minPolarAngle = 0 означает вид сверху, maxPolarAngle = Math.PI означает вид снизу
+    // Устанавливаем минимальный угол чуть больше 0, чтобы не было вида строго сверху
+    controls.minPolarAngle = 0.1 // Небольшой наклон сверху
+    controls.maxPolarAngle = Math.PI / 2 // Половина окружности - не позволяем смотреть снизу вверх
+    controls.target.set(finalCenter.x, modelCenterY, finalCenter.z) // Target на центр модели
     controls.update()
 
     loading.value = false

@@ -6,6 +6,7 @@
     </main>
     <Footer />
     <ActionMenuButton />
+    <CookieConsent />
   </div>
 </template>
 

@@ -78,15 +78,9 @@
                 >
                   <!-- Circle background -->
                   <img 
-                    src="https://www.figma.com/api/mcp/asset/54d0f66b-b601-41f4-aa21-e69f71bfa8c4" 
-                    alt="" 
-                    class="absolute inset-0 w-full h-full object-cover rounded-full"
-                  />
-                  <!-- VK logo inside -->
-                  <img 
-                    src="https://www.figma.com/api/mcp/asset/91373bff-ac3b-4736-977d-166869d00832" 
+                    src="/images/social-vk-bg.svg" 
                     alt="VK" 
-                    class="relative z-10 w-[40%] h-[40%] object-contain"
+                    class="absolute inset-0 w-full h-full object-cover rounded-full"
                   />
                 </a>
                 <a 
@@ -96,15 +90,9 @@
                 >
                   <!-- Circle background -->
                   <img 
-                    src="https://www.figma.com/api/mcp/asset/3256f975-f004-4f9d-86a3-5eb85f9d85fb" 
-                    alt="" 
-                    class="absolute inset-0 w-full h-full object-cover rounded-full"
-                  />
-                  <!-- Telegram logo inside -->
-                  <img 
-                    src="https://www.figma.com/api/mcp/asset/3c609572-383a-4756-896c-c4a192efdaba" 
+                    src="/images/social-telegram-bg.svg" 
                     alt="Telegram" 
-                    class="relative z-10 w-[40%] h-[40%] object-contain"
+                    class="absolute inset-0 w-full h-full object-cover rounded-full"
                   />
                 </a>
               </div>

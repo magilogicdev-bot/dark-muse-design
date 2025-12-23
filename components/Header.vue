@@ -302,11 +302,10 @@ const handleVideoClick = () => {
   background: #2a2c38;
   border-bottom: none;
   width: 100%;
-  min-height: auto;
+  height: 36px;
   display: flex;
   align-items: stretch;
 }
-
 
 /* Left Section */
 .header__left {
@@ -1410,7 +1409,7 @@ const handleVideoClick = () => {
   }
 
   .header__bar {
-    min-height: 60px;
+    height: 36px;
   }
 
   .menu__logo-text {
@@ -1462,25 +1461,25 @@ const handleVideoClick = () => {
 
 @media (min-width: 481px) and (max-width: 768px) {
   .header__bar {
-    min-height: 50px;
+    height: 36px;
   }
 }
 
 @media (min-width: 769px) and (max-width: 1024px) {
   .header__bar {
-    min-height: 60px;
+    height: 36px;
   }
 }
 
 @media (min-width: 1025px) {
   .header__bar {
-    min-height: 70px;
+    height: 36px;
   }
 }
 
 @media (min-width: 1440px) {
   .header__bar {
-    min-height: 80px;
+    height: 36px;
   }
 }
 </style>

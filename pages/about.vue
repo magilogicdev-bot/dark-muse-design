@@ -311,14 +311,14 @@
         </div>
 
         <!-- Right Column: Lighter Grey Background -->
-        <div class="bg-[#555761] px-5 sm:px-8 md:px-12 lg:px-20 py-12 lg:py-16 flex flex-col h-full relative">
+        <div class="bg-[#555761] px-5 sm:px-8 md:px-12 lg:pl-20 lg:pr-[220px] py-12 lg:py-16 flex flex-col h-full relative">
             
             <div class="flex flex-col h-full min-h-[600px] lg:min-h-0">
               <!-- Middle: Company Info Text Block - Vertically Centered -->
               <div class="flex-1 flex flex-col justify-center py-10 lg:py-0">
-                <div class="flex justify-end">
-                  <div class="relative max-w-[540px] scroll-container-fixed">
-                    <div class="scrollable-text flex flex-col gap-6 lg:gap-8 text-right font-light max-h-[340px] overflow-y-scroll pr-8 lg:pr-10">
+                <div class="flex justify-end w-full">
+                  <div class="relative max-w-[650px] scroll-container-fixed">
+                    <div class="scrollable-text flex flex-col gap-6 lg:gap-8 text-right font-light max-h-[340px] overflow-y-scroll mr-0 pr-5">
                       <p class="content-text text-[11px] sm:text-xs md:text-sm lg:text-[13px] xl:text-[14px] 2xl:text-[15px] leading-[1.65] lg:leading-[1.75] text-white text-right tracking-tight">
                         АСК "Новый Дом" – это не просто строительная компания, это команда профессионалов, которая много лет воплощает в жизнь самые смелые мечты о собственном пространстве. Индивидуальные жилые дома и коттеджи: от уютных семейных гнездышек до роскошных загородных резиденций.
                       </p>
@@ -331,8 +331,8 @@
               </div>
 
               <!-- Bottom Right: Townhouse Image -->
-              <div class="flex justify-end mt-auto pt-8">
-                <div class="w-full max-w-[480px] aspect-[16/10] overflow-hidden shadow-lg">
+              <div class="flex justify-end w-full mt-auto pt-8">
+                <div class="max-w-[650px] aspect-[16/10] overflow-hidden shadow-lg">
                    <img 
                     src="/images/ecocity-townhouses.webp" 
                     alt="Таунхаусы" 
@@ -372,10 +372,11 @@
           </div>
 
           <!-- Right Area: Photo & Description (Span 7 cols) -->
-          <div class="lg:col-span-7 flex flex-col items-center lg:items-end">
+          <div class="lg:col-span-7 flex flex-col items-center lg:items-end lg:pl-[80px] lg:pr-[146px]">
              
              <!-- Church Photo Container with Frame -->
-             <div class="relative p-6 sm:p-8 border border-white/20 mb-8 sm:mb-12">
+             <div class="flex justify-end w-full mb-8 sm:mb-12">
+               <div class="relative p-6 sm:p-8 border border-white/20 max-w-[650px]">
                <!-- Crosshair decorations on frame corners -->
                <div class="absolute -top-[1px] -left-[10px] w-[20px] h-[1px] bg-white/40"></div>
                <div class="absolute -top-[10px] -left-[1px] w-[1px] h-[20px] bg-white/40"></div>
@@ -386,21 +387,24 @@
                <div class="absolute -bottom-[1px] -left-[10px] w-[20px] h-[1px] bg-white/40"></div>
                <div class="absolute -bottom-[10px] -left-[1px] w-[1px] h-[20px] bg-white/40"></div>
 
-               <div class="relative w-full max-w-[400px] sm:max-w-[450px] aspect-[3/4] overflow-hidden">
+               <div class="relative w-full aspect-[3/4] overflow-hidden">
                  <img 
-                   src="/images/church-photo.webp" 
-                   alt="Храм в селе Любилки" 
-                   class="w-full h-full object-cover"
-                   loading="lazy"
-                 />
+                  src="/images/church-photo.webp" 
+                  alt="Храм в селе Любилки" 
+                  class="w-full h-full object-cover"
+                  loading="lazy"
+                />
+               </div>
                </div>
              </div>
 
              <!-- Description Text -->
-             <div class="max-w-[450px] text-center lg:text-right">
+             <div class="flex justify-end w-full">
+               <div class="max-w-[650px] text-center lg:text-right">
                <p class="content-text text-[11px] sm:text-xs md:text-sm lg:text-[13px] xl:text-[14px] 2xl:text-[15px] leading-[1.65] lg:leading-[1.75] text-white text-center lg:text-right tracking-tight">
                  Село Любилки украшает величественный белокаменный храм, словно жемчужина, посвященный Пресвятой Богородице и святому Феодосию Тотемскому. Его золотой купол, устремленный в небо, является настоящим украшением, подчеркивая и сохраняя неповторимую историческую целостность этого живописного места.
                </p>
+               </div>
              </div>
 
           </div>
@@ -448,24 +452,26 @@
         </div>
 
         <!-- Right Column: Lighter Grey Background -->
-        <div class="bg-[#555761] px-5 sm:px-8 md:px-12 lg:px-20 py-12 lg:py-16 flex flex-col h-full relative">
+        <div class="bg-[#555761] px-5 sm:px-8 md:px-12 lg:pl-20 lg:pr-[220px] py-12 lg:py-16 flex flex-col h-full relative">
             
             <div class="flex flex-col h-full justify-between gap-12">
               
               <!-- Top: Small Grayscale Image -->
-              <div class="w-full max-w-[500px] aspect-[16/10] overflow-hidden shadow-lg self-end lg:self-start">
+              <div class="flex justify-end w-full">
+                <div class="max-w-[650px] aspect-[16/10] overflow-hidden shadow-lg">
                  <img 
                   src="/images/ecocity-house-bw.webp" 
                   alt="Экогород ЧБ" 
                   class="w-full h-full object-cover grayscale"
                   loading="lazy"
                 />
+                </div>
               </div>
 
               <!-- Bottom: Text Block -->
-              <div class="flex justify-end mt-auto">
-                <div class="relative max-w-[580px] scroll-container-fixed">
-                  <div class="scrollable-text flex flex-col gap-6 lg:gap-8 text-right font-light max-h-[340px] overflow-y-scroll pr-8 lg:pr-10">
+              <div class="flex justify-end w-full mt-auto">
+                <div class="relative max-w-[650px] scroll-container-fixed">
+                  <div class="scrollable-text flex flex-col gap-6 lg:gap-8 text-right font-light max-h-[340px] overflow-y-scroll mr-0 pr-5">
                     <h3 class="text-white text-[12px] lg:text-[14px] uppercase tracking-[0.15em] leading-[1.6]">
                       ЭКОГОРОД: Новый стандарт жизни в Ярославской области, который говорит сам за себя
                     </h3>
@@ -515,21 +521,24 @@
            </div>
 
            <!-- Right Column: Image and Product Description -->
-           <div class="flex flex-col gap-16 lg:gap-32 items-end">
+           <div class="flex flex-col gap-16 lg:gap-32 items-end lg:pr-[170px]">
               
               <!-- Top: Building Image -->
-               <div class="w-full max-w-[620px] relative aspect-[16/10] shadow-2xl">
+               <div class="flex justify-end w-full">
+                 <div class="max-w-[650px] relative aspect-[16/10] shadow-2xl">
                  <img 
-                   src="/images/dagestan-building-new.webp" 
-                   alt="Камни Дагестана Офис" 
-                   class="w-full h-full object-cover"
-                   loading="lazy"
-                 />
-              </div>
+                  src="/images/dagestan-building-new.webp" 
+                  alt="Камни Дагестана Офис" 
+                  class="w-full h-full object-cover"
+                  loading="lazy"
+                />
+                 </div>
+               </div>
               
               <!-- Bottom: Description Text Block with Right Border -->
-               <div class="relative max-w-[700px] text-right scroll-container-fixed">
-                  <div class="scrollable-text flex flex-col gap-2.5 max-h-[340px] overflow-y-scroll pr-8 lg:pr-10">
+               <div class="flex justify-end w-full">
+                 <div class="relative max-w-[650px] text-right scroll-container-fixed">
+                  <div class="scrollable-text flex flex-col gap-2.5 max-h-[340px] overflow-y-scroll mr-0 pr-5">
                     <p class="content-text text-[11px] sm:text-xs md:text-sm lg:text-[13px] xl:text-[14px] 2xl:text-[15px] leading-[1.65] lg:leading-[1.75] text-white text-right tracking-tight">
                       "Камни Дагестана" является признанным лидером в производстве высококачественных облицовочных материалов. Находясь в самом сердце Дагестана она специализируется на создании продукции, отвечающей самым взыскательным требованиям современного строительства и дизайна.
                     </p>
@@ -551,8 +560,9 @@
                         <span class="font-bold">Ракушечник:</span> легкий и теплый материал с уникальной пористой структурой, обладающий отличными звукоизоляционными свойствами и создающий неповторимый среднеземноморский стиль.
                       </p>
                     </div>
+                  </div>
                  </div>
-              </div>
+               </div>
 
            </div>
         </div>
@@ -588,12 +598,13 @@
         </div>
 
         <!-- Right Column: Lighter Grey Background -->
-        <div class="bg-[#555761] px-5 sm:px-8 md:px-12 lg:px-20 py-12 lg:py-16 flex flex-col h-full relative">
+        <div class="bg-[#555761] px-5 sm:px-8 md:px-12 lg:pl-20 lg:pr-[220px] py-12 lg:py-16 flex flex-col h-full relative">
             
-            <div class="flex flex-col h-full justify-between gap-12 lg:gap-16">
+            <div class="flex flex-col h-full justify-between gap-12 lg:gap-16 ml-0">
               
               <!-- Top: Architects Branding Image/Slider -->
-              <div class="w-full max-w-[650px] aspect-[16/10] overflow-hidden shadow-lg self-end lg:self-start relative group">
+              <div class="flex justify-end w-full">
+                <div class="max-w-[650px] aspect-[16/10] overflow-hidden shadow-lg relative group">
                  <img 
                   src="/images/a9f3495b5dc55635957a7aade82d1b35127bfe7d.webp" 
                   alt="Pobedonoscev Architects Project" 
@@ -607,12 +618,13 @@
                    <div class="w-1.5 h-1.5 rounded-full border border-white/50"></div>
                    <div class="w-1.5 h-1.5 rounded-full border border-white/50"></div>
                 </div>
+                </div>
               </div>
 
               <!-- Bottom: Text Block -->
-              <div class="flex justify-end mt-auto">
-                <div class="relative max-w-[580px] scroll-container-fixed">
-                  <div class="scrollable-text flex flex-col gap-6 lg:gap-8 text-right font-light max-h-[340px] overflow-y-scroll pr-8 lg:pr-10">
+              <div class="flex justify-end w-full mt-auto">
+                <div class="relative max-w-[650px] scroll-container-fixed">
+                  <div class="scrollable-text flex flex-col gap-6 lg:gap-8 text-right font-light max-h-[340px] overflow-y-scroll mr-0 pr-5">
                     <p class="content-text text-[11px] sm:text-xs md:text-sm lg:text-[13px] xl:text-[14px] 2xl:text-[15px] leading-[1.65] lg:leading-[1.75] text-white text-right tracking-tight">
                       Pobedonoscev architects — студию, рожденную из страсти к совершенству и глубокого понимания того, что такое истинная роскошь в архитектуре.
                     </p>
