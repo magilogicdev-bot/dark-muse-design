@@ -2,7 +2,7 @@
   <section class="w-full bg-primary py-8 md:py-12 lg:py-16 xl:py-20 relative overflow-hidden">
     <div class="container mx-auto max-w-[1920px] px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 2xl:px-20">
       <!-- Light Gray Content Block -->
-      <div class="bg-[#E1E3E1] rounded-lg md:rounded-xl lg:rounded-2xl p-6 md:p-8 lg:p-10 xl:p-12 2xl:p-16 mx-auto max-w-full lg:max-w-[85%] xl:max-w-[75%] 2xl:max-w-[70%]">
+      <div class="bg-[#E1E3E1] rounded-lg md:rounded-xl lg:rounded-2xl p-6 md:p-8 lg:p-10 xl:p-12 2xl:p-16 w-full">
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-8 lg:gap-10 xl:gap-12 items-center">
           <!-- Left Content Block -->
           <div class="flex flex-col space-y-4 md:space-y-5 lg:space-y-6">

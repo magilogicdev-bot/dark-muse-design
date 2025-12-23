@@ -1,9 +1,9 @@
 <template>
   <section class="w-full bg-[#E1E3E1] pt-[120px] md:pt-[75px] lg:pt-[88px] xl:pt-[101px] pb-8 md:pb-12 lg:pb-16 xl:pb-20">
     <div class="container mx-auto max-w-[1920px] px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 2xl:px-20">
-      <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-8 lg:gap-12 xl:gap-16 items-end">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-8 lg:gap-12 xl:gap-16 items-center">
         <!-- Left Content Block -->
-        <div class="flex flex-col space-y-5 md:space-y-6 lg:space-y-7 xl:space-y-8 h-[515px]">
+        <div class="flex flex-col space-y-5 md:space-y-6 lg:space-y-7 xl:space-y-8 h-[515px] justify-center">
           <!-- Main Heading -->
           <h1 class="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-[#333333] leading-tight">
             Купите квартиру в<br />
@@ -26,7 +26,7 @@
           </button>
 
           <!-- Disclaimer Text -->
-          <p class="text-xs md:text-sm text-[#555555] leading-normal font-bold mt-6 md:mt-8 lg:mt-10">
+          <p class="text-xs md:text-sm text-[#555555] leading-normal font-bold mt-6 md:mt-8 lg:mt-10 text-center">
             Мы работаем только с лидерами страхового рынка. Гарантируем прозрачные условия и официальные полисы.
           </p>
         </div>
