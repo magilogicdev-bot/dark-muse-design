@@ -288,7 +288,7 @@ const handleVideoClick = () => {
 .header {
   --header-bar-height: 0px;
   --menu-padding-top: clamp(72px, 16vh, 220px);
-  position: absolute;
+  position: fixed;
   inset: 0 0 auto 0;
   z-index: 100;
   color: #fff;

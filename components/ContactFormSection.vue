@@ -15,7 +15,7 @@
           </p>
 
           <!-- Form -->
-          <form @submit.prevent="submitForm" class="flex flex-col gap-4 md:gap-5 lg:gap-6">
+          <form @submit.prevent="submitForm" class="flex flex-col gap-4 md:gap-5 lg:gap-6 w-[454px]">
             <!-- Name Input -->
             <input
               type="text"
