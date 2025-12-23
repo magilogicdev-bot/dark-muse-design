@@ -243,9 +243,6 @@
               </NuxtLink>
             </div>
           </div>
-
-          <!-- Action Menu Button (Right Bottom) -->
-          <ActionMenuButton />
         </div>
       </div>
     </section>

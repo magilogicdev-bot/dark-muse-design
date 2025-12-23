@@ -74,9 +74,6 @@
         </div>
       </div>
     </section>
-
-    <!-- Floating Action Bar -->
-    <FloatingActionBar />
   </div>
 </template>
 

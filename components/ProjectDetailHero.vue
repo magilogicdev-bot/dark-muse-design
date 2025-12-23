@@ -32,9 +32,6 @@
         </p>
       </div>
     </div>
-    
-    <!-- Action Menu Button -->
-    <ActionMenuButton />
   </section>
 </template>
 

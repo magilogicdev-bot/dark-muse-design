@@ -33,9 +33,6 @@
       </div>
     </div>
 
-    <!-- Action Menu Button -->
-    <ActionMenuButton />
-
     <!-- Bottom Right Buttons (Audio + Video) -->
     <div class="home-page__bottom-buttons">
       <button

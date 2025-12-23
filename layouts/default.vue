@@ -5,6 +5,7 @@
       <slot />
     </main>
     <Footer />
+    <ActionMenuButton />
   </div>
 </template>
 

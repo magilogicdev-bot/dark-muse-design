@@ -45,9 +45,6 @@
         </div>
       </div>
     </section>
-
-    <!-- Floating Action Bar with Gold Accent -->
-    <FloatingActionBarGold />
   </div>
 </template>
 

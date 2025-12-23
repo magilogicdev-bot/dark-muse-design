@@ -60,7 +60,7 @@ import { ref } from 'vue'
 import { siteConfig } from '~/config/contacts'
 
 const config = siteConfig
-const isOpen = ref(true) // По умолчанию открыто
+const isOpen = ref(false) // По умолчанию скрыто
 
 const toggleMenu = () => {
   isOpen.value = !isOpen.value
@@ -88,10 +88,10 @@ const handlePhone = () => {
 
 <style scoped>
 .action-menu-container {
-  position: absolute;
+  position: fixed;
   bottom: clamp(24px, 2vw, 32px);
   right: clamp(24px, 2vw, 32px);
-  z-index: 10;
+  z-index: 999;
   display: flex;
   flex-direction: column;
   align-items: flex-end;
