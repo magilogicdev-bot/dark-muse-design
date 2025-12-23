@@ -357,19 +357,19 @@ const handleVideoClick = () => {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  gap: clamp(6px, 0.8vw, 14px);
-  width: clamp(24px, 2.2vw, 46px);
-  height: clamp(14px, 1.4vw, 22px);
+  gap: clamp(5px, 0.7vw, 12px);
+  width: clamp(20px, 1.8vw, 38px);
+  height: clamp(12px, 1.2vw, 18px);
   flex-shrink: 0;
   position: relative;
 }
 
 .header__burger-line {
   display: block;
-  height: 2.5px;
+  height: 1.5px;
   width: 100%;
   background: linear-gradient(90deg, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0.95) 100%);
-  border-radius: 2px;
+  border-radius: 1.5px;
   transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
   transform-origin: center;
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
@@ -386,11 +386,11 @@ const handleVideoClick = () => {
 }
 
 .header__burger--open .header__burger-line:nth-child(1) {
-  transform: translateY(clamp(4px, 0.45vw, 6px)) rotate(45deg) scaleX(1.1);
+  transform: translateY(clamp(4px, 0.45vw, 6px)) rotate(45deg) scaleX(1);
 }
 
 .header__burger--open .header__burger-line:nth-child(2) {
-  transform: translateY(calc(clamp(4px, 0.45vw, 6px) * -1)) rotate(-45deg) scaleX(1.1);
+  transform: translateY(calc(clamp(4px, 0.45vw, 6px) * -1)) rotate(-45deg) scaleX(1);
 }
 
 .header__menu-text {

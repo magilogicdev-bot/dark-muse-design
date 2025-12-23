@@ -78,7 +78,7 @@
               <img 
                 src="/images/contacts/map-iso.webp" 
                 alt="Схема расположения объектов" 
-                class="absolute w-full h-full sm:w-[120%] sm:h-auto sm:aspect-[885/636] md:w-[110%] lg:w-[885px] lg:h-[636px] object-cover map-image-animated left-0 sm:left-[-10%] md:left-[-5%] lg:left-[-120px] xl:left-[-60px] 2xl:left-[-20px] top-0 sm:top-[5%] md:top-[8%] lg:top-[122px] ml-0 mr-0"
+                class="absolute w-full h-full sm:w-[120%] sm:h-auto sm:aspect-[885/636] md:w-[110%] lg:w-[885px] lg:h-[636px] object-cover left-0 sm:left-[-10%] md:left-[-5%] lg:left-[-120px] xl:left-[-60px] 2xl:left-[-20px] top-0 sm:top-[5%] md:top-[8%] lg:top-[122px] ml-0 mr-0"
                 style="object-position: 40% center;"
               />
             </div>
@@ -110,23 +110,6 @@
 
             <!-- Gradient Overlay Left -->
             <div class="absolute inset-y-0 left-0 bg-gradient-to-r from-primary via-primary/50 to-transparent pointer-events-none w-1/4 lg:w-1/5"></div>
-
-            <!-- Side Navigation Icons (Desktop) - 4 buttons per Figma -->
-            <div class="hidden lg:flex absolute right-4 xl:right-6 2xl:right-8 top-1/2 -translate-y-1/2 flex-col gap-2 xl:gap-3 icon-buttons-container">
-              <button class="icon-button w-12 h-12 xl:w-14 xl:h-14 2xl:w-16 2xl:h-16 flex items-center justify-center transition-all duration-300 hover:scale-110 overflow-visible">
-                <img src="/images/contacts/icon-1.webp?v=2" alt="Phone" class="w-full h-full object-contain" loading="eager" />
-              </button>
-              <button class="icon-button w-12 h-12 xl:w-14 xl:h-14 2xl:w-16 2xl:h-16 flex items-center justify-center transition-all duration-300 hover:scale-110 overflow-visible animation-delay-100">
-                <img src="/images/contacts/icon-2.webp?v=2" alt="Telegram" class="w-full h-full object-contain" loading="eager" />
-              </button>
-              <button class="icon-button w-12 h-12 xl:w-14 xl:h-14 2xl:w-16 2xl:h-16 flex items-center justify-center transition-all duration-300 hover:scale-110 overflow-visible animation-delay-200">
-                <img src="/images/contacts/icon-3.webp?v=2" alt="Notifications" class="w-full h-full object-contain" loading="eager" />
-              </button>
-              <button class="icon-button w-12 h-12 xl:w-14 xl:h-14 2xl:w-16 2xl:h-16 flex items-center justify-center transition-all duration-300 hover:scale-110 overflow-visible animation-delay-300">
-                <img src="/images/contacts/icon-4.webp?v=2" alt="Check" class="w-full h-full object-contain" loading="eager" />
-              </button>
-            </div>
-
 
             <!-- Social Icons Bottom Right -->
             <div class="absolute right-4 sm:right-6 lg:right-4 xl:right-6 2xl:right-8 bottom-4 sm:bottom-6 lg:bottom-6 flex items-center gap-2 sm:gap-3">
@@ -211,19 +194,6 @@ const contacts = [
   box-shadow: 0 0 20px rgba(212, 175, 55, 0.5), 0 0 40px rgba(212, 175, 55, 0.3);
 }
 
-/* Map image animation - subtle floating effect */
-.map-image-animated {
-  animation: mapFloat 8s ease-in-out infinite;
-}
-
-@keyframes mapFloat {
-  0%, 100% {
-    transform: translateY(0) scale(1);
-  }
-  50% {
-    transform: translateY(-10px) scale(1.01);
-  }
-}
 
 /* Icon button animations with staggered delays */
 .icon-button {
