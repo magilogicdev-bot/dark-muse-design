@@ -32,7 +32,9 @@ if (-not $Token) {
 
 # Use provided token if available
 if (-not $Token) {
-    $Token = ":FIGMA_TOKEN"
+    Write-Host "❌ Error: FIGMA_TOKEN environment variable is not set" -ForegroundColor Red
+    Write-Host "   Please set it using: `$env:FIGMA_TOKEN = 'your-token'" -ForegroundColor Yellow
+    exit 1
 }
 
 # Figma file key and node IDs for contacts page

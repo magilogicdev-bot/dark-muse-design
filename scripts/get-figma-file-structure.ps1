@@ -1,7 +1,7 @@
 # PowerShell script to get Figma file structure and find node IDs
 param(
     [Parameter(Mandatory=$false)]
-    [string]$Token = ":FIGMA_TOKEN",
+    [string]$Token = $env:FIGMA_TOKEN,
     [Parameter(Mandatory=$false)]
     [string]$FileKey = "HKJCXfKmo3ptpjTU8NW5ce"
 )

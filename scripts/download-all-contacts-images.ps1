@@ -1,7 +1,7 @@
 # PowerShell script to download all contact page images from Figma
 param(
     [Parameter(Mandatory=$false)]
-    [string]$Token = ":FIGMA_TOKEN"
+    [string]$Token = $env:FIGMA_TOKEN
 )
 
 $ErrorActionPreference = "Stop"
