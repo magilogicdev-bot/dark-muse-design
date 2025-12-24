@@ -10,10 +10,12 @@
       <!-- Main Project Card -->
       <article class="relative overflow-hidden rounded-[12px] lg:rounded-[18px] xl:rounded-[22px] shadow-lg bg-black mb-4 lg:mb-6">
         <div class="aspect-[16/10] md:aspect-[16/9] lg:aspect-[2/1] xl:aspect-[2.4/1]">
-          <img 
+          <NuxtImg 
             src="/images/current-projects-main.webp" 
             alt="ЭКОГОРОД 3" 
-            class="w-full h-full object-cover" 
+            class="w-full h-full object-cover"
+            loading="lazy"
+            format="webp"
           />
           <div class="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black/46"></div>
         </div>
@@ -38,7 +40,7 @@
               :key="idx"
               class="w-[36px] h-[36px] md:w-[48px] md:h-[48px] lg:w-[64px] lg:h-[64px] xl:w-[80px] xl:h-[80px] rounded-full bg-white flex items-center justify-center flex-shrink-0"
             >
-              <img :src="icon.src" :alt="icon.alt" class="w-[18px] h-[18px] md:w-[24px] md:h-[24px] lg:w-[32px] lg:h-[32px] xl:w-[40px] xl:h-[40px] object-contain" />
+              <NuxtImg :src="icon.src" :alt="icon.alt" class="w-[18px] h-[18px] md:w-[24px] md:h-[24px] lg:w-[32px] lg:h-[32px] xl:w-[40px] xl:h-[40px] object-contain" loading="lazy" format="webp" />
             </div>
           </div>
 
@@ -90,10 +92,12 @@
         
         <!-- Block 4: Gallery -->
         <div class="bg-[#ededed] rounded-[8px] lg:rounded-[10px] overflow-hidden relative min-h-[120px] md:min-h-[150px] lg:min-h-[200px] xl:min-h-[260px] group cursor-pointer">
-          <img 
+          <NuxtImg 
             src="/images/current-projects-gallery.webp" 
             alt="Галерея" 
-            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" 
+            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+            loading="lazy"
+            format="webp"
           />
           <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
           <div class="absolute bottom-3 lg:bottom-4 xl:bottom-5 left-3 lg:left-4 xl:left-5 right-3 lg:right-4 xl:right-5">

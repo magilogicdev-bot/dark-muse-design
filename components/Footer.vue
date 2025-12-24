@@ -18,20 +18,26 @@
           <!-- Right: Badges/Logos -->
           <div class="flex items-center gap-3 md:gap-4 lg:gap-5 xl:gap-6">
             <!-- Icon components from Figma -->
-            <img 
+            <NuxtImg 
               src="/images/footer-icon-1.png" 
               alt="CITY VISION AWARDS" 
               class="h-10 md:h-12 lg:h-14 xl:h-16 max-h-16 w-auto object-contain flex-shrink-0 aspect-auto"
+              loading="lazy"
+              format="webp"
             />
-            <img 
+            <NuxtImg 
               src="/images/footer-icon-2.png" 
               alt="Checkmark Icon" 
               class="h-10 md:h-12 lg:h-14 xl:h-16 max-h-16 w-auto object-contain flex-shrink-0 aspect-auto"
+              loading="lazy"
+              format="webp"
             />
-            <img 
+            <NuxtImg 
               src="/images/footer-icon-3.png" 
               alt="Refresh Icon" 
               class="h-10 md:h-12 lg:h-14 xl:h-16 max-h-16 w-auto object-contain flex-shrink-0 aspect-auto"
+              loading="lazy"
+              format="webp"
             />
           </div>
         </div>

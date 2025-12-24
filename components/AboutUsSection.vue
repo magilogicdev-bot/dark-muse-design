@@ -14,10 +14,12 @@
 
         <!-- Right: House Image with Watermark -->
         <div class="relative aspect-[16/10] lg:aspect-[4/3] overflow-hidden order-1 lg:order-2">
-          <img 
+          <NuxtImg 
             src="/images/render48.webp" 
             alt="Современный дом" 
             class="w-full h-full object-cover"
+            loading="lazy"
+            format="webp"
           />
           <!-- Watermark Overlay -->
           <div class="absolute bottom-0 left-0 p-4 lg:p-6 pointer-events-none">
@@ -33,10 +35,12 @@
         
         <!-- Left: Grayscale House Image with Carousel Dots -->
         <div class="relative aspect-[4/3] overflow-hidden order-2 lg:order-1">
-          <img 
+          <NuxtImg 
             :src="carouselImage" 
             alt="Архитектурный проект" 
             class="w-full h-full object-cover grayscale"
+            loading="lazy"
+            format="webp"
           />
           <!-- Carousel Dots -->
           <div class="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2 z-10">

@@ -14,10 +14,12 @@
       <!-- Main Project Card -->
       <article class="relative overflow-hidden rounded-[12px] lg:rounded-[18px] xl:rounded-[22px] shadow-lg bg-black mb-6 md:mb-8 lg:mb-10">
         <div class="aspect-[16/10] md:aspect-[16/9] lg:aspect-[2/1] xl:aspect-[2.4/1]">
-          <img 
+          <NuxtImg 
             src="/images/current-projects-main.webp" 
             alt="ЭКОГОРОД 3" 
-            class="w-full h-full object-cover" 
+            class="w-full h-full object-cover"
+            loading="lazy"
+            format="webp"
           />
           <div class="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black/46"></div>
         </div>

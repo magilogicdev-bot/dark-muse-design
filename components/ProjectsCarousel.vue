@@ -26,10 +26,12 @@
           class="bg-white rounded-lg md:rounded-xl lg:rounded-2xl overflow-hidden hover:shadow-xl transition-shadow"
         >
           <div class="aspect-[4/3] w-full">
-            <img
+            <NuxtImg
               :src="project.image"
               :alt="project.title"
               class="w-full h-full object-cover"
+              loading="lazy"
+              format="webp"
             />
           </div>
           <div class="p-6 md:p-8">

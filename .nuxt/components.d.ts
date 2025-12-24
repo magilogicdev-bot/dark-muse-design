@@ -77,7 +77,6 @@ export const MortgagePromoSection: typeof import("../components/MortgagePromoSec
 export const MortgageStepsSection: typeof import("../components/MortgageStepsSection.vue").default
 export const NewsCard: typeof import("../components/NewsCard.vue").default
 export const NewsSection: typeof import("../components/NewsSection.vue").default
-export const NuxtImg: typeof import("../components/NuxtImg.vue").default
 export const PartnersSection: typeof import("../components/PartnersSection.vue").default
 export const PriceListSection: typeof import("../components/PriceListSection.vue").default
 export const ProgressSection: typeof import("../components/ProgressSection.vue").default
@@ -102,7 +101,8 @@ export const NuxtLink: typeof import("../node_modules/nuxt/dist/app/components/n
 export const NuxtLoadingIndicator: typeof import("../node_modules/nuxt/dist/app/components/nuxt-loading-indicator").default
 export const NuxtTime: typeof import("../node_modules/nuxt/dist/app/components/nuxt-time.vue").default
 export const NuxtRouteAnnouncer: typeof import("../node_modules/nuxt/dist/app/components/nuxt-route-announcer").default
-export const NuxtPicture: typeof import("../node_modules/nuxt/dist/app/components/nuxt-stubs").NuxtPicture
+export const NuxtImg: typeof import("../node_modules/@nuxt/image/dist/runtime/components/NuxtImg.vue").default
+export const NuxtPicture: typeof import("../node_modules/@nuxt/image/dist/runtime/components/NuxtPicture.vue").default
 export const NuxtPage: typeof import("../node_modules/nuxt/dist/pages/runtime/page").default
 export const NoScript: typeof import("../node_modules/nuxt/dist/head/runtime/components").NoScript
 export const Link: typeof import("../node_modules/nuxt/dist/head/runtime/components").Link
@@ -177,7 +177,6 @@ export const LazyMortgagePromoSection: LazyComponent<typeof import("../component
 export const LazyMortgageStepsSection: LazyComponent<typeof import("../components/MortgageStepsSection.vue").default>
 export const LazyNewsCard: LazyComponent<typeof import("../components/NewsCard.vue").default>
 export const LazyNewsSection: LazyComponent<typeof import("../components/NewsSection.vue").default>
-export const LazyNuxtImg: LazyComponent<typeof import("../components/NuxtImg.vue").default>
 export const LazyPartnersSection: LazyComponent<typeof import("../components/PartnersSection.vue").default>
 export const LazyPriceListSection: LazyComponent<typeof import("../components/PriceListSection.vue").default>
 export const LazyProgressSection: LazyComponent<typeof import("../components/ProgressSection.vue").default>
@@ -202,7 +201,8 @@ export const LazyNuxtLink: LazyComponent<typeof import("../node_modules/nuxt/dis
 export const LazyNuxtLoadingIndicator: LazyComponent<typeof import("../node_modules/nuxt/dist/app/components/nuxt-loading-indicator").default>
 export const LazyNuxtTime: LazyComponent<typeof import("../node_modules/nuxt/dist/app/components/nuxt-time.vue").default>
 export const LazyNuxtRouteAnnouncer: LazyComponent<typeof import("../node_modules/nuxt/dist/app/components/nuxt-route-announcer").default>
-export const LazyNuxtPicture: LazyComponent<typeof import("../node_modules/nuxt/dist/app/components/nuxt-stubs").NuxtPicture>
+export const LazyNuxtImg: LazyComponent<typeof import("../node_modules/@nuxt/image/dist/runtime/components/NuxtImg.vue").default>
+export const LazyNuxtPicture: LazyComponent<typeof import("../node_modules/@nuxt/image/dist/runtime/components/NuxtPicture.vue").default>
 export const LazyNuxtPage: LazyComponent<typeof import("../node_modules/nuxt/dist/pages/runtime/page").default>
 export const LazyNoScript: LazyComponent<typeof import("../node_modules/nuxt/dist/head/runtime/components").NoScript>
 export const LazyLink: LazyComponent<typeof import("../node_modules/nuxt/dist/head/runtime/components").Link>

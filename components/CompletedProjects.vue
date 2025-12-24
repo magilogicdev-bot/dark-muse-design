@@ -22,10 +22,12 @@
         <!-- Main Large Image -->
         <article class="relative overflow-hidden rounded-[12px] lg:rounded-[18px] xl:rounded-[22px] shadow-lg bg-black group cursor-pointer">
           <div class="aspect-[16/9] lg:aspect-[2.2/1] xl:aspect-[2.5/1]">
-            <img 
+            <NuxtImg 
               src="/images/completed-projects-main.webp" 
               alt="ЖК Экогород 2" 
-              class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" 
+              class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+              loading="lazy"
+              format="webp"
             />
           </div>
           <div class="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black/46"></div>
@@ -42,10 +44,12 @@
             class="relative overflow-hidden rounded-[12px] lg:rounded-[18px] xl:rounded-[22px] shadow-lg bg-black group cursor-pointer"
           >
             <div class="aspect-[16/10] lg:aspect-[16/9]">
-              <img 
+              <NuxtImg 
                 :src="item.image" 
                 :alt="item.title" 
-                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" 
+                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                loading="lazy"
+                format="webp"
               />
             </div>
             <div class="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent"></div>

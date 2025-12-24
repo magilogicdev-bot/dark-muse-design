@@ -2,10 +2,12 @@
   <section class="ecocity-hero">
     <!-- Background Image -->
     <div class="ecocity-hero__bg">
-      <img
+      <NuxtImg
         src="/images/c128e2cbdc01ecd9ac287c89ce18f16ad7d56854.webp"
         alt="Жилой комплекс Экогород 3"
         class="ecocity-hero__image"
+        format="webp"
+        preload
       />
       <div class="ecocity-hero__overlay"></div>
     </div>
@@ -50,20 +52,22 @@
         <div class="ecocity-hero__side-actions">
            <div class="vertical-group">
             <button class="side-btn" aria-label="WhatsApp">
-              <img src="/images/menu-icons/menu-icon-1.webp" alt="WhatsApp" />
+              <NuxtImg src="/images/menu-icons/menu-icon-1.webp" alt="WhatsApp" loading="lazy" format="webp" />
             </button>
             <button class="side-btn" aria-label="Telegram">
-              <img src="/images/menu-icons/menu-icon-2.webp" alt="Telegram" />
+              <NuxtImg src="/images/menu-icons/menu-icon-2.webp" alt="Telegram" loading="lazy" format="webp" />
             </button>
             <button class="side-btn" aria-label="Phone">
-              <img src="/images/menu-icons/menu-icon-3.webp" alt="Phone" />
+              <NuxtImg src="/images/menu-icons/menu-icon-3.webp" alt="Phone" loading="lazy" format="webp" />
             </button>
             <button class="side-btn side-btn--orange" aria-label="Scroll Down">
               <!-- TODO: Replace with /images/icons/ecocity-scroll-down.webp after downloading from Figma -->
-              <img 
+              <NuxtImg 
                 src="/images/icons/chevron-down.webp" 
                 alt="Scroll Down" 
                 class="w-5 h-5 object-contain"
+                loading="lazy"
+                format="webp"
               />
             </button>
            </div>
@@ -72,10 +76,10 @@
         <!-- Bottom Right Circle Buttons -->
         <div class="ecocity-hero__bottom-actions">
            <button class="circle-btn" @click="$emit('open3d')" aria-label="3D Model">
-             <img src="/images/icons/Group 134.webp" alt="3D" class="w-full h-full object-contain" />
+             <NuxtImg src="/images/icons/Group 134.webp" alt="3D" class="w-full h-full object-contain" loading="lazy" format="webp" />
            </button>
            <button class="circle-btn" aria-label="Location">
-             <img src="/images/icons/ecocity-location.webp" alt="Location" class="w-full h-full object-contain" />
+             <NuxtImg src="/images/icons/ecocity-location.webp" alt="Location" class="w-full h-full object-contain" loading="lazy" format="webp" />
            </button>
         </div>
       </div>

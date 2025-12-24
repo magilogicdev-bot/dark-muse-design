@@ -13,10 +13,12 @@
           class="bg-white rounded-lg md:rounded-xl lg:rounded-2xl overflow-hidden hover:shadow-lg transition-shadow cursor-pointer"
         >
           <div class="aspect-square w-full">
-            <img
+            <NuxtImg
               :src="property.image"
               :alt="property.title"
               class="w-full h-full object-cover"
+              loading="lazy"
+              format="webp"
             />
           </div>
           <div class="p-4 md:p-5">

@@ -2,10 +2,12 @@
   <div class="home-page bg-primary text-white">
     <!-- Background 3D Model - Pinned to bottom right -->
     <div class="home-page__background">
-      <img
+      <NuxtImg
         src="/images/menu-3d-background.webp"
         alt="3D модель жилого комплекса"
         class="home-page__background-image"
+        format="webp"
+        loading="lazy"
       />
     </div>
     
@@ -15,10 +17,12 @@
       aria-label="Интерактивная 3D модель"
       @click="handle3DButtonClick"
     >
-      <img
+      <NuxtImg
         src="/images/3d-icon-button.webp"
         alt="3D"
         class="home-page__3d-button-icon"
+        format="webp"
+        loading="lazy"
       />
     </button>
 
@@ -76,16 +80,20 @@
         class="home-page__video-button"
         aria-label="ВИДЕО"
       >
-        <img
+        <NuxtImg
           src="/images/menu-icons/menu-video-button.webp"
           alt="ВИДЕО"
           class="home-page__video-button-image"
+          format="webp"
+          loading="lazy"
         />
       </button>
-      <img
+      <NuxtImg
         src="/images/menu-tagline.webp"
         alt="Легко трудно быть уникальным"
         class="home-page__video-text"
+        format="webp"
+        loading="lazy"
       />
     </div>
 

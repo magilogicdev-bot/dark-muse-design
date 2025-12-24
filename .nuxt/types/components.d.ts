@@ -77,7 +77,6 @@ interface _GlobalComponents {
   'MortgageStepsSection': typeof import("../../components/MortgageStepsSection.vue").default
   'NewsCard': typeof import("../../components/NewsCard.vue").default
   'NewsSection': typeof import("../../components/NewsSection.vue").default
-  'NuxtImg': typeof import("../../components/NuxtImg.vue").default
   'PartnersSection': typeof import("../../components/PartnersSection.vue").default
   'PriceListSection': typeof import("../../components/PriceListSection.vue").default
   'ProgressSection': typeof import("../../components/ProgressSection.vue").default
@@ -102,7 +101,8 @@ interface _GlobalComponents {
   'NuxtLoadingIndicator': typeof import("../../node_modules/nuxt/dist/app/components/nuxt-loading-indicator").default
   'NuxtTime': typeof import("../../node_modules/nuxt/dist/app/components/nuxt-time.vue").default
   'NuxtRouteAnnouncer': typeof import("../../node_modules/nuxt/dist/app/components/nuxt-route-announcer").default
-  'NuxtPicture': typeof import("../../node_modules/nuxt/dist/app/components/nuxt-stubs").NuxtPicture
+  'NuxtImg': typeof import("../../node_modules/@nuxt/image/dist/runtime/components/NuxtImg.vue").default
+  'NuxtPicture': typeof import("../../node_modules/@nuxt/image/dist/runtime/components/NuxtPicture.vue").default
   'NuxtPage': typeof import("../../node_modules/nuxt/dist/pages/runtime/page").default
   'NoScript': typeof import("../../node_modules/nuxt/dist/head/runtime/components").NoScript
   'Link': typeof import("../../node_modules/nuxt/dist/head/runtime/components").Link
@@ -177,7 +177,6 @@ interface _GlobalComponents {
   'LazyMortgageStepsSection': LazyComponent<typeof import("../../components/MortgageStepsSection.vue").default>
   'LazyNewsCard': LazyComponent<typeof import("../../components/NewsCard.vue").default>
   'LazyNewsSection': LazyComponent<typeof import("../../components/NewsSection.vue").default>
-  'LazyNuxtImg': LazyComponent<typeof import("../../components/NuxtImg.vue").default>
   'LazyPartnersSection': LazyComponent<typeof import("../../components/PartnersSection.vue").default>
   'LazyPriceListSection': LazyComponent<typeof import("../../components/PriceListSection.vue").default>
   'LazyProgressSection': LazyComponent<typeof import("../../components/ProgressSection.vue").default>
@@ -202,7 +201,8 @@ interface _GlobalComponents {
   'LazyNuxtLoadingIndicator': LazyComponent<typeof import("../../node_modules/nuxt/dist/app/components/nuxt-loading-indicator").default>
   'LazyNuxtTime': LazyComponent<typeof import("../../node_modules/nuxt/dist/app/components/nuxt-time.vue").default>
   'LazyNuxtRouteAnnouncer': LazyComponent<typeof import("../../node_modules/nuxt/dist/app/components/nuxt-route-announcer").default>
-  'LazyNuxtPicture': LazyComponent<typeof import("../../node_modules/nuxt/dist/app/components/nuxt-stubs").NuxtPicture>
+  'LazyNuxtImg': LazyComponent<typeof import("../../node_modules/@nuxt/image/dist/runtime/components/NuxtImg.vue").default>
+  'LazyNuxtPicture': LazyComponent<typeof import("../../node_modules/@nuxt/image/dist/runtime/components/NuxtPicture.vue").default>
   'LazyNuxtPage': LazyComponent<typeof import("../../node_modules/nuxt/dist/pages/runtime/page").default>
   'LazyNoScript': LazyComponent<typeof import("../../node_modules/nuxt/dist/head/runtime/components").NoScript>
   'LazyLink': LazyComponent<typeof import("../../node_modules/nuxt/dist/head/runtime/components").Link>

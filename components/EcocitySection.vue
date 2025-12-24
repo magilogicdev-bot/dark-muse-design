@@ -12,11 +12,12 @@
 
         <!-- ROW 1: Grayscale House Image (Top Right) -->
         <div class="relative w-full aspect-[4/3] overflow-hidden order-2 lg:order-2">
-          <img
+          <NuxtImg
             src="/images/ecocity-house-bw.webp"
             alt="Современный дом ЭКОГОРОД"
             class="w-full h-full object-cover"
             loading="lazy"
+            format="webp"
           />
         </div>
 
@@ -24,11 +25,12 @@
         <div class="relative w-full order-3 lg:order-3">
           <!-- Image Container -->
           <div class="relative w-full aspect-[4/3] overflow-hidden">
-            <img
+            <NuxtImg
               src="/images/ecocity-townhouses.webp"
               alt="Жилой комплекс ЭКОГОРОД"
               class="w-full h-full object-cover"
               loading="lazy"
+              format="webp"
             />
           </div>
 

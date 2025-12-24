@@ -32,3 +32,4 @@ export { definePageMeta } from '../node_modules/nuxt/dist/pages/runtime/composab
 export { defineLazyHydrationComponent } from '#app/composables/lazy-hydration';
 export { useMenu } from '../composables/useMenu';
 export { usePageMeta } from '../composables/usePageMeta';
+export { useImage } from '../node_modules/@nuxt/image/dist/runtime/composables';

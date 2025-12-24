@@ -21,10 +21,12 @@
           class="bg-white rounded-lg md:rounded-xl overflow-hidden flex flex-col hover:shadow-lg transition-shadow"
         >
           <div class="aspect-[4/3] w-full">
-            <img
+            <NuxtImg
               :src="property.image"
               :alt="property.title"
               class="w-full h-full object-cover"
+              loading="lazy"
+              format="webp"
             />
           </div>
           <div class="p-5 md:p-6 flex-1 flex flex-col">

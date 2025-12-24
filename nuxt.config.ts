@@ -1,7 +1,7 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   devtools: { enabled: true },
-  modules: ['@nuxtjs/tailwindcss'],
+  modules: ['@nuxtjs/tailwindcss', '@nuxt/image'],
   compatibilityDate: '2025-12-11',
   css: ['~/assets/css/tailwind.css', '~/assets/css/main.css'],
   app: {
@@ -30,6 +30,32 @@ export default defineNuxtConfig({
       autoprefixer: {},
     },
   },
+  // Настройки оптимизации изображений
+  image: {
+    quality: 85,
+    format: ['webp', 'avif', 'jpg'],
+    screens: {
+      xs: 320,
+      sm: 640,
+      md: 768,
+      lg: 1024,
+      xl: 1280,
+      xxl: 1536,
+    },
+    domains: [],
+    provider: 'ipx',
+    ipx: {
+      maxAge: 31536000, // 1 год кэширования
+      sharp: {
+        webp: {
+          quality: 85,
+        },
+        avif: {
+          quality: 75,
+        },
+      },
+    },
+  },
   // Настройки для статической генерации (SSG)
   nitro: {
     prerender: {
@@ -49,6 +75,25 @@ export default defineNuxtConfig({
         '/apartment/2',
         '/apartment/3'
       ]
-    }
-  }
+    },
+    compressPublicAssets: true,
+    minify: true,
+  },
+  // Оптимизация рендеринга
+  experimental: {
+    payloadExtraction: false,
+  },
+  // Дополнительные оптимизации
+  vite: {
+    build: {
+      cssCodeSplit: true,
+      rollupOptions: {
+        output: {
+          manualChunks: {
+            'vendor': ['vue'],
+          },
+        },
+      },
+    },
+  },
 })

@@ -10,10 +10,12 @@
       </div>
 
       <!-- Plan Image -->
-      <img
+      <NuxtImg
         :src="plan.image"
         :alt="`Планировка квартиры ${plan.rooms} комнаты`"
         class="w-full h-full object-contain pt-8"
+        loading="lazy"
+        format="webp"
         @error="handleImageError"
       />
       
@@ -80,6 +82,8 @@ const deletePlan = () => {
   console.log('Delete plan:', props.plan.id)
 }
 </script>
+
+
 
 
 

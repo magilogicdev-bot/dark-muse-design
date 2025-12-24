@@ -13,10 +13,12 @@
           class="aspect-square rounded-lg md:rounded-xl overflow-hidden cursor-pointer hover:opacity-90 transition-opacity"
           @click="openLightbox(index)"
         >
-          <img
+          <NuxtImg
             :src="image"
             :alt="`Галерея ${index + 1}`"
             class="w-full h-full object-cover"
+            loading="lazy"
+            format="webp"
           />
         </div>
       </div>

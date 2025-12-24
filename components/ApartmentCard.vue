@@ -4,10 +4,12 @@
     class="bg-white rounded-[10px] lg:rounded-[14px] xl:rounded-[18px] overflow-hidden shadow-lg cursor-pointer hover:shadow-xl transition-shadow flex flex-col block"
   >
     <div class="aspect-[4/5] bg-gray-100 flex-shrink-0">
-      <img 
+      <NuxtImg 
         :src="apartment.image" 
         :alt="apartment.title" 
-        class="w-full h-full object-cover" 
+        class="w-full h-full object-cover"
+        loading="lazy"
+        format="webp"
       />
     </div>
     <div class="p-3 md:p-4 flex flex-col flex-1">

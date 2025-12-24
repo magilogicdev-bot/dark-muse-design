@@ -7,10 +7,12 @@
       class="w-full relative bg-[#EBEBEB] flex-1 flex items-center justify-center min-h-0"
     >
       <!-- Plan Image -->
-      <img
+      <NuxtImg
         :src="plan.image"
         :alt="`Планировка квартиры ${plan.rooms} комнаты`"
         class="w-full h-full max-w-[85%] max-h-full object-contain pt-4"
+        loading="lazy"
+        format="webp"
         @error="handleImageError"
       />
     </div>

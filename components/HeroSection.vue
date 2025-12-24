@@ -5,10 +5,12 @@
       ref="imageContainer"
       class="relative w-full"
     >
-      <img
+      <NuxtImg
         src="/images/hero-background.webp"
         alt="Вид сверху на жилой комплекс"
         class="w-full h-auto block"
+        format="webp"
+        preload
       />
       
       <!-- Interactive Houses -->
@@ -29,11 +31,13 @@
           :aria-label="`Дом ${house.number}`"
         >
           <!-- House Outline Image (visible by default, brighter on hover) -->
-          <img
+          <NuxtImg
             v-if="house.outlineImage"
             :src="house.outlineImage"
             :alt="`Обводка дома ${house.number}`"
             class="absolute inset-0 w-full h-full object-contain opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"
+            loading="lazy"
+            format="webp"
           />
           <!-- Fallback: CSS border outline -->
           <div
