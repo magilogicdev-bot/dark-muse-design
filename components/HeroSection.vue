@@ -70,30 +70,30 @@ const houses = ref([
     // Левый жилой комплекс (светлый/серый)
     number: 1,
     left: 48.5,
-    top: 24,
-    width: 12,
-    height: 35,
+    top: 23.5,
+    width: 11.5,
+    height: 36,
     zIndex: 1,
     outlineImage: '/images/house-outline-1.png'
   },
   {
     // Центральные башни (две высотки)
     number: 2,
-    left: 28,
-    top: 39,
-    width: 17,
-    height: 37,
+    left: 28.2,
+    top: 38.5,
+    width: 16.2,
+    height: 38.5,
     zIndex: 55,
     outlineImage: '/images/house-outline-2.png'
   },
   {
     // Правый жилой комплекс (большой П-образный)
     number: 3,
-    left: 34.5,
+    left: 34.7,
     zIndex: 50,
-    top: 48,
+    top: 46.8,
     width: 30,
-    height: 41,
+    height: 41.5,
     outlineImage: '/images/house-outline-3.png'
   }
 ])

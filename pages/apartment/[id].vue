@@ -160,7 +160,7 @@
           </div>
 
           <!-- 3D Compass Control - Bottom left -->
-          <div class="compass-control">
+          <div class="compass-control cursor-pointer" @click="toggle3DViewer">
             <img 
               src="/images/3d-control-compass-38362c.webp" 
               alt="3D контрол направления"
@@ -259,12 +259,6 @@
     <!-- Contact Form Section -->
     <ContactFormSection />
 
-    <!-- 3D Viewer Modal -->
-    <Model3DViewer 
-      :is-open="is3DViewerOpen" 
-      :model-path="apartment.model3d"
-      @close="is3DViewerOpen = false"
-    />
   </div>
 </template>
 
@@ -297,7 +291,7 @@ const apartmentData = {
     image: '/images/apartment-plan-3room.webp',
     designImage: '/images/apartment-plan-3room.webp',
     sectionImage: '/images/apartment-plan-3room.webp',
-    model3d: '/models/4.gltf'
+    model3d: '/models/Plan_1.gltf'
   },
   2: {
     id: 2,
@@ -318,7 +312,7 @@ const apartmentData = {
     image: '/images/apartment-plan-3room.webp',
     designImage: '/images/apartment-plan-3room.webp',
     sectionImage: '/images/apartment-plan-3room.webp',
-    model3d: '/models/4.gltf'
+    model3d: '/models/Plan_1.gltf'
   },
   3: {
     id: 3,
@@ -339,7 +333,7 @@ const apartmentData = {
     image: '/images/apartment-plan-3room.webp',
     designImage: '/images/apartment-plan-3room.webp',
     sectionImage: '/images/apartment-plan-3room.webp',
-    model3d: '/models/4.gltf'
+    model3d: '/models/Plan_1.gltf'
   }
 }
 
@@ -381,7 +375,7 @@ const handlePrint = () => {
 }
 
 const toggle3DViewer = () => {
-  is3DViewerOpen.value = !is3DViewerOpen.value
+  window.open('/3d-map', '_blank')
 }
 
 // SEO
@@ -400,7 +394,7 @@ useHead({
 /* Hero Section Layout */
 .apartment-hero-section {
   min-height: 100vh;
-  padding-top: 100px;
+  padding-top: 0px;
 }
 
 .apartment-hero-container {

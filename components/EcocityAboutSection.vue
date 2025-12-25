@@ -6,17 +6,17 @@
         <!-- Left: Title -->
         <div class="flex items-start">
           <h2 class="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-medium uppercase leading-tight">
-            О ПРОЕКТЕ
+            {{ title }}
           </h2>
         </div>
 
         <!-- Right: Text Content -->
         <div class="flex flex-col gap-4 md:gap-5 lg:gap-6">
           <p class="text-sm md:text-base lg:text-lg leading-relaxed text-white/90">
-            Жилой комплекс «Экогород 3» создан в гармонии и уважении к природе и здоровью человека. Проектом предусмотрено размещение шести 8-9 этажных жилых домов, два из которых дополнены общественной функцией. На первых этажах предполагается размещение магазинов и прочих мест досугового назначения, что позволяет жителям находиться в максимальном комфорте и удобстве.
+            {{ text1 }}
           </p>
-          <p class="text-sm md:text-base lg:text-lg leading-relaxed text-white/90">
-            Основной идеей организации территории комплекса является формирование двух закрытых дворовых пространств, объединенных пешеходной зоной и многофункциональной спортивной площадкой. Дворы без машин - это современная тенденция организации жилой застройки для обеспечения безопасности и комфортного проживания.
+          <p v-if="text2" class="text-sm md:text-base lg:text-lg leading-relaxed text-white/90">
+            {{ text2 }}
           </p>
         </div>
       </div>
@@ -27,7 +27,7 @@
         <div class="relative h-full overflow-hidden rounded-lg md:rounded-xl">
           <img
             :src="images.main"
-            alt="Жилой комплекс Экогород 3"
+            :alt="title"
             class="w-full h-full object-cover"
             loading="lazy"
           />
@@ -84,13 +84,28 @@
 </template>
 
 <script setup>
-// Image paths - will be updated after downloading from Figma
-const images = {
-  main: '/images/ecocity-about-main.webp',
-  courtyard: '/images/ecocity-about-courtyard.webp',
-  playground: '/images/ecocity-about-playground.webp',
-  facade: '/images/ecocity-about-facade.webp',
-  gallery: '/images/ecocity-about-gallery.webp'
-}
+const props = defineProps({
+  title: {
+    type: String,
+    default: 'О ПРОЕКТЕ'
+  },
+  text1: {
+    type: String,
+    default: 'Жилой комплекс «Экогород 3» создан в гармонии и уважении к природе и здоровью человека. Проектом предусмотрено размещение шести 8-9 этажных жилых домов, два из которых дополнены общественной функцией. На первых этажах предполагается размещение магазинов и прочих мест досугового назначения, что позволяет жителям находиться в максимальном комфорте и удобстве.'
+  },
+  text2: {
+    type: String,
+    default: 'Основной идеей организации территории комплекса является формирование двух закрытых дворовых пространств, объединенных пешеходной зоной и многофункциональной спортивной площадкой. Дворы без машин - это современная тенденция организации жилой застройки для обеспечения безопасности и комфортного проживания.'
+  },
+  images: {
+    type: Object,
+    default: () => ({
+      main: '/images/alfa/1125-16276.webp',
+      courtyard: '/images/alfa/1125-16280.webp',
+      playground: '/images/alfa/1125-16283.webp',
+      facade: '/images/alfa/1125-16286.webp',
+      gallery: '/images/alfa/1125-16289.webp'
+    })
+  }
+})
 </script>
-

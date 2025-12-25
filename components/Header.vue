@@ -2,7 +2,7 @@
   <header ref="headerEl" class="header" :class="{ 'header--menu-open': isMenuOpen }">
     <!-- Top ribbon -->
     <div ref="headerBarEl" class="header__bar">
-      <div class="container mx-auto max-w-[1920px] flex items-center justify-between gap-1.5 sm:gap-2.5 md:gap-4 lg:gap-6 xl:gap-8 px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 2xl:px-20 py-1.5 sm:py-2 md:py-2.5 lg:py-3 xl:py-4 2xl:py-5 w-full min-w-0 overflow-hidden">
+      <div class="container mx-auto max-w-[1920px] flex items-center justify-between gap-1.5 sm:gap-2.5 md:gap-4 lg:gap-6 xl:gap-8 px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 2xl:px-20 py-1.5 sm:py-2 md:py-2.5 lg:py-3 xl:py-4 2xl:py-5 w-full min-w-0 overflow-hidden h-[50px]">
         <div class="header__left">
           <button
             @click="toggleMenu"
@@ -20,8 +20,13 @@
 
           <NuxtLink
             :to="config.navigation.buyApartment"
-            class="header__nav-link header__nav-link--desktop"
+            class="header__nav-link header__nav-link--desktop flex items-center gap-2"
           >
+            <NuxtImg
+              src="/images/vector.png"
+              alt=""
+              class="w-[13px] h-[13px] object-contain flex-shrink-0"
+            />
             КУПИТЬ КВАРТИРУ
           </NuxtLink>
         </div>
@@ -34,7 +39,7 @@
 
         <div class="header__right">
           <NuxtLink to="/favorites" class="header__favorites header__nav-link--desktop">
-            <span class="header__favorites-count">5</span>
+            <span class="header__favorites-count">0</span>
             <svg class="header__heart-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
               <path
                 stroke-linecap="round"
@@ -92,7 +97,8 @@
         v-if="isMenuOpen"
         id="site-menu"
         class="dropdown-menu"
-        @mouseleave="closeMenu"
+        ref="menuEl"
+        @click.stop
       >
         <!-- Decorative Rail Lines -->
         <div class="dropdown-menu__rail-lines">
@@ -117,13 +123,6 @@
       </div>
     </Transition>
 
-    <!-- 3D Model Viewer Modal -->
-    <Model3DViewer
-      v-if="is3DViewerOpen"
-      :is-open="is3DViewerOpen"
-      model-path="/models/4.gltf"
-      @close="close3DViewer"
-    />
   </header>
 </template>
 
@@ -139,6 +138,7 @@ const route = useRoute()
 
 const headerEl = ref(null)
 const headerBarEl = ref(null)
+const menuEl = ref(null)
 const is3DViewerOpen = ref(false)
 const menuItemsVisible = ref(false)
 
@@ -162,13 +162,30 @@ const onKeydown = (event) => {
   }
 }
 
+const handleClickOutside = (event) => {
+  if (!isMenuOpen.value || !menuEl.value) return
+  
+  const target = event.target
+  const isClickOnMenuButton = target.closest('.header__menu-btn') || target.closest('.header__mobile-btn')
+  const isClickInsideMenu = menuEl.value.contains(target)
+  
+  if (!isClickInsideMenu && !isClickOnMenuButton) {
+    closeMenu()
+  }
+}
+
 watch(isMenuOpen, (open) => {
   if (typeof window === 'undefined') return
 
   if (open) {
     window.addEventListener('keydown', onKeydown)
+    // Add click outside listener after menu is rendered
+    setTimeout(() => {
+      document.addEventListener('click', handleClickOutside)
+    }, 0)
   } else {
     window.removeEventListener('keydown', onKeydown)
+    document.removeEventListener('click', handleClickOutside)
     // Reset menu items visibility for next animation
     menuItemsVisible.value = false
   }
@@ -177,6 +194,7 @@ watch(isMenuOpen, (open) => {
 onBeforeUnmount(() => {
   if (typeof window !== 'undefined') {
     window.removeEventListener('keydown', onKeydown)
+    document.removeEventListener('click', handleClickOutside)
   }
 })
 
@@ -231,9 +249,7 @@ const menuItems = [
 
 // Handle 3D button click
 const handle3DButtonClick = () => {
-  console.log('Кнопка 3D модели нажата')
-  is3DViewerOpen.value = true
-  console.log('is3DViewerOpen установлен в:', is3DViewerOpen.value)
+  window.open('/3d-map', '_blank')
   closeMenu()
 }
 
@@ -302,7 +318,7 @@ const handleVideoClick = () => {
   background: #2a2c38;
   border-bottom: none;
   width: 100%;
-  height: 36px;
+  height: 50px;
   display: flex;
   align-items: stretch;
 }
@@ -356,19 +372,19 @@ const handleVideoClick = () => {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  gap: clamp(5px, 0.7vw, 12px);
-  width: clamp(20px, 1.8vw, 38px);
-  height: clamp(12px, 1.2vw, 18px);
+  gap: clamp(3px, 0.5vw, 6px);
+  width: clamp(16px, 1.5vw, 24px);
+  height: clamp(10px, 1vw, 14px);
   flex-shrink: 0;
   position: relative;
 }
 
 .header__burger-line {
   display: block;
-  height: 1.5px;
+  height: 1px;
   width: 100%;
   background: linear-gradient(90deg, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0.95) 100%);
-  border-radius: 1.5px;
+  border-radius: 1px;
   transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
   transform-origin: center;
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
@@ -385,11 +401,11 @@ const handleVideoClick = () => {
 }
 
 .header__burger--open .header__burger-line:nth-child(1) {
-  transform: translateY(clamp(4px, 0.45vw, 6px)) rotate(45deg) scaleX(1);
+  transform: translateY(clamp(3px, 0.35vw, 4px)) rotate(45deg) scaleX(1);
 }
 
 .header__burger--open .header__burger-line:nth-child(2) {
-  transform: translateY(calc(clamp(4px, 0.45vw, 6px) * -1)) rotate(-45deg) scaleX(1);
+  transform: translateY(calc(clamp(3px, 0.35vw, 4px) * -1)) rotate(-45deg) scaleX(1);
 }
 
 .header__menu-text {
@@ -596,7 +612,7 @@ const handleVideoClick = () => {
   top: 100%;
   left: 16px;
   z-index: 240;
-  background: #2a2c38;
+  background: rgba(42, 44, 56, 0.7);
   border-radius: 0 0 20px 20px;
   padding: 24px 32px 32px 24px;
   display: flex;
@@ -661,29 +677,29 @@ const handleVideoClick = () => {
 .dropdown-menu__nav {
   display: flex;
   flex-direction: column;
-  gap: 24px;
+  gap: 18px;
   padding-left: 16px;
 }
 
 @media (min-width: 640px) {
   .dropdown-menu__nav {
-    gap: 28px;
+    gap: 20px;
     padding-left: 20px;
   }
 }
 
 @media (min-width: 1024px) {
   .dropdown-menu__nav {
-    gap: 32px;
+    gap: 22px;
     padding-left: 24px;
   }
 }
 
 .dropdown-menu__link {
-  font-family: 'Mazzard', 'Inter', sans-serif;
-  font-size: 18px;
-  font-weight: 300;
-  letter-spacing: 0.02em;
+  font-family: 'Inter', sans-serif;
+  font-size: clamp(8px, 0.8vw, 12px);
+  font-weight: 200;
+  letter-spacing: -0.02em;
   color: #fff;
   text-decoration: none;
   text-transform: uppercase;
@@ -700,15 +716,9 @@ const handleVideoClick = () => {
   transform: translateX(0);
 }
 
-@media (min-width: 640px) {
+@media (min-width: 1280px) {
   .dropdown-menu__link {
-    font-size: 20px;
-  }
-}
-
-@media (min-width: 1024px) {
-  .dropdown-menu__link {
-    font-size: 22px;
+    font-size: clamp(10px, 1vw, 14px);
   }
 }
 
@@ -1409,7 +1419,7 @@ const handleVideoClick = () => {
   }
 
   .header__bar {
-    height: 36px;
+    height: 50px;
   }
 
   .menu__logo-text {
@@ -1461,25 +1471,25 @@ const handleVideoClick = () => {
 
 @media (min-width: 481px) and (max-width: 768px) {
   .header__bar {
-    height: 36px;
+    height: 50px;
   }
 }
 
 @media (min-width: 769px) and (max-width: 1024px) {
   .header__bar {
-    height: 36px;
+    height: 50px;
   }
 }
 
 @media (min-width: 1025px) {
   .header__bar {
-    height: 36px;
+    height: 50px;
   }
 }
 
 @media (min-width: 1440px) {
   .header__bar {
-    height: 36px;
+    height: 50px;
   }
 }
 </style>

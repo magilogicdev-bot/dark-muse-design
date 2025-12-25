@@ -61,7 +61,7 @@ const props = defineProps({
   },
   modelPath: {
     type: String,
-    default: '/models/4.gltf'
+    default: '/models/Plan_1.gltf'
   }
 })
 
@@ -185,7 +185,7 @@ const initModel = async () => {
     loader.setPath('/models/')
     
     console.log('Начинаем загрузку GLTF модели...')
-    const gltf = await loader.loadAsync('4.gltf')
+    const gltf = await loader.loadAsync('Plan_1.gltf')
     model = gltf.scene
     console.log('GLTF модель загружена:', model)
 

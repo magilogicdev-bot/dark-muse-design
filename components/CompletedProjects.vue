@@ -20,19 +20,26 @@
       <!-- Gallery Grid -->
       <div class="space-y-3 lg:space-y-4 xl:space-y-5">
         <!-- Main Large Image -->
-        <article class="relative overflow-hidden rounded-[12px] lg:rounded-[18px] xl:rounded-[22px] shadow-lg bg-black group cursor-pointer">
+        <article 
+          @click="navigateTo('/project/ecocity-2')"
+          class="relative overflow-hidden rounded-[12px] lg:rounded-[18px] xl:rounded-[22px] shadow-lg bg-black group cursor-pointer"
+        >
           <div class="aspect-[16/9] lg:aspect-[2.2/1] xl:aspect-[2.5/1]">
             <NuxtImg 
               src="/images/completed-projects-main.webp" 
               alt="ЖК Экогород 2" 
-              class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+              class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-in-out"
               loading="lazy"
               format="webp"
             />
           </div>
-          <div class="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black/46"></div>
-          <div class="absolute bottom-3 md:bottom-4 lg:bottom-6 xl:bottom-8 left-3 md:left-4 lg:left-6 xl:left-8">
-            <h3 class="text-lg md:text-xl lg:text-2xl xl:text-3xl font-bold uppercase text-white">жк "экогород 2"</h3>
+          <!-- Dark overlay on hover -->
+          <div class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+          
+          <!-- Text Content -->
+          <div class="absolute bottom-6 md:bottom-8 lg:bottom-10 left-0 w-full text-center transform translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300">
+            <p class="text-[10px] md:text-[12px] lg:text-[14px] uppercase tracking-[0.05em] text-white/80 mb-1 md:mb-2">жилой комплекс</p>
+            <h3 class="text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-medium uppercase text-white">Экогород 2</h3>
           </div>
         </article>
 
@@ -41,21 +48,25 @@
           <article 
             v-for="(item, idx) in galleryItems" 
             :key="idx"
+            @click="navigateTo(item.link)"
             class="relative overflow-hidden rounded-[12px] lg:rounded-[18px] xl:rounded-[22px] shadow-lg bg-black group cursor-pointer"
           >
             <div class="aspect-[16/10] lg:aspect-[16/9]">
               <NuxtImg 
                 :src="item.image" 
                 :alt="item.title" 
-                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-in-out"
                 loading="lazy"
                 format="webp"
               />
             </div>
-            <div class="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent"></div>
-            <!-- Title overlay - appears on hover -->
-            <div class="absolute top-3 md:top-4 lg:top-6 xl:top-8 left-1/2 -translate-x-1/2 w-full px-3 md:px-4">
-              <h3 class="text-base md:text-lg lg:text-xl xl:text-2xl font-bold uppercase text-white text-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+            <!-- Dark overlay on hover -->
+            <div class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+            
+            <!-- Text Content -->
+            <div class="absolute bottom-4 md:bottom-6 lg:bottom-8 left-0 w-full text-center transform translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300">
+              <p class="text-[8px] md:text-[10px] lg:text-[12px] uppercase tracking-[0.05em] text-white/80 mb-1">жилой комплекс</p>
+              <h3 class="text-lg md:text-xl lg:text-2xl xl:text-3xl font-medium uppercase text-white">
                 {{ item.title }}
               </h3>
             </div>
@@ -68,9 +79,9 @@
 
 <script setup>
 const galleryItems = [
-  { title: 'новый дом', image: '/images/completed-projects-1.webp' },
-  { title: 'экогород', image: '/images/completed-projects-2.webp' },
-  { title: 'папанина', image: '/images/completed-projects-3.webp' },
-  { title: 'жк литератор', image: '/images/completed-projects-4.webp' }
+  { title: 'новый дом', image: '/images/completed-projects-1.webp', link: '/project/new-house' },
+  { title: 'экогород', image: '/images/completed-projects-2.webp', link: '/project/ecocity' },
+  { title: 'пионерский', image: '/images/completed-projects-3.webp', link: '/project/pioneer' },
+  { title: 'в разработке', image: '/images/completed-projects-4.webp', link: '#' }
 ]
 </script>

@@ -97,7 +97,7 @@ const props = defineProps({
   },
   projectLink: {
     type: String,
-    default: '/project/ecocity'
+    default: '/project/ecocity-3'
   }
 })
 

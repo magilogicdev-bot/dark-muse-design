@@ -44,17 +44,13 @@
         class="home-page__audio-button"
         aria-label="Аудио"
       >
-        <svg
+        <NuxtImg
+          src="/images/menu-icons/audio-button.png"
+          alt="Аудио"
           class="home-page__audio-button-icon"
-          viewBox="0 0 24 24"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <rect x="4" y="12" width="2" height="8" fill="currentColor"/>
-          <rect x="8" y="8" width="2" height="16" fill="currentColor"/>
-          <rect x="12" y="4" width="2" height="24" fill="currentColor"/>
-          <rect x="16" y="10" width="2" height="12" fill="currentColor"/>
-        </svg>
+          format="png"
+          loading="lazy"
+        />
       </button>
       <button
         @click="handleVideoClick"
@@ -89,27 +85,24 @@
         />
       </button>
       <NuxtImg
-        src="/images/menu-tagline.webp"
+        src="/images/menu-tagline.png"
         alt="Легко трудно быть уникальным"
         class="home-page__video-text"
-        format="webp"
         loading="lazy"
       />
     </div>
 
-    <!-- 3D Model Viewer Modal -->
-    <Model3DViewer
-      v-if="is3DViewerOpen"
-      :is-open="is3DViewerOpen"
-      model-path="/models/4.gltf"
-      @close="close3DViewer"
-    />
   </div>
 </template>
 
 <script setup>
 import { ref } from 'vue'
 import { siteConfig } from '~/config/contacts'
+
+// Используем layout без футера
+definePageMeta({
+  layout: 'home'
+})
 
 const config = siteConfig
 const is3DViewerOpen = ref(false)
@@ -129,7 +122,7 @@ const phoneHref = 'tel:' + config.contacts.phone.formatted
 
 // Handle 3D button click
 const handle3DButtonClick = () => {
-  is3DViewerOpen.value = true
+  window.open('/3d-map', '_blank')
 }
 
 const close3DViewer = () => {
@@ -156,8 +149,12 @@ usePageMeta({
 <style scoped>
 .home-page {
   position: relative;
-  min-height: 90vh;
+  height: 100vh;
+  min-height: 100vh;
+  max-height: 100vh;
   background: #2a2c38;
+  overflow: hidden;
+  overflow-y: hidden;
   overflow-x: hidden;
 }
 
@@ -177,10 +174,10 @@ usePageMeta({
   display: block !important;
   width: auto;
   height: auto;
-  max-width: 60vw;
-  max-height: 70vh;
-  min-width: 400px;
-  min-height: 300px;
+  max-width: 95vw;
+  max-height: 95vh;
+  min-width: 800px;
+  min-height: 700px;
   object-fit: contain;
   object-position: bottom right;
   opacity: 1;
@@ -345,7 +342,7 @@ usePageMeta({
 .home-page__bottom-buttons {
   position: absolute;
   right: clamp(120px, 12vw, 200px);
-  bottom: clamp(32px, 4vh, 64px);
+  bottom: clamp(98px, 10vh, 120px);
   z-index: 10;
   display: flex;
   align-items: center;
@@ -355,17 +352,17 @@ usePageMeta({
 
 .home-page__audio-button {
   position: relative;
-  width: clamp(40px, 4vw, 52px);
-  height: clamp(40px, 4vw, 52px);
-  border-radius: 50%;
-  background: rgba(42, 44, 56, 0.8);
-  border: 1px solid rgba(255, 255, 255, 0.3);
+  width: clamp(40px, 4vw, 40px);
+  height: clamp(40px, 4vw, 40px);
+  border-radius: 0;
+  background: transparent;
+  border: none;
   cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
   padding: 0;
-  transition: transform 0.3s ease, opacity 0.3s ease, background-color 0.3s ease;
+  transition: transform 0.3s ease, opacity 0.3s ease;
   outline: none;
   flex-shrink: 0;
 }
@@ -373,8 +370,6 @@ usePageMeta({
 .home-page__audio-button:hover {
   transform: scale(1.1);
   opacity: 0.9;
-  background: rgba(42, 44, 56, 0.95);
-  border-color: rgba(255, 255, 255, 0.5);
 }
 
 .home-page__audio-button:active {
@@ -382,10 +377,11 @@ usePageMeta({
 }
 
 .home-page__audio-button-icon {
-  width: clamp(16px, 2vw, 22px);
-  height: clamp(16px, 2vw, 22px);
-  color: rgba(255, 255, 255, 0.9);
+  width: 100%;
+  height: 100%;
   display: block;
+  object-fit: contain;
+  background: transparent;
 }
 
 .home-page__bottom-video-button {
@@ -456,8 +452,8 @@ usePageMeta({
   justify-content: center;
   transition: transform 0.3s ease, opacity 0.3s ease;
   outline: none;
-  width: clamp(300px, 35vw, 427px);
-  height: clamp(45px, 5.5vh, 55px);
+  width: clamp(400px, 45vw, 850px);
+  height: clamp(55px, 7vh, 120px);
   font-size: clamp(18px, 2vw, 20px);
   line-height: 1.2;
   color: rgba(255, 255, 255, 1);
@@ -482,16 +478,13 @@ usePageMeta({
 
 /* Video Text Below Button (Image) */
 .home-page__video-text {
-  position: absolute;
-  left: 44px;
-  top: 90px;
+  position: relative;
   display: block;
-  width: auto;
-  height: auto;
-  max-width: clamp(200px, 25vw, 300px);
-  max-height: clamp(50px, 6vh, 80px);
+  width: 350px;
+  height: 148px;
   object-fit: contain;
   margin: 0;
+  line-height: 42px;
 }
 
 @media (max-width: 1024px) {
@@ -506,8 +499,8 @@ usePageMeta({
   }
 
   .home-page__background-image {
-    max-width: min(80vw, 1000px);
-    max-height: min(85vh, 800px);
+    max-width: min(95vw, 1400px);
+    max-height: min(95vh, 1200px);
   }
 
 
@@ -517,13 +510,14 @@ usePageMeta({
   }
 
   .home-page__video-button-image {
-    max-width: clamp(180px, 28vw, 350px);
-    max-height: clamp(35px, 4.5vh, 70px);
+    max-width: clamp(250px, 35vw, 450px);
+    max-height: clamp(45px, 6vh, 90px);
   }
 
   .home-page__video-text {
-    max-width: clamp(180px, 28vw, 280px);
-    max-height: clamp(45px, 5.5vh, 70px);
+    width: 350px;
+    height: 148px;
+    line-height: 42px;
   }
 
   .home-page__3d-button {
@@ -574,8 +568,8 @@ usePageMeta({
   }
 
   .home-page__background-image {
-    max-width: min(85vw, 900px);
-    max-height: min(90vh, 700px);
+    max-width: min(95vw, 1300px);
+    max-height: min(95vh, 1100px);
   }
 }
 
@@ -614,8 +608,8 @@ usePageMeta({
   }
 
   .home-page__background-image {
-    max-width: min(90vw, 800px);
-    max-height: min(95vh, 600px);
+    max-width: min(95vw, 1200px);
+    max-height: min(95vh, 1000px);
   }
 
   .home-page__3d-button {
@@ -634,8 +628,8 @@ usePageMeta({
 
 
   .home-page__video-button-image {
-    max-width: clamp(150px, 30vw, 300px);
-    max-height: clamp(30px, 4vh, 60px);
+    max-width: clamp(200px, 35vw, 380px);
+    max-height: clamp(40px, 5vh, 75px);
   }
 }
 </style>

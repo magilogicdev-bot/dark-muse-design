@@ -5,7 +5,7 @@
       <!-- === LEFT COLUMN: Info (1/3 width) === -->
       <section class="flex flex-col space-y-2 lg:space-y-3 w-full lg:w-1/3 lg:pr-8">
         <!-- Title -->
-        <h1 class="text-[clamp(24px,4vw,48px)] font-black tracking-[-0.04em] leading-[0.9] uppercase m-0">
+        <h1 class="text-[clamp(24px,4vw,48px)] font-normal tracking-[-0.04em] leading-[0.9] uppercase m-0">
           КОНТАКТЫ
         </h1>
         
@@ -42,13 +42,14 @@
           </div>
 
           <!-- Contact List -->
-          <div class="space-y-2">
-            <div v-for="(phone, index) in contactList" :key="index" class="flex items-center gap-2 flex-wrap">
-              <a :href="`tel:${phone.href}`" class="text-[clamp(16px,1.8vw,24px)] font-black tracking-tight hover:text-[#f8b543] transition-colors whitespace-nowrap">
+          <div class="space-y-4 pt-4">
+            <div v-for="(phone, index) in contactList" :key="index" class="flex items-center gap-4 group">
+              <a :href="`tel:${phone.href}`" class="text-[clamp(18px,2vw,26px)] font-normal tracking-wide text-white transition-colors whitespace-nowrap">
                 {{ phone.display }}
               </a>
-              <span class="text-[7px] opacity-25 uppercase tracking-[0.15em] font-black">
-                — {{ phone.label }}
+              <div class="w-1 h-1 rounded-full bg-white/40"></div>
+              <span class="text-[10px] text-white/60 uppercase tracking-[0.05em] font-medium">
+                {{ phone.label }}
               </span>
             </div>
           </div>
@@ -56,10 +57,10 @@
 
         <!-- CTA Block -->
         <div class="flex flex-col items-start gap-2">
-          <button class="bg-white text-[#2A2C38] hover:bg-[#f8b543] hover:text-white px-6 py-2 rounded-full text-[9px] font-black uppercase tracking-[0.25em] transition-all duration-300 shadow-2xl active:scale-95">
+          <button class="bg-white text-[#2A2C38] hover:bg-white/90 px-8 py-3 rounded-full text-[14px] font-medium italic transition-all duration-300 shadow-xl active:scale-95 mb-6">
             Оставить заявку
           </button>
-          <p class="text-[10px] opacity-35 max-w-[340px] leading-relaxed">
+          <p class="text-[11px] text-white max-w-[340px] leading-relaxed font-light">
             Мы работаем только с лидерами страхового рынка. Гарантируем прозрачные условия и официальные полисы.
           </p>
         </div>
@@ -200,38 +201,39 @@
         </p>
       </div>
       <!-- Social Icons -->
-      <div class="absolute top-[720px] left-[989px] flex items-center justify-center gap-2 md:gap-2.5 lg:gap-3">
+      <!-- Social Icons - Bottom Right Fixed -->
+      <div class="fixed bottom-[clamp(28px,2.5vw,38px)] right-[clamp(100px,8vw,120px)] z-50 flex items-center justify-center gap-3 md:gap-4">
         <a 
           :href="config.contacts.social.vk" 
-          class="w-8 h-8 md:w-9 md:h-9 lg:w-10 lg:h-10 xl:w-12 xl:h-12 rounded-full aspect-square flex items-center justify-center hover:opacity-80 transition-opacity flex-shrink-0 relative overflow-hidden"
+          class="w-10 h-10 md:w-11 md:h-11 lg:w-12 lg:h-12 rounded-full flex items-center justify-center hover:opacity-80 transition-opacity flex-shrink-0"
           aria-label="VKontakte"
         >
           <img 
             src="/images/social-vk-bg.svg" 
             alt="VK" 
-            class="absolute inset-0 w-full h-full object-cover rounded-full"
+            class="w-full h-full object-contain"
           />
         </a>
         <a 
           :href="config.contacts.social.telegram" 
-          class="w-8 h-8 md:w-9 md:h-9 lg:w-10 lg:h-10 xl:w-12 xl:h-12 rounded-full aspect-square flex items-center justify-center hover:opacity-80 transition-opacity flex-shrink-0 relative overflow-hidden"
+          class="w-10 h-10 md:w-11 md:h-11 lg:w-12 lg:h-12 rounded-full flex items-center justify-center hover:opacity-80 transition-opacity flex-shrink-0"
           aria-label="Telegram"
         >
           <img 
             src="/images/social-telegram-bg.svg" 
             alt="Telegram" 
-            class="absolute inset-0 w-full h-full object-cover rounded-full"
+            class="w-full h-full object-contain"
           />
         </a>
         <a 
           :href="config.contacts.social.whatsapp" 
-          class="w-8 h-8 md:w-9 md:h-9 lg:w-10 lg:h-10 xl:w-12 xl:h-12 rounded-full aspect-square flex items-center justify-center hover:opacity-80 transition-opacity flex-shrink-0 relative overflow-hidden"
-          aria-label="WhatsApp"
+          class="w-10 h-10 md:w-11 md:h-11 lg:w-12 lg:h-12 rounded-full flex items-center justify-center hover:opacity-80 transition-opacity flex-shrink-0"
+          aria-label="Viber"
         >
           <img 
             src="/images/ellipse-14.png" 
-            alt="WhatsApp" 
-            class="absolute inset-0 w-full h-full object-cover rounded-full"
+            alt="Viber" 
+            class="w-full h-full object-contain"
           />
         </a>
       </div>
@@ -243,6 +245,10 @@
 import { siteConfig } from '~/config/contacts'
 
 const config = siteConfig
+
+definePageMeta({
+  layout: 'home'
+})
 
 const hoveredMarker = ref(null)
 

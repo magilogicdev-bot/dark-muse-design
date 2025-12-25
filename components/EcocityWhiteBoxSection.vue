@@ -33,7 +33,6 @@
           loading="lazy"
         />
         
-        <!-- SVG Lines connecting hotspots to labels (visible on hover) -->
         <svg
           v-if="imageContainer"
           ref="svgContainer"
@@ -42,15 +41,14 @@
           preserveAspectRatio="none"
         >
           <line
-            v-for="(hotspot, index) in hotspots"
-            :key="`line-${index}`"
-            :x1="getLineStartX(hotspot)"
-            :y1="getLineStartY(hotspot)"
-            :x2="getLineEndX(hotspot)"
-            :y2="getLineEndY(hotspot)"
+            v-if="currentHotspotIndex !== null"
+            :x1="activeLineCoords.x1"
+            :y1="activeLineCoords.y1"
+            :x2="activeLineCoords.x2"
+            :y2="activeLineCoords.y2"
             stroke="white"
             stroke-width="1.5"
-            :class="['stroke-white transition-opacity duration-200', currentHotspotIndex === index ? 'opacity-100' : 'opacity-0']"
+            class="stroke-white transition-opacity duration-300"
           />
         </svg>
         
@@ -59,7 +57,7 @@
           v-for="(hotspot, index) in hotspots"
           :key="`hotspot-${index}`"
           :style="getHotspotStyle(hotspot)"
-          class="absolute w-6 h-6 md:w-8 md:h-8 border-2 border-gray-800 rounded-full bg-gray-800/80 hover:bg-gray-800 flex items-center justify-center z-20 cursor-pointer transition-all duration-200"
+          class="absolute w-6 h-6 md:w-8 md:h-8 border-2 border-gray-800 rounded-full bg-gray-800/80 hover:bg-gray-800 flex items-center justify-center z-20 cursor-pointer transition-all duration-300 hover:scale-110"
           @mouseenter="handleHotspotEnter(index)"
           @mouseleave="handleHotspotLeave"
         >
@@ -75,6 +73,7 @@
         >
           <div
             v-if="currentHotspotIndex === index"
+            :data-label-index="index"
             :style="getLabelStyle(hotspot)"
             class="absolute z-30 bg-white/95 backdrop-blur-sm rounded-lg shadow-xl p-3 md:p-4 min-w-[180px] md:min-w-[220px] max-w-[260px] pointer-events-auto"
             @mouseenter="handleLabelEnter"
@@ -91,7 +90,7 @@
 </template>
 
 <script setup>
-import { ref, onMounted, onBeforeUnmount } from 'vue'
+import { ref, onMounted, onBeforeUnmount, watch, nextTick } from 'vue'
 
 const imageContainer = ref(null)
 const svgContainer = ref(null)
@@ -113,14 +112,14 @@ const hotspots = ref([
     top: '25%',
     text: 'Качественные оконные блоки',
     labelLeft: '10%',
-    labelTop: '15%'
+    labelTop: '10%'
   },
   {
     left: '15%',
     top: '75%',
     text: 'Разводка отопления в полу. Установлены биметаллические радиаторы.',
     labelLeft: '10%',
-    labelTop: '65%'
+    labelTop: '55%'
   },
   {
     left: '45%',
@@ -155,7 +154,7 @@ const hotspots = ref([
     top: '55%',
     text: 'Возведены перегородки из пазогребневых блоков',
     labelLeft: '85%',
-    labelTop: '45%'
+    labelTop: '35%'
   },
   {
     left: '50%',
@@ -233,23 +232,73 @@ const handleLabelLeave = () => {
   }, 200)
 }
 
-const getLineStartX = (hotspot) => {
-  return (parseFloat(hotspot.left) / 100) * svgWidth.value
+const activeLineCoords = ref({ x1: 0, y1: 0, x2: 0, y2: 0 })
+
+const updateActiveLine = () => {
+  if (currentHotspotIndex.value === null) return
+  
+  const hotspot = hotspots.value[currentHotspotIndex.value]
+  const x1 = (parseFloat(hotspot.left) / 100) * svgWidth.value
+  const y1 = (parseFloat(hotspot.top) / 100) * svgHeight.value
+  
+  const labelLeftPercent = parseFloat(hotspot.labelLeft || hotspot.left)
+  const labelTopPercent = parseFloat(hotspot.labelTop || hotspot.top)
+  const hotspotLeftPercent = parseFloat(hotspot.left)
+  const hotspotTopPercent = parseFloat(hotspot.top)
+  
+  // Base target (fallback)
+  let x2 = (labelLeftPercent / 100) * svgWidth.value
+  let y2 = (labelTopPercent / 100) * svgHeight.value
+  
+  const approxWidth = Math.min(220, svgWidth.value * 0.15)
+  const approxHeight = Math.min(80, svgHeight.value * 0.08)
+  
+  if (labelLeftPercent < hotspotLeftPercent - 2) x2 += approxWidth
+  else if (Math.abs(labelLeftPercent - hotspotLeftPercent) <= 2) x2 += approxWidth / 2
+  
+  if (labelTopPercent < hotspotTopPercent - 2) y2 += approxHeight
+  else if (Math.abs(labelTopPercent - hotspotTopPercent) <= 2) y2 += approxHeight / 2
+
+  // Try to get real dimensions
+  if (imageContainer.value) {
+    const labelElement = imageContainer.value.querySelector(`[data-label-index="${currentHotspotIndex.value}"]`)
+    if (labelElement) {
+      const labelRect = labelElement.getBoundingClientRect()
+      const containerRect = imageContainer.value.getBoundingClientRect()
+      
+      if (containerRect.width > 0 && containerRect.height > 0) {
+        const scaleX = svgWidth.value / containerRect.width
+        const scaleY = svgHeight.value / containerRect.height
+        const labelLeftPx = labelRect.left - containerRect.left
+        const labelTopPx = labelRect.top - containerRect.top
+        const labelWidth = labelRect.width
+        const labelHeight = labelRect.height
+        
+        // Horizontal
+        if (labelLeftPercent < hotspotLeftPercent - 2) x2 = (labelLeftPx + labelWidth) * scaleX
+        else if (labelLeftPercent > hotspotLeftPercent + 2) x2 = labelLeftPx * scaleX
+        else x2 = (labelLeftPx + labelWidth / 2) * scaleX
+        
+        // Vertical
+        if (labelTopPercent < hotspotTopPercent - 2) y2 = (labelTopPx + labelHeight) * scaleY
+        else if (labelTopPercent > hotspotTopPercent + 2) y2 = labelTopPx * scaleY
+        else y2 = (labelTopPx + labelHeight / 2) * scaleY
+      }
+    }
+  }
+  
+  activeLineCoords.value = { x1, y1, x2, y2 }
 }
 
-const getLineStartY = (hotspot) => {
-  return (parseFloat(hotspot.top) / 100) * svgHeight.value
-}
-
-const getLineEndX = (hotspot) => {
-  const labelLeft = hotspot.labelLeft || hotspot.left
-  return (parseFloat(labelLeft) / 100) * svgWidth.value
-}
-
-const getLineEndY = (hotspot) => {
-  const labelTop = hotspot.labelTop || hotspot.top
-  return (parseFloat(labelTop) / 100) * svgHeight.value
-}
+// Watch for changes and update line
+watch([currentHotspotIndex, svgWidth, svgHeight], () => {
+  updateActiveLine()
+  if (currentHotspotIndex.value !== null) {
+    nextTick().then(updateActiveLine)
+    setTimeout(updateActiveLine, 50)
+    setTimeout(updateActiveLine, 150)
+  }
+})
 
 // Update SVG dimensions when container size changes
 onMounted(() => {

@@ -9,7 +9,7 @@
         <!-- Map -->
         <div class="lg:col-span-2 rounded-lg md:rounded-xl lg:rounded-2xl overflow-hidden aspect-square lg:aspect-auto lg:h-[600px]">
           <img
-            src="/images/map-large.webp"
+            :src="mapImage"
             alt="Карта"
             class="w-full h-full object-cover"
           />
@@ -47,5 +47,10 @@
 </template>
 
 <script setup>
-// Map Section Component
+defineProps({
+  mapImage: {
+    type: String,
+    default: '/images/ecocity-general-plan.webp' // Fallback to an existing image
+  }
+})
 </script>

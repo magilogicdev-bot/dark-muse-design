@@ -11,43 +11,45 @@
         <div
           v-for="(bank, index) in banks"
           :key="index"
-          class="bg-gradient-to-br from-white/5 to-gray-800/80 rounded-lg md:rounded-xl p-4 md:p-6 relative border border-gray-600/30 hover:border-gray-500/50 transition-colors"
+          class="bg-gradient-to-br from-white/5 to-gray-800/80 rounded-lg md:rounded-xl p-3 md:p-4 relative border border-white hover:border-white/80 transition-colors"
         >
           <!-- External Link Icon (Top Right) -->
           <a
             :href="bank.link"
             target="_blank"
             rel="noopener noreferrer"
-            class="absolute top-3 right-3 md:top-4 md:right-4 w-5 h-5 md:w-6 md:h-6 text-white/70 hover:text-white transition-colors"
+            class="absolute top-2 right-2 md:top-3 md:right-3 w-5 h-5 md:w-6 md:h-6"
             aria-label="Открыть сайт банка"
           >
-            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" class="w-full h-full">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-            </svg>
+            <NuxtImg
+              src="/images/arrow-6.png"
+              alt="Открыть ссылку"
+              class="w-full h-full object-contain"
+            />
           </a>
 
           <!-- Bank Name and Reference -->
-          <div class="mb-4 md:mb-6">
-            <h3 class="text-[rgba(255,255,255,0.55)] text-sm md:text-base font-medium uppercase mb-1">
+          <div class="mb-3 md:mb-4">
+            <h3 class="text-white text-sm md:text-base font-medium uppercase mb-1">
               {{ bank.name }}
             </h3>
-            <p class="text-[rgba(255,255,255,0.55)] text-xs md:text-sm">
+            <p class="text-white text-xs md:text-sm">
               {{ bank.reference }}
             </p>
           </div>
 
           <!-- Full Cost of Credit -->
-          <div class="mb-3 md:mb-4">
-            <p class="text-[rgba(255,255,255,0.55)] text-xs md:text-sm mb-1">Полная стоимость кредита</p>
-            <p class="text-[rgba(255,255,255,0.55)] text-base md:text-lg font-semibold">
+          <div class="mb-2 md:mb-3">
+            <p class="text-white text-xs md:text-sm mb-1">Полная стоимость кредита</p>
+            <p class="text-white text-base md:text-lg font-semibold">
               {{ bank.fullCost }}
             </p>
           </div>
 
           <!-- Rate -->
-          <div class="mb-4 md:mb-6">
-            <p class="text-[rgba(255,255,255,0.55)] text-xs md:text-sm mb-1">Ставка</p>
-            <p class="text-[rgba(255,255,255,0.55)] text-lg md:text-xl font-bold">
+          <div class="mb-3 md:mb-4">
+            <p class="text-white text-xs md:text-sm mb-1">Ставка</p>
+            <p class="text-white text-lg md:text-xl font-bold">
               {{ bank.rate }}
             </p>
           </div>

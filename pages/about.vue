@@ -1,31 +1,22 @@
 <template>
   <div class="bg-primary text-white min-h-screen font-sans selection:bg-[#d4a574] selection:text-primary">
     <!-- Main Biography Section -->
-    <section id="biography-section" class="min-h-screen flex items-center justify-center pb-16 md:pb-20 lg:pb-24 px-5 sm:px-6 md:px-10 lg:px-16 xl:px-20 relative">
+    <section id="biography-section" class="min-h-[70vh] flex items-center justify-center pb-16 md:pb-20 lg:pb-24 px-5 sm:px-6 md:px-10 lg:px-16 xl:px-20 relative overflow-hidden">
       
-      <!-- Decorative Horizontal Lines -->
-      <div class="absolute top-0 left-0 w-full h-px bg-white/10 z-0"></div>
-      <div class="absolute bottom-16 md:bottom-20 lg:bottom-24 left-0 w-full h-px bg-white/10 z-0"></div>
-      
-      <div class="max-w-[1770px] mx-auto w-full relative z-1">
+      <div class="max-w-[1770px] mx-auto w-full relative z-2">
         
-        <!-- Back Button -->
-        <div class="mb-8 lg:mb-12">
-          <NuxtLink to="/" class="inline-flex items-center gap-2 md:gap-3 text-white/40 hover:text-white transition-colors group">
-            <svg class="w-4 h-4 md:w-5 md:h-5 transition-transform group-hover:-translate-x-1" viewBox="0 0 28 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M0.469669 5.46967C0.176777 5.76256 0.176777 6.23744 0.469669 6.53033L5.24264 11.3033C5.53553 11.5962 6.01041 11.5962 6.3033 11.3033C6.59619 11.0104 6.59619 10.5355 6.3033 10.2426L2.06066 6L6.3033 1.75736C6.59619 1.46447 6.59619 0.989593 6.3033 0.696699C6.01041 0.403806 5.53553 0.403806 5.24264 0.696699L0.469669 5.46967ZM28 5.25L1 5.25V6.75L28 6.75V5.25Z" fill="currentColor"/>
-            </svg>
-            <span class="text-[10px] md:text-xs lg:text-sm tracking-[0.18em] uppercase font-light" style="font-size: clamp(8px, 0.8vw, 12px);">НАЗАД</span>
-          </NuxtLink>
-        </div>
-        
-        <!-- Desktop Layout: Grid with 3 columns -->
-        <div class="hidden lg:grid grid-cols-[auto_1fr_auto] gap-6 xl:gap-10 2xl:gap-12 items-start relative">
+        <!-- Desktop Layout: Grid with 2 columns -->
+        <div class="hidden lg:grid grid-cols-[1.2fr_1fr] items-start relative pt-[5%]">
           
-          <!-- Decorative vertical line between text and photo -->
-          <div class="absolute right-[28%] xl:right-[26%] 2xl:right-[24%] top-0 bottom-0 w-px bg-white/10 z-0"></div>
+          <!-- Screenshot Reference Image -->
+          <img 
+            src="/images/screenshot-2025-12-25-100143.png" 
+            alt="Screenshot reference" 
+            class="absolute"
+            style="top: 334px; left: 684px; width: 20.3%; aspect-ratio: 359/75; z-index: 0;"
+          />
           
-          <!-- Left: Years Timeline -->
+          <!-- Decorative Years Timeline (Fixed) -->
           <div class="years-timeline-fixed">
             <button 
               v-for="item in timelineYears" 
@@ -41,40 +32,59 @@
               ></span>
             </button>
           </div>
-
-          <!-- Center: Biography Text -->
-          <div class="flex flex-col gap-10 xl:gap-14 2xl:gap-16 ml-[110px] mr-[110px] relative z-1">
+          
+          <!-- Left: Biography Text & Quote -->
+          <div class="flex flex-col pl-24 xl:pl-32 relative z-1">
             <transition name="fade" mode="out-in">
-              <div :key="activeYear" class="flex flex-col gap-10 xl:gap-14 2xl:gap-16">
+              <div :key="activeYear" class="flex flex-col">
                 <!-- Main Biography Text -->
-                <p class="italic text-white/90 leading-[1.6]" style="font-family: 'Marck Script', cursive; font-size: clamp(16px, 1.6vw, 21px);">
+                <p class="bio-text italic text-white/95 leading-[1.8] max-w-[850px]" style="font-size: clamp(16px, 1.5vw, 22px); width: 781px;">
                   {{ currentBiography.text }}
                 </p>
                 
                 <!-- Quote - Centered -->
-                <div class="flex flex-col items-center">
-                  <p class="bio-quote text-xl lg:text-2xl xl:text-[28px] 2xl:text-[32px] text-white/80 text-center leading-[1.4] xl:leading-[1.45]">
-                    <span class="text-base lg:text-lg xl:text-xl align-top mr-1 opacity-50">«</span>
-                    <span class="bio-quote-line">{{ currentBiography.quote1 }}</span>
-                    <br/>
-                    <span class="bio-quote-line ml-8 xl:ml-12">{{ currentBiography.quote2 }}</span>
-                    <span class="text-base lg:text-lg xl:text-xl align-top ml-1 opacity-50">»</span>
-                  </p>
+                <div class="flex flex-col items-center relative">
+                  <img 
+                    src="/images/quote-image.png" 
+                    alt="Цитата" 
+                    class="max-w-full h-auto absolute"
+                    style="left: 504px; top: 318px; width: 370px;"
+                  />
                 </div>
               </div>
             </transition>
           </div>
 
-          <!-- Right: Portrait with decorative lines -->
-          <div class="flex flex-col items-end pl-4 xl:pl-6 relative z-1 w-[262px]">
-            
-            <!-- Portrait container with decorative lines -->
-            <div class="relative w-full max-w-[280px] xl:max-w-[320px] 2xl:max-w-[360px]">
-              <!-- Decorative horizontal line (top) -->
-              <div class="absolute -top-px left-0 right-0 h-px bg-white/10"></div>
+          <!-- Right: Portrait Column -->
+          <div class="flex flex-col items-center lg:items-end relative z-1 pr-[12%] xl:pr-[15%] mt-0 mb-0 pt-[29px]">
+            <div class="relative group" style="width: min(210px, 18vw);">
               
+              <!-- DECORATIVE LINES (Tethered to Photo at ~20px) -->
+              
+              <!-- Top horizontal line (at photo top) -->
+              <div class="absolute top-[-55px] left-[-2000px] right-[-1000px] h-0.5 bg-white/20 z-0 opacity-80 mb-0"
+                   style="mask-image: linear-gradient(to right, transparent, white 20%, white 95%, transparent); -webkit-mask-image: linear-gradient(to right, transparent, white 20%, white 95%, transparent);">
+              </div>
+              <div class="absolute top-[-45px] left-0 right-0 bottom-0 bg-repeat-x opacity-60 mt-0" style="background-image: url('/images/line-46.svg'); background-size: 1000px 100%;"></div>
+
+              <!-- Right vertical line (at 20px from photo) -->
+              <div class="absolute top-[-100px] bottom-[-200px] right-[-20px] w-0.5 bg-white/30 z-0 overflow-visible"
+                   style="mask-image: linear-gradient(to bottom, transparent, white 5%, white 95%, transparent); -webkit-mask-image: linear-gradient(to bottom, transparent, white 5%, white 95%, transparent);">
+                <div class="absolute inset-0 bg-repeat-y opacity-50" style="background-image: url('/images/line-49.svg'); background-size: 100% 120px;"></div>
+              </div>
+
+              <!-- Bottom horizontal line (below signature) -->
+              <div class="absolute bottom-[-100px] left-[-2000px] right-[-50px] h-0.5 bg-white/30 z-0 opacity-60"
+                   style="mask-image: linear-gradient(to right, transparent, white 20%, white 98%, transparent); -webkit-mask-image: linear-gradient(to right, transparent, white 20%, white 98%, transparent);">
+                <div class="absolute inset-x-0 inset-y-0 bg-repeat-x" style="background-image: url('/images/line-46.svg'); background-size: 800px 100%;"></div>
+              </div>
+
+              <!-- Orange Accent Corner at Intersection -->
+              <div class="absolute bottom-[-100px] right-[-20px] w-[60px] h-0.5 bg-[#d4a574] z-1 -translate-x-[40px]"></div>
+              <div class="absolute bottom-[-100px] right-[-20px] w-0.5 h-[60px] bg-[#d4a574] z-1 translate-y-[30px]"></div>
+
               <!-- Portrait image -->
-              <div class="relative aspect-[3/4] shadow-2xl">
+              <div class="relative aspect-[3/4] shadow-2xl overflow-hidden border border-white/5 z-1">
                 <img 
                   src="/images/395fddf73453a4c5ea047bd09cfa3ef614c29e08.webp" 
                   alt="Победоносцев Алексей Николаевич" 
@@ -82,19 +92,11 @@
                 />
               </div>
               
-              <!-- Decorative horizontal line (bottom) -->
-              <div class="absolute -bottom-px left-0 right-0 h-px bg-white/10"></div>
-            </div>
-            
-            <!-- Name and decorative orange line -->
-            <div class="w-full max-w-[280px] xl:max-w-[320px] 2xl:max-w-[360px] mt-4 xl:mt-5 2xl:mt-6">
-              <p class="bio-signature text-lg xl:text-xl 2xl:text-2xl text-white/70 text-right">
-                Победоносцев Алексей Николаевич
-              </p>
-              <!-- Decorative Orange Line with corner -->
-              <div class="relative mt-2">
-                <div class="h-px bg-[#d4a574]/70"></div>
-                <div class="absolute right-0 top-0 bottom-0 w-px bg-[#d4a574]/70"></div>
+              <!-- Name/Signature positioned below -->
+              <div class="mt-6 xl:mt-8 flex justify-end relative z-1">
+                <p class="bio-signature text-sm xl:text-base 2xl:text-lg text-white/80 text-right whitespace-nowrap min-w-max mr-[-10px]">
+                  Победоносцев Алексей Николаевич
+                </p>
               </div>
             </div>
           </div>
@@ -142,14 +144,8 @@
             </div>
 
             <!-- Portrait with decorative lines -->
-            <div class="flex flex-col items-end relative">
-              <!-- Decorative vertical line (right edge) -->
-              <div class="absolute right-0 top-0 bottom-0 w-px bg-white/10 z-0"></div>
-              
-              <div class="relative w-full max-w-[280px]">
-                <!-- Decorative horizontal line (top) -->
-                <div class="absolute -top-px left-0 right-0 h-px bg-white/10"></div>
-                
+            <div class="flex flex-col items-end relative portrait-wrapper-tablet">
+              <div class="relative w-full max-w-[280px] portrait-container">
                 <div class="relative aspect-[3/4] shadow-2xl">
                   <img 
                     src="/images/395fddf73453a4c5ea047bd09cfa3ef614c29e08.webp" 
@@ -157,13 +153,10 @@
                     class="w-full h-full object-cover scale-x-[-1]"
                   />
                 </div>
-                
-                <!-- Decorative horizontal line (bottom) -->
-                <div class="absolute -bottom-px left-0 right-0 h-px bg-white/10"></div>
               </div>
               
               <div class="w-full max-w-[280px] mt-5">
-                <p class="bio-signature text-xl text-white/70 text-right">
+                <p class="bio-signature text-base text-white/70 text-right whitespace-nowrap overflow-hidden">
                   Победоносцев Алексей Николаевич
                 </p>
                 <!-- Decorative Orange Line with corner -->
@@ -194,10 +187,7 @@
 
           <!-- Mobile: Portrait (centered) with decorative lines -->
           <div class="flex flex-col items-center relative">
-            <div class="relative w-[55vw] max-w-[220px] sm:max-w-[260px]">
-              <!-- Decorative horizontal line (top) -->
-              <div class="absolute -top-px left-0 right-0 h-px bg-white/10"></div>
-              
+            <div class="relative w-[55vw] max-w-[220px] sm:max-w-[260px] portrait-container">
               <div class="relative aspect-[3/4] shadow-2xl">
                 <img 
                   src="/images/395fddf73453a4c5ea047bd09cfa3ef614c29e08.webp" 
@@ -205,13 +195,10 @@
                   class="w-full h-full object-cover scale-x-[-1]"
                 />
               </div>
-              
-              <!-- Decorative horizontal line (bottom) -->
-              <div class="absolute -bottom-px left-0 right-0 h-px bg-white/10"></div>
             </div>
             
             <div class="w-full max-w-[220px] sm:max-w-[260px] mt-4">
-              <p class="bio-signature text-base sm:text-lg text-white/70 text-center">
+              <p class="bio-signature text-xs sm:text-sm text-white/70 text-center whitespace-nowrap overflow-hidden">
                 Победоносцев Алексей Николаевич
               </p>
               <!-- Decorative Orange Line -->
@@ -246,12 +233,12 @@
     </section>
 
     <!-- Content Block 1: Architectural Blueprint + Text -->
-    <section id="year-2006" class="py-12 sm:py-16 md:py-20 lg:py-24 px-5 sm:px-6 md:px-10 lg:px-16 xl:px-20">
-      <div class="max-w-[1770px] mx-auto">
-        <div class="grid grid-cols-1 lg:grid-cols-[1fr_45%] xl:grid-cols-[1fr_42%] gap-8 lg:gap-12 xl:gap-16 items-center">
+    <section id="year-2006" class="py-12 sm:py-16 md:py-20 lg:py-24 px-5 sm:px-6 md:px-10 lg:px-0">
+      <div class="max-w-[1920px] mx-auto">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 xl:gap-16 items-center">
           
           <!-- Architectural Blueprint Image (Left on Desktop) -->
-          <div class="relative order-1 lg:order-1 overflow-hidden">
+          <div class="relative order-1 lg:order-1 lg:pl-20 overflow-hidden">
             <div class="relative w-full aspect-[4/3] lg:aspect-[3/2]">
               <div class="absolute inset-0 opacity-70 overflow-hidden pointer-events-none">
                 <img 
@@ -264,19 +251,25 @@
           </div>
           
           <!-- Text Content (Right on Desktop) -->
-          <div class="flex flex-col gap-4 lg:gap-5 order-2 lg:order-2">
-            <p class="content-text text-[11px] sm:text-xs md:text-sm lg:text-[13px] xl:text-[14px] 2xl:text-[15px] leading-[1.65] lg:leading-[1.75] text-white text-right tracking-tight">
-              Алексей Николаевич Победоносцев начал свой профессиональный путь в 2006 году, сразу после получения образования. Его первой ступенькой в карьере стал Петровский завод ЖБИ, где ему предложили стать мастером-строителем.
-            </p>
-            <p class="content-text text-[11px] sm:text-xs md:text-sm lg:text-[13px] xl:text-[14px] 2xl:text-[15px] leading-[1.65] lg:leading-[1.75] text-white text-right tracking-tight">
-              Чтобы Алексей Николаевич мог продолжать развивать свои навыки и применять знания, для него была специально создана должность архитектора, ранее отсутствовавшая в штате предприятия. Таким образом, его карьера стартовала с одновременного выполнения двух ответственных ролей.
-            </p>
-            <p class="content-text text-[11px] sm:text-xs md:text-sm lg:text-[13px] xl:text-[14px] 2xl:text-[15px] leading-[1.65] lg:leading-[1.75] text-white text-right tracking-tight">
-              Проработав на заводе два года, Алексей Николаевич внес значительный вклад в его развитие. Затем было открыто новое направление – Отдел Капитального Строительства (ОКС). Ему было доверено возглавить это подразделение, заняв пост начальника и заместителя директора ОКС. Параллельно с этим, он продолжил выполнять обязанности главного архитектора.
-            </p>
-            <p class="content-text text-[11px] sm:text-xs md:text-sm lg:text-[13px] xl:text-[14px] 2xl:text-[15px] leading-[1.65] lg:leading-[1.75] text-white text-right tracking-tight">
-              За годы работы с 2006 по 2011 год, под чутким руководством Алексея Николаевича Победоносцева, на заводе успешно реализовано множество значимых проектов. Были построены как многоквартирные и индивидуальные жилые дома, так и промышленные объекты, а также внесли вклад в развитие объектов культуры. Кроме того, мы занимались созданием малых архитектурных форм, дизайнерскими ремонтами детских садов и школ, благоустройством парковых территорий и многим другим.
-            </p>
+          <div class="flex flex-col justify-end w-full lg:pr-[220px] order-2 lg:order-2">
+            <div class="flex justify-end w-full">
+              <div class="relative max-w-[500px] w-full scroll-container-fixed">
+                <div class="scrollable-text flex flex-col gap-6 lg:gap-8 text-right font-light max-h-[340px] overflow-y-scroll mr-0 pr-5">
+                <p class="content-text text-[11px] sm:text-xs md:text-sm lg:text-[13px] xl:text-[14px] 2xl:text-[15px] leading-[1.65] lg:leading-[1.75] text-white text-right tracking-tight">
+                  Алексей Николаевич Победоносцев начал свой профессиональный путь в 2006 году, сразу после получения образования. Его первой ступенькой в карьере стал Петровский завод ЖБИ, где ему предложили стать мастером-строителем.
+                </p>
+                <p class="content-text text-[11px] sm:text-xs md:text-sm lg:text-[13px] xl:text-[14px] 2xl:text-[15px] leading-[1.65] lg:leading-[1.75] text-white text-right tracking-tight">
+                  Чтобы Алексей Николаевич мог продолжать развивать свои навыки и применять знания, для него была специально создана должность архитектора, ранее отсутствовавшая в штате предприятия. Таким образом, его карьера стартовала с одновременного выполнения двух ответственных ролей.
+                </p>
+                <p class="content-text text-[11px] sm:text-xs md:text-sm lg:text-[13px] xl:text-[14px] 2xl:text-[15px] leading-[1.65] lg:leading-[1.75] text-white text-right tracking-tight">
+                  Проработав на заводе два года, Алексей Николаевич внес значительный вклад в его развитие. Затем было открыто новое направление – Отдел Капитального Строительства (ОКС). Ему было доверено возглавить это подразделение, заняв пост начальника и заместителя директора ОКС. Параллельно с этим, он продолжил выполнять обязанности главного архитектора.
+                </p>
+                <p class="content-text text-[11px] sm:text-xs md:text-sm lg:text-[13px] xl:text-[14px] 2xl:text-[15px] leading-[1.65] lg:leading-[1.75] text-white text-right tracking-tight">
+                  За годы работы с 2006 по 2011 год, под чутким руководством Алексея Николаевича Победоносцева, на заводе успешно реализовано множество значимых проектов. Были построены как многоквартирные и индивидуальные жилые дома, так и промышленные объекты, а также внесли вклад в развитие объектов культуры. Кроме того, мы занимались созданием малых архитектурных форм, дизайнерскими ремонтами детских садов и школ, благоустройством парковых территорий и многим другим.
+                </p>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -317,7 +310,7 @@
               <!-- Middle: Company Info Text Block - Vertically Centered -->
               <div class="flex-1 flex flex-col justify-center py-10 lg:py-0">
                 <div class="flex justify-end w-full">
-                  <div class="relative max-w-[650px] scroll-container-fixed">
+                  <div class="relative max-w-[500px] scroll-container-fixed">
                     <div class="scrollable-text flex flex-col gap-6 lg:gap-8 text-right font-light max-h-[340px] overflow-y-scroll mr-0 pr-5">
                       <p class="content-text text-[11px] sm:text-xs md:text-sm lg:text-[13px] xl:text-[14px] 2xl:text-[15px] leading-[1.65] lg:leading-[1.75] text-white text-right tracking-tight">
                         АСК "Новый Дом" – это не просто строительная компания, это команда профессионалов, которая много лет воплощает в жизнь самые смелые мечты о собственном пространстве. Индивидуальные жилые дома и коттеджи: от уютных семейных гнездышек до роскошных загородных резиденций.
@@ -332,7 +325,7 @@
 
               <!-- Bottom Right: Townhouse Image -->
               <div class="flex justify-end w-full mt-auto pt-8">
-                <div class="max-w-[650px] aspect-[16/10] overflow-hidden shadow-lg">
+                <div class="max-w-[500px] aspect-[16/10] overflow-hidden shadow-lg w-full">
                    <img 
                     src="/images/ecocity-townhouses.webp" 
                     alt="Таунхаусы" 
@@ -348,7 +341,7 @@
     </section>
 
     <!-- Content Block 3: Church Project -->
-    <section id="year-2012" class="relative py-16 sm:py-20 lg:py-28 px-5 sm:px-6 md:px-10 lg:px-16 bg-[#2A2C38] overflow-hidden">
+    <section id="year-2012" class="relative py-16 sm:py-20 lg:py-28 px-5 sm:px-6 md:px-10 lg:px-0 bg-[#2A2C38] overflow-hidden">
        
       <!-- Background Blueprint (Absolute Positioned) -->
       <div class="absolute bottom-0 left-0 w-full md:w-[80%] lg:w-[75%] h-[70%] md:h-[90%] opacity-40 pointer-events-none">
@@ -359,11 +352,11 @@
          />
       </div>
 
-      <div class="max-w-[1700px] mx-auto relative z-10">
-        <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-8 items-start">
+      <div class="max-w-[1920px] mx-auto relative z-10">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-8 items-start">
           
           <!-- Left Area: Text (Span 5 cols) -->
-          <div class="lg:col-span-5 pt-10 lg:pt-20">
+          <div class="lg:pl-20 pt-10 lg:pt-20">
             <div class="max-w-[480px]">
               <p class="italic text-white/90 leading-[1.6]" style="font-family: 'Marck Script', cursive; font-size: clamp(16px, 1.6vw, 21px);">
                 Возможно, это было что-то, что я видел, слышал, или просто чувствовал. Но эта мысль, как семечко, прорастала во мне, и я представлял себе, как возвожу стены, как украшаю его, как люди приходят туда, чтобы найти покой и свет. Это было нечто большее, чем просто здание, это было место, где душа могла бы обрести свой дом.
@@ -372,40 +365,42 @@
           </div>
 
           <!-- Right Area: Photo & Description (Span 7 cols) -->
-          <div class="lg:col-span-7 flex flex-col items-center lg:items-end lg:pl-[80px] lg:pr-[146px]">
+          <div class="flex flex-col items-center lg:items-end lg:pr-[220px]">
              
              <!-- Church Photo Container with Frame -->
-             <div class="flex justify-end w-full mb-8 sm:mb-12">
-               <div class="relative p-6 sm:p-8 border border-white/20 max-w-[650px]">
-               <!-- Crosshair decorations on frame corners -->
-               <div class="absolute -top-[1px] -left-[10px] w-[20px] h-[1px] bg-white/40"></div>
-               <div class="absolute -top-[10px] -left-[1px] w-[1px] h-[20px] bg-white/40"></div>
-               <div class="absolute -top-[1px] -right-[10px] w-[20px] h-[1px] bg-white/40"></div>
-               <div class="absolute -top-[10px] -right-[1px] w-[1px] h-[20px] bg-white/40"></div>
-               <div class="absolute -bottom-[1px] -right-[10px] w-[20px] h-[1px] bg-white/40"></div>
-               <div class="absolute -bottom-[10px] -right-[1px] w-[1px] h-[20px] bg-white/40"></div>
-               <div class="absolute -bottom-[1px] -left-[10px] w-[20px] h-[1px] bg-white/40"></div>
-               <div class="absolute -bottom-[10px] -left-[1px] w-[1px] h-[20px] bg-white/40"></div>
+              <div class="flex justify-end w-full mb-8 sm:mb-12">
+                <div class="relative p-6 sm:p-8 border border-white/20 max-w-[500px] w-full">
+                <!-- Crosshair decorations on frame corners -->
+                <div class="absolute -top-[1px] -left-[10px] w-[20px] h-[1px] bg-white/40"></div>
+                <div class="absolute -top-[10px] -left-[1px] w-[1px] h-[20px] bg-white/40"></div>
+                <div class="absolute -top-[1px] -right-[10px] w-[20px] h-[1px] bg-white/40"></div>
+                <div class="absolute -top-[10px] -right-[1px] w-[1px] h-[20px] bg-white/40"></div>
+                <div class="absolute -bottom-[1px] -right-[10px] w-[20px] h-[1px] bg-white/40"></div>
+                <div class="absolute -bottom-[10px] -right-[1px] w-[1px] h-[20px] bg-white/40"></div>
+                <div class="absolute -bottom-[1px] -left-[10px] w-[20px] h-[1px] bg-white/40"></div>
+                <div class="absolute -bottom-[10px] -left-[1px] w-[1px] h-[20px] bg-white/40"></div>
 
-               <div class="relative w-full aspect-[3/4] overflow-hidden">
-                 <img 
-                  src="/images/church-photo.webp" 
-                  alt="Храм в селе Любилки" 
-                  class="w-full h-full object-cover"
-                  loading="lazy"
-                />
-               </div>
-               </div>
-             </div>
+                <div class="relative w-full aspect-[3/4] overflow-hidden">
+                  <img 
+                   src="/images/church-photo.webp" 
+                   alt="Храм в селе Любилки" 
+                   class="w-full h-full object-cover"
+                   loading="lazy"
+                 />
+                </div>
+                </div>
+              </div>
 
-             <!-- Description Text -->
-             <div class="flex justify-end w-full">
-               <div class="max-w-[650px] text-center lg:text-right">
-               <p class="content-text text-[11px] sm:text-xs md:text-sm lg:text-[13px] xl:text-[14px] 2xl:text-[15px] leading-[1.65] lg:leading-[1.75] text-white text-center lg:text-right tracking-tight">
-                 Село Любилки украшает величественный белокаменный храм, словно жемчужина, посвященный Пресвятой Богородице и святому Феодосию Тотемскому. Его золотой купол, устремленный в небо, является настоящим украшением, подчеркивая и сохраняя неповторимую историческую целостность этого живописного места.
-               </p>
-               </div>
-             </div>
+              <!-- Description Text -->
+              <div class="flex justify-end w-full">
+                <div class="relative max-w-[500px] w-full scroll-container-fixed">
+                  <div class="scrollable-text flex flex-col gap-6 lg:gap-8 text-right font-light max-h-[340px] overflow-y-scroll mr-0 pr-5">
+                    <p class="content-text text-[11px] sm:text-xs md:text-sm lg:text-[13px] xl:text-[14px] 2xl:text-[15px] leading-[1.65] lg:leading-[1.75] text-white text-center lg:text-right tracking-tight">
+                      Село Любилки украшает величественный белокаменный храм, словно жемчужина, посвященный Пресвятой Богородице и святому Феодосию Тотемскому. Его золотой купол, устремленный в небо, является настоящим украшением, подчеркивая и сохраняя неповторимую историческую целостность этого живописного места.
+                    </p>
+                  </div>
+                </div>
+              </div>
 
           </div>
 
@@ -458,7 +453,7 @@
               
               <!-- Top: Small Grayscale Image -->
               <div class="flex justify-end w-full">
-                <div class="max-w-[650px] aspect-[16/10] overflow-hidden shadow-lg">
+                <div class="max-w-[500px] aspect-[16/10] overflow-hidden shadow-lg w-full">
                  <img 
                   src="/images/ecocity-house-bw.webp" 
                   alt="Экогород ЧБ" 
@@ -470,7 +465,7 @@
 
               <!-- Bottom: Text Block -->
               <div class="flex justify-end w-full mt-auto">
-                <div class="relative max-w-[650px] scroll-container-fixed">
+                <div class="relative max-w-[500px] w-full scroll-container-fixed">
                   <div class="scrollable-text flex flex-col gap-6 lg:gap-8 text-right font-light max-h-[340px] overflow-y-scroll mr-0 pr-5">
                     <h3 class="text-white text-[12px] lg:text-[14px] uppercase tracking-[0.15em] leading-[1.6]">
                       ЭКОГОРОД: Новый стандарт жизни в Ярославской области, который говорит сам за себя
@@ -497,13 +492,13 @@
     </section>
 
     <!-- Content Block 5: Dagestan Stones -->
-    <section id="year-2017" class="relative py-8 sm:py-12 lg:py-16 px-5 sm:px-6 md:px-10 lg:px-16 bg-[#2A2C38] overflow-hidden text-white border-t border-white/5">
+    <section id="year-2017" class="relative py-8 sm:py-12 lg:py-16 px-5 sm:px-6 md:px-10 lg:px-0 bg-[#2A2C38] overflow-hidden text-white border-t border-white/5">
       
       <!-- Background Sketch (Excavator/Quarry) -->
       <div class="absolute inset-0 w-full h-full opacity-40 pointer-events-none mix-blend-screen">
          <img 
-           src="/images/dagestan-stones-bg.webp" 
-           alt="Карьерный экскаватор скетч" 
+           src="/images/group-134.svg" 
+           alt="Фон секции" 
            class="w-full h-full object-cover object-bottom"
          />
       </div>
@@ -512,7 +507,7 @@
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-start">
            
            <!-- Left Column: Poetic Quote -->
-           <div class="pt-10 lg:pt-20">
+           <div class="lg:pl-20 pt-10 lg:pt-20">
               <div class="max-w-[500px] pl-4 sm:pl-10 relative">
                  <p class="italic text-white/90 leading-[1.6]" style="font-family: 'Marck Script', cursive; font-size: clamp(16px, 1.6vw, 21px);">
                    Камень - это не просто безмолвный свидетель времени, не просто строительный материал или элемент пейзажа. В нем заключена своя, особая музыка - тихая, глубокая, пронизанная мудростью веков. Это не мелодия, которую можно услышать ухом, а скорее вибрация, ощущение, которое проникает в самую суть
@@ -521,11 +516,11 @@
            </div>
 
            <!-- Right Column: Image and Product Description -->
-           <div class="flex flex-col gap-16 lg:gap-32 items-end lg:pr-[170px]">
+           <div class="flex flex-col gap-16 lg:gap-32 items-end lg:pr-[220px]">
               
               <!-- Top: Building Image -->
                <div class="flex justify-end w-full">
-                 <div class="max-w-[650px] relative aspect-[16/10] shadow-2xl">
+                 <div class="max-w-[500px] relative aspect-[16/10] shadow-2xl w-full">
                  <img 
                   src="/images/dagestan-building-new.webp" 
                   alt="Камни Дагестана Офис" 
@@ -537,7 +532,7 @@
               
               <!-- Bottom: Description Text Block with Right Border -->
                <div class="flex justify-end w-full">
-                 <div class="relative max-w-[650px] text-right scroll-container-fixed">
+                 <div class="relative max-w-[500px] w-full text-right scroll-container-fixed">
                   <div class="scrollable-text flex flex-col gap-2.5 max-h-[340px] overflow-y-scroll mr-0 pr-5">
                     <p class="content-text text-[11px] sm:text-xs md:text-sm lg:text-[13px] xl:text-[14px] 2xl:text-[15px] leading-[1.65] lg:leading-[1.75] text-white text-right tracking-tight">
                       "Камни Дагестана" является признанным лидером в производстве высококачественных облицовочных материалов. Находясь в самом сердце Дагестана она специализируется на создании продукции, отвечающей самым взыскательным требованиям современного строительства и дизайна.
@@ -604,7 +599,7 @@
               
               <!-- Top: Architects Branding Image/Slider -->
               <div class="flex justify-end w-full">
-                <div class="max-w-[650px] aspect-[16/10] overflow-hidden shadow-lg relative group">
+                <div class="max-w-[500px] aspect-[16/10] overflow-hidden shadow-lg relative group w-full">
                  <img 
                   src="/images/a9f3495b5dc55635957a7aade82d1b35127bfe7d.webp" 
                   alt="Pobedonoscev Architects Project" 
@@ -623,7 +618,7 @@
 
               <!-- Bottom: Text Block -->
               <div class="flex justify-end w-full mt-auto">
-                <div class="relative max-w-[650px] scroll-container-fixed">
+                <div class="relative max-w-[500px] w-full scroll-container-fixed">
                   <div class="scrollable-text flex flex-col gap-6 lg:gap-8 text-right font-light max-h-[340px] overflow-y-scroll mr-0 pr-5">
                     <p class="content-text text-[11px] sm:text-xs md:text-sm lg:text-[13px] xl:text-[14px] 2xl:text-[15px] leading-[1.65] lg:leading-[1.75] text-white text-right tracking-tight">
                       Pobedonoscev architects — студию, рожденную из страсти к совершенству и глубокого понимания того, что такое истинная роскошь в архитектуре.
@@ -686,13 +681,15 @@
          </div>
 
          <!-- Text Content -->
-         <div class="flex flex-col gap-6 text-center max-w-[800px]">
-            <p class="content-text text-[11px] sm:text-xs md:text-sm lg:text-[13px] xl:text-[14px] 2xl:text-[15px] leading-[1.65] lg:leading-[1.75] text-white text-center tracking-tight">
-              Pobedonoscev Group команда профессионалов строительной отрасли, чья репутация подкреплена многолетним опытом и многочисленными наградами.
-            </p>
-            <p class="content-text text-[11px] sm:text-xs md:text-sm lg:text-[13px] xl:text-[14px] 2xl:text-[15px] leading-[1.65] lg:leading-[1.75] text-white text-center tracking-tight">
-              Pobedonoscev Group успешно реализует проекты по строительству многоквартирных жилых комплексов, предлагая современные решения и высочайшие стандарты качества. Мы строим не просто дома, а пространства, где будет комфортно жить и развиваться вашим семьям.
-            </p>
+         <div class="relative max-w-[800px] scroll-container-fixed">
+           <div class="scrollable-text flex flex-col gap-6 lg:gap-8 text-center font-light max-h-[340px] overflow-y-scroll mr-0 pr-5">
+             <p class="content-text text-[11px] sm:text-xs md:text-sm lg:text-[13px] xl:text-[14px] 2xl:text-[15px] leading-[1.65] lg:leading-[1.75] text-white text-center tracking-tight">
+               Pobedonoscev Group команда профессионалов строительной отрасли, чья репутация подкреплена многолетним опытом и многочисленными наградами.
+             </p>
+             <p class="content-text text-[11px] sm:text-xs md:text-sm lg:text-[13px] xl:text-[14px] 2xl:text-[15px] leading-[1.65] lg:leading-[1.75] text-white text-center tracking-tight">
+               Pobedonoscev Group успешно реализует проекты по строительству многоквартирных жилых комплексов, предлагая современные решения и высочайшие стандарты качества. Мы строим не просто дома, а пространства, где будет комфортно жить и развиваться вашим семьям.
+             </p>
+           </div>
          </div>
 
       </div>
@@ -811,6 +808,44 @@ const timelineYears = [
 ]
 
 const activeYear = ref('2006')
+let observer = null
+
+onMounted(() => {
+  const options = {
+    root: null,
+    rootMargin: '-30% 0px -40% 0px', // More precise triggering in the central viewport
+    threshold: 0
+  }
+
+  observer = new IntersectionObserver((entries) => {
+    // Collect all intersecting entries to find the one closest to top
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const id = entry.target.id
+        if (id === 'biography-section' || id === 'year-2006') {
+          activeYear.value = '2006'
+        } else if (id.startsWith('year-')) {
+          activeYear.value = id.replace('year-', '')
+        }
+      }
+    })
+  }, options)
+
+  // Observe historical sections
+  const sections = [
+    document.getElementById('biography-section'),
+    document.getElementById('year-2006'),
+    ...timelineYears.slice(1).map(year => document.getElementById(`year-${year.year}`))
+  ]
+
+  sections.forEach(section => {
+    if (section) observer.observe(section)
+  })
+})
+
+onUnmounted(() => {
+  if (observer) observer.disconnect()
+})
 
 const currentBiography = computed(() => {
   return timelineYears.find(item => item.year === activeYear.value) || timelineYears[0]
@@ -897,7 +932,7 @@ usePageMeta({
 .years-timeline-fixed {
   position: fixed;
   left: clamp(80px, 5vw, 80px);
-  top: 50%;
+  top: 30%;
   transform: translateY(-50%);
   z-index: 1040;
   display: flex;

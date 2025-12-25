@@ -1,7 +1,7 @@
 <template>
   <Model3DViewer
     :is-open="true"
-    model-path="/models/4.gltf"
+    model-path="/models/Plan_1.gltf"
     @close="handleClose"
   />
 </template>

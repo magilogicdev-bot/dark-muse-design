@@ -13,7 +13,7 @@
         <!-- Right: Text Content -->
         <div class="flex flex-col gap-4 md:gap-5 lg:gap-6">
           <p class="text-sm md:text-base lg:text-lg leading-relaxed text-white/90">
-            Выбрав дом, перемещайтесь по подъездам, узнавайте больше информации о понравившейся вам квартире в ЖК Экогород 3.
+            {{ description }}
           </p>
         </div>
       </div>
@@ -55,16 +55,23 @@
 <script setup>
 import { ref } from 'vue'
 
+const props = defineProps({
+  images: {
+    type: Object,
+    default: () => ({
+      generalPlan: '/images/ecocity-general-plan.webp'
+    })
+  },
+  description: {
+    type: String,
+    default: 'Выбрав дом, перемещайтесь по подъездам, узнавайте больше информации о понравившейся вам квартире в ЖК.'
+  }
+})
+
 const activeTab = ref('visualization')
 
 const tabs = [
   { id: 'visualization', label: 'Визуализация' },
-  { id: '3d-plan', label: '3D-генплан' },
   { id: 'yandex-map', label: 'Яндекс Карта' }
 ]
-
-// Image path - will be updated after downloading from Figma
-const images = {
-  generalPlan: '/images/ecocity-general-plan.webp'
-}
 </script>

@@ -3,8 +3,8 @@
     <!-- Background Image -->
     <div class="ecocity-hero__bg">
       <NuxtImg
-        src="/images/c128e2cbdc01ecd9ac287c89ce18f16ad7d56854.webp"
-        alt="Жилой комплекс Экогород 3"
+        :src="bgImage"
+        :alt="title"
         class="ecocity-hero__image"
         format="webp"
         preload
@@ -15,21 +15,21 @@
     <div class="container-fluid h-full relative z-10">
       <!-- Top Info Chips -->
       <div class="ecocity-hero__chips">
-        <div class="hero-chip hero-chip--green">
-          <span class="hero-chip__label">В ПРОДАЖЕ</span>
-          <span class="hero-chip__value">192 КВАРТИРЫ</span>
+        <!-- Status Chips (Top Row) -->
+        <div class="chips-row">
+          <div 
+            v-for="(chip, index) in chips.filter(c => c.type === 'status')" 
+            :key="'status-' + index"
+            class="hero-chip hero-chip--orange"
+          >
+            <span class="hero-chip__single">{{ chip.label }}</span>
+          </div>
         </div>
-        <div class="hero-chip">
-          <span class="hero-chip__label">РАЙОН</span>
-          <span class="hero-chip__value">ЗАВОЛЖСКИЙ</span>
-        </div>
-        <div class="hero-chip">
-          <span class="hero-chip__label">СТАТУС</span>
-          <span class="hero-chip__value">СТРОИТСЯ</span>
-        </div>
-        <div class="hero-chip">
-          <span class="hero-chip__label">СРОК СДАЧИ</span>
-          <span class="hero-chip__value">4 КВАРТАЛ 2025</span>
+        
+        <!-- Info Chips (Bottom Row) - Connected -->
+        <div class="hero-chip hero-chip--combined">
+          <span class="hero-chip__label-part">РАЙОН</span>
+          <span class="hero-chip__value-part">ЗАВОЛЖСКИЙ</span>
         </div>
       </div>
 
@@ -38,39 +38,14 @@
         <!-- Bottom Left Text -->
         <div class="ecocity-hero__info">
           <span class="ecocity-hero__subtitle uppercase tracking-widest text-[10px] md:text-sm font-light opacity-80 mb-2 block">
-            ЖИЛОЙ КОМПЛЕКС
+            {{ subtitle }}
           </span>
           <h1 class="ecocity-hero__title font-black text-4xl md:text-7xl lg:text-[84px] leading-[0.9] mb-6">
-            ЭКОГОРОД 3
+            {{ title }}
           </h1>
           <p class="ecocity-hero__description text-sm md:text-base opacity-90 max-w-[420px] font-light leading-relaxed">
-            Пространство, где каждая деталь создана для вашего комфорта. Среди сосен, в экологически чистом районе, начинается жизнь, о которой вы мечтали.
+            {{ description }}
           </p>
-        </div>
-
-        <!-- Floating Vertical Actions (Right) -->
-        <div class="ecocity-hero__side-actions">
-           <div class="vertical-group">
-            <button class="side-btn" aria-label="WhatsApp">
-              <NuxtImg src="/images/menu-icons/menu-icon-1.webp" alt="WhatsApp" loading="lazy" format="webp" />
-            </button>
-            <button class="side-btn" aria-label="Telegram">
-              <NuxtImg src="/images/menu-icons/menu-icon-2.webp" alt="Telegram" loading="lazy" format="webp" />
-            </button>
-            <button class="side-btn" aria-label="Phone">
-              <NuxtImg src="/images/menu-icons/menu-icon-3.webp" alt="Phone" loading="lazy" format="webp" />
-            </button>
-            <button class="side-btn side-btn--orange" aria-label="Scroll Down">
-              <!-- TODO: Replace with /images/icons/ecocity-scroll-down.webp after downloading from Figma -->
-              <NuxtImg 
-                src="/images/icons/chevron-down.webp" 
-                alt="Scroll Down" 
-                class="w-5 h-5 object-contain"
-                loading="lazy"
-                format="webp"
-              />
-            </button>
-           </div>
         </div>
 
         <!-- Bottom Right Circle Buttons -->
@@ -88,12 +63,38 @@
 </template>
 
 <script setup>
-defineEmits(['open3d'])
+const props = defineProps({
+  title: {
+    type: String,
+    default: 'ЭКОГОРОД 3'
+  },
+  subtitle: {
+    type: String,
+    default: 'ЖИЛОЙ КОМПЛЕКС'
+  },
+  description: {
+    type: String,
+    default: 'Пространство, где каждая деталь создана для вашего комфорта. Среди сосен, в экологически чистом районе, начинается жизнь, о которой вы мечтали.'
+  },
+  bgImage: {
+    type: String,
+    default: '/images/alfa/1125-16257.webp'
+  },
+  chips: {
+    type: Array,
+    default: () => [
+      { label: 'РАЙОН', value: 'ЗАВОЛЖСКИЙ' },
+      { label: 'СТАТУС', value: 'СДАН' }
+    ]
+  }
+})
 
-// TODO: After downloading icons from Figma, update these paths:
-// scrollDownIcon: '/images/icons/ecocity-scroll-down.webp'
-// locationIcon: '/images/icons/ecocity-location.webp' (then change v-if to use img instead of svg)
+defineEmits(['open3d'])
 </script>
+
+<style scoped>
+/* ... existing styles ... */
+</style>
 
 <style scoped>
 .ecocity-hero {
@@ -138,8 +139,14 @@ defineEmits(['open3d'])
   left: 40px;
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: 12px;
   z-index: 20;
+}
+
+.chips-row {
+  display: flex;
+  flex-direction: row;
+  gap: 12px;
 }
 
 .hero-chip {
@@ -172,6 +179,67 @@ defineEmits(['open3d'])
   border-radius: 100px;
   font-size: 11px;
   font-weight: 700;
+}
+
+.hero-chip__single {
+  padding: 0 24px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+}
+
+.hero-chip--combined {
+  background: rgba(50, 50, 50, 0.9);
+  padding: 0;
+  overflow: hidden;
+}
+
+.hero-chip__label-part {
+  padding: 0 20px;
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  color: #fff;
+}
+
+.hero-chip__value-part {
+  background: #fff;
+  color: #000;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  padding: 0 24px;
+  border-radius: 100px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+}
+
+.hero-chip--orange {
+  background: #F2994A;
+  border-color: transparent;
+}
+
+.hero-chip--orange .hero-chip__single {
+  color: #fff;
+}
+
+.hero-chip--dark {
+  background: rgba(50, 50, 50, 0.9);
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+.hero-chip--dark .hero-chip__single {
+  color: #fff;
+}
+
+.hero-chip--white {
+  background: #fff;
+  border-color: transparent;
+}
+
+.hero-chip--white .hero-chip__single {
+  color: #000;
 }
 
 .hero-chip--green {

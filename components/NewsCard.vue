@@ -1,11 +1,11 @@
 <template>
-  <article class="group cursor-pointer flex flex-col">
+  <article class="group cursor-pointer flex flex-col hover:scale-[1.02] transition-transform duration-300">
     <!-- Image Container with Overlays -->
-    <div class="relative aspect-[4/3] w-full overflow-hidden mb-3 md:mb-4">
+    <div class="relative aspect-[4/3] w-full overflow-hidden mb-3 md:mb-4 bg-black">
       <NuxtImg
         :src="news.image"
         :alt="news.title"
-        class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+        class="w-full h-full object-cover scale-[1.03]"
         loading="lazy"
         format="webp"
       />

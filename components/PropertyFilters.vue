@@ -31,7 +31,7 @@
               <h3 class="text-xl md:text-2xl lg:text-3xl xl:text-4xl font-medium uppercase leading-tight">ЭКОГОРОД 3</h3>
             </div>
             <NuxtLink 
-              to="/project/ecocity"
+              to="/project/ecocity-3"
               class="flex items-center justify-center w-full sm:w-auto lg:w-[140px] xl:w-[180px] h-[36px] md:h-[40px] lg:h-[48px] xl:h-[56px] bg-white rounded-[5px] text-black text-[10px] md:text-[12px] lg:text-[14px] xl:text-[16px] font-medium uppercase hover:bg-gray-100 transition-colors px-4 cursor-pointer relative z-10"
             >
               ПОДРОБНЕЕ

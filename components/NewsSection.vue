@@ -18,24 +18,24 @@
         <div
           v-for="(news, index) in newsItems"
           :key="index"
-          class="bg-white rounded-lg md:rounded-xl overflow-hidden flex flex-col hover:shadow-lg transition-shadow cursor-pointer"
+          class="rounded-lg md:rounded-xl overflow-hidden flex flex-col hover:shadow-lg hover:scale-[1.02] transition-all duration-300 cursor-pointer"
           @click="handleNewsClick(news)"
         >
-          <div class="aspect-[4/3] w-full">
+          <div class="aspect-[4/3] w-full overflow-hidden bg-black">
             <img
               :src="getNewsImage(news.image)"
               :alt="news.title"
-              class="w-full h-full object-cover"
+              class="w-full h-full object-cover scale-[1.03]"
             />
           </div>
           <div class="p-5 md:p-6 flex-1 flex flex-col">
-            <h3 class="text-black text-lg md:text-xl lg:text-2xl font-semibold mb-3 md:mb-4">
+            <h3 class="text-white text-lg md:text-xl lg:text-2xl font-semibold mb-3 md:mb-4">
               {{ news.title }}
             </h3>
-            <p class="text-gray-600 text-sm md:text-base lg:text-lg mb-4 flex-1">
+            <p class="text-white/70 text-sm md:text-base lg:text-lg mb-4 flex-1">
               {{ news.excerpt }}
             </p>
-            <p class="text-gray-400 text-xs md:text-sm">
+            <p class="text-white/40 text-xs md:text-sm">
               {{ news.date }}
             </p>
           </div>
