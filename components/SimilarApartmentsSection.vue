@@ -12,7 +12,7 @@
           v-for="(apartment, index) in similarApartments"
           :key="index"
           :to="`/apartment/${apartment.id || index + 1}`"
-          class="bg-[#D9D9D9] rounded-lg md:rounded-xl p-4 md:p-6 flex flex-col sm:flex-row items-start sm:items-center gap-4 md:gap-6 hover:bg-[#C9C9C9] transition-colors cursor-pointer"
+          class="bg-[#D9D9D9] rounded-lg md:rounded-xl p-4 md:p-6 flex flex-col sm:flex-row items-center sm:items-center gap-4 md:gap-6 hover:bg-[#C9C9C9] transition-colors cursor-pointer text-center sm:text-left"
         >
           <!-- Floor Plan Icon (Left) -->
           <div class="flex-shrink-0 w-20 h-20 md:w-24 md:h-24 bg-white border border-gray-300 rounded flex items-center justify-center overflow-hidden">
@@ -37,7 +37,7 @@
             </p>
             
             <!-- Cost Details -->
-            <div class="flex flex-col gap-1">
+            <div class="flex flex-col gap-1 w-full max-w-[280px] mx-auto sm:mx-0">
               <div class="flex items-baseline justify-between gap-4">
                 <span class="text-[#666666] text-xs md:text-sm uppercase whitespace-nowrap">СТОИМОСТЬ</span>
                 <span class="text-[#333333] text-sm md:text-base font-medium">{{ apartment.price }}</span>
@@ -50,7 +50,7 @@
           </div>
 
           <!-- Additional Information (Right) -->
-          <div class="flex flex-col items-start sm:items-end gap-1 text-left sm:text-right">
+          <div class="flex flex-col items-center sm:items-end gap-1 text-center sm:text-right">
             <p class="text-[#333333] text-xs md:text-sm whitespace-nowrap">
               {{ apartment.location }}
             </p>

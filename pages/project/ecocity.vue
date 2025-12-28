@@ -1,14 +1,13 @@
 <template>
-  <div class="bg-primary text-white">
+  <div class="bg-[#1A1A1A] text-white">
     <EcocityHeroSection 
       title="ЭКОГОРОД"
       subtitle="ЖИЛОЙ КОМПЛЕКС"
       description="Жилой квартал Экогород — это целый мир, где природа и современная архитектура живут в гармонии. Шестнадцать домов, утопающих в зелени соснового бора, создают атмосферу уюта, спокойствия и комфорта."
       bg-image="/images/ecocity/hero.webp"
       :chips="[
-        { label: 'СДАН', type: 'status' },
-        { label: 'РАЙОН', type: 'label' },
-        { label: 'ЗАВОЛЖСКИЙ', type: 'value' }
+        { label: 'СТАТУС', value: 'СДАН' },
+        { label: 'РАЙОН', value: 'ЗАВОЛЖСКИЙ' }
       ]"
       @open3d="handleOpen3D"
     />
@@ -20,8 +19,8 @@
         main: '/images/ecocity/about_1_main.webp',
         courtyard: '/images/ecocity/about_2_top_left.webp',
         playground: '/images/ecocity/about_3_top_right.webp',
-        facade: '/images/ecocity/about_4_bot_left.webp',
-        gallery: '/images/ecocity/about_5_bot_right.webp'
+        facade: '/images/ecocity/about_5_bot_right.webp',
+        gallery: '/images/ecocity/gallery_new.png'
       }"
     />
     <EcocityFeaturesSection 
@@ -36,7 +35,7 @@
     />
     <EcocityGeneralPlanSection 
       description="Выбрав дом, перемещайтесь по подъездам, узнавайте больше информации о понравившейся вам квартире в ЖК Экогород."
-      :images="{ generalPlan: '/images/ecocity/general_plan.webp' }"
+      :images="{ generalPlan: '/images/general_plan_new.png' }"
     />
     <EcocityMediaSection 
       description="Будьте в курсе самых значимых событий: новые реализованные проекты, тенденции в архитектуре и строительных технологиях, изменения в законодательстве и события из жизни нашей компании."

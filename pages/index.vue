@@ -26,16 +26,7 @@
       />
     </button>
 
-    <div class="home-page__menu">
-      <div class="home-page__mobile-links">
-        <a :href="phoneHref" class="home-page__phone">
-          {{ config.contacts.phone.primary }}
-        </a>
-        <a :href="config.navigation.getPresentation" class="home-page__presentation-link">
-          ПОЛУЧИТЬ ПРЕЗЕНТАЦИЮ
-        </a>
-      </div>
-    </div>
+
 
     <!-- Bottom Right Buttons (Audio + Video) -->
     <div class="home-page__bottom-buttons">
@@ -67,6 +58,7 @@
         </svg>
         <span class="home-page__bottom-video-button-text">ВИДЕО</span>
       </button>
+
     </div>
 
     <!-- Video Button (Center) -->
@@ -171,6 +163,9 @@ usePageMeta({
 }
 
 .home-page__background-image {
+  position: absolute;
+  left: -467px;
+  top: -740px;
   display: block !important;
   width: auto;
   height: auto;
@@ -184,11 +179,33 @@ usePageMeta({
   visibility: visible;
 }
 
+@media (min-width: 1025px) {
+  .home-page__background {
+    width: 100%;
+    height: 100%;
+    bottom: 0;
+    right: 0;
+  }
+  .home-page__background-image {
+    left: auto;
+    top: auto;
+    right: 0;
+    bottom: 0;
+    width: 90vw;
+    height: 90vh;
+    max-width: none;
+    max-height: none;
+    min-width: 0;
+    min-height: 0;
+    object-position: bottom right;
+  }
+}
+
 /* 3D Icon Button */
 .home-page__3d-button {
   position: absolute;
-  left: 50%;
-  top: 50%;
+  left: -41px;
+  top: 674px;
   transform: translate(calc(50% + clamp(120px, 12vw, 220px)), calc(-50% + clamp(100px, 12vh, 180px)));
   z-index: 10;
   background: transparent;
@@ -221,6 +238,22 @@ usePageMeta({
   height: 100%;
   object-fit: contain;
   pointer-events: none;
+}
+
+@media (min-width: 1025px) {
+  .home-page__3d-button {
+    left: auto;
+    right: 35%;
+    top: auto;
+    bottom: 45%;
+    transform: translate(50%, 50%);
+    width: clamp(160px, 15vw, 200px);
+    height: clamp(140px, 13vw, 175px);
+  }
+  
+  .home-page__3d-button:hover {
+    transform: translate(50%, 50%) scale(1.1);
+  }
 }
 
 .home-page__menu {
@@ -311,7 +344,7 @@ usePageMeta({
 }
 
 .home-page__mobile-links {
-  display: none;
+  display: flex;
   flex-direction: column;
   gap: 24px;
   margin-top: 48px;
@@ -341,13 +374,21 @@ usePageMeta({
 /* Bottom Right Buttons (Audio + Video) */
 .home-page__bottom-buttons {
   position: absolute;
-  right: clamp(120px, 12vw, 200px);
+  left: 53px;
   bottom: clamp(98px, 10vh, 120px);
   z-index: 10;
   display: flex;
   align-items: center;
   gap: clamp(12px, 1.5vw, 20px);
   pointer-events: auto;
+}
+
+@media (min-width: 1025px) {
+  .home-page__bottom-buttons {
+    left: auto;
+    align-items: bottom;
+    right: clamp(120px, 10vw, 200px);
+  }
 }
 
 .home-page__audio-button {
@@ -426,6 +467,8 @@ usePageMeta({
   line-height: 1;
 }
 
+
+
 /* Video Button Container (Aligned with КОМПАНИЯ) */
 .home-page__video-container {
   position: absolute;
@@ -487,9 +530,9 @@ usePageMeta({
   line-height: 42px;
 }
 
-@media (max-width: 1024px) {
+@media (max-width: 768px) {
   .home-page__mobile-links {
-    display: flex;
+    display: none;
   }
 
   .home-page__menu {
@@ -521,17 +564,28 @@ usePageMeta({
   }
 
   .home-page__3d-button {
-    transform: translate(calc(50% + clamp(90px, 9vw, 180px)), calc(-50% + clamp(70px, 9vh, 140px)));
-    width: clamp(120px, 12vw, 160px);
-    height: clamp(100px, 11vw, 135px);
+    left: 20px;
+    bottom: 135px;
+    top: auto;
+    transform: none;
+    width: 130px;
+    height: auto;
   }
 
   .home-page__3d-button:hover {
-    transform: translate(calc(50% + clamp(90px, 9vw, 180px)), calc(-50% + clamp(70px, 9vh, 140px))) scale(1.15);
+    transform: scale(1.05);
   }
 
-  .home-page__3d-button:active {
-    transform: translate(calc(50% + clamp(90px, 9vw, 180px)), calc(-50% + clamp(70px, 9vh, 140px))) scale(1.05);
+  .home-page__bottom-buttons {
+    left: 20px;
+    bottom: 55px;
+    top: auto;
+    width: auto;
+    height: auto;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 12px;
   }
 }
 
@@ -553,41 +607,13 @@ usePageMeta({
     padding-right: clamp(0.75rem, 4vw, 1.5rem);
   }
 
-  .home-page__3d-button {
-    transform: translate(calc(50% + clamp(60px, 7vw, 120px)), calc(-50% + clamp(50px, 7vh, 100px)));
-    width: clamp(110px, 11vw, 160px);
-    height: clamp(95px, 10vw, 135px);
-  }
-
-  .home-page__3d-button:hover {
-    transform: translate(calc(50% + clamp(60px, 7vw, 120px)), calc(-50% + clamp(50px, 7vh, 100px))) scale(1.15);
-  }
-
-  .home-page__3d-button:active {
-    transform: translate(calc(50% + clamp(60px, 7vw, 120px)), calc(-50% + clamp(50px, 7vh, 100px))) scale(1.05);
-  }
-
   .home-page__background-image {
     max-width: min(95vw, 1300px);
     max-height: min(95vh, 1100px);
   }
 }
 
-@media (max-width: 640px) {
-  .home-page__3d-button {
-    transform: translate(calc(50% + clamp(40px, 5vw, 80px)), calc(-50% + clamp(30px, 4vh, 70px)));
-    width: clamp(90px, 9vw, 130px);
-    height: clamp(75px, 8vw, 110px);
-  }
 
-  .home-page__3d-button:hover {
-    transform: translate(calc(50% + clamp(40px, 5vw, 80px)), calc(-50% + clamp(30px, 4vh, 70px))) scale(1.15);
-  }
-
-  .home-page__3d-button:active {
-    transform: translate(calc(50% + clamp(40px, 5vw, 80px)), calc(-50% + clamp(30px, 4vh, 70px))) scale(1.05);
-  }
-}
 
 @media (max-width: 480px) {
   .home-page__content {
@@ -613,19 +639,16 @@ usePageMeta({
   }
 
   .home-page__3d-button {
-    transform: translate(calc(50% + clamp(30px, 4vw, 60px)), calc(-50% + clamp(20px, 3vh, 50px)));
-    width: clamp(70px, 7vw, 100px);
-    height: clamp(60px, 6vw, 85px);
+    left: 15px;
+    bottom: 120px;
+    width: 110px;
   }
 
-  .home-page__3d-button:hover {
-    transform: translate(calc(50% + clamp(30px, 4vw, 60px)), calc(-50% + clamp(20px, 3vh, 50px))) scale(1.15);
+  .home-page__bottom-buttons {
+    left: 15px;
+    bottom: 65px;
+    gap: 10px;
   }
-
-  .home-page__3d-button:active {
-    transform: translate(calc(50% + clamp(30px, 4vw, 60px)), calc(-50% + clamp(20px, 3vh, 50px))) scale(1.05);
-  }
-
 
   .home-page__video-button-image {
     max-width: clamp(200px, 35vw, 380px);

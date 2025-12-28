@@ -23,7 +23,7 @@
 <script setup>
 import { ref, onMounted } from 'vue'
 
-const isAccepted = ref(false)
+const isAccepted = ref(true) // Start with hidden to avoid flicker
 
 const acceptCookies = () => {
   if (typeof window !== 'undefined') {
@@ -37,6 +37,8 @@ onMounted(() => {
     const consent = localStorage.getItem('cookieConsent')
     if (consent === 'accepted') {
       isAccepted.value = true
+    } else {
+      isAccepted.value = false
     }
   }
 })

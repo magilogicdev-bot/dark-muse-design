@@ -1,85 +1,88 @@
 <template>
-  <div class="contacts-page h-screen max-h-[813px] bg-[#2A2C38] text-white relative flex flex-col justify-center items-start">
-    <!-- Main Content -->
-    <main class="flex-grow container mx-auto py-0 px-0 relative z-10 flex justify-center items-center">
-      <!-- === LEFT COLUMN: Info (1/3 width) === -->
-      <section class="flex flex-col space-y-2 lg:space-y-3 w-full lg:w-1/3 lg:pr-8">
+  <div class="contacts-page min-h-screen bg-[#2A2C38] text-white relative flex flex-col font-sans">
+    <!-- === DESKTOP LAYOUT (Hidden on Mobile) === -->
+    <div class="hidden lg:flex flex-col min-h-screen relative w-full items-center justify-center overflow-hidden">
+      <!-- Main Content -->
+      <main class="w-full max-w-[1920px] px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 2xl:px-20 relative z-10 flex justify-between items-center gap-12 xl:gap-20">
+      <!-- === LEFT COLUMN: Info (3-2 Grouping - Compact) === -->
+      <section class="flex flex-col justify-center flex-[0_0_25%]">
         <!-- Title -->
-        <h1 class="text-[clamp(24px,4vw,48px)] font-normal tracking-[-0.04em] leading-[0.9] uppercase m-0">
+        <h1 class="text-[clamp(32px,4vw,56px)] font-normal tracking-wide leading-none uppercase m-0 mb-6 lg:mb-10">
           КОНТАКТЫ
         </h1>
         
-        <!-- Address -->
-        <div class="space-y-0.5">
-          <p class="text-[clamp(13px,1.1vw,18px)] font-medium leading-tight">
-            г. Ярославль, пл. Труда, д. 1,
-          </p>
-          <p class="text-[clamp(13px,1.1vw,18px)] font-medium opacity-50 leading-tight">
-            Бизнес-центр Towers, офис 605
-          </p>
-        </div>
-
-        <!-- Building Photo -->
-        <div class="w-full max-w-[400px] aspect-[2/1] rounded-xl overflow-hidden border border-white/5 shadow-[0_20px_60px_-15px_rgba(0,0,0,0.6)]">
-          <img
-            src="/images/contacts/building-photo.webp"
-            alt="Бизнес-центр"
-            class="w-full h-full object-cover grayscale-[0.2] brightness-90"
-            onerror="this.src='/images/contacts/image-49.png'"
-          />
-        </div>
-
-        <!-- Working Info Group -->
-        <div class="space-y-2">
-          <!-- Working Hours -->
-          <div class="space-y-0.5">
-            <p class="text-[8px] opacity-40 uppercase tracking-[0.2em] font-black">
-              Время работы отдела продаж:
+        <!-- TOP GROUP (3 paragraphs) -->
+        <div class="space-y-4 lg:space-y-6">
+          <!-- 1. Address -->
+          <div class="space-y-1">
+            <p class="text-sm md:text-base lg:text-lg text-white/80 leading-relaxed">
+              г. Ярославль, пл. Труда, д. 1,
             </p>
-            <p class="text-[13px] lg:text-[15px] font-black">
-              Сегодня с 09:00 до 18:00
+            <p class="text-sm md:text-base lg:text-lg text-white/50 leading-relaxed">
+              Бизнес-центр Towers, офис 605
             </p>
           </div>
 
-          <!-- Contact List -->
-          <div class="space-y-4 pt-4">
-            <div v-for="(phone, index) in contactList" :key="index" class="flex items-center gap-4 group">
-              <a :href="`tel:${phone.href}`" class="text-[clamp(18px,2vw,26px)] font-normal tracking-wide text-white transition-colors whitespace-nowrap">
+          <!-- 2. Photo -->
+          <div class="w-full max-w-[380px] aspect-[16/9] rounded-xl overflow-hidden border border-white/5 shadow-[0_15px_40px_-10px_rgba(0,0,0,0.5)]">
+            <img
+              src="/images/contacts/building-photo.webp"
+              alt="Бизнес-центр"
+              class="w-full h-full object-cover grayscale-[0.2] brightness-90"
+              onerror="this.src='/images/contacts/image-49.png'"
+            />
+          </div>
+
+          <!-- 3. Working Hours -->
+          <div class="space-y-1">
+            <p class="text-[10px] md:text-xs text-white/40 uppercase tracking-[0.15em] font-medium">
+              Время работы отдела продаж:
+            </p>
+            <p class="text-sm md:text-base lg:text-lg text-[#f8b543] leading-relaxed font-medium">
+              Сегодня с 09:00 до 18:00
+            </p>
+          </div>
+        </div>
+
+        <!-- GAP BETWEEN GROUPS -->
+        <div class="h-6 lg:h-10"></div>
+
+        <!-- BOTTOM GROUP (2 paragraphs) -->
+        <div class="space-y-4 lg:space-y-6">
+          <!-- 4. Contact List -->
+          <div class="space-y-2">
+            <div v-for="(phone, index) in contactList" :key="index" class="flex items-center gap-3 group">
+              <a :href="`tel:${phone.href}`" class="text-base md:text-lg lg:text-xl text-white/80 leading-relaxed transition-colors whitespace-nowrap hover:text-white">
                 {{ phone.display }}
               </a>
-              <div class="w-1 h-1 rounded-full bg-white/40"></div>
-              <span class="text-[10px] text-white/60 uppercase tracking-[0.05em] font-medium">
+              <div class="w-1 h-1 rounded-full bg-white/20"></div>
+              <span class="text-[10px] md:text-xs text-white/40 uppercase tracking-wide">
                 {{ phone.label }}
               </span>
             </div>
           </div>
-        </div>
 
-        <!-- CTA Block -->
-        <div class="flex flex-col items-start gap-2">
-          <button class="bg-white text-[#2A2C38] hover:bg-white/90 px-8 py-3 rounded-full text-[14px] font-medium italic transition-all duration-300 shadow-xl active:scale-95 mb-6">
-            Оставить заявку
-          </button>
-          <p class="text-[11px] text-white max-w-[340px] leading-relaxed font-light">
-            Мы работаем только с лидерами страхового рынка. Гарантируем прозрачные условия и официальные полисы.
-          </p>
+          <!-- 5. CTA Block -->
+          <div class="flex flex-col items-start gap-3">
+            <button class="bg-white text-black hover:bg-white/90 px-8 py-3 rounded-full text-sm font-bold italic transition-all duration-300 shadow-xl active:scale-95">
+              Оставить заявку
+            </button>
+            <p class="text-xs md:text-sm text-white/50 max-w-[340px] leading-relaxed">
+              Мы работаем только с лидерами страхового рынка. Гарантируем прозрачные условия и официальные полисы.
+            </p>
+          </div>
         </div>
       </section>
 
-      <!-- Map Container -->
-      <div class="w-full h-full overflow-hidden relative">
+      <!-- Map Container (blended, no shadow) -->
+      <div class="flex-[0_0_62%] aspect-[4/3] relative select-none">
         <img
           src="/images/contacts/screenshot-reference.png"
           alt="Карта"
-          class="absolute top-0 left-0 w-full h-full object-cover"
+          class="absolute inset-0 w-full h-full object-contain pointer-events-none"
         />
-        <!-- Houses Icon (Starting point for lines) -->
-        <img
-          id="houses-icon"
-          src="/images/Group.svg"
-          alt=""
-          class="absolute top-[67.65%] left-[44.30%] w-[45px] h-auto z-20 pointer-events-none"
-        />
+        
+        <!-- Houses Icon Removed as requested -->
 
         <!-- Dynamic Markers and Lines -->
         <div v-for="marker in markers" :key="marker.id" 
@@ -140,11 +143,11 @@
           </svg>
 
           <!-- Marker Icon -->
-          <div class="w-[60px] h-[55px] rounded-[60px] border border-white relative overflow-hidden flex items-center justify-center z-10 transition-transform duration-300 group-hover:scale-110 shadow-lg">
+          <div class="w-[72px] h-[72px] rounded-full border border-white relative overflow-hidden flex items-center justify-center z-10 transition-transform duration-300 group-hover:scale-110 shadow-lg">
             <img
               :src="marker.image"
               :alt="marker.name"
-              class="w-full h-full object-cover object-center pointer-events-none rounded-[60px]"
+              class="w-full h-full object-cover object-center pointer-events-none rounded-full"
             />
           </div>
           
@@ -162,13 +165,12 @@
           </div>
         </div>
 
-        <!-- 3D Icon (far right, aligned with Вкусно и точка) -->
+        <!-- 3D Icon (far right, aligned with map) -->
         <a 
           href="/3d-map"
           target="_blank"
           rel="noopener noreferrer"
-          class="absolute top-[54.82%] left-[86.69%] w-[111px] h-[95px] flex items-center justify-center cursor-pointer hover:opacity-80 transition-opacity z-20" 
-          style="left: 620px; top: 497px;"
+          class="absolute bottom-[28%] right-[25%] w-[130px] h-[110px] flex items-center justify-center cursor-pointer hover:opacity-80 transition-opacity z-20" 
         >
           <div class="w-20 h-20 lg:w-24 lg:h-24 relative">
             <img
@@ -179,82 +181,225 @@
           </div>
         </a>
 
-        <!-- Ecogorod Icon (under address text) -->
-        <!-- TODO: Uncomment when ecogorod-icon.png is exported from Figma -->
-        <!-- <div class="absolute top-[680px] left-[775px] w-[85px] h-[81px] flex items-center justify-center" data-node-id="1114:12382">
+        <!-- Ecogorod Address with Icon (positioned relative to map) -->
+        <div class="absolute top-[75%] right-[10%] flex items-center gap-2 lg:gap-3 z-10 pointer-events-none">
           <img
-            src="/images/contacts/ecogorod-icon.png"
-            alt="Экогород"
-            class="w-full h-full object-contain"
+            src="/images/Group-ecogorod.svg"
+            alt=""
+            class="w-[45px] h-[45px] lg:w-[60px] lg:h-[60px] flex-shrink-0"
           />
-        </div> -->
-      </div>
-      <!-- Ecogorod Address with Icon -->
-      <div class="absolute top-[650px] left-[989px] flex items-center gap-2 md:gap-2.5 lg:gap-3">
-        <img
-          src="/images/Group-ecogorod.svg"
-          alt=""
-          class="w-[50px] h-[50px] flex-shrink-0"
-        />
-        <p class="text-white text-[14px] leading-[21px] font-normal font-sans whitespace-nowrap">
-          Экогород 3, посёлок Красный Бор,<br> Ярославский муниципальный округ, 150518
-        </p>
-      </div>
-      <!-- Social Icons -->
-      <!-- Social Icons - Bottom Right Fixed -->
-      <div class="fixed bottom-[clamp(28px,2.5vw,38px)] right-[clamp(100px,8vw,120px)] z-50 flex items-center justify-center gap-3 md:gap-4">
-        <a 
-          :href="config.contacts.social.vk" 
-          class="w-10 h-10 md:w-11 md:h-11 lg:w-12 lg:h-12 rounded-full flex items-center justify-center hover:opacity-80 transition-opacity flex-shrink-0"
-          aria-label="VKontakte"
-        >
-          <img 
-            src="/images/social-vk-bg.svg" 
-            alt="VK" 
-            class="w-full h-full object-contain"
-          />
-        </a>
-        <a 
-          :href="config.contacts.social.telegram" 
-          class="w-10 h-10 md:w-11 md:h-11 lg:w-12 lg:h-12 rounded-full flex items-center justify-center hover:opacity-80 transition-opacity flex-shrink-0"
-          aria-label="Telegram"
-        >
-          <img 
-            src="/images/social-telegram-bg.svg" 
-            alt="Telegram" 
-            class="w-full h-full object-contain"
-          />
-        </a>
-        <a 
-          :href="config.contacts.social.whatsapp" 
-          class="w-10 h-10 md:w-11 md:h-11 lg:w-12 lg:h-12 rounded-full flex items-center justify-center hover:opacity-80 transition-opacity flex-shrink-0"
-          aria-label="Viber"
-        >
-          <img 
-            src="/images/ellipse-14.png" 
-            alt="Viber" 
-            class="w-full h-full object-contain"
-          />
-        </a>
+          <p class="text-white text-[13px] lg:text-[15px] leading-tight font-normal font-sans whitespace-nowrap text-shadow">
+            Экогород 3, посёлок Красный Бор,<br> Ярославский муниципальный округ, 150518
+          </p>
+        </div>
       </div>
     </main>
+
+    <!-- Social Icons - Bottom Right (next to menu button) -->
+    <div class="fixed z-[999] flex items-center gap-2 social-icons-position">
+      <a 
+        :href="config.contacts.social.vk" 
+        class="w-10 h-10 md:w-11 md:h-11 lg:w-12 lg:h-12 rounded-full flex items-center justify-center hover:opacity-80 transition-opacity flex-shrink-0"
+        aria-label="VKontakte"
+      >
+        <img 
+          src="/images/social-vk-bg.svg" 
+          alt="VK" 
+          class="w-full h-full object-contain"
+        />
+      </a>
+      <a 
+        :href="config.contacts.social.telegram" 
+        class="w-10 h-10 md:w-11 md:h-11 lg:w-12 lg:h-12 rounded-full flex items-center justify-center hover:opacity-80 transition-opacity flex-shrink-0"
+        aria-label="Telegram"
+      >
+        <img 
+          src="/images/social-telegram-bg.svg" 
+          alt="Telegram" 
+          class="w-full h-full object-contain"
+        />
+      </a>
+      <a 
+        :href="config.contacts.social.whatsapp" 
+        class="w-10 h-10 md:w-11 md:h-11 lg:w-12 lg:h-12 rounded-full flex items-center justify-center hover:opacity-80 transition-opacity flex-shrink-0"
+        aria-label="Viber"
+      >
+        <img 
+          src="/images/ellipse-14.png" 
+          alt="Viber" 
+          class="w-full h-full object-contain"
+        />
+      </a>
+    </div>
+    </div>
+
+    <!-- === MOBILE LAYOUT (Visible on Mobile) === -->
+    <div class="lg:hidden flex flex-col min-h-screen w-full bg-[#2A2C38] px-4 pt-3 pb-24 relative overflow-y-auto">
+      <!-- Mobile Title & Address -->
+      <section class="mb-6 px-1">
+        <h1 class="text-[36px] leading-tight font-normal uppercase tracking-tight mb-5">КОНТАКТЫ</h1>
+        <div class="space-y-0.5 text-sm text-white font-light">
+          <p>г. Ярославль, пл. Труда, д. 1,</p>
+          <p class="text-white">Бизнес-центр Towers, офис 605</p>
+        </div>
+      </section>
+
+      <!-- Mobile Contact Cards -->
+      <section class="space-y-3 mb-6 px-1">
+        <div 
+          v-for="(contact, index) in contactList" 
+          :key="index"
+          class="bg-gradient-to-r from-transparent to-[rgba(255,255,255,0.1)] border border-white/10 rounded-xl p-4 relative group active:scale-[0.98] transition-transform"
+        >
+          <div class="flex flex-col gap-3">
+            <div class="flex justify-between items-start">
+              <h3 class="text-[10px] font-bold uppercase tracking-widest text-white">{{ contact.label }}</h3>
+              <a :href="`tel:${contact.href}`" class="text-base font-medium text-white">{{ contact.display }}</a>
+            </div>
+            <div class="flex justify-between items-end">
+              <p class="text-[8px] leading-relaxed text-white max-w-[160px] uppercase font-medium tracking-wider">Единый телефон по вопросам приобретения недвижимости</p>
+              <div class="w-8 h-8 flex items-center justify-center text-white/30">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 7V5z" />
+                </svg>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Mobile Social Row -->
+      <section class="flex justify-center items-center gap-4 mb-8">
+        <a :href="config.contacts.social.vk" class="w-12 h-12 rounded-full overflow-hidden shadow-lg transform active:scale-90 transition-transform">
+          <img src="/images/social-vk-bg.svg" alt="VK" class="w-full h-full object-cover" />
+        </a>
+        <a :href="config.contacts.social.telegram" class="w-12 h-12 rounded-full overflow-hidden shadow-lg transform active:scale-90 transition-transform">
+          <img src="/images/social-telegram-bg.svg" alt="Telegram" class="w-full h-full object-cover" />
+        </a>
+        <a :href="config.contacts.social.whatsapp" class="w-12 h-12 rounded-full overflow-hidden shadow-lg transform active:scale-90 transition-transform">
+          <img src="/images/ellipse-14.png" alt="Viber" class="w-full h-full object-cover" />
+        </a>
+      </section>
+
+      <!-- Separator Line -->
+      <div class="w-full h-px bg-white/20 mb-8"></div>
+
+      <!-- Action Menu Buttons (shown when menu is open) - Fixed positioning outside overflow container -->
+      <Transition name="menu-fade">
+        <div v-if="isActionMenuOpen && !isMenuOpen" class="fixed bottom-[88px] right-4 z-[1004] flex flex-col gap-2 items-end pointer-events-auto">
+          <button 
+            @click="handlePhone"
+            class="w-12 h-12 rounded-full border border-white/20 bg-[#2A2C38] flex items-center justify-center shadow-xl hover:scale-110 active:scale-95 transition-all"
+            aria-label="Позвонить"
+          >
+            <img
+              src="/images/menu-icons/menu-icon-3.webp"
+              alt="Позвонить"
+              class="w-full h-full object-contain"
+            />
+          </button>
+          <button 
+            @click="handleTelegram"
+            class="w-12 h-12 rounded-full border border-white/20 bg-[#2A2C38] flex items-center justify-center shadow-xl hover:scale-110 active:scale-95 transition-all p-2"
+            aria-label="Telegram"
+          >
+            <img
+              src="/images/menu-icons/menu-icon-2.webp"
+              alt="Telegram"
+              class="w-full h-full object-contain"
+            />
+          </button>
+          <button 
+            @click="handleWhatsApp"
+            class="w-12 h-12 rounded-full border border-white/20 bg-[#2A2C38] flex items-center justify-center shadow-xl hover:scale-110 active:scale-95 transition-all p-2"
+            aria-label="WhatsApp"
+          >
+            <img
+              src="/images/menu-icons/menu-icon-1.webp"
+              alt="WhatsApp"
+              class="w-full h-full object-contain"
+            />
+          </button>
+        </div>
+      </Transition>
+
+      <!-- Mobile Footer Action -->
+      <div v-if="!isMenuOpen" class="fixed bottom-4 left-4 right-4 z-[1004] pointer-events-none">
+        <div class="flex flex-col items-end gap-3 pointer-events-auto relative">
+          <!-- Main Action Buttons Row -->
+          <div class="flex items-center gap-3 w-full relative z-0">
+            <button class="flex-grow bg-gradient-to-r from-[#1e4a28] to-[#2d6e3b] border border-white text-white rounded-xl py-4 px-4 text-[10px] font-bold uppercase tracking-widest shadow-2xl active:scale-95 transition-all">
+              Оставить заявку на связь
+            </button>
+            <button 
+              @click="scrollToTop"
+              class="w-14 h-14 rounded-full border border-white/20 flex items-center justify-center bg-[#2A2C38] shadow-2xl active:scale-95 transition-all relative overflow-hidden flex-shrink-0"
+              :class="{ 'rotate-180': isActionMenuOpen }"
+            >
+              <NuxtImg
+                src="/images/icons/scroll-to-top.webp"
+                alt="Прокрутить вверх"
+                class="w-full h-full object-contain relative z-10 transition-transform duration-300"
+                loading="lazy"
+              />
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </template>
 
 <script setup>
 import { siteConfig } from '~/config/contacts'
+import { useMenu } from '~/composables/useMenu'
 
+const { isMenuOpen, toggleMenu, closeMenu } = useMenu()
 const config = siteConfig
 
 definePageMeta({
   layout: 'home'
 })
 
+
 const hoveredMarker = ref(null)
+const isActionMenuOpen = ref(false)
+
+const toggleActionMenu = () => {
+  isActionMenuOpen.value = !isActionMenuOpen.value
+}
+
+const scrollToTop = () => {
+  if (process.client) {
+    isActionMenuOpen.value = !isActionMenuOpen.value
+    if (!isActionMenuOpen.value) {
+      // Если меню закрывается, прокручиваем наверх
+      window.scrollTo({ top: 0, behavior: 'smooth' })
+    }
+  }
+}
+
+const handlePhone = () => {
+  if (process.client) {
+    window.location.href = 'tel:' + config.contacts.phone.formatted
+  }
+}
+
+const handleTelegram = () => {
+  if (process.client && config.contacts.social.telegram) {
+    window.open(config.contacts.social.telegram, '_blank')
+  }
+}
+
+const handleWhatsApp = () => {
+  if (process.client && config.contacts.social.whatsapp) {
+    window.open(config.contacts.social.whatsapp, '_blank')
+  }
+}
 
 const getLineCoords = (marker) => {
-  const dx = (parseFloat('44.30') - parseFloat(marker.left)) * 10
-  const dy = (parseFloat('67.65') - parseFloat(marker.top)) * 10
+  const dx = (parseFloat('50.00') - parseFloat(marker.left)) * 7
+  const dy = (parseFloat('55.00') - parseFloat(marker.top)) * 7
   const distance = Math.sqrt(dx * dx + dy * dy)
   
   if (distance === 0) return { dx: 0, dy: 0, distance: 0, ux: 0, uy: 0 }
@@ -325,7 +470,8 @@ const contactList = [
 }
 
 h1 {
-  font-family: 'Mazzard H', 'Manrope', sans-serif;
+  /* Removed custom font to match site-wide typography */
+  font-weight: 400; 
 }
 
 @keyframes dash {
@@ -345,6 +491,59 @@ h1 {
 
 main > div > section {
   animation: fadeInScale 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* Social icons positioning - aligned with ActionMenuButton */
+.social-icons-position {
+  bottom: calc(clamp(24px, 2vw, 32px) + 8px); /* Center vertically with 64px toggle button */
+  right: calc(clamp(40px, 5vw, 80px) + 64px + 20px); /* 80px(right) + 64px(width) + 40px(gap) */
+}
+
+@media (max-width: 1024px) {
+  .social-icons-position {
+    bottom: clamp(16px, 2vw, 24px);
+    right: calc(clamp(16px, 2vw, 24px) + clamp(44px, 4vw, 56px) + 16px);
+  }
+}
+
+@media (max-width: 640px) {
+  .social-icons-position {
+    bottom: clamp(12px, 2vw, 20px);
+    right: calc(clamp(12px, 2vw, 20px) + clamp(40px, 4vw, 52px) + 16px);
+  }
+}
+
+/* Center dropdown menu vertically on mobile */
+@media (max-width: 1024px) {
+  :deep(.dropdown-menu) {
+    position: fixed !important;
+    top: 50% !important;
+    left: 50% !important;
+    transform: translate(-50%, -50%) !important;
+    border-radius: 20px !important;
+    background: rgba(42, 44, 56, 0.95) !important;
+    backdrop-filter: blur(10px) !important;
+  }
+  
+  :deep(.dropdown-menu__nav) {
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: center !important;
+    align-items: center !important;
+    height: 100% !important;
+  }
+}
+
+/* Menu fade animation */
+.menu-fade-enter-active,
+.menu-fade-leave-active {
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.menu-fade-enter-from,
+.menu-fade-leave-to {
+  opacity: 0;
+  transform: translateY(10px);
 }
 
 </style>

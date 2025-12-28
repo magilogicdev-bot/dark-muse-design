@@ -73,7 +73,7 @@
             <img
               :src="images.gallery"
               alt="Галерея проекта"
-              class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+              class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
               loading="lazy"
             />
           </NuxtLink>

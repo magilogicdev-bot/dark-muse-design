@@ -2,7 +2,8 @@
   <header ref="headerEl" class="header" :class="{ 'header--menu-open': isMenuOpen }">
     <!-- Top ribbon -->
     <div ref="headerBarEl" class="header__bar">
-      <div class="container mx-auto max-w-[1920px] flex items-center justify-between gap-1.5 sm:gap-2.5 md:gap-4 lg:gap-6 xl:gap-8 px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 2xl:px-20 py-1.5 sm:py-2 md:py-2.5 lg:py-3 xl:py-4 2xl:py-5 w-full min-w-0 overflow-hidden h-[50px]">
+      <!-- Desktop Version -->
+      <div class="header__bar-desktop container mx-auto max-w-[1920px] flex items-center justify-between gap-1.5 sm:gap-2.5 md:gap-4 lg:gap-6 xl:gap-8 px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 2xl:px-20 py-1.5 sm:py-2 md:py-2.5 lg:py-3 xl:py-4 2xl:py-5 w-full min-w-0 overflow-hidden h-[50px]">
         <div class="header__left">
           <button
             @click="toggleMenu"
@@ -32,7 +33,7 @@
         </div>
 
         <div class="header__center">
-          <NuxtLink to="/" class="header__logo" :class="{ 'header__logo--hidden': isHomePage }">
+          <NuxtLink to="/" class="header__logo" :class="{ 'lg:opacity-0 lg:pointer-events-none': isHomePage }">
             <NuxtImg src="/images/logo.webp" alt="Pobedonoscev" class="header__logo-img" />
           </NuxtLink>
         </div>
@@ -74,18 +75,44 @@
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
             </svg>
           </NuxtLink>
+        </div>
+      </div>
 
+      <!-- Mobile Version -->
+      <div class="header__bar-mobile px-4 pt-3 flex items-center justify-between">
+        <NuxtLink to="/" class="text-lg font-medium tracking-tight">Pobedonoscev</NuxtLink>
+        <div class="flex items-center gap-2">
           <button
-            @click="toggleMenu"
-            class="header__mobile-btn"
+            @click="handlePhone"
+            class="w-8 h-8 rounded-full border border-white/20 flex items-center justify-center hover:opacity-90 active:scale-95 transition-all"
+            aria-label="Позвонить"
+          >
+            <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 7V5z" />
+            </svg>
+          </button>
+          <NuxtLink
+            to="/favorites"
+            class="w-8 h-8 rounded-full border border-white/20 flex items-center justify-center hover:opacity-90 active:scale-95 transition-all"
+            aria-label="Избранное"
+          >
+            <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+            </svg>
+          </NuxtLink>
+          <button 
+            @click="toggleMenu" 
+            class="flex items-center gap-1.5 px-2.5 py-1 bg-[#2A2C38] border border-white/20 rounded-full text-[9px] font-bold tracking-widest text-white hover:opacity-90 active:scale-95 transition-all cursor-pointer"
             :aria-label="isMenuOpen ? 'Закрыть меню' : 'Открыть меню'"
             :aria-expanded="isMenuOpen"
             aria-controls="site-menu"
           >
-            <span class="header__burger" :class="{ 'header__burger--open': isMenuOpen }" aria-hidden="true">
-              <span class="header__burger-line"></span>
-              <span class="header__burger-line"></span>
-            </span>
+            <div class="flex flex-col gap-0.5 w-3">
+              <div class="h-[1.5px] w-full bg-white"></div>
+              <div class="h-[1.5px] w-full bg-white"></div>
+              <div class="h-[1.5px] w-full bg-white"></div>
+            </div>
+            МЕНЮ
           </button>
         </div>
       </div>
@@ -100,26 +127,110 @@
         ref="menuEl"
         @click.stop
       >
-        <!-- Decorative Rail Lines -->
-        <div class="dropdown-menu__rail-lines">
-          <div class="dropdown-menu__rail-line dropdown-menu__rail-line--accent"></div>
-          <div class="dropdown-menu__rail-line"></div>
+        <!-- Desktop Version: Decorative Rail Lines + Navigation -->
+        <div class="dropdown-menu__desktop">
+          <div class="dropdown-menu__rail-lines">
+            <div class="dropdown-menu__rail-line dropdown-menu__rail-line--accent"></div>
+            <div class="dropdown-menu__rail-line"></div>
+          </div>
+          
+          <nav class="dropdown-menu__nav">
+            <NuxtLink
+              v-for="(item, index) in menuItems"
+              :key="item.label"
+              :to="item.to"
+              class="dropdown-menu__link"
+              :class="{ 'dropdown-menu__link--visible': menuItemsVisible }"
+              :style="{ transitionDelay: `${index * 80}ms` }"
+              @click="closeMenu"
+            >
+              {{ item.label }}
+            </NuxtLink>
+          </nav>
         </div>
-        
-        <!-- Navigation Links with staggered animation -->
-        <nav class="dropdown-menu__nav">
-          <NuxtLink
-            v-for="(item, index) in menuItems"
-            :key="item.label"
-            :to="item.to"
-            class="dropdown-menu__link"
-            :class="{ 'dropdown-menu__link--visible': menuItemsVisible }"
-            :style="{ transitionDelay: `${index * 80}ms` }"
-            @click="closeMenu"
-          >
-            {{ item.label }}
-          </NuxtLink>
-        </nav>
+
+        <!-- Mobile Version: Navigation + Footer -->
+        <div class="dropdown-menu__mobile">
+          <!-- Mobile Navigation -->
+          <nav class="dropdown-menu__mobile-nav">
+            <NuxtLink
+              v-for="(item, index) in menuItems"
+              :key="item.label"
+              :to="item.to"
+              class="dropdown-menu__mobile-link"
+              :class="{ 'dropdown-menu__mobile-link--visible': menuItemsVisible }"
+              :style="{ transitionDelay: `${index * 80}ms` }"
+              @click="closeMenu"
+            >
+              {{ item.label }}
+            </NuxtLink>
+          </nav>
+
+          <!-- Mobile Footer -->
+          <div class="dropdown-menu__mobile-footer">
+            <div class="dropdown-menu__mobile-footer-line"></div>
+            <div class="dropdown-menu__mobile-footer-buttons">
+              <button
+                class="dropdown-menu__mobile-cta-btn"
+                aria-label="Оставить заявку на связь"
+              >
+                ОСТАВИТЬ ЗАЯВКУ НА СВЯЗЬ
+              </button>
+              <div class="dropdown-menu__mobile-scroll-top-wrapper">
+                <Transition name="menu-fade">
+                  <div v-if="isActionMenuOpen" class="dropdown-menu__mobile-action-menu">
+                    <button
+                      @click="handlePhone"
+                      class="dropdown-menu__mobile-action-btn"
+                      aria-label="Позвонить"
+                    >
+                      <img
+                        src="/images/menu-icons/menu-icon-3.webp"
+                        alt="Позвонить"
+                        class="dropdown-menu__mobile-action-icon"
+                      />
+                    </button>
+                    <button
+                      @click="handleTelegram"
+                      class="dropdown-menu__mobile-action-btn"
+                      aria-label="Telegram"
+                    >
+                      <img
+                        src="/images/menu-icons/menu-icon-2.webp"
+                        alt="Telegram"
+                        class="dropdown-menu__mobile-action-icon"
+                      />
+                    </button>
+                    <button
+                      @click="handleWhatsApp"
+                      class="dropdown-menu__mobile-action-btn"
+                      aria-label="WhatsApp"
+                    >
+                      <img
+                        src="/images/menu-icons/menu-icon-1.webp"
+                        alt="WhatsApp"
+                        class="dropdown-menu__mobile-action-icon"
+                      />
+                    </button>
+                  </div>
+                </Transition>
+                <button
+                  @click="handleScrollToTop"
+                  class="dropdown-menu__mobile-scroll-top-btn"
+                  :class="{ 'dropdown-menu__mobile-scroll-top-btn--open': isActionMenuOpen }"
+                  aria-label="Прокрутить вверх"
+                >
+                  <NuxtImg
+                    src="/images/icons/scroll-to-top.webp"
+                    alt="Прокрутить вверх"
+                    class="dropdown-menu__mobile-scroll-top-icon"
+                    loading="lazy"
+                  />
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </Transition>
 
@@ -141,6 +252,7 @@ const headerBarEl = ref(null)
 const menuEl = ref(null)
 const is3DViewerOpen = ref(false)
 const menuItemsVisible = ref(false)
+const isActionMenuOpen = ref(false)
 
 // Trigger staggered animation after menu panel appears
 const onMenuEnter = () => {
@@ -239,6 +351,7 @@ onBeforeUnmount(() => {
 
 // Menu items
 const menuItems = [
+  { label: 'ГЛАВНАЯ', to: '/' },
   { label: 'КОМПАНИЯ', to: '/about' },
   { label: 'ПРОЕКТЫ', to: '/apartment-selection' },
   { label: 'ВЫБОР КВАРТИРЫ', to: '/buy-apartment' },
@@ -284,6 +397,16 @@ const handleScrollDown = () => {
   }
 }
 
+const handleScrollToTop = () => {
+  if (typeof window !== 'undefined') {
+    isActionMenuOpen.value = !isActionMenuOpen.value
+    if (!isActionMenuOpen.value) {
+      // Если меню закрывается, прокручиваем наверх
+      window.scrollTo({ top: 0, behavior: 'smooth' })
+    }
+  }
+}
+
 const handleAudioClick = () => {
   // Обработка клика на кнопку аудио
   console.log('Аудио открыто')
@@ -306,7 +429,7 @@ const handleVideoClick = () => {
   --menu-padding-top: clamp(72px, 16vh, 220px);
   position: fixed;
   inset: 0 0 auto 0;
-  z-index: 100;
+  z-index: 1000;
   color: #fff;
 }
 
@@ -314,13 +437,36 @@ const handleVideoClick = () => {
 
 .header__bar {
   position: relative;
-  z-index: 250;
+  z-index: 1001;
   background: #2a2c38;
   border-bottom: none;
   width: 100%;
   height: 50px;
   display: flex;
   align-items: stretch;
+}
+
+/* Desktop/Mobile Header Versions */
+.header__bar-desktop {
+  display: flex;
+}
+
+.header__bar-mobile {
+  display: none;
+}
+
+@media (max-width: 1024px) {
+  .header__bar-desktop {
+    display: none;
+  }
+
+  .header__bar-mobile {
+    display: flex;
+    width: 100%;
+    height: auto;
+    min-height: 32px;
+    margin-bottom: 24px;
+  }
 }
 
 /* Left Section */
@@ -612,7 +758,9 @@ const handleVideoClick = () => {
   top: 100%;
   left: 16px;
   z-index: 240;
-  background: rgba(42, 44, 56, 0.7);
+  background: rgba(42, 44, 56, 0.75);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
   border-radius: 0 0 20px 20px;
   padding: 24px 32px 32px 24px;
   display: flex;
@@ -638,6 +786,64 @@ const handleVideoClick = () => {
 @media (min-width: 1440px) {
   .dropdown-menu {
     left: 80px;
+  }
+}
+
+/* Mobile Menu - Full Screen */
+@media (max-width: 1024px) {
+  .dropdown-menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100vh;
+    border-radius: 0;
+    padding: 0;
+    background: #2a2c38;
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    box-shadow: none;
+    transform-origin: center;
+    z-index: 1002;
+    visibility: visible;
+    opacity: 1;
+  }
+
+  .header--menu-open .header__bar {
+    z-index: 1003;
+  }
+
+  .dropdown-menu__desktop {
+    display: none;
+  }
+
+  .dropdown-menu__mobile {
+    display: flex !important;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    padding: clamp(16px, 4vw, 24px);
+    box-sizing: border-box;
+    visibility: visible;
+    opacity: 1;
+    background: transparent;
+  }
+}
+
+/* Desktop Menu - Keep Original */
+@media (min-width: 1025px) {
+  .dropdown-menu__desktop {
+    display: flex;
+    gap: 16px;
+  }
+
+  .dropdown-menu__mobile {
+    display: none;
   }
 }
 
@@ -727,7 +933,204 @@ const handleVideoClick = () => {
   transform: translateX(6px);
 }
 
+/* Mobile Menu Styles */
+@media (max-width: 1024px) {
+  /* Mobile Navigation */
+  .dropdown-menu__mobile-nav {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    flex: 1;
+    gap: clamp(16px, 4vw, 24px);
+    padding: clamp(20px, 5vw, 40px) 0;
+  }
 
+  .dropdown-menu__mobile-link {
+    font-family: 'Inter', sans-serif;
+    font-size: clamp(14px, 3.5vw, 18px);
+    font-weight: 400;
+    letter-spacing: 0.05em;
+    color: #fff !important;
+    text-decoration: none;
+    text-transform: uppercase;
+    display: block;
+    text-align: center;
+    opacity: 0;
+    transform: translateY(-10px);
+    transition: opacity 0.4s ease, transform 0.4s ease, color 0.3s ease;
+    visibility: visible;
+  }
+
+  .dropdown-menu__mobile-link--visible {
+    opacity: 1 !important;
+    transform: translateY(0);
+    visibility: visible;
+  }
+
+  .dropdown-menu__mobile-link:hover {
+    color: #d4952d;
+  }
+
+  /* Mobile Footer */
+  .dropdown-menu__mobile-footer {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding-top: clamp(12px, 2vw, 16px);
+    margin-top: clamp(12px, 2vw, 16px);
+    align-items: center;
+  }
+
+  .dropdown-menu__mobile-footer-line {
+    width: 100%;
+    height: 1px;
+    background: rgba(255, 255, 255, 0.2);
+    margin-bottom: clamp(16px, 4vw, 24px);
+  }
+
+  .dropdown-menu__mobile-scroll-top-wrapper {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-shrink: 0;
+  }
+
+  .dropdown-menu__mobile-action-menu {
+    position: absolute;
+    bottom: 100%;
+    right: 0;
+    left: 2px;
+    margin-bottom: clamp(8px, 2vw, 12px);
+    display: flex;
+    flex-direction: column;
+    gap: clamp(8px, 1.5vh, 12px);
+    align-items: center;
+    justify-content: flex-start;
+    width: 45px;
+  }
+
+  .dropdown-menu__mobile-footer-buttons {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    gap: clamp(12px, 3vw, 20px);
+    flex-wrap: nowrap;
+  }
+
+  .dropdown-menu__mobile-cta-btn {
+    flex: 1;
+    background: linear-gradient(90deg, rgba(0, 0, 0, 0) 0%, rgb(33, 72, 129) 100%), linear-gradient(90deg, rgb(86, 90, 115) 0%, rgb(86, 90, 115) 100%);
+    border: 1px solid #fff;
+    color: #fff;
+    border-radius: 6px;
+    padding: clamp(14px, 3.5vw, 16px) clamp(16px, 4vw, 24px);
+    font-family: 'Inter', sans-serif;
+    font-size: clamp(10px, 2.5vw, 12px);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+    min-width: 0;
+    align-self: center;
+  }
+
+  .dropdown-menu__mobile-cta-btn:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.4);
+    border-color: #fff;
+  }
+
+  .dropdown-menu__mobile-cta-btn:active {
+    transform: scale(0.95);
+  }
+
+  .dropdown-menu__mobile-scroll-top-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: clamp(42px, 10vw, 50px);
+    height: clamp(42px, 10vw, 50px);
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    transition: all 0.3s ease;
+    flex-shrink: 0;
+    align-self: center;
+  }
+
+  .dropdown-menu__mobile-scroll-top-icon {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+
+  .dropdown-menu__mobile-scroll-top-btn:hover {
+    transform: scale(1.05);
+    opacity: 0.9;
+  }
+
+  .dropdown-menu__mobile-scroll-top-btn:active {
+    transform: scale(0.95);
+  }
+
+  .dropdown-menu__mobile-scroll-top-btn--open {
+    transform: rotate(180deg);
+  }
+
+  .dropdown-menu__mobile-scroll-top-btn--open:hover {
+    transform: rotate(180deg) scale(1.05);
+  }
+
+  .dropdown-menu__mobile-action-btn {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    background: rgba(42, 44, 56, 0.8);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    padding: 0;
+    transition: all 0.3s ease;
+    flex-shrink: 0;
+  }
+
+  .dropdown-menu__mobile-action-icon {
+    width: 45px;
+    height: 45px;
+    object-fit: contain;
+  }
+
+  .dropdown-menu__mobile-action-btn:hover {
+    transform: scale(1.1);
+    opacity: 0.9;
+    border-color: rgba(255, 255, 255, 0.3);
+  }
+
+  .dropdown-menu__mobile-action-btn:active {
+    transform: scale(0.95);
+  }
+
+  /* Анимация появления/скрытия action menu */
+  .menu-fade-enter-active,
+  .menu-fade-leave-active {
+    transition: opacity 0.3s ease, transform 0.3s ease;
+  }
+
+  .menu-fade-enter-from,
+  .menu-fade-leave-to {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+}
 
 /* Dropdown Slide Animation */
 .dropdown-slide-enter-active {
@@ -757,6 +1160,31 @@ const handleVideoClick = () => {
   100% {
     opacity: 0;
     transform: translateY(-20px) scale(0.95);
+  }
+}
+
+/* Mobile Menu Animation Override */
+@media (max-width: 1024px) {
+  @keyframes dropdownSlideIn {
+    0% {
+      opacity: 0;
+      transform: scale(0.98);
+    }
+    100% {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+
+  @keyframes dropdownSlideOut {
+    0% {
+      opacity: 1;
+      transform: scale(1);
+    }
+    100% {
+      opacity: 0;
+      transform: scale(0.98);
+    }
   }
 }
 

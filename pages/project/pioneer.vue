@@ -1,14 +1,13 @@
 <template>
-  <div class="bg-primary text-white">
+  <div class="bg-[#1A1A1A] text-white">
     <EcocityHeroSection 
       title="ПИОНЕРСКИЙ"
       subtitle="ЖИЛОЙ КОМПЛЕКС"
       description="Пространство, где каждая деталь создана для вашего комфорта. Среди сосен, в экологически чистом районе, начинается жизнь, о которой вы мечтали."
       bg-image="/images/pioneer/hero.webp"
       :chips="[
-        { label: 'СДАН', type: 'status' },
-        { label: 'РАЙОН', type: 'label' },
-        { label: 'ЗАВОЛЖСКИЙ', type: 'value' }
+        { label: 'СТАТУС', value: 'СДАН' },
+        { label: 'РАЙОН', value: 'ЗАВОЛЖСКИЙ' }
       ]"
       @open3d="handleOpen3D"
     />
@@ -20,8 +19,8 @@
         main: '/images/pioneer/about_1_main.webp',
         courtyard: '/images/pioneer/about_2_top_left.webp',
         playground: '/images/pioneer/about_3_top_right.webp',
-        facade: '/images/pioneer/about_4_bot_left.webp',
-        gallery: '/images/pioneer/about_5_bot_right.webp'
+        facade: '/images/pioneer/about_5_bot_right.webp',
+        gallery: '/images/pioneer/about_4_bot_left.webp'
       }"
     />
     <EcocityFeaturesSection 

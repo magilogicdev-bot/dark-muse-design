@@ -1,6 +1,6 @@
 <template>
-  <section class="bg-primary py-16 md:py-20 lg:py-24">
-    <div class="container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+  <section class="bg-[#1A1A1A] py-16 md:py-20 lg:py-24 font-brand">
+    <div class="container mx-auto max-w-[1920px] px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 2xl:px-20 relative z-10">
       <div class="bg-[#FF8700] rounded-lg p-2.5 md:p-3 lg:p-4 relative overflow-hidden" style="height: 400px;">
         <div class="relative flex flex-col">
           <h2 class="text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-normal text-white mb-1 leading-tight">

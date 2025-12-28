@@ -11,39 +11,29 @@
             <!-- VK Icon -->
             <a
               :href="config.contacts.social.vk"
-              class="w-12 h-12 md:w-14 md:h-14 lg:w-16 lg:h-16 rounded-full flex items-center justify-center transition hover:scale-105 relative"
+              class="w-12 h-12 md:w-14 md:h-14 lg:w-16 lg:h-16 rounded-full flex items-center justify-center transition hover:scale-105 hover:opacity-80"
               aria-label="VKontakte"
               target="_blank"
               rel="noopener noreferrer"
             >
               <img 
-                src="https://www.figma.com/api/mcp/asset/54d0f66b-b601-41f4-aa21-e69f71bfa8c4" 
-                alt="" 
-                class="absolute inset-0 w-full h-full object-cover rounded-full"
-              />
-              <img 
-                src="https://www.figma.com/api/mcp/asset/91373bff-ac3b-4736-977d-166869d00832" 
+                src="/images/social-vk-bg.svg" 
                 alt="VK" 
-                class="relative z-10 w-[40%] h-[40%] object-contain"
+                class="w-full h-full object-contain"
               />
             </a>
             <!-- Telegram Icon -->
             <a
               :href="config.contacts.social.telegram"
-              class="w-12 h-12 md:w-14 md:h-14 lg:w-16 lg:h-16 rounded-full flex items-center justify-center transition hover:scale-105 relative"
+              class="w-12 h-12 md:w-14 md:h-14 lg:w-16 lg:h-16 rounded-full flex items-center justify-center transition hover:scale-105 hover:opacity-80"
               aria-label="Telegram"
               target="_blank"
               rel="noopener noreferrer"
             >
               <img 
-                src="https://www.figma.com/api/mcp/asset/3256f975-f004-4f9d-86a3-5eb85f9d85fb" 
-                alt="" 
-                class="absolute inset-0 w-full h-full object-cover rounded-full"
-              />
-              <img 
-                src="https://www.figma.com/api/mcp/asset/3c609572-383a-4756-896c-c4a192efdaba" 
+                src="/images/social-telegram-bg.svg" 
                 alt="Telegram" 
-                class="relative z-10 w-[40%] h-[40%] object-contain"
+                class="w-full h-full object-contain"
               />
             </a>
           </div>

@@ -1,4 +1,6 @@
 /** @type {import('tailwindcss').Config} */
+import tailwindScrollbar from 'tailwind-scrollbar'
+
 export default {
   content: [
     "./components/**/*.{js,vue,ts}",
@@ -83,5 +85,8 @@ export default {
       },
     },
   },
-  plugins: [],
+  plugins: [
+    // Context7 (tailwind-scrollbar docs): for richer WebKit/Chromium control use pseudoelements strategy.
+    tailwindScrollbar({ nocompatible: true, preferredStrategy: 'pseudoelements' }),
+  ],
 }

@@ -23,6 +23,43 @@ body {
   overflow-x: hidden;
 }
 
+/* Scrollbars: Основные стили WebKit/Chrome/Edge/Safari */
+/* Мы используем этот метод как основной для Chrome/Edge, чтобы иметь полный контроль (скрыть стрелки) */
+.scrollable-text::-webkit-scrollbar {
+  width: 3px !important;
+  height: 3px !important;
+}
+
+.scrollable-text::-webkit-scrollbar-track {
+  background: transparent !important;
+}
+
+.scrollable-text::-webkit-scrollbar-thumb {
+  background-color: rgba(255, 255, 255, 0.9) !important;
+  border-radius: 10px !important;
+  border: none !important;
+}
+
+/* Удаление стрелочек и кнопок для Chrome/Edge/Safari (особенно актуально для Windows) */
+.scrollable-text::-webkit-scrollbar-button {
+  display: none !important;
+  width: 0 !important;
+  height: 0 !important;
+}
+
+.scrollable-text::-webkit-scrollbar-corner {
+  background: transparent !important;
+}
+
+/* Firefox-only styles */
+/* Используем @supports для таргетинга Firefox, чтобы Chrome не перехватывал управление через scrollbar-width */
+@supports (-moz-appearance: none) {
+  .scrollable-text {
+    scrollbar-width: thin;
+    scrollbar-color: rgba(255, 255, 255, 0.9) transparent;
+  }
+}
+
 img {
   display: block;
   max-width: 100%;

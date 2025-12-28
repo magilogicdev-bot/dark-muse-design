@@ -1,5 +1,5 @@
 <template>
-  <div class="bg-primary text-white">
+  <div class="bg-[#1A1A1A] text-white">
     <MortgageHeroSection />
     <MortgageInfoSection />
     <MortgageStepsSection />

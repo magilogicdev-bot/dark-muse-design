@@ -1,24 +1,23 @@
 <template>
-  <section class="relative w-full bg-primary">
+  <section class="relative w-full bg-primary overflow-hidden">
     <!-- Hero Background Image -->
     <div
       ref="imageContainer"
-      class="relative w-full"
+      class="relative w-full cursor-pointer overflow-hidden"
+      @click="handleBackgroundClick"
     >
-      <NuxtImg
-        src="/images/hero-background.webp"
-        alt="Вид сверху на жилой комплекс"
-        class="w-full h-auto block"
-        format="webp"
-        preload
+      <img
+        :src="currentHeroImage"
+        alt="Вид жилого комплекса"
+        class="w-full h-auto block transition-opacity duration-500"
       />
       
-      <!-- Interactive Houses -->
-      <div class="absolute inset-0">
+      <!-- Interactive Houses (Only visible on main view) -->
+      <div v-if="isDefaultView" class="absolute inset-0 overflow-hidden">
         <button
           v-for="(house, index) in computedHouses"
           :key="index"
-          @click="handleHouseClick(house)"
+          @click.stop="handleHouseClick(house)"
           :style="{
             position: 'absolute',
             left: house.computedLeft + '%',
@@ -30,14 +29,12 @@
           class="group cursor-pointer transition-all duration-300 focus:outline-none"
           :aria-label="`Дом ${house.number}`"
         >
-          <!-- House Outline Image (visible by default, brighter on hover) -->
-          <NuxtImg
+          <!-- House Outline Image (Standard img for reliable production paths) -->
+          <img
             v-if="house.outlineImage"
             :src="house.outlineImage"
             :alt="`Обводка дома ${house.number}`"
             class="absolute inset-0 w-full h-full object-contain opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"
-            loading="lazy"
-            format="webp"
           />
           <!-- Fallback: CSS border outline -->
           <div
@@ -47,14 +44,6 @@
         </button>
       </div>
     </div>
-
-    <!-- Image Zoom Modal -->
-    <ImageZoomModal
-      :is-open="isImageModalOpen"
-      image-src="/images/high-life-award.png"
-      image-alt="HIGH LIFE – победитель премии URBAN 2025"
-      @close="closeImageModal"
-    />
   </section>
 </template>
 
@@ -64,6 +53,8 @@ import { ref, computed } from 'vue'
 const imageContainer = ref(null)
 const baseWidth = ref(1460) // Базовый размер для конвертации px в %
 const baseHeight = ref(915) // Базовый размер для конвертации px в %
+const defaultImage = '/images/hero-background.webp'
+const currentHeroImage = ref(defaultImage)
 
 const houses = ref([
   {
@@ -74,7 +65,8 @@ const houses = ref([
     width: 11.5,
     height: 36,
     zIndex: 1,
-    outlineImage: '/images/house-outline-1.png'
+    outlineImage: '/images/house-outline-1.png',
+    detailImage: '/images/completed-projects-1.webp'
   },
   {
     // Центральные башни (две высотки)
@@ -84,7 +76,8 @@ const houses = ref([
     width: 16.2,
     height: 38.5,
     zIndex: 55,
-    outlineImage: '/images/house-outline-2.png'
+    outlineImage: '/images/house-outline-2.png',
+    detailImage: '/images/completed-projects-2.webp'
   },
   {
     // Правый жилой комплекс (большой П-образный)
@@ -94,7 +87,8 @@ const houses = ref([
     top: 46.8,
     width: 30,
     height: 41.5,
-    outlineImage: '/images/house-outline-3.png'
+    outlineImage: '/images/house-outline-3.png',
+    detailImage: '/images/high-life-award.png'
   }
 ])
 
@@ -122,21 +116,17 @@ const computedHouses = computed(() => {
   })
 })
 
-
-
-const isImageModalOpen = ref(false)
+const isDefaultView = computed(() => currentHeroImage.value === defaultImage)
 
 const handleHouseClick = (house) => {
-  // Для дома 3 открываем модальное окно с изображением и зум-эффектом
-  if (house.number === 3) {
-    isImageModalOpen.value = true
-  } else {
-    // Для других домов можно добавить другую логику
-    console.log('House clicked:', house.number)
+  if (house.detailImage) {
+    currentHeroImage.value = house.detailImage
   }
 }
 
-const closeImageModal = () => {
-  isImageModalOpen.value = false
+const handleBackgroundClick = () => {
+  if (!isDefaultView.value) {
+    currentHeroImage.value = defaultImage
+  }
 }
 </script>

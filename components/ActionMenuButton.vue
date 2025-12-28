@@ -1,6 +1,6 @@
 <template>
   <div class="action-menu-container">
-    <!-- Меню кнопок (показывается при isOpen, по умолчанию открыто) -->
+    <!-- Меню кнопок (показывается при isOpen) -->
     <Transition name="menu-fade">
       <div v-show="isOpen" class="action-menu">
         <button
@@ -38,17 +38,19 @@
         </button>
       </div>
     </Transition>
-    <!-- Кнопка скрытия/открытия (внизу) -->
+
+    <!-- Основная кнопка МЕНЮ (триггер) -->
     <button
       @click="toggleMenu"
-      class="action-menu-toggle"
-      :class="{ 'action-menu-toggle--open': isOpen }"
-      :aria-label="isOpen ? 'Скрыть меню' : 'Показать меню'"
+      class="action-menu__toggle"
+      :class="{ 'action-menu__toggle--active': isOpen }"
+      aria-label="Открыть меню контактов"
     >
       <NuxtImg
         src="/images/icons/scroll-to-top.webp"
         alt="Меню"
-        class="w-full h-full object-contain"
+        class="action-menu__toggle-icon"
+        format="webp"
         loading="lazy"
       />
     </button>
@@ -90,20 +92,27 @@ const handlePhone = () => {
 .action-menu-container {
   position: fixed;
   bottom: clamp(24px, 2vw, 32px);
-  right: clamp(24px, 2vw, 32px);
+  right: clamp(40px, 5vw, 80px);
   z-index: 999;
   display: flex;
   flex-direction: column;
-  align-items: flex-end;
-  gap: clamp(12px, 1.5vh, 20px);
-  pointer-events: auto;
+  align-items: center;
+  pointer-events: none; /* Let clicks pass through container gaps */
+}
+
+@media (max-width: 1024px) {
+  .action-menu-container {
+    display: none !important;
+  }
 }
 
 .action-menu {
   display: flex;
   flex-direction: column;
-  gap: clamp(12px, 1.5vh, 20px);
+  gap: clamp(12px, 1.5vw, 20px);
   align-items: center;
+  margin-bottom: clamp(12px, 1.5vw, 20px); /* Gap between menu and button */
+  pointer-events: auto;
 }
 
 .action-menu__button {
@@ -135,55 +144,57 @@ const handlePhone = () => {
   pointer-events: none;
 }
 
-.action-menu-toggle {
-  width: clamp(48px, 4vw, 64px);
-  height: clamp(48px, 4vw, 64px);
+.action-menu__toggle {
+  width: clamp(40px, 4vw, 40px);
+  height: clamp(40px, 4vw, 40px);
+  border-radius: 50%;
   background: transparent;
   border: none;
   cursor: pointer;
-  padding: 0;
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: transform 0.3s ease, opacity 0.3s ease;
+  padding: 0;
+  transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
   outline: none;
-  flex-shrink: 0;
+  pointer-events: auto;
 }
 
-.action-menu-toggle--open {
+@media (min-width: 1025px) {
+  .action-menu__toggle {
+    width: 64px;
+    height: 64px;
+  }
+}
+
+.action-menu__toggle:hover {
+  transform: scale(1.1);
+}
+
+.action-menu__toggle--active {
   transform: rotate(180deg);
 }
 
-.action-menu-toggle:hover {
-  opacity: 0.9;
+.action-menu__toggle--active:hover {
+  transform: rotate(180deg) scale(1.1);
 }
 
-.action-menu-toggle--open:hover {
-  transform: rotate(180deg) scale(1.05);
+.action-menu__toggle-icon {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
 }
 
-.action-menu-toggle:not(.action-menu-toggle--open):hover {
-  transform: scale(1.05);
-}
-
-.action-menu-toggle:active {
-  transform: scale(0.95);
-}
-
-.action-menu-toggle--open:active {
-  transform: rotate(180deg) scale(0.95);
-}
-
-/* Анимация появления/скрытия меню */
+/* Анимация появления/скрытия меню - "вылетание" из кнопки */
 .menu-fade-enter-active,
 .menu-fade-leave-active {
-  transition: opacity 0.3s ease, transform 0.3s ease;
+  transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
 }
 
 .menu-fade-enter-from,
 .menu-fade-leave-to {
   opacity: 0;
-  transform: translateY(10px);
+  transform: translateY(40px) scale(0.5);
 }
 
 @media (max-width: 1024px) {
@@ -199,11 +210,6 @@ const handlePhone = () => {
 
   .action-menu__button-icon {
     width: clamp(36px, 5vw, 56px);
-  }
-
-  .action-menu-toggle {
-    width: clamp(44px, 4vw, 56px);
-    height: clamp(44px, 4vw, 56px);
   }
 }
 
@@ -221,11 +227,5 @@ const handlePhone = () => {
   .action-menu__button-icon {
     width: clamp(32px, 5vw, 48px);
   }
-
-  .action-menu-toggle {
-    width: clamp(40px, 4vw, 52px);
-    height: clamp(40px, 4vw, 52px);
-  }
 }
 </style>
-

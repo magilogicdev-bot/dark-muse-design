@@ -1,14 +1,13 @@
 <template>
-  <div class="bg-primary text-white">
+  <div class="bg-[#1A1A1A] text-white">
     <EcocityHeroSection 
       title="ЭКОГОРОД 2"
       subtitle="ЖИЛОЙ КОМПЛЕКС"
       description="Пространство, где каждая деталь создана для вашего комфорта. Среди сосен, в экологически чистом районе, начинается жизнь, о которой вы мечтали."
       bg-image="/images/ecocity2/hero.webp"
       :chips="[
-        { label: 'СДАН', type: 'status' },
-        { label: 'РАЙОН', type: 'label' },
-        { label: 'ЗАВОЛЖСКИЙ', type: 'value' }
+        { label: 'СТАТУС', value: 'СДАН' },
+        { label: 'РАЙОН', value: 'ЗАВОЛЖСКИЙ' }
       ]"
       @open3d="handleOpen3D"
     />
@@ -36,7 +35,7 @@
     />
     <EcocityGeneralPlanSection 
       description="Выбрав дом, перемещайтесь по подъездам, узнавайте больше информации о понравившейся вам квартире в ЖК Экогород 2."
-      :images="{ generalPlan: '/images/ecocity2/general_plan.webp' }"
+      :images="{ generalPlan: '/images/general_plan_new.png' }"
     />
     <EcocityMediaSection 
       description="Будьте в курсе самых значимых событий: новые реализованные проекты, тенденции в архитектуре и строительных технологиях, изменения в законодательстве и события из жизни нашей компании."

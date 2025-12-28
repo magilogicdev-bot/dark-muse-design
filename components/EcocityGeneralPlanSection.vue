@@ -36,24 +36,66 @@
       </div>
 
       <!-- Main Visualization -->
-      <div class="relative w-full rounded-lg md:rounded-xl overflow-hidden">
-        <div class="relative aspect-[16/9] md:aspect-[21/9] lg:aspect-[2/1]">
+      <div v-if="activeTab === 'visualization'" class="relative w-full rounded-lg md:rounded-xl overflow-hidden shadow-2xl">
+        <div 
+          class="relative cursor-pointer overflow-hidden group"
+          @click="handleBackgroundClick"
+        >
           <img
-            :src="images.generalPlan"
+            :src="currentVisualImage || images.generalPlan"
             alt="Генеральный план ЖК Экогород 3"
-            class="w-full h-full object-cover"
+            class="w-full h-auto block transition-all duration-700 ease-out"
             loading="lazy"
           />
-          <!-- Interactive Markers (if needed) -->
-          <!-- Red markers and green markers can be added here as absolute positioned elements -->
+          
+          <!-- Interactive Houses overlay -->
+          <div v-if="isDefaultView" class="absolute inset-0">
+            <button
+              v-for="(house, index) in houses"
+              :key="index"
+              @click.stop="handleHouseClick(house)"
+              :style="{
+                position: 'absolute',
+                left: house.left + '%',
+                top: house.top + '%',
+                width: house.width + '%',
+                height: house.height + '%',
+                zIndex: house.zIndex
+              }" 
+              class="group/house cursor-pointer transition-all duration-300 focus:outline-none"
+              :aria-label="`Дом ${house.number}`"
+            >
+              <!-- House Outline -->
+              <img
+                v-if="house.outlineImage"
+                :src="house.outlineImage"
+                :alt="`Обводка дома ${house.number}`"
+                class="absolute inset-0 w-full h-full object-contain opacity-0 group-hover/house:opacity-100 transition-opacity duration-300 pointer-events-none"
+              />
+              <div
+                v-else
+                class="absolute inset-0 border-2 border-white/50 opacity-0 group-hover/house:opacity-100 transition-opacity duration-300 pointer-events-none rounded-sm"
+              ></div>
+            </button>
+          </div>
+
+          <!-- Hint Overlay (visible on first load) -->
+          <div v-if="isDefaultView" class="absolute bottom-6 left-1/2 -translate-x-1/2 bg-black/50 backdrop-blur-md px-6 py-3 rounded-full border border-white/10 pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+            <span class="text-sm font-medium uppercase tracking-wider">Нажмите на дом для просмотра</span>
+          </div>
         </div>
+      </div>
+
+      <!-- Yandex Map Placeholder -->
+      <div v-else class="relative w-full aspect-[16/9] bg-stone-900 rounded-lg md:rounded-xl overflow-hidden flex items-center justify-center">
+        <p class="text-white/50 italic capitalize">Интерактивная карта загружается...</p>
       </div>
     </div>
   </section>
 </template>
 
 <script setup>
-import { ref } from 'vue'
+import { ref, computed } from 'vue'
 
 const props = defineProps({
   images: {
@@ -69,9 +111,57 @@ const props = defineProps({
 })
 
 const activeTab = ref('visualization')
+const currentVisualImage = ref(null)
 
 const tabs = [
   { id: 'visualization', label: 'Визуализация' },
   { id: 'yandex-map', label: 'Яндекс Карта' }
+ ]
+
+const houses = [
+  {
+    number: 1,
+    left: 48.5,
+    top: 17,
+    width: 11.5,
+    height: 36,
+    zIndex: 10,
+    outlineImage: '/images/house-outline-1.png',
+    detailImage: '/images/completed-projects-1.webp'
+  },
+  {
+    number: 2,
+    left: 28.2,
+    top: 36.5,
+    width: 16.2,
+    height: 38.5,
+    zIndex: 20,
+    outlineImage: '/images/house-outline-2.png',
+    detailImage: '/images/completed-projects-2.webp'
+  },
+  {
+    number: 3,
+    left: 24.5,
+    top: 43,
+    width: 50,
+    height: 50,
+    zIndex: 15,
+    outlineImage: '/images/house-outline-3.png',
+    detailImage: '/images/high-life-award.png'
+  }
 ]
+
+const isDefaultView = computed(() => !currentVisualImage.value || currentVisualImage.value === props.images.generalPlan)
+
+const handleHouseClick = (house) => {
+  if (house.detailImage) {
+    currentVisualImage.value = house.detailImage
+  }
+}
+
+const handleBackgroundClick = () => {
+  if (!isDefaultView.value) {
+    currentVisualImage.value = props.images.generalPlan
+  }
+}
 </script>

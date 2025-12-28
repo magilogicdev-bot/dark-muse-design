@@ -79,10 +79,6 @@
                 <div class="absolute inset-x-0 inset-y-0 bg-repeat-x" style="background-image: url('/images/line-46.svg'); background-size: 800px 100%;"></div>
               </div>
 
-              <!-- Orange Accent Corner at Intersection -->
-              <div class="absolute bottom-[-100px] right-[-20px] w-[60px] h-0.5 bg-[#d4a574] z-1 -translate-x-[40px]"></div>
-              <div class="absolute bottom-[-100px] right-[-20px] w-0.5 h-[60px] bg-[#d4a574] z-1 translate-y-[30px]"></div>
-
               <!-- Portrait image -->
               <div class="relative aspect-[3/4] shadow-2xl overflow-hidden border border-white/5 z-1">
                 <img 
@@ -159,10 +155,9 @@
                 <p class="bio-signature text-base text-white/70 text-right whitespace-nowrap overflow-hidden">
                   Победоносцев Алексей Николаевич
                 </p>
-                <!-- Decorative Orange Line with corner -->
+                <!-- Decorative Line -->
                 <div class="relative mt-2">
-                  <div class="h-px bg-[#d4a574]/70"></div>
-                  <div class="absolute right-0 top-0 bottom-0 w-px bg-[#d4a574]/70"></div>
+                  <div class="h-px bg-white/20"></div>
                 </div>
               </div>
             </div>
@@ -201,9 +196,9 @@
               <p class="bio-signature text-xs sm:text-sm text-white/70 text-center whitespace-nowrap overflow-hidden">
                 Победоносцев Алексей Николаевич
               </p>
-              <!-- Decorative Orange Line -->
+              <!-- Decorative Line -->
               <div class="relative mt-2">
-                <div class="h-px bg-[#d4a574]/70"></div>
+                <div class="h-px bg-white/20"></div>
               </div>
             </div>
           </div>
@@ -254,7 +249,7 @@
           <div class="flex flex-col justify-end w-full lg:pr-[220px] order-2 lg:order-2">
             <div class="flex justify-end w-full">
               <div class="relative max-w-[500px] w-full scroll-container-fixed">
-                <div class="scrollable-text flex flex-col gap-6 lg:gap-8 text-right font-light max-h-[340px] overflow-y-scroll mr-0 pr-5">
+                <div class="scrollable-text flex flex-col gap-6 lg:gap-8 text-right font-light max-h-[340px] overflow-y-scroll mr-0 pr-5 ">
                 <p class="content-text text-[11px] sm:text-xs md:text-sm lg:text-[13px] xl:text-[14px] 2xl:text-[15px] leading-[1.65] lg:leading-[1.75] text-white text-right tracking-tight">
                   Алексей Николаевич Победоносцев начал свой профессиональный путь в 2006 году, сразу после получения образования. Его первой ступенькой в карьере стал Петровский завод ЖБИ, где ему предложили стать мастером-строителем.
                 </p>
@@ -295,7 +290,7 @@
             <!-- Bottom: Large Complex Image (Full Width, Shorter Height) -->
             <div class="relative w-full -ml-8 sm:-ml-12 lg:-ml-20 mr-[-20px] sm:mr-[-32px] md:mr-[-48px] lg:mr-[-80px] mt-auto aspect-[16/12] sm:aspect-[16/11] lg:aspect-[16/11] overflow-hidden group">
               <img 
-                src="/images/ecocity-complex.webp" 
+                src="/images/ecocity-complex-new.png" 
                 alt="Современное здание" 
                 class="w-full h-full object-cover shadow-2xl"
                 loading="lazy"
@@ -311,7 +306,7 @@
               <div class="flex-1 flex flex-col justify-center py-10 lg:py-0">
                 <div class="flex justify-end w-full">
                   <div class="relative max-w-[500px] scroll-container-fixed">
-                    <div class="scrollable-text flex flex-col gap-6 lg:gap-8 text-right font-light max-h-[340px] overflow-y-scroll mr-0 pr-5">
+                    <div class="scrollable-text flex flex-col gap-6 lg:gap-8 text-right font-light max-h-[340px] overflow-y-scroll mr-0 pr-5 ">
                       <p class="content-text text-[11px] sm:text-xs md:text-sm lg:text-[13px] xl:text-[14px] 2xl:text-[15px] leading-[1.65] lg:leading-[1.75] text-white text-right tracking-tight">
                         АСК "Новый Дом" – это не просто строительная компания, это команда профессионалов, которая много лет воплощает в жизнь самые смелые мечты о собственном пространстве. Индивидуальные жилые дома и коттеджи: от уютных семейных гнездышек до роскошных загородных резиденций.
                       </p>
@@ -327,7 +322,7 @@
               <div class="flex justify-end w-full mt-auto pt-8">
                 <div class="max-w-[500px] aspect-[16/10] overflow-hidden shadow-lg w-full">
                    <img 
-                    src="/images/ecocity-townhouses.webp" 
+                    src="/images/ecocity-townhouses-new.png" 
                     alt="Таунхаусы" 
                     class="w-full h-full object-cover"
                     loading="lazy"
@@ -394,7 +389,7 @@
               <!-- Description Text -->
               <div class="flex justify-end w-full">
                 <div class="relative max-w-[500px] w-full scroll-container-fixed">
-                  <div class="scrollable-text flex flex-col gap-6 lg:gap-8 text-right font-light max-h-[340px] overflow-y-scroll mr-0 pr-5">
+                  <div class="scrollable-text flex flex-col gap-6 lg:gap-8 text-right font-light max-h-[340px] overflow-y-scroll mr-0 pr-5 ">
                     <p class="content-text text-[11px] sm:text-xs md:text-sm lg:text-[13px] xl:text-[14px] 2xl:text-[15px] leading-[1.65] lg:leading-[1.75] text-white text-center lg:text-right tracking-tight">
                       Село Любилки украшает величественный белокаменный храм, словно жемчужина, посвященный Пресвятой Богородице и святому Феодосию Тотемскому. Его золотой купол, устремленный в небо, является настоящим украшением, подчеркивая и сохраняя неповторимую историческую целостность этого живописного места.
                     </p>
@@ -466,7 +461,7 @@
               <!-- Bottom: Text Block -->
               <div class="flex justify-end w-full mt-auto">
                 <div class="relative max-w-[500px] w-full scroll-container-fixed">
-                  <div class="scrollable-text flex flex-col gap-6 lg:gap-8 text-right font-light max-h-[340px] overflow-y-scroll mr-0 pr-5">
+                  <div class="scrollable-text flex flex-col gap-6 lg:gap-8 text-right font-light max-h-[340px] overflow-y-scroll mr-0 pr-5 ">
                     <h3 class="text-white text-[12px] lg:text-[14px] uppercase tracking-[0.15em] leading-[1.6]">
                       ЭКОГОРОД: Новый стандарт жизни в Ярославской области, который говорит сам за себя
                     </h3>
@@ -533,7 +528,7 @@
               <!-- Bottom: Description Text Block with Right Border -->
                <div class="flex justify-end w-full">
                  <div class="relative max-w-[500px] w-full text-right scroll-container-fixed">
-                  <div class="scrollable-text flex flex-col gap-2.5 max-h-[340px] overflow-y-scroll mr-0 pr-5">
+                  <div class="scrollable-text flex flex-col gap-2.5 max-h-[340px] overflow-y-scroll mr-0 pr-5 ">
                     <p class="content-text text-[11px] sm:text-xs md:text-sm lg:text-[13px] xl:text-[14px] 2xl:text-[15px] leading-[1.65] lg:leading-[1.75] text-white text-right tracking-tight">
                       "Камни Дагестана" является признанным лидером в производстве высококачественных облицовочных материалов. Находясь в самом сердце Дагестана она специализируется на создании продукции, отвечающей самым взыскательным требованиям современного строительства и дизайна.
                     </p>
@@ -619,7 +614,7 @@
               <!-- Bottom: Text Block -->
               <div class="flex justify-end w-full mt-auto">
                 <div class="relative max-w-[500px] w-full scroll-container-fixed">
-                  <div class="scrollable-text flex flex-col gap-6 lg:gap-8 text-right font-light max-h-[340px] overflow-y-scroll mr-0 pr-5">
+                  <div class="scrollable-text flex flex-col gap-6 lg:gap-8 text-right font-light max-h-[340px] overflow-y-scroll mr-0 pr-5 ">
                     <p class="content-text text-[11px] sm:text-xs md:text-sm lg:text-[13px] xl:text-[14px] 2xl:text-[15px] leading-[1.65] lg:leading-[1.75] text-white text-right tracking-tight">
                       Pobedonoscev architects — студию, рожденную из страсти к совершенству и глубокого понимания того, что такое истинная роскошь в архитектуре.
                     </p>
@@ -682,7 +677,7 @@
 
          <!-- Text Content -->
          <div class="relative max-w-[800px] scroll-container-fixed">
-           <div class="scrollable-text flex flex-col gap-6 lg:gap-8 text-center font-light max-h-[340px] overflow-y-scroll mr-0 pr-5">
+           <div class="scrollable-text flex flex-col gap-6 lg:gap-8 text-center font-light max-h-[340px] overflow-y-scroll mr-0 pr-5 ">
              <p class="content-text text-[11px] sm:text-xs md:text-sm lg:text-[13px] xl:text-[14px] 2xl:text-[15px] leading-[1.65] lg:leading-[1.75] text-white text-center tracking-tight">
                Pobedonoscev Group команда профессионалов строительной отрасли, чья репутация подкреплена многолетним опытом и многочисленными наградами.
              </p>
@@ -698,11 +693,11 @@
     <!-- Bottom Section: Awards and Certifications -->
     <section class="py-12 sm:py-16 md:py-20 lg:py-24 px-5 sm:px-6 md:px-10 lg:px-16 xl:px-20">
       <div class="max-w-[1770px] mx-auto">
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-0 max-w-[1200px] mx-auto items-stretch">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-0 max-w-[1200px] mx-auto items-stretch">
           
           <!-- Award Card 1: CITY VISION AWARDS 2016 -->
-          <div class="bg-[#2A2C38] border border-white/30 rounded-lg lg:rounded-xl p-5 md:p-6 lg:p-8 flex flex-col items-center text-center gap-3 md:gap-4 lg:gap-5 transition-all duration-300 hover:bg-[#353844] hover:border-white/50 cursor-pointer h-full w-full max-w-[280px] mx-auto">
-            <div class="w-24 h-24 md:w-28 md:h-28 lg:w-32 lg:h-32 flex items-center justify-center">
+          <div class="bg-[#2A2C38] border border-white/30 rounded-lg lg:rounded-xl p-4 sm:p-5 md:p-6 lg:p-8 flex flex-col items-center justify-center text-center gap-2 sm:gap-3 md:gap-4 lg:gap-5 transition-all duration-300 hover:bg-[#353844] hover:border-white/50 cursor-pointer min-h-[170px] sm:min-h-[180px] md:h-full w-full max-w-[220px] sm:max-w-[250px] md:max-w-[280px] mx-auto">
+            <div class="w-16 h-16 sm:w-20 sm:h-20 md:w-28 md:h-28 lg:w-32 lg:h-32 flex items-center justify-center">
               <img 
                 src="/images/footer-icon-1.png" 
                 alt="CITY VISION AWARDS 2016" 
@@ -710,14 +705,14 @@
                 loading="lazy"
               />
             </div>
-            <p class="text-white text-base md:text-lg lg:text-xl font-semibold uppercase" style="font-family: 'Manrope', sans-serif">
+            <p class="text-white text-xs sm:text-sm md:text-lg lg:text-xl font-semibold uppercase" style="font-family: 'Manrope', sans-serif">
               CITY VISION AWARDS 2016
             </p>
           </div>
 
           <!-- Award Card 2: СБЕРБАНК -->
-          <div class="bg-[#2A2C38] border border-white/30 rounded-lg lg:rounded-xl p-5 md:p-6 lg:p-8 flex flex-col items-center text-center gap-3 md:gap-4 lg:gap-5 transition-all duration-300 hover:bg-[#353844] hover:border-white/50 cursor-pointer h-full w-full max-w-[280px] mx-auto">
-            <div class="w-24 h-24 md:w-28 md:h-28 lg:w-32 lg:h-32 flex items-center justify-center">
+          <div class="bg-[#2A2C38] border border-white/30 rounded-lg lg:rounded-xl p-4 sm:p-5 md:p-6 lg:p-8 flex flex-col items-center justify-center text-center gap-2 sm:gap-3 md:gap-4 lg:gap-5 transition-all duration-300 hover:bg-[#353844] hover:border-white/50 cursor-pointer min-h-[170px] sm:min-h-[180px] md:h-full w-full max-w-[220px] sm:max-w-[250px] md:max-w-[280px] mx-auto">
+            <div class="w-16 h-16 sm:w-20 sm:h-20 md:w-28 md:h-28 lg:w-32 lg:h-32 flex items-center justify-center">
               <img 
                 src="/images/footer-icon-2.png" 
                 alt="СБЕРБАНК" 
@@ -725,19 +720,19 @@
                 loading="lazy"
               />
             </div>
-            <div class="flex flex-col gap-2">
-              <p class="text-white text-sm md:text-base lg:text-lg leading-[1.4] uppercase" style="font-family: 'Manrope', sans-serif">
+            <div class="flex flex-col gap-1 sm:gap-2">
+              <p class="text-white text-[10px] sm:text-xs md:text-base lg:text-lg leading-[1.4] uppercase" style="font-family: 'Manrope', sans-serif">
                 «ЛУЧШИЙ ПРОЕКТ ЖИЛЬЯ<br/>КОМФОРТ-КЛАССА»
               </p>
-              <p class="text-white/80 text-xs md:text-sm lg:text-base font-medium mt-2" style="font-family: 'Manrope', sans-serif">
+              <p class="text-white/80 text-[10px] sm:text-xs md:text-sm lg:text-base font-medium mt-1 sm:mt-2" style="font-family: 'Manrope', sans-serif">
                 СБЕРБАНК
               </p>
             </div>
           </div>
 
           <!-- Award Card 3: КОНКУРС ТОП ЖК -->
-          <div class="bg-[#2A2C38] border border-white/30 rounded-lg lg:rounded-xl p-5 md:p-6 lg:p-8 flex flex-col items-center text-center gap-3 md:gap-4 lg:gap-5 transition-all duration-300 hover:bg-[#353844] hover:border-white/50 cursor-pointer h-full w-full max-w-[280px] mx-auto">
-            <div class="w-24 h-24 md:w-28 md:h-28 lg:w-32 lg:h-32 flex items-center justify-center">
+          <div class="bg-[#2A2C38] border border-white/30 rounded-lg lg:rounded-xl p-4 sm:p-5 md:p-6 lg:p-8 flex flex-col items-center justify-center text-center gap-2 sm:gap-3 md:gap-4 lg:gap-5 transition-all duration-300 hover:bg-[#353844] hover:border-white/50 cursor-pointer min-h-[170px] sm:min-h-[180px] md:h-full w-full max-w-[220px] sm:max-w-[250px] md:max-w-[280px] mx-auto">
+            <div class="w-16 h-16 sm:w-20 sm:h-20 md:w-28 md:h-28 lg:w-32 lg:h-32 flex items-center justify-center">
               <img 
                 src="/images/footer-icon-3.png" 
                 alt="КОНКУРС ТОП ЖК" 
@@ -745,8 +740,8 @@
                 loading="lazy"
               />
             </div>
-            <div class="flex flex-col gap-2">
-              <p class="text-white text-sm md:text-base lg:text-lg leading-[1.4] uppercase" style="font-family: 'Manrope', sans-serif">
+            <div class="flex flex-col gap-1 sm:gap-2">
+              <p class="text-white text-[10px] sm:text-xs md:text-base lg:text-lg leading-[1.4] uppercase" style="font-family: 'Manrope', sans-serif">
                 «ЛУЧШИЙ ЖИЛОЙ<br/>КОМПЛЕКС -<br/>НОВОСТРОЙКА»
               </p>
             </div>
@@ -997,39 +992,18 @@ usePageMeta({
 .scroll-container-fixed::after {
   content: "";
   position: absolute;
-  right: 1px; /* Сдвигаем линию, чтобы она была точно под центром скроллбара */
+  right: 1.5px; /* Центрируем линию под 3px ползунком */
   top: 0;
   bottom: 0;
   width: 1px;
-  background-color: rgba(255, 255, 255, 0.2);
+  background-color: rgba(255, 255, 255, 0.3);
   z-index: 0;
   pointer-events: none;
 }
 
 .scrollable-text {
-  scrollbar-width: thin;
-  scrollbar-color: #ffffff transparent;
   position: relative;
   z-index: 1;
-}
-
-/* Стилизация скроллбара */
-.scrollable-text::-webkit-scrollbar {
-  width: 3px; /* Идеальная ширина для тонкой линии */
-}
-
-.scrollable-text::-webkit-scrollbar-track {
-  background: transparent;
-}
-
-.scrollable-text::-webkit-scrollbar-thumb {
-  background-color: #ffffff;
-  border-left: 1px solid transparent; /* Создаем микро-отступ, если нужно */
-  background-clip: padding-box;
-}
-
-.scrollable-text::-webkit-scrollbar-thumb:hover {
-  background-color: #ffffff;
 }
 </style>
 

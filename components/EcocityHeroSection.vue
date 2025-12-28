@@ -15,21 +15,14 @@
     <div class="container-fluid h-full relative z-10">
       <!-- Top Info Chips -->
       <div class="ecocity-hero__chips">
-        <!-- Status Chips (Top Row) -->
-        <div class="chips-row">
-          <div 
-            v-for="(chip, index) in chips.filter(c => c.type === 'status')" 
-            :key="'status-' + index"
-            class="hero-chip hero-chip--orange"
-          >
-            <span class="hero-chip__single">{{ chip.label }}</span>
-          </div>
-        </div>
-        
-        <!-- Info Chips (Bottom Row) - Connected -->
-        <div class="hero-chip hero-chip--combined">
-          <span class="hero-chip__label-part">РАЙОН</span>
-          <span class="hero-chip__value-part">ЗАВОЛЖСКИЙ</span>
+        <div 
+          v-for="(chip, index) in chips" 
+          :key="index"
+          class="hero-chip hero-chip--combined"
+          :class="chip.class"
+        >
+          <span class="hero-chip__label-part uppercase">{{ chip.label }}</span>
+          <span class="hero-chip__value-part uppercase">{{ chip.value }}</span>
         </div>
       </div>
 
@@ -83,8 +76,10 @@ const props = defineProps({
   chips: {
     type: Array,
     default: () => [
+      { label: 'В ПРОДАЖЕ', value: '192 КВАРТИРЫ', class: 'hero-chip--green' },
       { label: 'РАЙОН', value: 'ЗАВОЛЖСКИЙ' },
-      { label: 'СТАТУС', value: 'СДАН' }
+      { label: 'СТАТУС', value: 'СТРОИТСЯ' },
+      { label: 'СРОК СДАЧИ', value: '4 КВАРТАЛ 2025' }
     ]
   }
 })
@@ -130,13 +125,13 @@ defineEmits(['open3d'])
   width: 100%;
   max-width: 1920px;
   margin: 0 auto;
-  padding: 0 40px;
+  padding: 0 clamp(16px, 4.16vw, 80px); /* Matches px-4 to 2xl:px-20 */
 }
 
 .ecocity-hero__chips {
   position: absolute;
   top: 140px;
-  left: 40px;
+  left: clamp(16px, 4.16vw, 80px);
   display: flex;
   flex-direction: column;
   gap: 12px;
@@ -243,20 +238,14 @@ defineEmits(['open3d'])
 }
 
 .hero-chip--green {
-  background: #467c51; 
+  background: #467c51 !important;
   border-color: rgba(255, 255, 255, 0.2);
-}
-
-.hero-chip--green .hero-chip__label {
-  color: #fff;
-  opacity: 1;
-  font-weight: 600;
 }
 
 .ecocity-hero__content-wrapper {
   position: absolute;
   inset: 0;
-  padding: 40px;
+  padding: 40px clamp(16px, 4.16vw, 80px);
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
@@ -270,7 +259,7 @@ defineEmits(['open3d'])
 
 .ecocity-hero__side-actions {
   position: absolute;
-  right: 40px;
+  right: clamp(16px, 4.16vw, 80px);
   bottom: 140px;
   z-index: 30;
   pointer-events: auto;
@@ -319,7 +308,7 @@ defineEmits(['open3d'])
 
 .ecocity-hero__bottom-actions {
   position: absolute;
-  right: 120px;
+  right: clamp(16px, 4.16vw, 80px);
   bottom: 40px;
   display: flex;
   gap: 20px;
@@ -355,21 +344,22 @@ defineEmits(['open3d'])
 
 @media (max-width: 768px) {
   .container-fluid {
-    padding: 0 20px;
+    padding: 0 clamp(16px, 4.16vw, 80px);
   }
   .ecocity-hero__chips {
     top: 100px;
-    left: 20px;
-    gap: 10px;
+    gap: 8px;
   }
   .hero-chip {
-    height: 36px;
+    height: 32px;
   }
-  .hero-chip__label {
-    padding: 0 10px;
+  .hero-chip__label-part {
+    padding: 0 12px;
+    font-size: 9px;
   }
-  .hero-chip__value {
-    padding: 0 15px;
+  .hero-chip__value-part {
+    padding: 0 16px;
+    font-size: 9px;
   }
   .ecocity-hero__content-wrapper {
     padding: 20px;

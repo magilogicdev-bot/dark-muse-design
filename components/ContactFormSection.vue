@@ -5,17 +5,17 @@
         <!-- Left Column: Contact Form -->
         <div class="flex flex-col gap-6 md:gap-8">
           <!-- Title -->
-          <h2 class="text-white text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-medium leading-tight">
+          <h2 class="text-white text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-medium leading-tight text-center lg:text-left">
             Заполните форму и мы с вами свяжемся
           </h2>
           
           <!-- Subtitle -->
-          <p class="text-white text-base md:text-lg lg:text-xl leading-relaxed">
+          <p class="text-white text-base md:text-lg lg:text-xl leading-relaxed text-center lg:text-left">
             Разбиремся в тонкостях сделки
           </p>
 
           <!-- Form -->
-          <form @submit.prevent="submitForm" class="flex flex-col gap-4 md:gap-5 lg:gap-6 w-[454px]">
+          <form @submit.prevent="submitForm" class="flex flex-col gap-4 md:gap-5 lg:gap-6 max-w-[454px] w-full mx-auto lg:mx-0">
             <!-- Name Input -->
             <input
               type="text"
@@ -46,7 +46,7 @@
             <!-- Submit Button -->
             <button
               type="submit"
-              class="bg-[#FF8C00] hover:bg-[#FF9F34] text-white rounded-full px-6 md:px-8 py-3 md:py-4 text-base md:text-lg font-medium uppercase transition-colors cursor-pointer w-fit"
+              class="bg-[#FF8C00] hover:bg-[#FF9F34] text-white rounded-full px-6 md:px-8 py-3 md:py-4 text-base md:text-lg font-medium uppercase transition-colors cursor-pointer w-full sm:w-fit mx-auto lg:mx-0"
             >
               ОТПРАВИТЬ
             </button>

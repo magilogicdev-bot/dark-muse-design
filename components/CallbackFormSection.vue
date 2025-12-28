@@ -1,7 +1,7 @@
 <template>
-  <section class="bg-[#1a1d28] py-16 md:py-20 lg:py-24">
-    <div class="container max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-      <h2 class="text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold text-white mb-12 md:mb-16">
+  <section class="bg-[#1A1A1A] py-16 md:py-20 lg:py-24">
+    <div class="container mx-auto max-w-[1920px] px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 2xl:px-20">
+      <h2 class="text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold text-white mb-12 md:mb-16 uppercase tracking-tight">
         ОБРАТНЫЙ ЗВОНОК
       </h2>
       

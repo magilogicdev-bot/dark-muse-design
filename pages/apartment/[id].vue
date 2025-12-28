@@ -394,7 +394,7 @@ useHead({
 /* Hero Section Layout */
 .apartment-hero-section {
   min-height: 100vh;
-  padding-top: 0px;
+  background-color: #2A2C38;
 }
 
 .apartment-hero-container {
@@ -402,19 +402,21 @@ useHead({
   grid-template-columns: minmax(320px, 560px) 1fr;
   min-height: calc(100vh - 100px);
   gap: 0;
+  max-width: 1920px;
+  margin: 0 auto;
+  width: 100%;
 }
 
 /* Left Panel - Dark Info */
 .apartment-info-panel {
-  background-color: var(--page-bg, #2A2C38);
-  padding: clamp(24px, 3vw, 48px) clamp(24px, 3vw, 48px) clamp(24px, 3vw, 48px) clamp(24px, 3vw, 48px);
-  padding-left: 0;
+  background-color: transparent;
+  padding: clamp(24px, 3vw, 48px) 0;
   display: flex;
   flex-direction: column;
 }
 
 .apartment-info-content {
-  padding-left: 123px;
+  padding-left: clamp(16px, 5vw, 80px);
   padding-right: 47px;
 }
 
@@ -715,56 +717,100 @@ useHead({
 @media (max-width: 1024px) {
   .apartment-hero-container {
     grid-template-columns: 1fr;
+    min-height: auto;
   }
   
   .apartment-hero-section {
     min-height: auto;
-    padding-top: 80px;
+    padding-top: 0; /* Header is fixed, main content has padding-top from layout */
+  }
+
+  .apartment-info-panel {
+    order: 2; /* Info below plan */
+    padding: 32px 20px;
+  }
+
+  .apartment-info-content {
+    padding-left: 0;
+    padding-right: 0;
   }
   
   .apartment-plan-panel {
-    min-height: 500px;
+    order: 1; /* Plan above info */
+    min-height: 450px;
+    height: 60vh;
   }
   
   .plan-controls-sidebar {
-    left: 12px;
+    top: 20px;
+    transform: none;
+    left: 16px;
+    gap: 8px;
   }
   
   .plan-tabs {
     flex-wrap: wrap;
     justify-content: center;
-    max-width: 90vw;
+    max-width: 95vw;
+    gap: 6px;
+    padding: 6px;
+  }
+
+  .plan-tab {
+    padding: 6px 12px;
+    font-size: 11px;
+  }
+
+  .buy-btn {
+    width: 100%;
+    justify-content: center;
+    margin-top: 4px;
+    padding: 10px;
+    font-size: 12px;
+  }
+
+  .compass-control {
+    bottom: 90px;
   }
 }
 
 @media (max-width: 640px) {
+  .apartment-title {
+    font-size: 24px;
+  }
+  
+  .apartment-subtitle {
+    font-size: 18px;
+  }
+
   .apartment-info-panel {
-    padding: 20px 16px;
+    padding: 30px 16px;
   }
   
   .apartment-plan-panel {
-    min-height: 400px;
+    height: 50vh;
+    min-height: 350px;
   }
   
   .plan-tabs-container {
-    width: 95%;
+    bottom: 12px;
+    width: 92%;
   }
   
-  .plan-tabs {
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 6px;
-    padding: 8px;
+  .plan-image-container {
+    padding: 40px 20px 80px 20px;
   }
-  
-  .plan-tab {
-    padding: 6px 12px;
-    font-size: 0.7rem;
+
+  .price-value {
+    font-size: 28px;
   }
-  
-  .buy-btn {
-    padding: 8px 16px;
-    font-size: 0.7rem;
+
+  .spec-row {
+    padding: 10px 0;
+  }
+
+  .spec-label, .spec-value, .additional-label, .additional-value, .all-params-btn {
+    font-size: 13px;
   }
 }
 </style>

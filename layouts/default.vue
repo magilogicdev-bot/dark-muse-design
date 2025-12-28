@@ -25,3 +25,13 @@ const { isMenuOpen } = useMenu()
   padding-top: var(--header-bar-height, 0px);
 }
 </style>
+
+<style>
+/* Скрываем action-menu на мобильных когда открыто меню */
+@media (max-width: 1024px) {
+  .header--menu-open ~ * .action-menu-container,
+  body:has(.header--menu-open) .action-menu-container {
+    display: none !important;
+  }
+}
+</style>

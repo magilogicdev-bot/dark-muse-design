@@ -1,38 +1,44 @@
 <template>
-  <section class="py-8 md:py-12 lg:py-16 xl:py-20 bg-primary text-white">
+  <section class="py-6 sm:py-8 md:py-12 lg:py-16 xl:py-20 bg-primary text-white">
     <div class="container mx-auto max-w-[1920px] px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 2xl:px-20">
       <!-- Section 1: О КВАРТИРЕ -->
-      <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8 xl:gap-10 mb-8 md:mb-12 lg:mb-16">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-6 lg:gap-8 xl:gap-10 mb-6 sm:mb-8 md:mb-12 lg:mb-16">
         <!-- Left: Title -->
         <div>
-          <h2 class="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-medium uppercase leading-tight">
+          <h2 class="text-1xl sm:text-3xl md:text-4xl lg:text-4xl xl:text-4xl font-medium uppercase leading-tight">
             О КВАРТИРЕ
           </h2>
         </div>
         
-        <!-- Right: Description -->
-        <div class="flex items-center">
-          <p class="text-base md:text-lg lg:text-xl text-white/80 leading-relaxed">
-            1-комнатная квартира комфорт-класса в жилом комплексе «Экогород», расположенная на 1 этаже 3-этажного здания. Срок сдачи — I квартал 2024 года. В квартире возведены стены и внутренние перегородки, проложены коммуникации, оштукатурены и зашпаклеваны стены, выполнена стяжка пола, установлены окна и откосы, качественная металлическая входная дверь, установлены счетчики коммунальных услуг. Рядом расположены детские сады, школы, остановки общественного транспорта, торговые центры, сетевые магазины, аптеки, отделения банков и банкоматы.
+        <!-- Right: Description (split into paragraphs) -->
+        <div class="flex flex-col gap-4 sm:gap-5 md:gap-6 lg:gap-8">
+          <p class="text-sm sm:text-base md:text-lg lg:text-xl text-white/80 leading-relaxed">
+            Продается 1-комнатная квартира комфорт класса в ЖК Экогород 3. Квартира располагается на 1 этаже в 3 подъезде многоквартирного дома. Сдача дома запланирована на 1 кв-л. 2028 года.
+          </p>
+          <p class="text-sm sm:text-base md:text-lg lg:text-xl text-white/80 leading-relaxed">
+            В квартире будут возведены стены и межкомнатные перегородки, разведены коммуникации, выполнена штукатурка и шпаклевка стен, стяжка полов, установлены окна и выполнены откосы, хорошая металлическая входная дверь, а так-же приборы учета.
+          </p>
+          <p class="text-sm sm:text-base md:text-lg lg:text-xl text-white/80 leading-relaxed">
+            В шаговой доступности детские сады, школы, остановки общественного транспорта, торговые центры, сетевые магазины, аптеки, отделения банков и банкоматы.
           </p>
         </div>
       </div>
 
       <!-- Section 2: ОТДЕЛКА WHITE BOX -->
-      <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8 xl:gap-10 mb-8 md:mb-12 lg:mb-16">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-6 lg:gap-8 xl:gap-10 mb-6 sm:mb-8 md:mb-12 lg:mb-16">
         <!-- Left: Title -->
         <div>
-          <h2 class="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-medium uppercase leading-tight">
+          <h2 class="text-2xl sm:text-3xl md:text-4xl lg:text-4xl xl:text-4xl font-medium uppercase leading-tight">
             ОТДЕЛКА WHITE BOX
           </h2>
         </div>
         
         <!-- Right: Description -->
-        <div class="flex flex-col gap-4 md:gap-5 lg:gap-6">
-          <p class="text-sm md:text-base lg:text-lg leading-relaxed text-white/90">
+        <div class="flex flex-col gap-3 sm:gap-4 md:gap-5 lg:gap-6">
+          <p class="text-sm sm:text-base md:text-lg lg:text-lg leading-relaxed text-white/90">
             Отделка White Box — это оптимальный формат для тех, кто ценит время и хочет реализовать собственный дизайн без сложных черновых работ.
           </p>
-          <p class="text-sm md:text-base lg:text-lg leading-relaxed text-white/90">
+          <p class="text-sm sm:text-base md:text-lg lg:text-lg leading-relaxed text-white/90">
             В квартире уже выполнены все ключевые инженерные и подготовительные этапы - ровные стены под покраску или декоративные покрытия, подготовленные полы, разведённые коммуникации и установленные инженерные системы. Пространство готово к финишному оформлению — вы начинаете с чистого, качественного основания.
           </p>
         </div>
@@ -41,7 +47,7 @@
       <!-- Image with Hotspots -->
       <div
         ref="imageContainer"
-        class="relative w-full aspect-[16/10] md:aspect-[16/9] lg:aspect-[2/1] bg-gray-900 rounded-lg overflow-visible"
+        class="relative w-full aspect-[4/3] sm:aspect-[16/10] md:aspect-[16/9] lg:aspect-[2/1] bg-gray-900 rounded-lg overflow-visible"
       >
         <img
           v-if="imageExists"
@@ -96,16 +102,19 @@
         <div
           v-for="(hotspot, index) in hotspots"
           :key="`point-${index}`"
+          :data-hotspot-index="index"
           :style="getHotspotStyle(hotspot)"
-          class="absolute w-6 h-6 md:w-8 md:h-8 border-2 border-gray-800 rounded-full bg-gray-800/80 hover:bg-gray-800 flex items-center justify-center z-20 cursor-pointer transition-all duration-200 hover:scale-110"
+          class="absolute w-5 h-5 sm:w-6 sm:h-6 md:w-8 md:h-8 border-2 border-gray-800 rounded-full bg-gray-800/80 hover:bg-gray-800 active:bg-gray-700 flex items-center justify-center z-20 cursor-pointer transition-all duration-200 hover:scale-110 active:scale-95 touch-manipulation"
           @mouseenter="handleHotspotEnter(index)"
           @mouseleave="handleHotspotLeave"
+          @click="handleHotspotClick(index)"
+          @touchstart="handleHotspotTouch(index, $event)"
         >
           <!-- Hotspot indicator dot -->
-          <div class="w-2 h-2 md:w-3 md:h-3 bg-white rounded-full"></div>
+          <div class="w-1.5 h-1.5 sm:w-2 sm:h-2 md:w-3 md:h-3 bg-white rounded-full"></div>
         </div>
         
-        <!-- Labels (visible on hover) -->
+        <!-- Labels (visible on hover/click) -->
         <Transition
           v-for="(hotspot, index) in hotspots"
           :key="`label-${index}`"
@@ -114,14 +123,26 @@
           <div
             v-if="currentHotspotIndex === index"
             :data-label-index="index"
-            :style="getLabelStyle(hotspot)"
-            class="absolute z-30 bg-white/95 backdrop-blur-sm rounded-lg shadow-xl p-3 md:p-4 min-w-[180px] md:min-w-[220px] max-w-[260px] pointer-events-auto"
+            :style="getLabelStyle(hotspot, index)"
+            class="absolute z-30 bg-white/95 backdrop-blur-sm rounded-lg shadow-xl p-3 md:p-4 min-w-[140px] sm:min-w-[180px] md:min-w-[220px] max-w-[calc(100vw-2rem)] sm:max-w-[260px] pointer-events-auto"
             @mouseenter="handleLabelEnter"
             @mouseleave="handleLabelLeave"
+            @touchstart.stop
           >
-            <p class="text-xs md:text-sm text-gray-900 leading-relaxed whitespace-normal">
+            <p class="text-xs sm:text-sm md:text-sm text-gray-900 leading-relaxed whitespace-normal">
               {{ hotspot.text }}
             </p>
+            <!-- Close button for mobile -->
+            <button
+              v-if="isMobile"
+              @click.stop="handleCloseLabel"
+              class="absolute top-2 right-2 w-5 h-5 flex items-center justify-center text-gray-500 hover:text-gray-900 md:hidden"
+              aria-label="Закрыть"
+            >
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+              </svg>
+            </button>
           </div>
         </Transition>
       </div>
@@ -135,10 +156,19 @@ const imageExists = ref(true)
 const currentHotspotIndex = ref(null)
 const hideTimeout = ref(null)
 const isLabelHovered = ref(false)
+const isMobile = ref(false)
 
-// Check if image exists on client side
+// Detect mobile device, check if image exists, and setup SVG updates
 onMounted(() => {
   if (process.client) {
+    // Detect mobile
+    const checkMobile = () => {
+      isMobile.value = window.innerWidth < 768 || ('ontouchstart' in window)
+    }
+    checkMobile()
+    window.addEventListener('resize', checkMobile)
+    
+    // Check if image exists
     const img = new Image()
     img.onload = () => {
       imageExists.value = true
@@ -147,6 +177,43 @@ onMounted(() => {
       imageExists.value = false
     }
     img.src = '/images/white-box-room.webp'
+    
+    // Update SVG dimensions
+    const updateSvgSize = () => {
+      if (imageContainer.value) {
+        const rect = imageContainer.value.getBoundingClientRect()
+        if (rect) {
+          svgWidth.value = rect.width
+          svgHeight.value = rect.height
+        }
+      }
+    }
+    
+    // Initial update
+    setTimeout(updateSvgSize, 100)
+    window.addEventListener('resize', updateSvgSize)
+    
+    // Handle click outside to close labels on mobile
+    const handleClickOutside = (event) => {
+      if (isMobile.value && currentHotspotIndex.value !== null) {
+        const target = event.target
+        const isClickOnHotspot = target.closest('[data-hotspot-index]')
+        const isClickOnLabel = target.closest('[data-label-index]')
+        
+        if (!isClickOnHotspot && !isClickOnLabel) {
+          currentHotspotIndex.value = null
+        }
+      }
+    }
+    
+    document.addEventListener('click', handleClickOutside)
+    
+    // Cleanup
+    onBeforeUnmount(() => {
+      window.removeEventListener('resize', checkMobile)
+      window.removeEventListener('resize', updateSvgSize)
+      document.removeEventListener('click', handleClickOutside)
+    })
   }
 })
 
@@ -239,33 +306,7 @@ const svgContainer = ref(null)
 const svgWidth = ref(1000)
 const svgHeight = ref(600)
 
-// Update SVG dimensions when container size changes
-onMounted(() => {
-  if (process.client) {
-    const updateSvgSize = () => {
-      if (imageContainer.value) {
-        const rect = imageContainer.value.getBoundingClientRect()
-        if (rect) {
-          svgWidth.value = rect.width
-          svgHeight.value = rect.height
-        }
-      }
-    }
-    
-    // Initial update
-    setTimeout(updateSvgSize, 100)
-    
-    // Update on resize
-    window.addEventListener('resize', updateSvgSize)
-    
-    // Cleanup
-    onBeforeUnmount(() => {
-      window.removeEventListener('resize', updateSvgSize)
-    })
-  }
-})
-
-const getLabelStyle = (hotspot) => {
+const getLabelStyle = (hotspot, index) => {
   const rect = imageContainer.value?.getBoundingClientRect()
   if (!rect) {
     return {
@@ -275,8 +316,27 @@ const getLabelStyle = (hotspot) => {
   }
   
   // Calculate label position in pixels
-  const labelLeft = (parseFloat(hotspot.labelLeft || hotspot.left) / 100) * rect.width
-  const labelTop = (parseFloat(hotspot.labelTop || hotspot.top) / 100) * rect.height
+  let labelLeft = (parseFloat(hotspot.labelLeft || hotspot.left) / 100) * rect.width
+  let labelTop = (parseFloat(hotspot.labelTop || hotspot.top) / 100) * rect.height
+  
+  // On mobile, adjust position to keep label within viewport
+  if (isMobile.value && process.client) {
+    const labelElement = imageContainer.value?.querySelector(`[data-label-index="${index}"]`)
+    if (labelElement) {
+      // We need to measure after render, so we'll use nextTick in the caller
+      // But we can still apply basic constraints
+      const padding = 16 // padding from viewport edge
+      const maxWidth = Math.min(260, window.innerWidth - padding * 2)
+      
+      // Keep label within container bounds
+      if (labelLeft < padding) labelLeft = padding
+      if (labelLeft + maxWidth > rect.width - padding) {
+        labelLeft = rect.width - maxWidth - padding
+      }
+      
+      if (labelTop < padding) labelTop = padding
+    }
+  }
   
   return {
     left: `${labelLeft}px`,
@@ -348,14 +408,69 @@ watch([currentHotspotIndex, svgWidth, svgHeight], () => {
   updateActiveLine()
   // Tooltip might take a frame to appear/size correctly
   if (currentHotspotIndex.value !== null) {
-    nextTick().then(updateActiveLine)
+    nextTick().then(() => {
+      updateActiveLine()
+      // Adjust label position on mobile after render
+      if (isMobile.value) {
+        adjustLabelPosition(currentHotspotIndex.value)
+      }
+    })
     // And another check slightly later for good measure
-    setTimeout(updateActiveLine, 50)
-    setTimeout(updateActiveLine, 150)
+    setTimeout(() => {
+      updateActiveLine()
+      if (isMobile.value) {
+        adjustLabelPosition(currentHotspotIndex.value)
+      }
+    }, 50)
+    setTimeout(() => {
+      updateActiveLine()
+      if (isMobile.value) {
+        adjustLabelPosition(currentHotspotIndex.value)
+      }
+    }, 150)
   }
 })
 
+// Adjust label position to keep it within viewport on mobile
+const adjustLabelPosition = (index) => {
+  if (!process.client || !isMobile.value || !imageContainer.value) return
+  
+  const labelElement = imageContainer.value.querySelector(`[data-label-index="${index}"]`)
+  if (!labelElement) return
+  
+  const containerRect = imageContainer.value.getBoundingClientRect()
+  const labelRect = labelElement.getBoundingClientRect()
+  const viewportWidth = window.innerWidth
+  const padding = 16
+  
+  // Check if label goes outside viewport
+  if (labelRect.right > viewportWidth - padding) {
+    const overflow = labelRect.right - (viewportWidth - padding)
+    const currentLeft = parseFloat(labelElement.style.left) || 0
+    labelElement.style.left = `${currentLeft - overflow}px`
+  }
+  
+  if (labelRect.left < padding) {
+    labelElement.style.left = `${padding}px`
+  }
+  
+  // Vertical adjustments if needed
+  if (labelRect.top < padding) {
+    labelElement.style.top = `${padding}px`
+  }
+  
+  const viewportHeight = window.innerHeight
+  if (labelRect.bottom > viewportHeight - padding) {
+    const overflow = labelRect.bottom - (viewportHeight - padding)
+    const currentTop = parseFloat(labelElement.style.top) || 0
+    labelElement.style.top = `${currentTop - overflow}px`
+  }
+}
+
 const handleHotspotEnter = (index) => {
+  // Only use hover on desktop
+  if (isMobile.value) return
+  
   // Clear any pending hide timeout
   if (hideTimeout.value) {
     clearTimeout(hideTimeout.value)
@@ -367,6 +482,9 @@ const handleHotspotEnter = (index) => {
 }
 
 const handleHotspotLeave = () => {
+  // Only use hover on desktop
+  if (isMobile.value) return
+  
   // Don't hide immediately - wait a bit in case user moves to label
   if (!isLabelHovered.value) {
     hideTimeout.value = setTimeout(() => {
@@ -375,6 +493,36 @@ const handleHotspotLeave = () => {
       }
     }, 200) // 200ms delay
   }
+}
+
+const handleHotspotClick = (index) => {
+  // On mobile, toggle label on click
+  if (isMobile.value) {
+    if (currentHotspotIndex.value === index) {
+      currentHotspotIndex.value = null
+    } else {
+      currentHotspotIndex.value = index
+    }
+  }
+}
+
+const handleHotspotTouch = (index, event) => {
+  // Prevent default to avoid scrolling
+  event.preventDefault()
+  event.stopPropagation()
+  
+  // On mobile, toggle label on touch
+  if (isMobile.value) {
+    if (currentHotspotIndex.value === index) {
+      currentHotspotIndex.value = null
+    } else {
+      currentHotspotIndex.value = index
+    }
+  }
+}
+
+const handleCloseLabel = () => {
+  currentHotspotIndex.value = null
 }
 
 const handleLabelEnter = () => {
@@ -409,6 +557,12 @@ const handleImageError = () => {
 .tooltip-leave-to {
   opacity: 0;
   transform: translateY(-5px);
+}
+
+/* Touch optimization */
+.touch-manipulation {
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
 }
 </style>
 

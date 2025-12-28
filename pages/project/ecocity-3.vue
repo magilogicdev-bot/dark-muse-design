@@ -1,9 +1,39 @@
 <template>
-  <div class="bg-primary text-white">
-    <EcocityHeroSection @open3d="handleOpen3D" />
+  <div class="bg-[#1A1A1A] text-white">
+    <EcocityHeroSection 
+      title="ЭКОГОРОД 3"
+      subtitle="ЖИЛОЙ КОМПЛЕКС"
+      description="Пространство, где каждая деталь создана для вашего комфорта. Среди сосен, в экологически чистом районе, начинается жизнь, о которой вы мечтали."
+      bg-image="/images/ecocity3/hero.png"
+      :chips="[
+        { label: 'В ПРОДАЖЕ', value: '192 КВАРТИРЫ', class: 'hero-chip--green' },
+        { label: 'РАЙОН', value: 'ЗАВОЛЖСКИЙ' },
+        { label: 'СТАТУС', value: 'СТРОИТСЯ' },
+        { label: 'СРОК СДАЧИ', value: '4 КВАРТАЛ 2025' }
+      ]"
+      @open3d="handleOpen3D" 
+    />
     <EcocityFiltersSection />
-    <EcocityAboutSection />
-    <EcocityFeaturesSection />
+    <EcocityAboutSection 
+      title="О ПРОЕКТЕ"
+      text1="Жилой комплекс «Экогород 3» создан в гармонии и уважении к природе и здоровью человека. Проектом предусмотрено размещение шести 8-9 этажных жилых домов, два из которых дополнены общественной функцией. На первых этажах предполагается размещение магазинов и прочих мест досугового назначения, что позволяет жителям находиться в максимальном комфорте и удобстве."
+      text2="Основной идеей организации территории комплекса является формирование двух закрытых дворовых пространств, объединенных пешеходной зоной и многофункциональной спортивной площадкой. Дворы без машин - это современная тенденция организации жилой застройки для обеспечения безопасности и комфортного проживания."
+      :images="{
+        main: '/images/current-projects-main.webp',
+        courtyard: '/images/ecocity3/about_1.png',
+        playground: '/images/ecocity3/about_2.png',
+        facade: '/images/ecocity3/about_3.png',
+        gallery: '/images/ecocity3/about_main.png'
+      }"
+    />
+    <EcocityFeaturesSection 
+      :features="[
+        { title: 'детские и спортивные площадки', image: '/images/ecocity3/features/feature_playground.png' },
+        { title: 'свежий воздух и природа', image: '/images/ecocity3/features/feature_nature.png' },
+        { title: 'двор без машин', image: '/images/ecocity3/features/feature_no_cars.png' },
+        { title: 'безопасность', image: '/images/ecocity3/features/feature_safety.png' }
+      ]"
+    />
     <EcocityGeneralPlanSection />
     <EcocityWhiteBoxSection />
     <EcocityCTASection />
