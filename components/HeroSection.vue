@@ -65,7 +65,7 @@ const houses = ref([
     width: 11.5,
     height: 36,
     zIndex: 1,
-    outlineImage: '/images/house-outline-1.png',
+    outlineImage: '/images/house-outline-1.webp',
     detailImage: '/images/completed-projects-1.webp'
   },
   {
@@ -76,7 +76,7 @@ const houses = ref([
     width: 16.2,
     height: 38.5,
     zIndex: 55,
-    outlineImage: '/images/house-outline-2.png',
+    outlineImage: '/images/house-outline-2.webp',
     detailImage: '/images/completed-projects-2.webp'
   },
   {
@@ -87,8 +87,8 @@ const houses = ref([
     top: 46.8,
     width: 30,
     height: 41.5,
-    outlineImage: '/images/house-outline-3.png',
-    detailImage: '/images/high-life-award.png'
+    outlineImage: '/images/house-outline-3.webp',
+    detailImage: '/images/high-life-award.webp'
   }
 ])
 

@@ -29,7 +29,7 @@
               src="/images/contacts/building-photo.webp"
               alt="Бизнес-центр"
               class="w-full h-full object-cover grayscale-[0.2] brightness-90"
-              onerror="this.src='/images/contacts/image-49.png'"
+              onerror="this.src='/images/contacts/image-49.webp'"
             />
           </div>
 
@@ -77,7 +77,7 @@
       <!-- Map Container (blended, no shadow) -->
       <div class="flex-[0_0_62%] aspect-[4/3] relative select-none">
         <img
-          src="/images/contacts/screenshot-reference.png"
+          src="/images/contacts/screenshot-reference.webp"
           alt="Карта"
           class="absolute inset-0 w-full h-full object-contain pointer-events-none"
         />
@@ -174,7 +174,7 @@
         >
           <div class="w-20 h-20 lg:w-24 lg:h-24 relative">
             <img
-              src="/images/3d-icon-button.png"
+              src="/images/3d-icon-button.webp"
               alt="3D"
               class="w-full h-full object-contain"
             />
@@ -225,7 +225,7 @@
         aria-label="Viber"
       >
         <img 
-          src="/images/ellipse-14.png" 
+          src="/images/ellipse-14.webp" 
           alt="Viber" 
           class="w-full h-full object-contain"
         />
@@ -234,7 +234,7 @@
     </div>
 
     <!-- === MOBILE LAYOUT (Visible on Mobile) === -->
-    <div class="lg:hidden flex flex-col min-h-screen w-full bg-[#2A2C38] px-4 pt-3 pb-24 relative overflow-y-auto">
+    <div class="lg:hidden flex flex-col w-full bg-[#2A2C38] px-4 pt-3 pb-20 relative">
       <!-- Mobile Title & Address -->
       <section class="mb-6 px-1">
         <h1 class="text-[36px] leading-tight font-normal uppercase tracking-tight mb-5">КОНТАКТЫ</h1>
@@ -277,58 +277,58 @@
           <img src="/images/social-telegram-bg.svg" alt="Telegram" class="w-full h-full object-cover" />
         </a>
         <a :href="config.contacts.social.whatsapp" class="w-12 h-12 rounded-full overflow-hidden shadow-lg transform active:scale-90 transition-transform">
-          <img src="/images/ellipse-14.png" alt="Viber" class="w-full h-full object-cover" />
+          <img src="/images/ellipse-14.webp" alt="Viber" class="w-full h-full object-cover" />
         </a>
       </section>
 
       <!-- Separator Line -->
       <div class="w-full h-px bg-white/20 mb-8"></div>
 
-      <!-- Action Menu Buttons (shown when menu is open) - Fixed positioning outside overflow container -->
-      <Transition name="menu-fade">
-        <div v-if="isActionMenuOpen && !isMenuOpen" class="fixed bottom-[88px] right-4 z-[1004] flex flex-col gap-2 items-end pointer-events-auto">
-          <button 
-            @click="handlePhone"
-            class="w-12 h-12 rounded-full border border-white/20 bg-[#2A2C38] flex items-center justify-center shadow-xl hover:scale-110 active:scale-95 transition-all"
-            aria-label="Позвонить"
-          >
-            <img
-              src="/images/menu-icons/menu-icon-3.webp"
-              alt="Позвонить"
-              class="w-full h-full object-contain"
-            />
-          </button>
-          <button 
-            @click="handleTelegram"
-            class="w-12 h-12 rounded-full border border-white/20 bg-[#2A2C38] flex items-center justify-center shadow-xl hover:scale-110 active:scale-95 transition-all p-2"
-            aria-label="Telegram"
-          >
-            <img
-              src="/images/menu-icons/menu-icon-2.webp"
-              alt="Telegram"
-              class="w-full h-full object-contain"
-            />
-          </button>
-          <button 
-            @click="handleWhatsApp"
-            class="w-12 h-12 rounded-full border border-white/20 bg-[#2A2C38] flex items-center justify-center shadow-xl hover:scale-110 active:scale-95 transition-all p-2"
-            aria-label="WhatsApp"
-          >
-            <img
-              src="/images/menu-icons/menu-icon-1.webp"
-              alt="WhatsApp"
-              class="w-full h-full object-contain"
-            />
-          </button>
-        </div>
-      </Transition>
-
       <!-- Mobile Footer Action -->
-      <div v-if="!isMenuOpen" class="fixed bottom-4 left-4 right-4 z-[1004] pointer-events-none">
-        <div class="flex flex-col items-end gap-3 pointer-events-auto relative">
+      <div v-if="!isMenuOpen" class="static z-[1004] px-1 mt-1 pointer-events-none">
+        <div class="flex flex-col items-end gap-2 pointer-events-auto relative">
+          <!-- Action Menu Buttons (shown when toggle is clicked) -->
+          <Transition name="menu-fade">
+            <div v-if="isActionMenuOpen" class="flex flex-col gap-2 items-end">
+              <button 
+                @click="handlePhone"
+                class="w-12 h-12 rounded-full border border-white/20 bg-[#2A2C38] flex items-center justify-center shadow-xl hover:scale-110 active:scale-95 transition-all"
+                aria-label="Позвонить"
+              >
+                <img
+                  src="/images/menu-icons/menu-icon-3.webp"
+                  alt="Позвонить"
+                  class="w-full h-full object-contain"
+                />
+              </button>
+              <button 
+                @click="handleTelegram"
+                class="w-12 h-12 rounded-full border border-white/20 bg-[#2A2C38] flex items-center justify-center shadow-xl hover:scale-110 active:scale-95 transition-all p-2"
+                aria-label="Telegram"
+              >
+                <img
+                  src="/images/menu-icons/menu-icon-2.webp"
+                  alt="Telegram"
+                  class="w-full h-full object-contain"
+                />
+              </button>
+              <button 
+                @click="handleWhatsApp"
+                class="w-12 h-12 rounded-full border border-white/20 bg-[#2A2C38] flex items-center justify-center shadow-xl hover:scale-110 active:scale-95 transition-all p-2"
+                aria-label="WhatsApp"
+              >
+                <img
+                  src="/images/menu-icons/menu-icon-1.webp"
+                  alt="WhatsApp"
+                  class="w-full h-full object-contain"
+                />
+              </button>
+            </div>
+          </Transition>
+
           <!-- Main Action Buttons Row -->
-          <div class="flex items-center gap-3 w-full relative z-0">
-            <button class="flex-grow bg-gradient-to-r from-[#1e4a28] to-[#2d6e3b] border border-white text-white rounded-xl py-4 px-4 text-[10px] font-bold uppercase tracking-widest shadow-2xl active:scale-95 transition-all">
+          <div class="flex items-center gap-2 w-full relative z-0">
+            <button class="flex-grow min-h-[56px] bg-gradient-to-r from-[#1e4a28] to-[#2d6e3b] border border-white/30 text-white rounded-xl py-3 px-4 text-[10px] font-bold uppercase tracking-widest shadow-2xl active:scale-95 transition-all">
               Оставить заявку на связь
             </button>
             <button 
@@ -417,7 +417,7 @@ const markers = [
     time: '2 мин',
     top: '5.66%',
     left: '44.74%',
-    image: '/images/f1f38b64031d15233f024b39314b7eab79d3ddb7.png'
+    image: '/images/f1f38b64031d15233f024b39314b7eab79d3ddb7.webp'
   },
   {
     id: 'restaurant',
@@ -425,7 +425,7 @@ const markers = [
     time: '5 мин',
     top: '15.38%',
     left: '28.75%',
-    image: '/images/83e26791ee87bf1ae2be35217a2eebe9e9429a70.png'
+    image: '/images/83e26791ee87bf1ae2be35217a2eebe9e9429a70.webp'
   },
   {
     id: 'polyclinic',
@@ -433,7 +433,7 @@ const markers = [
     time: '5 мин',
     top: '53.75%',
     left: '0.45%',
-    image: '/images/04019e2f95b75bd1ea76af66328601902522b470.png'
+    image: '/images/04019e2f95b75bd1ea76af66328601902522b470.webp'
   },
   {
     id: 'globus',
@@ -441,7 +441,7 @@ const markers = [
     time: '10 мин',
     top: '33.83%',
     left: '8.61%',
-    image: '/images/93844c73c2bc37792fbb814d0135be1a06aa6900.png'
+    image: '/images/93844c73c2bc37792fbb814d0135be1a06aa6900.webp'
   },
   {
     id: 'school',
@@ -449,7 +449,7 @@ const markers = [
     time: '3 мин',
     top: '69.31%',
     left: '3.47%',
-    image: '/images/4af098352d98e4197170afdcd0d2dbb8517cb0c6.png',
+    image: '/images/4af098352d98e4197170afdcd0d2dbb8517cb0c6.webp',
     maxWidth: '150px'
   }
 ]
@@ -467,6 +467,15 @@ const contactList = [
 .contacts-page {
   font-family: 'Manrope', 'Inter', sans-serif;
   overflow: hidden;
+  height: 100vh;
+}
+
+@media (max-width: 1024px) {
+  .contacts-page {
+    overflow-y: auto;
+    height: 100dvh;
+    min-height: -webkit-fill-available;
+  }
 }
 
 h1 {

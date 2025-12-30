@@ -36,7 +36,7 @@
         aria-label="Аудио"
       >
         <NuxtImg
-          src="/images/menu-icons/audio-button.png"
+          src="/images/menu-icons/audio-button.webp"
           alt="Аудио"
           class="home-page__audio-button-icon"
           format="png"
@@ -77,7 +77,7 @@
         />
       </button>
       <NuxtImg
-        src="/images/menu-tagline.png"
+        src="/images/image_28.webp"
         alt="Легко трудно быть уникальным"
         class="home-page__video-text"
         loading="lazy"

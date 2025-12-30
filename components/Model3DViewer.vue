@@ -140,89 +140,122 @@ const hotspots = [
     id: 'ecogorod-3',
     title: 'ЖК ЭКОГОРОД 3',
     description: 'Жилой комплекс «Экогород 3» создан в гармонии и уважении к природе и здоровью человека. Проектом предусмотрено размещение шести 8-9 этажных жилых домов.',
-    image: '/images/ecocity3/rectangle_1098.png',
+    image: '/images/ecocity3/rectangle_1098.webp',
     buttonText: 'ПОСМОТРЕТЬ ПРОЕКТ',
     link: '/images/ecocity3/Group.svg',
     isInternal: true,
-    position: { x: 1.7, y: 0.2, z: -0.6 },  // Center-right of model
+    position: { x: 1.7, y: 0, z: -0.6 },  // Center-right of model
     markerIcon: '/images/ecocity3/Group.svg'  // Green Ecogorod logo
   },
   {
     id: 'ecogorod-2',
     title: 'ЖК ЭКОГОРОД 2',
     description: 'Продолжение успешного проекта «Экогород» с улучшенными планировками и благоустроенной территорией.',
-    image: '/images/figma_assets/312883e98b52c1283bea27e972c12073a2f735e4.png',
+    image: '/images/figma_assets/312883e98b52c1283bea27e972c12073a2f735e4.webp',
     buttonText: 'ПОСМОТРЕТЬ ПРОЕКТ',
-    link: '/images/contacts/Group_146.png',
+    link: '/images/contacts/Group_146.webp',
     isInternal: true,
-    position: { x: 2.4, y: 0.2, z: -1.1 },  // Left of Ecogorod 3
-    markerIcon: '/images/contacts/marker-2.png'  // Blue buildings logo
+    position: { x: 0.7, y: 0, z: -0.2 },  // Left of Ecogorod 3
+    markerIcon: '/images/contacts/Group_146.webp' // Blue buildings logo
   },
   {
     id: 'ecogorod-1',
     title: 'ЖК ЭКОГОРОД',
     description: 'Первый этап масштабного проекта, где уют загородной жизни встречается с городским комфортом.',
-    image: '/images/figma_assets/4e4112f445b0c7267c10356a73c3802dd6bed991.png',
+    image: '/images/figma_assets/4e4112f445b0c7267c10356a73c3802dd6bed991.webp',
     buttonText: 'ПОСМОТРЕТЬ ПРОЕКТ',
-    link: '/images/contacts/Group_146.png',
+    link: '/images/contacts/Group_143.webp',
     isInternal: true,
-    position: { x: 2.5, y: 0.8, z: 0.5 },  // Right and below Ecogorod 3
-    markerIcon: '/images/contacts/marker-1.png'
+    position: { x: 0.7, y: 0, z: -1.1 },  // Right and below Ecogorod 3
+    markerIcon: '/images/contacts/ecogorod-4.webp'
   },
   {
     id: 'newhouse',
     title: 'ЖК НОВЫЙ ДОМ',
     description: 'Современный жилой комплекс с уникальной архитектурой и продуманными общественными пространствами.',
-    image: '/images/figma_assets/3a1eb57e0ac6865bc94f8b62f37cbda2d8d29a35.png',
+    image: '/images/figma_assets/3a1eb57e0ac6865bc94f8b62f37cbda2d8d29a35.webp',
     buttonText: 'ПОСМОТРЕТЬ ПРОЕКТ',
-    link: '/images/contacts/ND.png',
+    link: '/images/contacts/ND.webp',
     isInternal: true,
-    position: { x: -2.5, y: 0.8, z: 1.5 },  // Far left
-    markerIcon: '/images/contacts/marker-2.png'
+    position: { x: -1.2, y: 0, z:-3.2 },  // Far left
+    markerIcon: '/images/contacts/ND.webp'
   },
   {
     id: 'tasty',
     title: 'ВКУСНО И ТОЧКА',
     description: '«Вкусно — и точка» – ведущая сеть общественного питания, насчитывающая более 950 предприятий в 65 субъектах РФ.',
-    image: '/images/figma_assets/6098935f3e0b4a4084bf4e0ff52bf6bbc43f99e8.png',
+    image: '/images/figma_assets/6098935f3e0b4a4084bf4e0ff52bf6bbc43f99e8.webp',
     buttonText: 'БОЛЬШЕ ИНФОРМАЦИИ',
     link: 'https://vkusnoitochka.ru',
     isInternal: false,
-    position: { x: -1.0, y: 0.5, z: -3.5 },  // Top left of model
-    markerIcon: '/images/contacts/marker-5.png'  // Orange M logo
+    position: { x: -2.8, y: 0, z: 2.2 },  // Top left of model
+    markerIcon: '/images/contacts/marker-5.webp'  // Orange M logo
   },
   {
     id: 'globus',
     title: 'ТЦ ГЛОБУС',
     description: '«Глобус» — международная сеть гипермаркетов, магазины которой представлены в Германии, Чехии и России.',
-    image: '/images/figma_assets/45babc800c37169b87c9ca232dd0e61336524f21.png',
+    image: '/images/figma_assets/45babc800c37169b87c9ca232dd0e61336524f21.webp',
     buttonText: 'БОЛЬШЕ ИНФОРМАЦИИ',
     link: 'https://www.globus.ru',
     isInternal: false,
-    position: { x: -3.5, y: 0.5, z: 3.0 },  // Far left bottom
-    markerIcon: '/images/contacts/image_80.png'  // Green Globus logo
+    position: { x: -1.9, y: 0, z: 3.0 },  // Far left bottom
+    markerIcon: '/images/contacts/image_80.webp'  // Green Globus logo
   },
   {
     id: 'school',
     title: 'НОВАЯ ШКОЛА',
     description: 'Современная школа в Красном Бору. Совсем скоро будет построена рядом с нашими объектами.',
-    image: '/images/figma_assets/baa1ff7eb4478501e5c6ecba181729748dccbc9c.png',
+    image: '/images/figma_assets/baa1ff7eb4478501e5c6ecba181729748dccbc9c.webp',
     buttonText: 'БОЛЬШЕ ИНФОРМАЦИИ',
     link: '#',
     isInternal: false,
-    position: { x: 2.0, y: 0.5, z: 3.0 },  // Right side, bottom
-    markerIcon: '/images/contacts/marker-3.png'  // Plus/cross icon
+    position: { x: 2.3, y: 0, z: 0.9 },  // Right side, bottom
+    markerIcon: '/images/contacts/school_icon.webp'
   },
   {
     id: 'clinic',
     title: 'ПОЛИКЛИНИКА',
     description: 'Современная поликлиника появится рядом с нашими объектами уже в этом году.',
-    image: '/images/figma_assets/e12370a44e92aa917f3b96bf8a02c5fa69e64c1d.png',
+    image: '/images/figma_assets/e12370a44e92aa917f3b96bf8a02c5fa69e64c1d.webp',
     buttonText: 'БОЛЬШЕ ИНФОРМАЦИИ',
     link: '#',
     isInternal: false,
-    position: { x: 3.5, y: 0.5, z: 2.0 },  // Far right
-    markerIcon: '/images/contacts/marker-4.png'  // Plus/cross icon
+    position: { x: 1.4, y: 0, z: 1.9 },  // Far right
+    markerIcon: '/images/contacts/medical_icon.webp'
+  },
+  {
+    id: 'zags',
+    title: 'ЗАГС - ЯРОСЛАВЛЬ',
+    description: 'Загс в Заволжском районе расположен в живописном месте. Современное здание с просторными светлыми залами для торжественных церемоний.',
+    image: '/images/figma_assets/ecopark.png',
+    buttonText: 'БОЛЬШЕ ИНФОРМАЦИИ',
+    link: '#',
+    isInternal: false,
+    position: { x: -3.3, y: 0, z: 1 },
+    markerIcon: '/images/contacts/rings_icon.png'
+  },
+  {
+    id: 'kindergarten',
+    title: 'Детский сад № 4 "Совенок"',
+    description: 'Родителям может быть интересен детский сад № 4 Совенок. Большое количество активного времяпрепровождения, игр, разнообразных привычек и другого, что поможет подготовиться к дальнейшим свершениям!',
+    image: '/images/figma_assets/kindergarten.png',
+    buttonText: 'БОЛЬШЕ ИНФОРМАЦИИ',
+    link: '#',
+    isInternal: false,
+    position: { x: -2.7, y: 0, z: 0.8 },
+    markerIcon: '/images/icon-playground.svg'
+  },
+  {
+    id: 'ecopark',
+    title: 'ЭКОПАРК',
+    description: 'Это ухоженный парк с тенистыми аллеями, зеркальным прудом и ароматом хвои. Сюда приезжают семьями на пикники, а по утрам бегают спортсмены. Любимое место для прогулок и отдыха на природе в любое время года.',
+    image: '/images/figma_assets/zags.png',
+    buttonText: 'БОЛЬШЕ ИНФОРМАЦИИ',
+    link: '#',
+    isInternal: false,
+    position: { x: -0.6, y: 0, z: -1 },
+    markerIcon: '/images/contacts/park_icon.png'
   }
 ]
 
@@ -375,10 +408,11 @@ const initMarkers = async () => {
     markerDiv.className = 'marker-pin'
     markerDiv.style.pointerEvents = 'auto'
     markerDiv.innerHTML = `
-      <div class="marker-pin__body">
-        <img src="${hs.markerIcon}" alt="${hs.title}" class="marker-pin__icon" />
+      <div class="marker-pin__wrapper">
+        <div class="marker-pin__body">
+          <img src="${hs.markerIcon}" alt="${hs.title}" class="marker-pin__icon" />
+        </div>
       </div>
-      <div class="marker-pin__pointer"></div>
     `
     
     markerDiv.addEventListener('click', (e) => {
@@ -388,16 +422,18 @@ const initMarkers = async () => {
     })
     
     const label = new CSS2DObject(markerDiv)
-    label.position.set(hs.position.x, hs.position.y + 0.3, hs.position.z)
+    label.position.set(hs.position.x, hs.position.y, hs.position.z)
+    // Set center to bottom-middle (tip of the pin)
+    if (label.center) label.center.set(0.5, 1)
     label.userData = hs
     scene.add(label)
     css2dObjects.push(label)
     
     // Also create invisible sprite for raycasting (fallback)
-    const geometry = new THREE.SphereGeometry(0.3, 8, 8)
+    const geometry = new THREE.SphereGeometry(0.2, 8, 8)
     const material = new THREE.MeshBasicMaterial({ visible: false })
     const hitMesh = new THREE.Mesh(geometry, material)
-    hitMesh.position.set(hs.position.x, hs.position.y + 0.3, hs.position.z)
+    hitMesh.position.set(hs.position.x, hs.position.y, hs.position.z)
     hitMesh.userData = hs
     scene.add(hitMesh)
     hotspotObjects.push(hitMesh)
@@ -802,34 +838,50 @@ onBeforeUnmount(() => {
   flex-direction: column;
   align-items: center;
   cursor: pointer;
-  transition: transform 0.2s ease;
-  filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.4));
+  /* NO TRANSITION for transform to avoid lag during camera movement */
+  transition: opacity 0.2s ease;
+  will-change: transform;
 }
 
-:global(.marker-pin:hover) {
-  transform: scale(1.15);
+:global(.marker-pin__wrapper) {
+  /* Anchor the bottom tip of the pin exactly at the target 3D point */
+  transform: translate(-50%, -100%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.25));
+}
+
+:global(.marker-pin:hover .marker-pin__wrapper) {
+  transform: translate(-50%, -100%) scale(1.15);
 }
 
 :global(.marker-pin__body) {
-  width: 50px;
-  height: 50px;
+  width: 20px;
+  height: 20px;
   background: #ffffff;
   border-radius: 50% 50% 50% 0;
   transform: rotate(-45deg);
   display: flex;
   align-items: center;
   justify-content: center;
-  border: 3px solid #ffffff;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
-  overflow: hidden;
+  border: 0.5px solid #ffffff;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
 }
 
 :global(.marker-pin__icon) {
-  width: 32px;
-  height: 32px;
+  width: 16px;
+  height: 16px;
   object-fit: contain;
   transform: rotate(45deg);
-  border-radius: 4px;
+  border-radius: 50%; /* Make icons circular */
+}
+
+.hotspot-card__image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 8px; /* Matching the wrapper rounding */
 }
 
 :global(.marker-pin__pointer) {

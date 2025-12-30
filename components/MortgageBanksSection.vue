@@ -22,7 +22,7 @@
             aria-label="Открыть сайт банка"
           >
             <NuxtImg
-              src="/images/arrow-6.png"
+              src="/images/arrow-6.webp"
               alt="Открыть ссылку"
               class="w-full h-full object-contain"
             />

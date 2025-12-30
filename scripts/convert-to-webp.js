@@ -16,13 +16,13 @@ try {
 }
 
 // Функция для рекурсивного поиска файлов
-function findImages(dir, extensions = ['.webp', '.webp', '.webp']) {
+function findImages(dir, extensions = ['.png', '.jpg', '.jpeg']) {
   const files = [];
   const items = fs.readdirSync(dir, { withFileTypes: true });
 
   for (const item of items) {
     const fullPath = path.join(dir, item.name);
-    
+
     if (item.isDirectory() && !item.name.startsWith('.') && item.name !== 'node_modules') {
       files.push(...findImages(fullPath, extensions));
     } else if (item.isFile()) {
@@ -40,7 +40,7 @@ function findImages(dir, extensions = ['.webp', '.webp', '.webp']) {
 async function convertToWebP(inputPath) {
   try {
     const outputPath = inputPath.replace(/\.(png|jpg|jpeg)$/i, '.webp');
-    
+
     // Пропускаем, если WebP уже существует
     if (fs.existsSync(outputPath)) {
       console.log(`⏭️  Пропущено (уже существует): ${path.basename(outputPath)}`);
@@ -66,7 +66,7 @@ async function main() {
   console.log('🔄 Начинаю конвертацию изображений в WebP...\n');
 
   const directories = [publicImagesDir, assetsDir].filter(dir => fs.existsSync(dir));
-  
+
   if (directories.length === 0) {
     console.error('❌ Не найдены директории с изображениями');
     return;
@@ -78,7 +78,7 @@ async function main() {
   for (const dir of directories) {
     console.log(`📁 Обработка директории: ${path.relative(projectRoot, dir)}`);
     const images = findImages(dir);
-    
+
     if (images.length === 0) {
       console.log('   (нет изображений для конвертации)\n');
       continue;

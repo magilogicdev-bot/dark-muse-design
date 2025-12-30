@@ -49,7 +49,7 @@
           />
           
           <!-- Interactive Houses overlay -->
-          <div v-if="isDefaultView" class="absolute inset-0">
+          <div v-if="isDefaultView && showHouses" class="absolute inset-0">
             <button
               v-for="(house, index) in houses"
               :key="index"
@@ -107,6 +107,10 @@ const props = defineProps({
   description: {
     type: String,
     default: 'Выбрав дом, перемещайтесь по подъездам, узнавайте больше информации о понравившейся вам квартире в ЖК.'
+  },
+  showHouses: {
+    type: Boolean,
+    default: false
   }
 })
 
@@ -126,7 +130,7 @@ const houses = [
     width: 11.5,
     height: 36,
     zIndex: 10,
-    outlineImage: '/images/house-outline-1.png',
+    outlineImage: '/images/house-outline-1.webp',
     detailImage: '/images/completed-projects-1.webp'
   },
   {
@@ -136,7 +140,7 @@ const houses = [
     width: 16.2,
     height: 38.5,
     zIndex: 20,
-    outlineImage: '/images/house-outline-2.png',
+    outlineImage: '/images/house-outline-2.webp',
     detailImage: '/images/completed-projects-2.webp'
   },
   {
@@ -146,8 +150,8 @@ const houses = [
     width: 50,
     height: 50,
     zIndex: 15,
-    outlineImage: '/images/house-outline-3.png',
-    detailImage: '/images/high-life-award.png'
+    outlineImage: '/images/house-outline-3.webp',
+    detailImage: '/images/high-life-award.webp'
   }
 ]
 

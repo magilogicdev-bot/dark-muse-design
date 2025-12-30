@@ -36,7 +36,7 @@
               class="w-10 h-10 rounded-full flex items-center justify-center hover:opacity-80 transition-opacity flex-shrink-0"
               aria-label="Viber"
             >
-              <img src="/images/ellipse-14.png" alt="Viber" class="w-full h-full object-contain" />
+              <img src="/images/ellipse-14.webp" alt="Viber" class="w-full h-full object-contain" />
             </a>
           </div>
         </div>

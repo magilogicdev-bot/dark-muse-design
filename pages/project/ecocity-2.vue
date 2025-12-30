@@ -35,7 +35,7 @@
     />
     <EcocityGeneralPlanSection 
       description="Выбрав дом, перемещайтесь по подъездам, узнавайте больше информации о понравившейся вам квартире в ЖК Экогород 2."
-      :images="{ generalPlan: '/images/general_plan_new.png' }"
+      :images="{ generalPlan: '/images/ecocity-2-general-plan.webp' }"
     />
     <EcocityMediaSection 
       description="Будьте в курсе самых значимых событий: новые реализованные проекты, тенденции в архитектуре и строительных технологиях, изменения в законодательстве и события из жизни нашей компании."

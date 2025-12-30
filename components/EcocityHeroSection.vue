@@ -33,7 +33,7 @@
           <span class="ecocity-hero__subtitle uppercase tracking-widest text-[10px] md:text-sm font-light opacity-80 mb-2 block">
             {{ subtitle }}
           </span>
-          <h1 class="ecocity-hero__title font-black text-4xl md:text-7xl lg:text-[84px] leading-[0.9] mb-6">
+          <h1 class="ecocity-hero__title font-black text-3xl md:text-5xl lg:text-[84px] leading-[0.9] mb-6">
             {{ title }}
           </h1>
           <p class="ecocity-hero__description text-sm md:text-base opacity-90 max-w-[420px] font-light leading-relaxed">
@@ -343,6 +343,9 @@ defineEmits(['open3d'])
 }
 
 @media (max-width: 768px) {
+  .ecocity-hero__title {
+    font-size: 42px;
+  }
   .container-fluid {
     padding: 0 clamp(16px, 4.16vw, 80px);
   }
@@ -365,8 +368,7 @@ defineEmits(['open3d'])
     padding: 20px;
   }
   .ecocity-hero__bottom-actions {
-    right: 20px;
-    bottom: 40px;
+    display: none;
   }
   .ecocity-hero__side-actions {
     right: 20px;

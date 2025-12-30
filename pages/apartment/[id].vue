@@ -94,7 +94,7 @@
                   aria-label="Добавить в избранное"
                 >
                   <img 
-                    src="/images/heart-orange-icon.png" 
+                    src="/images/heart-orange-icon.webp" 
                     alt="Избранное"
                     class="favorite-icon"
                   />
@@ -393,14 +393,14 @@ useHead({
 <style scoped>
 /* Hero Section Layout */
 .apartment-hero-section {
-  min-height: 100vh;
   background-color: #2A2C38;
 }
 
 .apartment-hero-container {
   display: grid;
-  grid-template-columns: minmax(320px, 560px) 1fr;
-  min-height: calc(100vh - 100px);
+  grid-template-columns: minmax(320px, 480px) 1fr;
+  height: 90vh;
+  max-height: 1080px;
   gap: 0;
   max-width: 1920px;
   margin: 0 auto;
@@ -413,11 +413,24 @@ useHead({
   padding: clamp(24px, 3vw, 48px) 0;
   display: flex;
   flex-direction: column;
+  height: 100%;
+  overflow-y: auto;
+  border-right: 1px solid rgba(255, 255, 255, 0.1);
+  /* Hide scrollbar for Chrome, Safari and Opera */
+  &::-webkit-scrollbar {
+    display: none;
+  }
+  /* Hide scrollbar for IE, Edge and Firefox */
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 }
 
 .apartment-info-content {
-  padding-left: clamp(16px, 5vw, 80px);
-  padding-right: 47px;
+  padding-left: clamp(16px, 5vw, 60px);
+  padding-right: 40px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
 }
 
 /* Title Block */
@@ -581,6 +594,7 @@ useHead({
   position: relative;
   display: flex;
   flex-direction: column;
+  height: 100%;
   overflow: hidden;
 }
 
@@ -631,13 +645,14 @@ useHead({
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: clamp(60px, 8vw, 100px) clamp(80px, 10vw, 140px);
+  padding: clamp(30px, 4vw, 50px);
   background: #fff;
+  overflow: hidden;
 }
 
 .plan-image {
-  max-width: 100%;
-  max-height: 100%;
+  width: 100%;
+  height: 100%;
   object-fit: contain;
 }
 

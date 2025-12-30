@@ -4,7 +4,7 @@
       title="ЭКОГОРОД 3"
       subtitle="ЖИЛОЙ КОМПЛЕКС"
       description="Пространство, где каждая деталь создана для вашего комфорта. Среди сосен, в экологически чистом районе, начинается жизнь, о которой вы мечтали."
-      bg-image="/images/ecocity3/hero.png"
+      bg-image="/images/ecocity3/hero.webp"
       :chips="[
         { label: 'В ПРОДАЖЕ', value: '192 КВАРТИРЫ', class: 'hero-chip--green' },
         { label: 'РАЙОН', value: 'ЗАВОЛЖСКИЙ' },
@@ -20,21 +20,21 @@
       text2="Основной идеей организации территории комплекса является формирование двух закрытых дворовых пространств, объединенных пешеходной зоной и многофункциональной спортивной площадкой. Дворы без машин - это современная тенденция организации жилой застройки для обеспечения безопасности и комфортного проживания."
       :images="{
         main: '/images/current-projects-main.webp',
-        courtyard: '/images/ecocity3/about_1.png',
-        playground: '/images/ecocity3/about_2.png',
-        facade: '/images/ecocity3/about_3.png',
-        gallery: '/images/ecocity3/about_main.png'
+        courtyard: '/images/ecocity3/about_1.webp',
+        playground: '/images/ecocity3/about_2.webp',
+        facade: '/images/ecocity3/about_3.webp',
+        gallery: '/images/ecocity3/about_main.webp'
       }"
     />
     <EcocityFeaturesSection 
       :features="[
-        { title: 'детские и спортивные площадки', image: '/images/ecocity3/features/feature_playground.png' },
-        { title: 'свежий воздух и природа', image: '/images/ecocity3/features/feature_nature.png' },
-        { title: 'двор без машин', image: '/images/ecocity3/features/feature_no_cars.png' },
-        { title: 'безопасность', image: '/images/ecocity3/features/feature_safety.png' }
+        { title: 'детские и спортивные площадки', image: '/images/ecocity3/features/feature_playground.webp' },
+        { title: 'свежий воздух и природа', image: '/images/ecocity3/features/feature_nature.webp' },
+        { title: 'двор без машин', image: '/images/ecocity3/features/feature_no_cars.webp' },
+        { title: 'безопасность', image: '/images/ecocity3/features/feature_safety.webp' }
       ]"
     />
-    <EcocityGeneralPlanSection />
+    <EcocityGeneralPlanSection show-houses />
     <EcocityWhiteBoxSection />
     <EcocityCTASection />
     <EcocityExcursionsSection />

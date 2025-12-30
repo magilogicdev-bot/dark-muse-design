@@ -10,7 +10,7 @@
           
           <!-- Screenshot Reference Image -->
           <img 
-            src="/images/screenshot-2025-12-25-100143.png" 
+            src="/images/screenshot-2025-12-25-100143.webp" 
             alt="Screenshot reference" 
             class="absolute"
             style="top: 334px; left: 684px; width: 20.3%; aspect-ratio: 359/75; z-index: 0;"
@@ -45,7 +45,7 @@
                 <!-- Quote - Centered -->
                 <div class="flex flex-col items-center relative">
                   <img 
-                    src="/images/quote-image.png" 
+                    src="/images/quote-image.webp" 
                     alt="Цитата" 
                     class="max-w-full h-auto absolute"
                     style="left: 504px; top: 318px; width: 370px;"
@@ -290,7 +290,7 @@
             <!-- Bottom: Large Complex Image (Full Width, Shorter Height) -->
             <div class="relative w-full -ml-8 sm:-ml-12 lg:-ml-20 mr-[-20px] sm:mr-[-32px] md:mr-[-48px] lg:mr-[-80px] mt-auto aspect-[16/12] sm:aspect-[16/11] lg:aspect-[16/11] overflow-hidden group">
               <img 
-                src="/images/ecocity-complex-new.png" 
+                src="/images/ecocity-complex-new.webp" 
                 alt="Современное здание" 
                 class="w-full h-full object-cover shadow-2xl"
                 loading="lazy"
@@ -322,7 +322,7 @@
               <div class="flex justify-end w-full mt-auto pt-8">
                 <div class="max-w-[500px] aspect-[16/10] overflow-hidden shadow-lg w-full">
                    <img 
-                    src="/images/ecocity-townhouses-new.png" 
+                    src="/images/ecocity-townhouses-new.webp" 
                     alt="Таунхаусы" 
                     class="w-full h-full object-cover"
                     loading="lazy"
@@ -699,7 +699,7 @@
           <div class="bg-[#2A2C38] border border-white/30 rounded-lg lg:rounded-xl p-4 sm:p-5 md:p-6 lg:p-8 flex flex-col items-center justify-center text-center gap-2 sm:gap-3 md:gap-4 lg:gap-5 transition-all duration-300 hover:bg-[#353844] hover:border-white/50 cursor-pointer min-h-[170px] sm:min-h-[180px] md:h-full w-full max-w-[220px] sm:max-w-[250px] md:max-w-[280px] mx-auto">
             <div class="w-16 h-16 sm:w-20 sm:h-20 md:w-28 md:h-28 lg:w-32 lg:h-32 flex items-center justify-center">
               <img 
-                src="/images/footer-icon-1.png" 
+                src="/images/footer-icon-1.webp" 
                 alt="CITY VISION AWARDS 2016" 
                 class="w-full h-full object-contain"
                 loading="lazy"
@@ -714,7 +714,7 @@
           <div class="bg-[#2A2C38] border border-white/30 rounded-lg lg:rounded-xl p-4 sm:p-5 md:p-6 lg:p-8 flex flex-col items-center justify-center text-center gap-2 sm:gap-3 md:gap-4 lg:gap-5 transition-all duration-300 hover:bg-[#353844] hover:border-white/50 cursor-pointer min-h-[170px] sm:min-h-[180px] md:h-full w-full max-w-[220px] sm:max-w-[250px] md:max-w-[280px] mx-auto">
             <div class="w-16 h-16 sm:w-20 sm:h-20 md:w-28 md:h-28 lg:w-32 lg:h-32 flex items-center justify-center">
               <img 
-                src="/images/footer-icon-2.png" 
+                src="/images/footer-icon-2.webp" 
                 alt="СБЕРБАНК" 
                 class="w-full h-full object-contain"
                 loading="lazy"
@@ -734,7 +734,7 @@
           <div class="bg-[#2A2C38] border border-white/30 rounded-lg lg:rounded-xl p-4 sm:p-5 md:p-6 lg:p-8 flex flex-col items-center justify-center text-center gap-2 sm:gap-3 md:gap-4 lg:gap-5 transition-all duration-300 hover:bg-[#353844] hover:border-white/50 cursor-pointer min-h-[170px] sm:min-h-[180px] md:h-full w-full max-w-[220px] sm:max-w-[250px] md:max-w-[280px] mx-auto">
             <div class="w-16 h-16 sm:w-20 sm:h-20 md:w-28 md:h-28 lg:w-32 lg:h-32 flex items-center justify-center">
               <img 
-                src="/images/footer-icon-3.png" 
+                src="/images/footer-icon-3.webp" 
                 alt="КОНКУРС ТОП ЖК" 
                 class="w-full h-full object-contain"
                 loading="lazy"

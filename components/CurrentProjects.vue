@@ -40,7 +40,7 @@
               :key="idx"
               class="w-[36px] h-[36px] md:w-[48px] md:h-[48px] lg:w-[64px] lg:h-[64px] xl:w-[80px] xl:h-[80px] rounded-full bg-white flex items-center justify-center flex-shrink-0"
             >
-              <NuxtImg :src="icon.src" :alt="icon.alt" class="w-[18px] h-[18px] md:w-[24px] md:h-[24px] lg:w-[32px] lg:h-[32px] xl:w-[40px] xl:h-[40px] object-contain" loading="lazy" format="webp" />
+              <img :src="icon.src" :alt="icon.alt" class="w-[18px] h-[18px] md:w-[24px] md:h-[24px] lg:w-[32px] lg:h-[32px] xl:w-[40px] xl:h-[40px] object-contain" loading="lazy" />
             </div>
           </div>
 

@@ -35,7 +35,7 @@
     />
     <EcocityGeneralPlanSection 
       description="Выбрав дом, перемещайтесь по подъездам, узнавайте больше информации о понравившейся вам квартире в ЖК Новый Дом."
-      :images="{ generalPlan: '/images/general_plan_new.png' }"
+      :images="{ generalPlan: '/images/new-house-general-plan.webp' }"
     />
     <EcocityMediaSection 
       description="Будьте в курсе самых значимых событий: новые реализованные проекты, тенденции в архитектуре и строительных технологиях, изменения в законодательстве и события из жизни нашей компании."

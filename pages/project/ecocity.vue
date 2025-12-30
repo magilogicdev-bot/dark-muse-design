@@ -20,7 +20,7 @@
         courtyard: '/images/ecocity/about_2_top_left.webp',
         playground: '/images/ecocity/about_3_top_right.webp',
         facade: '/images/ecocity/about_5_bot_right.webp',
-        gallery: '/images/ecocity/gallery_new.png'
+        gallery: '/images/ecocity/gallery_new.webp'
       }"
     />
     <EcocityFeaturesSection 
@@ -35,7 +35,7 @@
     />
     <EcocityGeneralPlanSection 
       description="Выбрав дом, перемещайтесь по подъездам, узнавайте больше информации о понравившейся вам квартире в ЖК Экогород."
-      :images="{ generalPlan: '/images/general_plan_new.png' }"
+      :images="{ generalPlan: '/images/general_plan_new.webp' }"
     />
     <EcocityMediaSection 
       description="Будьте в курсе самых значимых событий: новые реализованные проекты, тенденции в архитектуре и строительных технологиях, изменения в законодательстве и события из жизни нашей компании."

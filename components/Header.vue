@@ -24,7 +24,7 @@
             class="header__nav-link header__nav-link--desktop flex items-center gap-2"
           >
             <NuxtImg
-              src="/images/vector.png"
+              src="/images/vector.webp"
               alt=""
               class="w-[13px] h-[13px] object-contain flex-shrink-0"
             />
