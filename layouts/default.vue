@@ -11,13 +11,16 @@
 </template>
 
 <script setup>
+import { onMounted } from 'vue'
 import { useMenu } from '~/composables/useMenu'
-
-// Базовый layout с Header и Footer для всех страниц
-// Если нужен другой layout, создайте новый файл в папке layouts/
-// Компоненты автоматически импортируются в Nuxt 3
+import { useFavorites } from '~/composables/useFavorites'
 
 const { isMenuOpen } = useMenu()
+const { initFavorites } = useFavorites()
+
+onMounted(() => {
+  initFavorites()
+})
 </script>
 
 <style scoped>

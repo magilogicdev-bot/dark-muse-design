@@ -73,13 +73,13 @@
                 />
               </div>
             </div>
-            <div class="mt-3 relative h-[2px]">
+            <div class="mt-3 relative h-5">
               <!-- Background track -->
-              <div class="absolute inset-0 h-[2px] bg-black/20 rounded-full"></div>
+              <div class="absolute w-full h-[2px] bg-black/20 rounded-full top-1/2 -translate-y-1/2"></div>
               
               <!-- Active range -->
               <div 
-                class="absolute h-[2px] bg-black rounded-full top-0"
+                class="absolute h-[2px] bg-black rounded-full top-1/2 -translate-y-1/2 z-0"
                 :style="{ 
                   left: `${((minPrice - priceMin) / (priceMax - priceMin)) * 100}%`, 
                   width: `${((maxPrice - minPrice) / (priceMax - priceMin)) * 100}%` 
@@ -94,8 +94,7 @@
                 :min="priceMin"
                 :max="priceMax"
                 :step="100000"
-                class="absolute inset-0 w-full h-0 opacity-0 cursor-pointer z-10"
-                style="pointer-events: auto;"
+                class="absolute inset-0 w-full h-full appearance-none bg-transparent pointer-events-none z-30 opacity-0 cursor-pointer"
               />
               
               <!-- Max slider -->
@@ -106,17 +105,16 @@
                 :min="priceMin"
                 :max="priceMax"
                 :step="100000"
-                class="absolute inset-0 w-full h-0 opacity-0 cursor-pointer z-10"
-                style="pointer-events: auto;"
+                class="absolute inset-0 w-full h-full appearance-none bg-transparent pointer-events-none z-30 opacity-0 cursor-pointer"
               />
               
-              <!-- Min thumb -->
+              <!-- Min thumb (visual) -->
               <div 
                 class="absolute w-[6px] h-[6px] bg-black rounded-full top-1/2 -translate-y-1/2 -translate-x-1/2 pointer-events-none z-20"
                 :style="{ left: `${((minPrice - priceMin) / (priceMax - priceMin)) * 100}%` }"
               ></div>
               
-              <!-- Max thumb -->
+              <!-- Max thumb (visual) -->
               <div 
                 class="absolute w-[6px] h-[6px] bg-black rounded-full top-1/2 -translate-y-1/2 -translate-x-1/2 pointer-events-none z-20"
                 :style="{ left: `${((maxPrice - priceMin) / (priceMax - priceMin)) * 100}%` }"
@@ -179,13 +177,13 @@
                 />
               </div>
             </div>
-            <div class="mt-3 relative h-[2px]">
+            <div class="mt-3 relative h-5">
               <!-- Background track -->
-              <div class="absolute inset-0 h-[2px] bg-black/20 rounded-full"></div>
+              <div class="absolute w-full h-[2px] bg-black/20 rounded-full top-1/2 -translate-y-1/2"></div>
               
               <!-- Active range -->
               <div 
-                class="absolute h-[2px] bg-black rounded-full top-0"
+                class="absolute h-[2px] bg-black rounded-full top-1/2 -translate-y-1/2 z-0"
                 :style="{ 
                   left: `${((minArea - areaMin) / (areaMax - areaMin)) * 100}%`, 
                   width: `${((maxArea - minArea) / (areaMax - areaMin)) * 100}%` 
@@ -200,8 +198,7 @@
                 :min="areaMin"
                 :max="areaMax"
                 :step="1"
-                class="absolute inset-0 w-full h-0 opacity-0 cursor-pointer z-10"
-                style="pointer-events: auto;"
+                class="absolute inset-0 w-full h-full appearance-none bg-transparent pointer-events-none z-30 opacity-0 cursor-pointer"
               />
               
               <!-- Max slider -->
@@ -212,17 +209,16 @@
                 :min="areaMin"
                 :max="areaMax"
                 :step="1"
-                class="absolute inset-0 w-full h-0 opacity-0 cursor-pointer z-10"
-                style="pointer-events: auto;"
+                class="absolute inset-0 w-full h-full appearance-none bg-transparent pointer-events-none z-30 opacity-0 cursor-pointer"
               />
               
-              <!-- Min thumb -->
+              <!-- Min thumb (visual) -->
               <div 
                 class="absolute w-[6px] h-[6px] bg-black rounded-full top-1/2 -translate-y-1/2 -translate-x-1/2 pointer-events-none z-20"
                 :style="{ left: `${((minArea - areaMin) / (areaMax - areaMin)) * 100}%` }"
               ></div>
               
-              <!-- Max thumb -->
+              <!-- Max thumb (visual) -->
               <div 
                 class="absolute w-[6px] h-[6px] bg-black rounded-full top-1/2 -translate-y-1/2 -translate-x-1/2 pointer-events-none z-20"
                 :style="{ left: `${((maxArea - areaMin) / (areaMax - areaMin)) * 100}%` }"
@@ -235,7 +231,7 @@
         <button
           class="relative bg-[#ff8700] text-white text-[11px] md:text-[12px] font-medium uppercase px-5 md:px-7 lg:px-10 h-[48px] md:h-[52px] lg:h-[56px] rounded-full hover:bg-[#ff9f34] transition-colors flex-shrink-0 flex items-center justify-center gap-2 md:gap-4 whitespace-nowrap w-full md:w-auto after:content-[''] after:absolute after:left-1/2 after:-translate-x-1/2 after:-bottom-4 after:h-[2px] after:w-[70%] after:bg-[#ff8700] after:rounded-full"
         >
-          <span class="whitespace-nowrap">ПОКАЗАТЬ 482 КВАРТИРЫ</span>
+          <span class="whitespace-nowrap">ПОКАЗАТЬ {{ filteredProperties.length }} {{ getRussianPlural(filteredProperties.length, 'КВАРТИРУ', 'КВАРТИРЫ', 'КВАРТИР') }}</span>
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" class="md:w-[18px] md:h-[18px]">
             <path d="M9 18L15 12L9 6" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
           </svg>
@@ -260,42 +256,23 @@
         </svg>
       </div>
 
-      <!-- Project Apartments Grid (shown when expanded) -->
       <Transition name="apartments-fade">
         <div v-if="showProjectApartments" class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 lg:gap-4 xl:gap-5 mb-6 md:mb-8 lg:mb-10">
-          <NuxtLink
+          <ApartmentCard
             v-for="item in projectApartments"
             :key="item.id"
-            :to="`/apartment/${item.id}`"
-            class="bg-white rounded-[10px] lg:rounded-[14px] xl:rounded-[18px] overflow-hidden shadow-lg cursor-pointer hover:shadow-xl transition-shadow block"
-          >
-            <div class="aspect-[4/5] bg-gray-100">
-              <img 
-                :src="item.image" 
-                :alt="item.title" 
-                class="w-full h-full object-cover" 
-              />
-            </div>
-          </NuxtLink>
+            :apartment="item"
+          />
         </div>
       </Transition>
 
       <!-- Property Cards Grid -->
       <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 lg:gap-4 xl:gap-5 mb-6 md:mb-8 lg:mb-10">
-        <NuxtLink
+        <ApartmentCard
           v-for="item in properties"
           :key="item.id"
-          :to="`/apartment/${item.id}`"
-          class="bg-white rounded-[10px] lg:rounded-[14px] xl:rounded-[18px] overflow-hidden shadow-lg cursor-pointer hover:shadow-xl transition-shadow block"
-        >
-          <div class="aspect-[4/5] bg-gray-100">
-            <img 
-              :src="item.image" 
-              :alt="item.title" 
-              class="w-full h-full object-cover" 
-            />
-          </div>
-        </NuxtLink>
+          :apartment="item"
+        />
       </div>
 
       <!-- Load More Button -->
@@ -311,7 +288,8 @@
 </template>
 
 <script setup>
-import { ref, watch } from 'vue'
+import { ref, computed } from 'vue'
+import { apartments } from '~/data/apartments'
 
 // Project apartments toggle
 const showProjectApartments = ref(false)
@@ -325,61 +303,89 @@ const planImage = '/images/property-plan.webp'
 // Project apartments (4 apartments from current project)
 const projectApartments = [
   { 
-    id: 101, 
+    id: 1, 
     complex: 'ЖК Экогород 3, д. 1', 
-    title: '1-комнатная, 36.5 м²', 
-    area: '36.5 м²', 
-    price: '4 200 000', 
+    title: '2-комнатная квартира', 
+    area: '54.4 м²', 
+    areaNum: 54.4,
+    price: '5 167 050 ₽', 
+    priceNum: 5167050,
+    rooms: 2,
     entrance: 1,
     totalEntrances: 4,
-    floor: 2,
+    floor: 1,
     totalFloors: 8,
-    image: planImage 
+    status: 'В продаже',
+    image: '/images/apartments/1/picture.webp',
+    imagePicture: '/images/apartments/1/picture.webp',
+    imageFurniture: '/images/apartments/1/furniture.webp',
+    imageDimentions: '/images/apartments/1/dimentions.webp'
   },
   { 
-    id: 102, 
+    id: 2, 
     complex: 'ЖК Экогород 3, д. 1', 
-    title: '2-комнатная, 54.39 м²', 
-    area: '54.39 м²', 
-    price: '5 167 050', 
+    title: '2-комнатная квартира', 
+    area: '68.3 м²', 
+    areaNum: 68.3,
+    price: '6 355 620 ₽', 
+    priceNum: 6355620,
+    rooms: 2,
     entrance: 1,
     totalEntrances: 4,
-    floor: 3,
+    floor: 1,
     totalFloors: 8,
-    image: planImage 
+    status: 'В продаже',
+    image: '/images/apartments/2/picture.webp',
+    imagePicture: '/images/apartments/2/picture.webp',
+    imageFurniture: '/images/apartments/2/furniture.webp',
+    imageDimentions: '/images/apartments/2/dimentions.webp'
   },
   { 
-    id: 103, 
+    id: 3, 
     complex: 'ЖК Экогород 3, д. 1', 
-    title: '2-комнатная, 58.2 м²', 
-    area: '58.2 м²', 
-    price: '5 450 000', 
-    entrance: 2,
+    title: '1-комнатная квартира', 
+    area: '43.1 м²', 
+    areaNum: 43.1,
+    price: '4 006 440 ₽', 
+    priceNum: 4006440,
+    rooms: 1,
+    entrance: 1,
     totalEntrances: 4,
-    floor: 2,
+    floor: 1,
     totalFloors: 8,
-    image: planImage 
+    status: 'В продаже',
+    image: '/images/apartments/3/picture.webp',
+    imagePicture: '/images/apartments/3/picture.webp',
+    imageFurniture: '/images/apartments/3/furniture.webp',
+    imageDimentions: '/images/apartments/3/dimentions.webp'
   },
   { 
-    id: 104, 
+    id: 5, 
     complex: 'ЖК Экогород 3, д. 1', 
-    title: '3-комнатная, 72.8 м²', 
-    area: '72.8 м²', 
-    price: '6 800 000', 
-    entrance: 2,
+    title: '1-комнатная квартира', 
+    area: '42.8 м²', 
+    areaNum: 42.8,
+    price: '3 976 680 ₽', 
+    priceNum: 3976680,
+    rooms: 1,
+    entrance: 1,
     totalEntrances: 4,
-    floor: 4,
+    floor: 1,
     totalFloors: 8,
-    image: planImage 
+    status: 'В продаже',
+    image: '/images/apartments/5/picture.webp',
+    imagePicture: '/images/apartments/5/picture.webp',
+    imageFurniture: '/images/apartments/5/furniture.webp',
+    imageDimentions: '/images/apartments/5/dimentions.webp'
   }
 ]
 
 // Price filter
 const priceMin = 1000000
 const priceMax = 50000000
-const minPrice = ref(5470000)
+const minPrice = ref(1000000)
 const maxPrice = ref(50000000)
-const minPriceInput = ref('5 470 000')
+const minPriceInput = ref('1 000 000')
 const maxPriceInput = ref('500+')
 
 // Area filter
@@ -408,6 +414,17 @@ const selectRoom = (selectedIndex) => {
 // Format number with spaces
 const formatNumber = (num) => {
   return num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ' ')
+}
+
+// Склонение слов для русского языка
+const getRussianPlural = (count, one, few, many) => {
+  const mod10 = count % 10
+  const mod100 = count % 100
+  
+  if (mod100 >= 11 && mod100 <= 19) return many
+  if (mod10 === 1) return one
+  if (mod10 >= 2 && mod10 <= 4) return few
+  return many
 }
 
 // Price handlers
@@ -534,104 +551,38 @@ const handleMaxAreaChange = (e) => {
   maxAreaInput.value = maxArea.value.toString()
 }
 
-const properties = [
-  { 
-    id: 1, 
-    complex: 'ЖК Экогород 3, д. 1', 
-    title: '2-комнатная, 54.39 м²', 
-    area: '54.39 м²', 
-    price: '5 167 050', 
-    entrance: 1,
-    totalEntrances: 4,
-    floor: 1,
-    totalFloors: 8,
-    image: planImage 
-  },
-  { 
-    id: 2, 
-    complex: 'ЖК Экогород 3, д. 1', 
-    title: '2-комнатная, 54.39 м²', 
-    area: '54.39 м²', 
-    price: '5 167 050', 
-    entrance: 1,
-    totalEntrances: 4,
-    floor: 1,
-    totalFloors: 8,
-    image: planImage 
-  },
-  { 
-    id: 3, 
-    complex: 'ЖК Экогород 3, д. 1', 
-    title: '2-комнатная, 54.39 м²', 
-    area: '54.39 м²', 
-    price: '5 167 050', 
-    entrance: 1,
-    totalEntrances: 4,
-    floor: 1,
-    totalFloors: 8,
-    image: planImage 
-  },
-  { 
-    id: 4, 
-    complex: 'ЖК Экогород 3, д. 1', 
-    title: '2-комнатная, 54.39 м²', 
-    area: '54.39 м²', 
-    price: '5 167 050', 
-    entrance: 1,
-    totalEntrances: 4,
-    floor: 1,
-    totalFloors: 8,
-    image: planImage 
-  },
-  { 
-    id: 5, 
-    complex: 'ЖК Экогород 3, д. 1', 
-    title: '2-комнатная, 54.39 м²', 
-    area: '54.39 м²', 
-    price: '5 167 050', 
-    entrance: 1,
-    totalEntrances: 4,
-    floor: 1,
-    totalFloors: 8,
-    image: planImage 
-  },
-  { 
-    id: 6, 
-    complex: 'ЖК Экогород 3, д. 1', 
-    title: '2-комнатная, 54.39 м²', 
-    area: '54.39 м²', 
-    price: '5 167 050', 
-    entrance: 1,
-    totalEntrances: 4,
-    floor: 1,
-    totalFloors: 8,
-    image: planImage 
-  },
-  { 
-    id: 7, 
-    complex: 'ЖК Экогород 3, д. 1', 
-    title: '2-комнатная, 54.39 м²', 
-    area: '54.39 м²', 
-    price: '5 167 050', 
-    entrance: 1,
-    totalEntrances: 4,
-    floor: 1,
-    totalFloors: 8,
-    image: planImage 
-  },
-  { 
-    id: 8, 
-    complex: 'ЖК Экогород 3, д. 1', 
-    title: '2-комнатная, 54.39 м²', 
-    area: '54.39 м²', 
-    price: '5 167 050', 
-    entrance: 1,
-    totalEntrances: 4,
-    floor: 1,
-    totalFloors: 8,
-    image: planImage 
-  }
-]
+// Фильтрованные квартиры (computed)
+const filteredProperties = computed(() => {
+  // Получаем активные комнаты
+  const activeRooms = roomOptions.value
+    .filter(r => r.active)
+    .map(r => {
+      if (r.isStudio) return 0 // Студия = 0 комнат
+      return parseInt(r.label)
+    })
+
+  return apartments.filter(apt => {
+    // Фильтр по цене
+    if (apt.priceNum < minPrice.value || apt.priceNum > maxPrice.value) {
+      return false
+    }
+    
+    // Фильтр по площади
+    if (apt.areaNum < minArea.value || apt.areaNum > maxArea.value) {
+      return false
+    }
+    
+    // Фильтр по комнатам (если выбраны)
+    if (activeRooms.length > 0 && !activeRooms.includes(apt.rooms)) {
+      return false
+    }
+    
+    return true
+  })
+})
+
+// Используем filteredProperties в шаблоне
+const properties = filteredProperties
 </script>
 
 <style scoped>
@@ -664,5 +615,26 @@ const properties = [
     opacity: 0;
     transform: translateY(-10px);
   }
+}
+
+/* Range Slider Thumbs Interaction Fix */
+input[type=range]::-webkit-slider-thumb {
+  pointer-events: auto;
+  width: 20px;
+  height: 20px;
+  -webkit-appearance: none;
+  cursor: pointer;
+  border-radius: 50%;
+  background: transparent; /* Keep invisible but clickable */
+}
+
+input[type=range]::-moz-range-thumb {
+  pointer-events: auto;
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+  border-radius: 50%;
+  border: none;
+  background: transparent;
 }
 </style>

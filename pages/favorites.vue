@@ -1,3 +1,22 @@
+<script setup>
+import { useRouter } from 'vue-router'
+import { computed } from 'vue'
+import { useFavorites } from '~/composables/useFavorites'
+import { apartments } from '~/data/apartments'
+
+const router = useRouter()
+const { favoriteIds } = useFavorites()
+
+const goBack = () => {
+  router.back()
+}
+
+// Фильтруем квартиры, которые есть в избранном
+const favoriteApartments = computed(() => {
+  return apartments.filter(apt => favoriteIds.value.includes(apt.id))
+})
+</script>
+
 <template>
   <div class="bg-primary text-white min-h-screen font-sans">
     <!-- Main Content -->
@@ -17,63 +36,43 @@
       <div class="grid grid-cols-1 lg:grid-cols-[minmax(280px,35%)_1fr] gap-8 lg:gap-12 xl:gap-16 2xl:gap-20 items-start">
         <!-- Left Section: Title and Description -->
         <div class="flex flex-col">
-          <h1 class="text-5xl font-bold uppercase mb-4 md:mb-6 lg:mb-8 text-white leading-tight">
+          <h1 class="text-4xl md:text-5xl font-bold uppercase mb-4 md:mb-6 lg:mb-8 text-white leading-tight">
             ИЗБРАННОЕ
           </h1>
-          <p class="text-lg text-white leading-relaxed">
+          <p class="text-lg text-white/70 leading-relaxed max-w-md">
             Сохраняйте понравившиеся квартиры в избранное. Вернитесь к ним в любой момент, чтобы сравнить варианты, показать близким или обсудить с нашими менеджерами.
           </p>
+          
+          <NuxtLink 
+            v-if="favoriteApartments.length === 0"
+            to="/buy-apartment"
+            class="mt-8 inline-flex items-center justify-center px-8 py-4 bg-[#ff8700] rounded-full text-white font-medium uppercase tracking-wider hover:bg-[#ff9f34] transition-colors w-fit"
+          >
+            К ВЫБОРУ КВАРТИР
+          </NuxtLink>
         </div>
 
-        <!-- Right Section: Plans Grid - 2x2 Layout -->
-        <div class="grid grid-cols-2 gap-3 md:gap-4 lg:gap-5 w-full max-w-[750px] mr-8 lg:mr-12 xl:mr-16">
-          <!-- First Card -->
-          <FavoritePlanCard
-            v-if="favoritePlans[0]"
-            :plan="favoritePlans[0]"
-          />
-
-          <!-- Search Panel -->
-          <FavoriteSearchPanel />
-
-          <!-- Other Cards -->
-          <FavoritePlanCard
-            v-for="plan in favoritePlans.slice(1)"
-            :key="plan.id"
-            :plan="plan"
-          />
+        <!-- Right Section: Plans Grid -->
+        <div class="w-full">
+          <div v-if="favoriteApartments.length > 0" class="grid grid-cols-1 sm:grid-cols-2 gap-4 md:gap-6 lg:gap-8">
+            <ApartmentCard
+              v-for="apt in favoriteApartments"
+              :key="apt.id"
+              :apartment="apt"
+            />
+          </div>
+          
+          <!-- Empty State -->
+          <div v-else class="flex flex-col items-center justify-center py-20 border-2 border-dashed border-white/10 rounded-3xl">
+            <div class="w-20 h-20 mb-6 text-white/20">
+              <svg fill="currentColor" viewBox="0 0 24 24">
+                <path d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+              </svg>
+            </div>
+            <p class="text-2xl font-medium text-white/40">СПИСОК ИЗБРАННОГО ПУСТ</p>
+          </div>
         </div>
       </div>
     </section>
   </div>
 </template>
-
-<script setup>
-const router = useRouter()
-
-const goBack = () => {
-  router.back()
-}
-
-// Static data for favorite plans
-const favoritePlans = ref([
-  {
-    id: 1,
-    image: '/images/plans/plan-1.webp',
-    rooms: '2',
-    area: '65.7',
-  },
-  {
-    id: 2,
-    image: '/images/plans/plan-2.svg',
-    rooms: '3',
-    area: '89.2',
-  },
-  {
-    id: 3,
-    image: '/images/plans/plan-3.svg',
-    rooms: '1',
-    area: '42.3',
-  },
-])
-</script>

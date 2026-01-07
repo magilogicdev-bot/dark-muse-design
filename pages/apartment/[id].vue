@@ -24,7 +24,7 @@
               </div>
               <div class="spec-row">
                 <span class="spec-label">Корпус</span>
-                <span class="spec-value">{{ apartment.building }}</span>
+                <span class="spec-value">{{ extraSpecs.building }}</span>
               </div>
               <div class="spec-row">
                 <span class="spec-label">Этаж</span>
@@ -32,27 +32,27 @@
               </div>
               <div class="spec-row">
                 <span class="spec-label">Выдача ключей</span>
-                <span class="spec-value">{{ apartment.keyHandover }}</span>
+                <span class="spec-value">{{ extraSpecs.keyHandover }}</span>
               </div>
               <div class="spec-row">
                 <span class="spec-label">Условный номер</span>
-                <span class="spec-value">{{ apartment.conditionalNumber }}</span>
+                <span class="spec-value">{{ extraSpecs.conditionalNumber }}</span>
               </div>
               <div class="spec-row">
                 <span class="spec-label">Цена за м²</span>
-                <span class="spec-value">{{ apartment.pricePerM2 }} руб.</span>
+                <span class="spec-value">{{ extraSpecs.pricePerM2 }} руб.</span>
               </div>
               <div class="spec-row">
                 <span class="spec-label">Стоимость</span>
-                <span class="spec-value">{{ apartment.price }} руб.</span>
+                <span class="spec-value">{{ apartment.price }}</span>
               </div>
               <div class="spec-row">
                 <span class="spec-label">Отделка</span>
-                <span class="spec-value">{{ apartment.finish }}</span>
+                <span class="spec-value">{{ extraSpecs.finish }}</span>
               </div>
               <div class="spec-row">
                 <span class="spec-label">Высота потолков</span>
-                <span class="spec-value">{{ apartment.ceilingHeight }} м</span>
+                <span class="spec-value">{{ extraSpecs.ceilingHeight }} м</span>
               </div>
             </div>
 
@@ -76,11 +76,11 @@
             <div class="apartment-additional-info">
               <div class="additional-row">
                 <span class="additional-label">Расположение</span>
-                <span class="additional-value">{{ apartment.location }}</span>
+                <span class="additional-value">{{ extraSpecs.location }}</span>
               </div>
               <div class="additional-row">
                 <span class="additional-label">Окна выходят</span>
-                <span class="additional-value">{{ apartment.windowsView }}</span>
+                <span class="additional-value">{{ extraSpecs.windowsView }}</span>
               </div>
             </div>
 
@@ -94,12 +94,13 @@
                   aria-label="Добавить в избранное"
                 >
                   <img 
-                    src="/images/heart-orange-icon.webp" 
+                    :src="isFavorite ? '/images/heart-orange-icon.webp' : '/images/heart-outline.svg'" 
                     alt="Избранное"
                     class="favorite-icon"
+                    :class="{ 'favorite-icon--active': isFavorite }"
                   />
                 </button>
-                <p class="price-value">{{ apartment.price }} <span class="price-currency">Руб.</span></p>
+                <p class="price-value">{{ apartment.price }}</p>
               </div>
             </div>
           </div>
@@ -173,7 +174,7 @@
             <!-- Furniture View -->
             <img 
               v-if="currentView === 'furniture'"
-              :src="apartment.image" 
+              :src="apartment.imageFurniture || apartment.image" 
               :alt="`Планировка ${apartment.rooms}-комнатной квартиры с мебелью`"
               class="plan-image"
             />
@@ -181,7 +182,7 @@
             <!-- Dimensions View -->
             <img 
               v-if="currentView === 'dimensions'"
-              :src="apartment.image" 
+              :src="apartment.imageDimentions || apartment.image" 
               :alt="`Планировка ${apartment.rooms}-комнатной квартиры с размерами`"
               class="plan-image"
             />
@@ -189,7 +190,7 @@
             <!-- Design View -->
             <img 
               v-if="currentView === 'design'"
-              :src="apartment.designImage || apartment.image" 
+              :src="apartment.imagePicture || apartment.image" 
               :alt="`Дизайн ${apartment.rooms}-комнатной квартиры`"
               class="plan-image"
             />
@@ -197,7 +198,7 @@
             <!-- Floor View -->
             <img 
               v-if="currentView === 'floor'"
-              :src="apartment.sectionImage || apartment.image" 
+              :src="apartment.imagePicture || apartment.image" 
               :alt="`${apartment.rooms}-комнатная квартира на этаже`"
               class="plan-image"
             />
@@ -251,7 +252,7 @@
     <WhiteBoxFinishingSection />
 
     <!-- Similar Apartments Section -->
-    <SimilarApartmentsSection />
+    <SimilarApartmentsSection :current-apartment="apartment" />
 
     
     <!-- Mortgage Banks Section -->
@@ -265,90 +266,38 @@
 <script setup>
 import { ref, computed } from 'vue'
 import { useRoute } from 'vue-router'
+import { apartments } from '~/data/apartments'
 
 const route = useRoute()
 const apartmentId = computed(() => route.params.id)
 
-// Mock data - в реальном приложении это будет загружаться из API
-// Структура данных соответствует PropertyFilters
-const apartmentData = {
-  1: {
-    id: 1,
-    rooms: '2',
-    area: '54.39 м²',
-    complex: 'Экогород 3',
-    building: '26/1',
-    floor: 1,
-    totalFloors: 8,
-    keyHandover: 'III кв. 2027 г.',
-    conditionalNumber: '26-1-98',
-    pricePerM2: '95 000',
-    price: '5 167 050',
-    finish: 'White box',
-    ceilingHeight: '2.72',
-    location: 'м. Пятницкое шоссе, Тушинская, Сходненская',
-    windowsView: 'На окружающую застройку',
-    image: '/images/apartment-plan-3room.webp',
-    designImage: '/images/apartment-plan-3room.webp',
-    sectionImage: '/images/apartment-plan-3room.webp',
-    model3d: '/models/Plan_1.gltf'
-  },
-  2: {
-    id: 2,
-    rooms: '2',
-    area: '54.39 м²',
-    complex: 'Экогород 3',
-    building: '26/1',
-    floor: 1,
-    totalFloors: 8,
-    keyHandover: 'III кв. 2027 г.',
-    conditionalNumber: '26-1-99',
-    pricePerM2: '95 000',
-    price: '5 167 050',
-    finish: 'White box',
-    ceilingHeight: '2.72',
-    location: 'м. Пятницкое шоссе, Тушинская, Сходненская',
-    windowsView: 'На окружающую застройку',
-    image: '/images/apartment-plan-3room.webp',
-    designImage: '/images/apartment-plan-3room.webp',
-    sectionImage: '/images/apartment-plan-3room.webp',
-    model3d: '/models/Plan_1.gltf'
-  },
-  3: {
-    id: 3,
-    rooms: '3',
-    area: '71 м²',
-    complex: 'Экогород 3',
-    building: '26/1',
-    floor: 2,
-    totalFloors: 6,
-    keyHandover: 'III кв. 2027 г.',
-    conditionalNumber: '26-1-98',
-    pricePerM2: '103 109',
-    price: '5 070 752',
-    finish: 'White box',
-    ceilingHeight: '2.72',
-    location: 'м. Пятницкое шоссе, Тушинская, Сходненская',
-    windowsView: 'На окружающую застройку',
-    image: '/images/apartment-plan-3room.webp',
-    designImage: '/images/apartment-plan-3room.webp',
-    sectionImage: '/images/apartment-plan-3room.webp',
-    model3d: '/models/Plan_1.gltf'
-  }
-}
-
 const apartment = computed(() => {
   const id = parseInt(apartmentId.value)
-  return apartmentData[id] || apartmentData[1]
+  return apartments.find(a => a.id === id) || apartments[0]
 })
 
+// Дополнительные характеристики (моки для примера, так как в основной базе их нет)
+const extraSpecs = computed(() => ({
+  building: '1',
+  keyHandover: 'III кв. 2026 г.',
+  conditionalNumber: `${apartment.value.id}`,
+  pricePerM2: Math.round(apartment.value.priceNum / apartment.value.areaNum).toLocaleString('ru-RU'),
+  finish: 'White box',
+  ceilingHeight: '2.72',
+  location: 'Ярославль, Заволжский р-н',
+  windowsView: 'Во двор / На улицу'
+}))
+
+const { isFavorite: checkFavorite, toggleFavorite: toggleGlobalFavorite } = useFavorites()
+
+const isFavorite = computed(() => checkFavorite(apartment.value.id))
+
 const showAllParams = ref(false)
-const isFavorite = ref(false)
 const currentView = ref('furniture')
 const is3DViewerOpen = ref(false)
 
 const toggleFavorite = () => {
-  isFavorite.value = !isFavorite.value
+  toggleGlobalFavorite(apartment.value.id)
 }
 
 const handleZoom = () => {
@@ -572,6 +521,11 @@ useHead({
   height: clamp(28px, 3.5vw, 36px);
   object-fit: contain;
   display: block;
+  transition: all 0.3s ease;
+}
+
+.favorite-icon:not(.favorite-icon--active) {
+  opacity: 0.6;
 }
 
 .price-value {

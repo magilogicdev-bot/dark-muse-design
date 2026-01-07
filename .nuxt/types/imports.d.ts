@@ -101,6 +101,7 @@ declare global {
   const useCssModule: typeof import('vue').useCssModule
   const useCssVars: typeof import('vue').useCssVars
   const useError: typeof import('../../node_modules/nuxt/dist/app/composables/error').useError
+  const useFavorites: typeof import('../../composables/useFavorites').useFavorites
   const useFetch: typeof import('../../node_modules/nuxt/dist/app/composables/fetch').useFetch
   const useHead: typeof import('../../node_modules/nuxt/dist/app/composables/head').useHead
   const useHeadSafe: typeof import('../../node_modules/nuxt/dist/app/composables/head').useHeadSafe
@@ -115,7 +116,6 @@ declare global {
   const useModel: typeof import('vue').useModel
   const useNuxtApp: typeof import('../../node_modules/nuxt/dist/app/nuxt').useNuxtApp
   const useNuxtData: typeof import('../../node_modules/nuxt/dist/app/composables/asyncData').useNuxtData
-  const useNuxtDevTools: typeof import('../../node_modules/@nuxt/devtools/dist/runtime/use-nuxt-devtools').useNuxtDevTools
   const usePageMeta: typeof import('../../composables/usePageMeta').usePageMeta
   const usePreviewMode: typeof import('../../node_modules/nuxt/dist/app/composables/preview').usePreviewMode
   const useRequestEvent: typeof import('../../node_modules/nuxt/dist/app/composables/ssr').useRequestEvent
@@ -289,6 +289,7 @@ declare module 'vue' {
     readonly useCssModule: UnwrapRef<typeof import('vue')['useCssModule']>
     readonly useCssVars: UnwrapRef<typeof import('vue')['useCssVars']>
     readonly useError: UnwrapRef<typeof import('../../node_modules/nuxt/dist/app/composables/error')['useError']>
+    readonly useFavorites: UnwrapRef<typeof import('../../composables/useFavorites')['useFavorites']>
     readonly useFetch: UnwrapRef<typeof import('../../node_modules/nuxt/dist/app/composables/fetch')['useFetch']>
     readonly useHead: UnwrapRef<typeof import('../../node_modules/nuxt/dist/app/composables/head')['useHead']>
     readonly useHeadSafe: UnwrapRef<typeof import('../../node_modules/nuxt/dist/app/composables/head')['useHeadSafe']>
@@ -303,7 +304,6 @@ declare module 'vue' {
     readonly useModel: UnwrapRef<typeof import('vue')['useModel']>
     readonly useNuxtApp: UnwrapRef<typeof import('../../node_modules/nuxt/dist/app/nuxt')['useNuxtApp']>
     readonly useNuxtData: UnwrapRef<typeof import('../../node_modules/nuxt/dist/app/composables/asyncData')['useNuxtData']>
-    readonly useNuxtDevTools: UnwrapRef<typeof import('../../node_modules/@nuxt/devtools/dist/runtime/use-nuxt-devtools')['useNuxtDevTools']>
     readonly usePageMeta: UnwrapRef<typeof import('../../composables/usePageMeta')['usePageMeta']>
     readonly usePreviewMode: UnwrapRef<typeof import('../../node_modules/nuxt/dist/app/composables/preview')['usePreviewMode']>
     readonly useRequestEvent: UnwrapRef<typeof import('../../node_modules/nuxt/dist/app/composables/ssr')['useRequestEvent']>

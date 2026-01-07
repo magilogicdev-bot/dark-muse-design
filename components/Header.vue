@@ -39,8 +39,12 @@
         </div>
 
         <div class="header__right">
-          <NuxtLink to="/favorites" class="header__favorites header__nav-link--desktop">
-            <span class="header__favorites-count">0</span>
+          <NuxtLink 
+            to="/favorites" 
+            class="header__favorites header__nav-link--desktop"
+            :class="{ 'header__favorites--active': favoritesCount > 0 }"
+          >
+            <span class="header__favorites-count">{{ favoritesCount }}</span>
             <svg class="header__heart-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
               <path
                 stroke-linecap="round"
@@ -94,6 +98,7 @@
           <NuxtLink
             to="/favorites"
             class="w-8 h-8 rounded-full border border-white/20 flex items-center justify-center hover:opacity-90 active:scale-95 transition-all"
+            :class="{ 'header__favorites--active-mobile': favoritesCount > 0 }"
             aria-label="Избранное"
           >
             <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -240,10 +245,12 @@
 <script setup>
 import { onBeforeUnmount, onMounted, ref, watch, computed } from 'vue'
 import { useMenu } from '~/composables/useMenu'
+import { useFavorites } from '~/composables/useFavorites'
 import { siteConfig } from '~/config/contacts'
 import { useRoute } from 'vue-router'
 
 const { isMenuOpen, toggleMenu, closeMenu } = useMenu()
+const { favoritesCount } = useFavorites()
 const config = siteConfig
 const route = useRoute()
 
@@ -688,6 +695,27 @@ const handleVideoClick = () => {
   height: clamp(14px, 1.2vw, 16px);
   color: #fff;
   flex-shrink: 0;
+  transition: color 0.3s ease, fill 0.3s ease;
+}
+
+.header__favorites--active .header__heart-icon {
+  color: #ff8700;
+  fill: #ff8700;
+}
+
+.header__favorites--active .header__favorites-count {
+  color: #ff8700;
+  font-weight: 600;
+}
+
+.header__favorites--active-mobile {
+  border-color: #ff8700 !important;
+  background: rgba(255, 135, 0, 0.1) !important;
+  color: #ff8700 !important;
+}
+
+.header__favorites--active-mobile svg {
+  fill: #ff8700;
 }
 
 .header__presentation {

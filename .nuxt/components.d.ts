@@ -46,8 +46,6 @@ export const EcocityMediaSection: typeof import("../components/EcocityMediaSecti
 export const EcocitySection: typeof import("../components/EcocitySection.vue").default
 export const EcocityWhiteBoxSection: typeof import("../components/EcocityWhiteBoxSection.vue").default
 export const FAQSection: typeof import("../components/FAQSection.vue").default
-export const FavoritePlanCard: typeof import("../components/FavoritePlanCard.vue").default
-export const FavoriteSearchPanel: typeof import("../components/FavoriteSearchPanel.vue").default
 export const FeaturesSection: typeof import("../components/FeaturesSection.vue").default
 export const FindPlansCard: typeof import("../components/FindPlansCard.vue").default
 export const FloatingActionBar: typeof import("../components/FloatingActionBar.vue").default
@@ -146,8 +144,6 @@ export const LazyEcocityMediaSection: LazyComponent<typeof import("../components
 export const LazyEcocitySection: LazyComponent<typeof import("../components/EcocitySection.vue").default>
 export const LazyEcocityWhiteBoxSection: LazyComponent<typeof import("../components/EcocityWhiteBoxSection.vue").default>
 export const LazyFAQSection: LazyComponent<typeof import("../components/FAQSection.vue").default>
-export const LazyFavoritePlanCard: LazyComponent<typeof import("../components/FavoritePlanCard.vue").default>
-export const LazyFavoriteSearchPanel: LazyComponent<typeof import("../components/FavoriteSearchPanel.vue").default>
 export const LazyFeaturesSection: LazyComponent<typeof import("../components/FeaturesSection.vue").default>
 export const LazyFindPlansCard: LazyComponent<typeof import("../components/FindPlansCard.vue").default>
 export const LazyFloatingActionBar: LazyComponent<typeof import("../components/FloatingActionBar.vue").default>

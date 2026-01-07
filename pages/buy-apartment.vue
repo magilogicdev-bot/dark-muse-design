@@ -4,9 +4,10 @@
     <BuyApartmentHeroSection />
 
     <!-- Property Search / Filters Section -->
-    <section id="filters" class="py-12 md:py-20 bg-[#1A1A1A]">
+    <!-- Property Search / Filters Section -->
+    <div id="filters">
       <PropertyFilters />
-    </section>
+    </div>
 
     <!-- How To Buy Section (New Design from Image) -->
     <HowToBuySection id="how-to-buy" />

@@ -46,8 +46,6 @@ interface _GlobalComponents {
   'EcocitySection': typeof import("../../components/EcocitySection.vue").default
   'EcocityWhiteBoxSection': typeof import("../../components/EcocityWhiteBoxSection.vue").default
   'FAQSection': typeof import("../../components/FAQSection.vue").default
-  'FavoritePlanCard': typeof import("../../components/FavoritePlanCard.vue").default
-  'FavoriteSearchPanel': typeof import("../../components/FavoriteSearchPanel.vue").default
   'FeaturesSection': typeof import("../../components/FeaturesSection.vue").default
   'FindPlansCard': typeof import("../../components/FindPlansCard.vue").default
   'FloatingActionBar': typeof import("../../components/FloatingActionBar.vue").default
@@ -146,8 +144,6 @@ interface _GlobalComponents {
   'LazyEcocitySection': LazyComponent<typeof import("../../components/EcocitySection.vue").default>
   'LazyEcocityWhiteBoxSection': LazyComponent<typeof import("../../components/EcocityWhiteBoxSection.vue").default>
   'LazyFAQSection': LazyComponent<typeof import("../../components/FAQSection.vue").default>
-  'LazyFavoritePlanCard': LazyComponent<typeof import("../../components/FavoritePlanCard.vue").default>
-  'LazyFavoriteSearchPanel': LazyComponent<typeof import("../../components/FavoriteSearchPanel.vue").default>
   'LazyFeaturesSection': LazyComponent<typeof import("../../components/FeaturesSection.vue").default>
   'LazyFindPlansCard': LazyComponent<typeof import("../../components/FindPlansCard.vue").default>
   'LazyFloatingActionBar': LazyComponent<typeof import("../../components/FloatingActionBar.vue").default>
